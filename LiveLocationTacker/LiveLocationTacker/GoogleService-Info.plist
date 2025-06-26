@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyAxiwCbXytBWB2I6nFiUsfvVRkvJieI7Rs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>843346805801</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.DynamicLinkInfo</string>
+	<key>PROJECT_ID</key>
+	<string>ios---phone-tracker</string>
+	<key>STORAGE_BUCKET</key>
+	<string>ios---phone-tracker.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:843346805801:ios:c1e36482e67b1336878838</string>
+</dict>
+</plist>
