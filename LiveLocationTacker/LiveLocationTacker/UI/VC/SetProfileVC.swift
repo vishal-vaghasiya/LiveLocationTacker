@@ -18,27 +18,37 @@ class SetProfileVC: UIViewController {
     @IBOutlet weak var pencil_view: UIView!
     @IBOutlet weak var txt_name: UITextField!
     let groupManager = FirebaseManager()
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         round_imgview.makeRounded()
         pencil_view.makeRounded()
         
         //btnUpdate.setButtonTitleAndFunctionality("Done")
         //txt_name.text = Constants.USERDEFAULTS.getCurrentuserName()
         //profile_img.image = UIImage(data: Constants.USERDEFAULTS.getProfileImage() ?? Data())
+        txt_name.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+    }
+    
+    @IBAction func cancelClick(_ sender: UIButton) {
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     @IBAction func btnEditimgAction(_ sender: UIButton) {
-        let imagePickerController = UIImagePickerController()
-        imagePickerController.delegate = self
-        imagePickerController.sourceType = .photoLibrary // Allow selecting images from the photo library
-        imagePickerController.allowsEditing = true
-        DispatchQueue.main.async {
-            self.present(imagePickerController, animated: true)
-        }
+//        let imagePickerController = UIImagePickerController()
+//        imagePickerController.delegate = self
+//        imagePickerController.sourceType = .photoLibrary // Allow selecting images from the photo library
+//        imagePickerController.allowsEditing = true
+//        DispatchQueue.main.async {
+//            self.present(imagePickerController, animated: true)
+//        }
+        
+//        let vc = IS_IPHONE ? StoryboardScene.ManageTeam.selectAssignTagVC.instantiate() : StoryboardScene.ManageTeamIPad.selectAssignTagVC.instantiate()
+//        //let vc = IS_IPHONE ? StoryboardScene.ManageTeam.selectTeamTagVC.instantiate() : StoryboardScene.ManageTeamIPad.selectTeamTagVC.instantiate()
+//        vc.callManageTeamApi = { (dict) in
+//            self.getBranchTeamUsers()
+//        }
+//        vc.modalPresentationStyle = .overCurrentContext
+//        self.present(vc, animated: false)
     }
     
     @IBAction func btnUpdateProfileAction(_ sender: UIButton) {
@@ -54,24 +64,27 @@ class SetProfileVC: UIViewController {
         }
     }
     
-    
     @IBAction func btnUpdateAction(_ sender: UIButton) {
-        showLoader(text: "Updating...")
-        
-        groupManager.updateUserNameInFirebase(userPhonenumber: Constants.USERDEFAULTS.getCurrentuserNumber(),entername: txt_name.text ?? "") { updated, errorMessage in
-            self.hideLoader()
-            
-            if updated {
-                Constants.USERDEFAULTS.set(true, forKey: "isIntro")
-                Constants.USERDEFAULTS.saveCurrentuserName(value: self.txt_name.text ?? "")
-                Constants.USERDEFAULTS.saveCurrentuserGender(value: self.btnMale.layer.borderWidth == 2 ? "Male" : "Female")
-                
-                self.navigateToHome()
-            }
-            else{
-                self.showAlert(title: "", message: errorMessage ?? "")
-            }
-        }
+        //        showLoader(text: "Updating...")
+        //
+        //        groupManager.updateUserNameInFirebase(userPhonenumber: Constants.USERDEFAULTS.getCurrentuserNumber(),entername: txt_name.text ?? "") { updated, errorMessage in
+        //            self.hideLoader()
+        //
+        //            if updated {
+        //                Constants.USERDEFAULTS.set(true, forKey: "isIntro")
+        //                Constants.USERDEFAULTS.saveCurrentuserName(value: self.txt_name.text ?? "")
+        //                Constants.USERDEFAULTS.saveCurrentuserGender(value: self.btnMale.layer.borderWidth == 2 ? "Male" : "Female")
+        //
+        self.navigateToHome()
+        //            }
+        //            else{
+        //                self.showAlert(title: "", message: errorMessage ?? "")
+        //            }
+        //        }
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        btnUpdate.isEnabled = textField.text?.count ?? 0 > 0
     }
 }
 

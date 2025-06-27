@@ -20,43 +20,38 @@ class UIEnableDisable: UIButton {
             alpha = isEnabled ? 1.0 : 1.0
             isUserInteractionEnabled = isEnabled
             clipsToBounds = false
-            adjustsImageWhenHighlighted = false
-            adjustsImageWhenDisabled = false
             layer.cornerRadius = 15
             setTitleColor(isEnabled ? .black : .lightGray, for: .normal)
+            
+            semanticContentAttribute = .forceRightToLeft
         }
     }
  
-    // Setup common properties (called from both initializers)
-    private func setupButton() {
+    private func applyStyle() {
         setBackgroundImage(disabledImage, for: .normal)
         setBackgroundImage(disabledImage, for: .disabled)
         isUserInteractionEnabled = false
-        adjustsImageWhenHighlighted = false
-        adjustsImageWhenDisabled = false
         clipsToBounds = false
- 
-        // Position image to the right
-        semanticContentAttribute = .forceRightToLeft
- 
-        // Optional spacing adjustments
+
         imageEdgeInsets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: -8)
         titleEdgeInsets = UIEdgeInsets(top: 0, left: -8, bottom: 0, right: 8)
         contentEdgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
-        
-        if let label = titleLabel {
-            label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
-        }
-        setTitleColor(titleColor(for: .normal) ?? .white, for: .normal)
+
+        setTitleColor(.lightGray, for: .normal)
+        setTitleColor(.lightGray, for: .disabled)
+
+        semanticContentAttribute = .forceRightToLeft
     }
  
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupButton()
+        applyStyle()
+        self.isEnabled = false
     }
  
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setupButton()
+        applyStyle()
+        self.isEnabled = false
     }
 }

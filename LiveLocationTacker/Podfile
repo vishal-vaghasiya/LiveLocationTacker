@@ -6,7 +6,8 @@ target 'LiveLocationTacker' do
   use_frameworks!
 
   # Pods for LiveLocationTacker
-
+  pod 'SwiftGen'#, '~> 6.6'
+  
   pod 'Toast-Swift'
   pod 'ReachabilitySwift'
   pod 'ProgressHUD'
@@ -20,12 +21,12 @@ target 'LiveLocationTacker' do
   pod 'PhoneNumberKit' , '~> 3.7'
   pod 'AEOTPTextField'
   
-  pod 'Firebase'
-  pod 'FirebaseMessaging'
-  pod 'Firebase/Crashlytics'
-  pod 'FirebaseAnalytics'
-  pod 'Firebase/Database'
+  pod 'Firebase', '~> 11.15'
   pod 'FirebaseAuth', '~> 11.15'
+  pod 'FirebaseMessaging', '~> 11.15'
+  pod 'FirebaseCrashlytics', '~> 11.15'
+  pod 'FirebaseAnalytics', '~> 11.15'
+  pod 'FirebaseDatabase', '~> 11.15'
   
   pod 'SwiftJWT'
   pod 'RevenueCat'

@@ -26,7 +26,8 @@ class LoginMobilenumberVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupButton()
+        
         lbl_countrycode.text = CountryManager.shared.currentCountry?.dialingCode
         img_flag.image = CountryManager.shared.currentCountry?.flag
         invalid_view.isHidden =  true

@@ -1,0 +1,17 @@
+xcassets:
+  paths:
+    - LiveLocationTacker/Resources/Assets.xcassets
+  templateName: swift5
+  output: LiveLocationTacker/Resources/Utility/SwiftGen/Images.swift
+
+fonts:
+  inputs: LiveLocationTacker/Resources/Fonts
+  outputs:
+    templateName: swift5
+    output: LiveLocationTacker/Resources/Utility/SwiftGen/Fonts.swift
+
+ib:
+  inputs: LiveLocationTacker/UI
+  outputs:
+    templateName: scenes-swift4
+    output: LiveLocationTacker/Resources/Utility/SwiftGen/Storyboards.swift
