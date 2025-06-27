@@ -7,31 +7,22 @@
 
 import UIKit
 import SwiftQRCodeScanner
-
-
 class ScantoJoinVC: UIViewController {
-
+    
     @IBOutlet weak var img_barcode: UIImageView!
-    @IBOutlet weak var btnScanBarcode: UIButton!
     @IBOutlet weak var qr_view: UIView!
-    @IBOutlet weak var btnShareBarcode: UIButton!
-    let groupManager = FirebaseManager()
+    let firebaseManager = FirebaseManager()
     var groupCode = String()
     var groupFcmtoken = String()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("fcmtoken ==> \(groupFcmtoken)")
-        print("groupCode ==> \(groupCode)")
-        setRightSideButtonInNavigationBar()
-        
-        btnScanBarcode.setButtonTitleAndFunctionality("Scan Barcode")
-        btnShareBarcode.setButtonTitleAndFunctionality("Share Barcode",backgroundImage: UIImage(named: "share_btn_bg"))
         img_barcode.image = generateHDQRCode(from: groupCode + "@" + groupFcmtoken + "@" + String(NSDate().timeIntervalSince1970))
     }
-    
+   
+    @IBAction func backClick(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     @IBAction func btnScanAction(_ sender: UIButton) {
         DispatchQueue.main.async {
@@ -41,13 +32,11 @@ class ScantoJoinVC: UIViewController {
         }
     }
     
-    
     @IBAction func btnShareBarcodeAction(_ sender: UIButton) {
         guard let imgeBarcode = img_barcode.image  else { return }
-        
         DispatchQueue.main.async {
             let activityVC = UIActivityViewController(activityItems: [imgeBarcode,Constants.APP_URL], applicationActivities: nil)
-            activityVC.popoverPresentationController?.sourceView = sender // For iPad support
+            activityVC.popoverPresentationController?.sourceView = sender
             self.present(activityVC, animated: true, completion: nil)
         }
     }
@@ -73,7 +62,7 @@ extension ScantoJoinVC : QRScannerCodeDelegate {
         UIDevice.current.isBatteryMonitoringEnabled = true
         let batteryLevel = Int(UIDevice.current.batteryLevel * 100)
         
-        groupManager.joinCircle(withCode: friendEnterCode,
+        firebaseManager.joinCircle(withCode: friendEnterCode,
                                 circleId: groupCode,
                                 batteryLevel: batteryLevel) { success in
             self.hideLoader()
@@ -81,7 +70,7 @@ extension ScantoJoinVC : QRScannerCodeDelegate {
             if success {
                 print("Friend successfully joined the circle!")
                 let myname = Constants.USERDEFAULTS.getCurrentuserName() + " " + NSLocalizedString("FriendQRPushMSG", comment: "")
-                self.groupManager.sendPushNotification(fcmToken: friendfcmtoken, body: myname)
+                self.firebaseManager.sendPushNotification(fcmToken: friendfcmtoken, body: myname)
                 self.navigateToHome()
             }
             else {

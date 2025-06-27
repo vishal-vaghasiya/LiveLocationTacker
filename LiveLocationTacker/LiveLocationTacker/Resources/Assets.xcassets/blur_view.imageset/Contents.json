@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "ic_Pro.png",
+      "filename" : "blur_view.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "ic_Pro@2x.png",
+      "filename" : "blur_view@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "ic_Pro@3x.png",
+      "filename" : "blur_view@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

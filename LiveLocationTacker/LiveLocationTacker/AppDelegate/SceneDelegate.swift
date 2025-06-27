@@ -170,35 +170,35 @@ extension UIViewController {
     
     func setRightSideButtonInNavigationBar(visibleBtnCount: Int = 0,isSetText:Bool = false,secondFolderImageName:String = "ic_Settings",seconBtnFram:CGRect = CGRect(x: 0, y: 0, width: 30, height: 30),completion:((UIButton) -> Void)? = nil) {
         
-        let proButtonView = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-        let editButtonView = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-        
-        let proButton = UIButton(type: .custom)
-        proButton.frame = CGRect(x: 0,y: 0,width: 30,height: 30)
-        proButton.setBackgroundImage(UIImage(named: "ic_Pro"), for: .normal)
-        proButton.addTarget(self, action: #selector(didTapProButton), for: .touchUpInside)
-        proButtonView.addSubview(proButton)
-        
-        let editbutton = UIButton(type: .custom)
-        editbutton.frame = seconBtnFram
-        editbutton.setBackgroundImage(UIImage(named: secondFolderImageName), for: .normal)
-        editbutton.addTarget(self, action: #selector(didTapEditButton), for: .touchUpInside)
-        editButtonView.addSubview(editbutton)
-        
-        let editNavButton = UIBarButtonItem(customView: editButtonView)
-        let proButtonItem = UIBarButtonItem(customView: proButtonView)
-        
-        // Add UIBarButtonItems to the navigation item
-        if visibleBtnCount == 1 {
-            self.navigationItem.rightBarButtonItem = Constants.userSubscribeAvailable ? nil : proButtonItem
-        }
-        else if visibleBtnCount == 2 {
-            self.navigationItem.rightBarButtonItem = editNavButton
-        }
-        else {
-            self.navigationItem.rightBarButtonItems = Constants.userSubscribeAvailable ? [editNavButton] : [proButtonItem,editNavButton]
-        }
-        completion?(editbutton)
+//        let proButtonView = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+//        let editButtonView = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+//        
+//        let proButton = UIButton(type: .custom)
+//        proButton.frame = CGRect(x: 0,y: 0,width: 30,height: 30)
+//        proButton.setBackgroundImage(UIImage(named: "ic_Pro"), for: .normal)
+//        proButton.addTarget(self, action: #selector(didTapProButton), for: .touchUpInside)
+//        proButtonView.addSubview(proButton)
+//        
+//        let editbutton = UIButton(type: .custom)
+//        editbutton.frame = seconBtnFram
+//        editbutton.setBackgroundImage(UIImage(named: secondFolderImageName), for: .normal)
+//        editbutton.addTarget(self, action: #selector(didTapEditButton), for: .touchUpInside)
+//        editButtonView.addSubview(editbutton)
+//        
+//        let editNavButton = UIBarButtonItem(customView: editButtonView)
+//        let proButtonItem = UIBarButtonItem(customView: proButtonView)
+//        
+//        // Add UIBarButtonItems to the navigation item
+//        if visibleBtnCount == 1 {
+//            self.navigationItem.rightBarButtonItem = Constants.userSubscribeAvailable ? nil : proButtonItem
+//        }
+//        else if visibleBtnCount == 2 {
+//            self.navigationItem.rightBarButtonItem = editNavButton
+//        }
+//        else {
+//            self.navigationItem.rightBarButtonItems = Constants.userSubscribeAvailable ? [editNavButton] : [proButtonItem,editNavButton]
+//        }
+        completion?(UIButton())
     }
     
     @objc private func didTapProButton(_ sender: UIBarButtonItem) {

@@ -22,6 +22,7 @@
 		0FF0194B2E0E4D5200575BB0 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FF019452E0E4D5200575BB0 /* Poppins-Bold.ttf */; };
 		0FF0194C2E0E4D5200575BB0 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FF019462E0E4D5200575BB0 /* Poppins-Medium.ttf */; };
 		0FF019502E0E5C8500575BB0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0FF0194F2E0E5C8500575BB0 /* GoogleService-Info.plist */; };
+		0FF019532E0EAE4000575BB0 /* MyCirclesPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF019522E0EAE4000575BB0 /* MyCirclesPopup.swift */; };
 		BD1A20572CD0B2E00033A8BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1A20562CD0B2E00033A8BA /* AppDelegate.swift */; };
 		BD1A20592CD0B2E00033A8BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1A20582CD0B2E00033A8BA /* SceneDelegate.swift */; };
 		BD1A205E2CD0B2E00033A8BA /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BD1A205D2CD0B2E00033A8BA /* Base */; };
@@ -110,6 +111,7 @@
 		0FF019472E0E4D5200575BB0 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		0FF019482E0E4D5200575BB0 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		0FF0194F2E0E5C8500575BB0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0FF019522E0EAE4000575BB0 /* MyCirclesPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCirclesPopup.swift; sourceTree = "<group>"; };
 		179C6570F863CE2D05929C3B /* Pods_LiveLocationTacker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LiveLocationTacker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F0B52A6D75671A46D801629 /* Pods-LiveLocationTacker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiveLocationTacker.release.xcconfig"; path = "Target Support Files/Pods-LiveLocationTacker/Pods-LiveLocationTacker.release.xcconfig"; sourceTree = "<group>"; };
 		BD1A20532CD0B2E00033A8BA /* LiveLocationTacker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveLocationTacker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -303,6 +305,11 @@
 				BD9DB1372CE856F5003615FE /* TabBar.storyboard */,
 				BD9DB1492CE858D8003615FE /* SplashVC.swift */,
 				BD75DDB62CE89C6B00A028BD /* HomeTabVC.swift */,
+				BD75DDB82CE89EC300A028BD /* MapVC.swift */,
+				BD75DDBC2CE8B76500A028BD /* JoinCircleVC.swift */,
+				BD7F29062D1A72810020B37D /* ScantoJoinVC.swift */,
+				BDBC8B6C2CEB527A00D913F0 /* UserDeatilsVC.swift */,
+				0FF019522E0EAE4000575BB0 /* MyCirclesPopup.swift */,
 			);
 			path = Tabbar;
 			sourceTree = "<group>";
@@ -478,10 +485,6 @@
 		BD9DB1392CE85715003615FE /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				BD75DDB82CE89EC300A028BD /* MapVC.swift */,
-				BD75DDBC2CE8B76500A028BD /* JoinCircleVC.swift */,
-				BD7F29062D1A72810020B37D /* ScantoJoinVC.swift */,
-				BDBC8B6C2CEB527A00D913F0 /* UserDeatilsVC.swift */,
 				BD7FE3322CEC4E27006C32D2 /* AremaCalculatoreVC.swift */,
 				BDC7782D2CECA1B900BEFF66 /* CompassVC.swift */,
 				BD38B9002CEC66540088D0C7 /* ProfileVC.swift */,
@@ -744,6 +747,7 @@
 				BD1A20A12CD0B3510033A8BA /* LocalNetworkAuthorization.swift in Sources */,
 				BD1A20572CD0B2E00033A8BA /* AppDelegate.swift in Sources */,
 				BD75DDB72CE89C6B00A028BD /* HomeTabVC.swift in Sources */,
+				0FF019532E0EAE4000575BB0 /* MyCirclesPopup.swift in Sources */,
 				BDB0BDDB2CE7032B00A5E037 /* FirebaseManager.swift in Sources */,
 				0F2DBFA42E0D3D4500243B13 /* UIEnableDisable.swift in Sources */,
 				BDBC8B6D2CEB527A00D913F0 /* UserDeatilsVC.swift in Sources */,

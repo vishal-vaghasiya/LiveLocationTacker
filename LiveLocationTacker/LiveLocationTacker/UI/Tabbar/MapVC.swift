@@ -16,16 +16,12 @@ var selectedGroupsnapSort:DataSnapshot?
 
 class MapVC: UIViewController {
 
-    @IBOutlet weak var btnJoinGroup: UIButton!
     @IBOutlet weak var lbl_circleName: UILabel!
     @IBOutlet weak var img_vectore: UIImageView!
-    @IBOutlet weak var groupTableview: UITableView!
     @IBOutlet weak var circle_view: UIView!
     @IBOutlet weak var map_view: MKMapView!
     @IBOutlet weak var bottom_view: UIView!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var dropdownView: UIView!
-    @IBOutlet weak var btnCreateNewGroup: UIButton!
     @IBOutlet weak var plus_lottieview: UIView!
     
     let groupManager = FirebaseManager()
@@ -46,9 +42,6 @@ class MapVC: UIViewController {
         map_view.delegate = self
         map_view.showsUserLocation = false
         locationManager.startUpdatingLocation()
-        
-        btnCreateNewGroup.setButtonTitleAndFunctionality("Create Circle",textFont: AppFont.semiBold(size: 16))
-        btnJoinGroup.setButtonTitleAndFunctionality("Join Circle",textFont: AppFont.semiBold(size: 16))
         
         UIDevice.current.isBatteryMonitoringEnabled = true
         NotificationCenter.default.addObserver(self, selector: #selector(batteryLevelDidChange), name: UIDevice.batteryLevelDidChangeNotification, object: nil)
@@ -142,42 +135,13 @@ class MapVC: UIViewController {
         }
     }
     
-//    func plotRoute() {
-//        guard !locationPoints.isEmpty else { return }
-//
-//        let sorted = locationPoints.sorted { $0.timestamp < $1.timestamp }
-//        let coordinates = sorted.map { CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude) }
-//
-//        // 1. Drop pins with route numbers
-//        for (index, point) in sorted.enumerated() {
-//            let annotation = MKPointAnnotation()
-//            annotation.coordinate = CLLocationCoordinate2D(latitude: point.latitude, longitude: point.longitude)
-//            annotation.title = "Step \(index + 1)"
-//            annotation.subtitle = "Lat: \(point.latitude), Lon: \(point.longitude)"
-//            map_view.addAnnotation(annotation)
-//        }
-//
-//        // 2. Draw polyline route
-//        let polyline = MKPolyline(coordinates: coordinates, count: coordinates.count)
-//        map_view.addOverlay(polyline)
-//
-//        // 3. Zoom to the start point
-//        if let first = coordinates.first {
-//            map_view.setRegion(
-//                MKCoordinateRegion(center: first, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)),
-//                animated: true
-//            )
-//        }
-//    }
-    
     @IBAction func btnPlusMemberAction(_ sender: UIButton) {
-        let vc = Constants.tab_storyBoard.instantiateViewController(identifier: "ScantoJoinVC") as! ScantoJoinVC
+        let vc = StoryboardScene.TabBar.joinCircleVC.instantiate()
         vc.groupCode = selectedGroupsnapSort?.childSnapshot(forPath: "code").value as? String ?? ""
-        vc.groupFcmtoken = selectedGroupsnapSort?.childSnapshot(forPath: "fcmtoken").value as? String ?? ""
+        //vc.groupFcmtoken = selectedGroupsnapSort?.childSnapshot(forPath: "fcmtoken").value as? String ?? ""
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
     
     @IBAction func btnSubscribeAction(_ sender: UIButton) {
         DispatchQueue.main.async {
@@ -188,14 +152,30 @@ class MapVC: UIViewController {
     }
     
     @IBAction func btnSelectGroupAction(_ sender: UIButton) {
-        UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+        //UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+        //img_vectore.isHighlighted = !img_vectore.isHighlighted
+        let vc = StoryboardScene.TabBar.myCirclesPopup.instantiate()
+        vc.groupSnapSortList = self.groupSnapSortList
+        vc.joinCircle = {
+            let vc = StoryboardScene.TabBar.joinCircleVC.instantiate()
+            vc.groupCode = selectedGroupsnapSort?.childSnapshot(forPath: "code").value as? String ?? ""
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        vc.selectedGroup = { (data) in
+            self.groupSnapSortList = data
+            self.memberList = selectedGroupsnapSort?.childSnapshot(forPath: "members").value as? [String:Any] ?? [:]
+            self.lbl_circleName.text = selectedGroupsnapSort?.childSnapshot(forPath: "name").value as? String ?? ""
+            self.addMemberPinsToMap()
+        }
+        vc.updateCircle = { (data) in
+            self.groupSnapSortList = data
+            self.lbl_circleName.text = selectedGroupsnapSort?.childSnapshot(forPath: "name").value as? String ?? ""
+            self.getMemberList()
+        }
         
-        dropdownView.isHidden = !dropdownView.isHidden
-        img_vectore.isHighlighted = !img_vectore.isHighlighted
-    }
-    
-    @IBAction func btnCreateNewGroupAction(_ sender: UIButton) {
-        createNewGroupTapped()
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: false)
     }
     
     @IBAction func btnMapTypeAction(_ sender: UIButton) {
@@ -236,37 +216,20 @@ class MapVC: UIViewController {
         }
     }
     
-    
-    func creatingNewCircle(name:String){
-        showLoader(text: "Loading...")
-        
-        UIDevice.current.isBatteryMonitoringEnabled = true
-        let batteryLevel = Int(UIDevice.current.batteryLevel * 100)
-        
-        groupManager.createCircle(name: name,
-                                  userName: Constants.USERDEFAULTS.getCurrentuserName(),
-                                  userPhone: Constants.USERDEFAULTS.getCurrentuserNumber(),
-                                  batteryLevel: batteryLevel) { [self] generatedCode in
-            print("Share this code with your friend: \(generatedCode ?? "")")
-            self.hideLoader()
-            fetchAllCircle()
-        }
-    }
-    
     func fetchAllCircle() {
         groupManager.saveFcmTokenFirebase()
-        
         groupManager.fetchAllCircles(phoneNumber: Constants.USERDEFAULTS.getCurrentuserNumber()) { ListSnapSort in
             DispatchQueue.main.async {
                 self.groupSnapSortList = ListSnapSort
                 selectedGroupsnapSort = ListSnapSort.first
-                
                 self.lbl_circleName.text = selectedGroupsnapSort?.childSnapshot(forPath: "name").value as? String ?? ""
-                
-                self.groupTableview.reloadData()
-                self.fetchMemberListFromCircle()
+                self.getMemberList()
             }
         }
+    }
+    
+    func getMemberList(){
+        self.fetchMemberListFromCircle()
     }
     
     func fetchMemberListFromCircle(){
@@ -279,63 +242,23 @@ class MapVC: UIViewController {
         let currentBatteryLevel = Int(UIDevice.current.batteryLevel * 100) // Convert to percentage
         groupManager.updateBatteryLevel(userPhone:  Constants.USERDEFAULTS.getCurrentuserNumber() , batteryLevel: currentBatteryLevel)
     }
-    
-    func createNewGroupTapped() {
-        let alert = UIAlertController(title: "Create New Circle", message: "Enter the name of your new circle.", preferredStyle: .alert)
-        alert.addTextField { textField in
-            textField.placeholder = "Circle Name"
-        }
-        let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
-            if let circleName = alert.textFields?.first?.text, !circleName.isEmpty {
-                print("New Circle Name: \(circleName)")
-                self.creatingNewCircle(name: circleName)
-            }
-            else {
-                print("Circle name cannot be empty.")
-            }
-        }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        alert.addAction(saveAction)
-        alert.addAction(cancelAction)
-        DispatchQueue.main.async {
-            self.present(alert, animated: true, completion: nil)
-        }
-    }
 }
 
 
 //MARK: - Datasource
 
 extension MapVC: UITableViewDelegate, UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableView == groupTableview {
-            return groupSnapSortList.count
-        }
         return memberList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if tableView == groupTableview {
-            
-            let groupCell = tableView.dequeueReusableCell(withType: CircleListTBVCell.self)
-            let groupDicValue = groupSnapSortList[indexPath.row]
-            groupCell.lbl_name.text = groupDicValue.childSnapshot(forPath: "name").value as? String ?? ""
-            groupCell.lbl_membercount.text = "\((groupDicValue.childSnapshot(forPath: "members").value as? [String:Any] ?? [:]).count) Members"
-            return groupCell
-        }
-        
         let cell = tableView.dequeueReusableCell(withType: MemberTBVCell.self)
         if let memberKeys = Array(memberList.keys.sorted()) as? [String],
            let memberDicvalue = memberList[memberKeys[indexPath.row]]  as? [String:Any] {
             
             cell.member_battery.text = "\(memberDicvalue["batteryLevel"] as? Int ?? 0)%"
             cell.member_name.text = memberDicvalue["username"] as? String ?? ""
-            
-            //            LocationManager.shared.getAddressFromLatLon(latitude: memberDicvalue["latitude"] as? Double ?? 0,
-            //                                                        longitude: memberDicvalue["longitude"] as? Double ?? 0) { address in
-            //                cell.member_address.text = address
-            //            }
             
             LocationManager.shared.getGoogleAddress(lat: memberDicvalue["latitude"] as? Double ?? 0, long: memberDicvalue["longitude"] as? Double ?? 0) { address in
                 DispatchQueue.main.async {
@@ -348,34 +271,19 @@ extension MapVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if tableView == groupTableview {
-            dropdownView.isHidden = true
-            img_vectore.isHighlighted = false
+        if let memberKeys = Array(memberList.keys.sorted()) as? [String],
+           let memberDicvalue = memberList[memberKeys[indexPath.row]]  as? [String:Any] {
             
-            let groupDicValue = groupSnapSortList[indexPath.row]
-            self.memberList = groupDicValue.childSnapshot(forPath: "members").value as? [String:Any] ?? [:]
-            self.lbl_circleName.text = groupDicValue.childSnapshot(forPath: "name").value as? String ?? ""
-            selectedGroupsnapSort = groupDicValue
-            self.tableView.reloadData()
-            self.addMemberPinsToMap()
-        }
-        else{
-            if let memberKeys = Array(memberList.keys.sorted()) as? [String],
-               let memberDicvalue = memberList[memberKeys[indexPath.row]]  as? [String:Any] {
-                
-                let coordinates = CLLocationCoordinate2D(latitude: memberDicvalue["latitude"] as? Double ?? 0, longitude: memberDicvalue["longitude"] as? Double ?? 0)
-                map_view.setRegion(MKCoordinateRegion(center: coordinates, latitudinalMeters: 500,longitudinalMeters: 500),animated: true)
-            }
+            let coordinates = CLLocationCoordinate2D(latitude: memberDicvalue["latitude"] as? Double ?? 0, longitude: memberDicvalue["longitude"] as? Double ?? 0)
+            map_view.setRegion(MKCoordinateRegion(center: coordinates, latitudinalMeters: 500,longitudinalMeters: 500),animated: true)
         }
     }
 }
 
 
 extension MapVC : MKMapViewDelegate {
-    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let identifier = "CustomPin"
-        
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
         if annotationView == nil {
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
@@ -386,11 +294,9 @@ extension MapVC : MKMapViewDelegate {
             // Add accessory button if needed
             let detailButton = UIButton(type: .detailDisclosure)
             annotationView?.rightCalloutAccessoryView = detailButton
-        }
-        else {
+        } else {
             annotationView?.annotation = annotation
         }
-        
         return annotationView
     }
     
@@ -416,22 +322,19 @@ extension MapVC : MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         guard let annotation = view.annotation else { return }
-        
         let vc = Constants.tab_storyBoard.instantiateViewController(withIdentifier: "UserDeatilsVC") as! UserDeatilsVC
-        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .overFullScreen
         LocationManager.shared.getAddressFromLatLon(latitude: annotation.coordinate.latitude,
                                                     longitude: annotation.coordinate.longitude) { address in
-            
             vc.address = address ?? ""
             vc.username = (annotation.title ?? "") ?? ""
             vc.usernumber = (annotation.subtitle ?? "") ?? ""
-            self.present(vc, animated: true)
+            self.present(vc, animated: false)
         }
     }
     
     func addMemberPinsToMap() {
         map_view.removeAnnotations(map_view.annotations) // Remove any existing annotations
-   
         for (_, member) in memberList {
             if let memberData = member as? [String: Any],
                let latitude = memberData["latitude"] as? Double,
