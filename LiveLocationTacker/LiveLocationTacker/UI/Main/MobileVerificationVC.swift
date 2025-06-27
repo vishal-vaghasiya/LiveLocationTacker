@@ -31,11 +31,11 @@ class MobileOTPVerificationVC: UIViewController , UIGestureRecognizerDelegate {
     var resendTimer = Timer()
     
     var data = NSDictionary()
-    var mobileNumber = String()
+    private var mobileNumber = String()
     var name = String()
-    var displayMobileNumber = String()
-    var selectedContryID = Int()
     var phoneCode = String()
+    var phoneNumber = String()
+    var selectedContryID = Int()
     let firebaseManager = FirebaseManager()
     // MARK: - LIFE CYCLE
     override func viewDidLoad() {
@@ -51,7 +51,8 @@ class MobileOTPVerificationVC: UIViewController , UIGestureRecognizerDelegate {
     
     // MARK: - UI SETUP
     func setupData(){
-        lblMobileNumber.text = "Enter the OTP Sent to \(phoneCode) \(displayMobileNumber)"
+        mobileNumber = "+\(phoneCode) \(phoneNumber)".removingSpaces
+        lblMobileNumber.text = "Enter the OTP Sent to +\(phoneCode) \(phoneNumber)"
         self.txtOTP.keyboardType = .numberPad
         self.txtOTP.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         startTimer()
@@ -150,26 +151,43 @@ class MobileOTPVerificationVC: UIViewController , UIGestureRecognizerDelegate {
         UIDevice.current.isBatteryMonitoringEnabled = true
         let batteryLevel = Int(UIDevice.current.batteryLevel * 100)
         
-        //groupManager.deleteUserAccount(userPhoneNumber: txtEnterNumber.text ?? "") { [self] isDeleted in
-        firebaseManager.createCircle(name: "My Circles",
-                                     userName: name,
-                                     userPhone: mobileNumber,
-                                     batteryLevel: batteryLevel) { [self] generatedCode in
-            print("Share this code with your friend: \(generatedCode ?? "")")
-            
-            Constants.USERDEFAULTS.saveCurrentuserNumber(value: name)
-            Constants.USERDEFAULTS.saveCurrentuserName(value: mobileNumber)
-            Constants.USERDEFAULTS.saveCurrentuserCode(value: generatedCode ?? "")
-            Constants.USERDEFAULTS.saveBatterySharing(value: true)
-            Constants.USERDEFAULTS.saveLocationSharing(value: true)
-            Constants.USERDEFAULTS.saveNotificationSharing(value: true)
-            Constants.USERDEFAULTS.saveProfileImage(value: UIImage(named: "engineer")?.pngData() ?? Data())
-            
-            self.hideLoader()
-            
-            self.pushVC(T: SetProfileVC.instantiate(appStoryboard: .main), viewControllerID: String(describing: SetProfileVC.self))
+        firebaseManager.isExistingUser(phoneNumber.digitsOnly) { isExisting, data in
+            if isExisting {
+                self.hideLoader()
+                let existingNumber = data?["admin"] as? String ?? ""
+                let existingName = data?["name"] as? String ?? ""
+                let existingCode = data?["code"] as? String ?? ""
+                
+                Constants.USERDEFAULTS.saveCurrentuserNumber(value: existingNumber)
+                Constants.USERDEFAULTS.saveCurrentuserName(value: existingName)
+                Constants.USERDEFAULTS.saveCurrentuserCode(value: existingCode)
+                Constants.USERDEFAULTS.saveBatterySharing(value: true)
+                Constants.USERDEFAULTS.saveLocationSharing(value: true)
+                Constants.USERDEFAULTS.saveNotificationSharing(value: true)
+                Constants.USERDEFAULTS.saveProfileImage(value: UIImage(named: "engineer")?.pngData() ?? Data())
+                
+                self.pushVC(T: SetProfileVC.instantiate(appStoryboard: .main), viewControllerID: String(describing: SetProfileVC.self))
+                
+            } else {
+                self.firebaseManager.createCircle(name: "My Circles",
+                                                  userName: self.name,
+                                                  userPhone: self.phoneNumber.digitsOnly,
+                                                  batteryLevel: batteryLevel) { [self] generatedCode in
+                    print("Share this code with your friend: \(generatedCode ?? "")")
+                    self.hideLoader()
+                    
+                    Constants.USERDEFAULTS.saveCurrentuserNumber(value: mobileNumber.digitsOnly)
+                    Constants.USERDEFAULTS.saveCurrentuserName(value: name)
+                    Constants.USERDEFAULTS.saveCurrentuserCode(value: generatedCode ?? "")
+                    Constants.USERDEFAULTS.saveBatterySharing(value: true)
+                    Constants.USERDEFAULTS.saveLocationSharing(value: true)
+                    Constants.USERDEFAULTS.saveNotificationSharing(value: true)
+                    Constants.USERDEFAULTS.saveProfileImage(value: UIImage(named: "engineer")?.pngData() ?? Data())
+                    
+                    self.pushVC(T: SetProfileVC.instantiate(appStoryboard: .main), viewControllerID: String(describing: SetProfileVC.self))
+                }
+            }
         }
-        //}
     }
     
 }

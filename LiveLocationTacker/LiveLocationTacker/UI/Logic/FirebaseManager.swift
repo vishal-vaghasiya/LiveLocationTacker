@@ -298,15 +298,7 @@ class FirebaseManager {
     
     func updateUserwiseLocationInFirebase(latitude: Double, longitude: Double,userPhonenumber:String) {
         updateLocationInFirebase(latitude: latitude, longitude: longitude, userPhonenumber: userPhonenumber)
-        
-        //        ref.child("circles").observeSingleEvent(of: .value) { snapshot in
-        
-        //            for case let circleSnapshot as DataSnapshot in snapshot.children {
-        //                if let circleData = circleSnapshot.value as? [String: Any],
-        //                   let members = circleData["members"] as? [String: Any] {
-        
-        // Check if the user's phone number is in the members list
-        if /*members.keys.contains(userPhonenumber) && */Constants.USERDEFAULTS.getLocationSharing() {
+        if Constants.USERDEFAULTS.getLocationSharing() {
             let userRef = self.ref.child("user_locations").child(userPhonenumber)
             let timestamp = Date().getCurrentUTCTimestampInfo().timestampSeconds
             
@@ -324,9 +316,6 @@ class FirebaseManager {
                 }
             }
         }
-        //                }
-        //            }
-        //        }
     }
     
     func updateUserNameInFirebase(userPhonenumber: String, entername: String, completion: @escaping (Bool, String?) -> Void) {
@@ -379,7 +368,25 @@ class FirebaseManager {
             }
         }
     }
+    
+    func isExistingUser(_ phoneNumber: String, completion: @escaping (Bool, [String: Any]?) -> Void) {
+        ref.child("circles")
+            .queryOrdered(byChild: "admin")
+            .queryEqual(toValue: phoneNumber)
+            .observeSingleEvent(of: .value) { snapshot in
 
+            guard
+                let data = snapshot.value as? [String: Any],
+                let firstCircle = data.first,
+                let circleDict = firstCircle.value as? [String: Any]
+            else {
+                completion(false, nil) // No user found
+                return
+            }
+
+            completion(true, circleDict) // User found
+        }
+    }
     
     func deleteUserAccount(userPhoneNumber: String, completion: @escaping (Bool) -> Void) {
         self.ref.child("circles").queryOrdered(byChild: "admin").queryEqual(toValue: userPhoneNumber).observeSingleEvent(of: .value) { snapshot in
@@ -507,7 +514,7 @@ class FirebaseManager {
             
             print("aceesToken ==> \(accessToken)")
             
-            let url = URL(string: "https://fcm.googleapis.com/v1/projects/phone-tracker-4b3f3/messages:send")!
+            let url = URL(string: "https://fcm.googleapis.com/v1/projects/ios---phone-tracker/messages:send")!
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")

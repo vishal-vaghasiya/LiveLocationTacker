@@ -62,22 +62,21 @@ class SetProfileVC: UIViewController {
     }
     
     @IBAction func btnUpdateAction(_ sender: UIButton) {
-        //        showLoader(text: "Updating...")
-        //
-        //        groupManager.updateUserNameInFirebase(userPhonenumber: Constants.USERDEFAULTS.getCurrentuserNumber(),entername: txt_name.text ?? "") { updated, errorMessage in
-        //            self.hideLoader()
-        //
-        //            if updated {
-        //                Constants.USERDEFAULTS.set(true, forKey: "isIntro")
-        //                Constants.USERDEFAULTS.saveCurrentuserName(value: self.txt_name.text ?? "")
-        //                Constants.USERDEFAULTS.saveCurrentuserGender(value: self.btnMale.layer.borderWidth == 2 ? "Male" : "Female")
-        //
-        self.navigateToHome()
-        //            }
-        //            else{
-        //                self.showAlert(title: "", message: errorMessage ?? "")
-        //            }
-        //        }
+        showLoader(text: "Updating...")
+        
+        groupManager.updateUserNameInFirebase(userPhonenumber: Constants.USERDEFAULTS.getCurrentuserNumber(),entername: txt_name.text ?? "") { updated, errorMessage in
+            self.hideLoader()
+            if updated {
+                Constants.USERDEFAULTS.set(true, forKey: "isIntro")
+                Constants.USERDEFAULTS.saveCurrentuserName(value: self.txt_name.text ?? "")
+                Constants.USERDEFAULTS.saveCurrentuserGender(value: self.btnMale.layer.borderWidth == 2 ? "Male" : "Female")
+                
+                self.navigateToHome()
+            }
+            else{
+                self.showAlert(title: "", message: errorMessage ?? "")
+            }
+        }
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {

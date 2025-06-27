@@ -775,6 +775,11 @@ extension String {
     var removingSpaces: String {
         return self.replacingOccurrences(of: " ", with: "")
     }
+    
+    var digitsOnly: String {
+        return self.filter { $0.isWholeNumber }
+    }
+    
 }
 
 

@@ -52,8 +52,8 @@ class LoginMobilenumberVC: UIViewController {
             if success {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: "MobileOTPVerificationVC") as! MobileOTPVerificationVC
-                vc.mobileNumber = phoneNumber
-                vc.displayMobileNumber = "\(CountryManager.shared.currentCountry?.dialingCode ?? "") \(self.txtEnterNumber.text ?? "")"
+                vc.phoneCode = "\(CountryManager.shared.currentCountry?.dialingCode ?? "")".digitsOnly
+                vc.phoneNumber = "\(self.txtEnterNumber.text ?? "")"
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         }
@@ -142,13 +142,13 @@ extension LoginMobilenumberVC: CNContactPickerDelegate {
             do {
                 // Parse the phone number to get the country dialing code
                 let parsedPhoneNumber = try phoneNumberKit.parse(phoneNumber)
-                let dialingCode = "+\(parsedPhoneNumber.countryCode)"
+                let dialingCode = parsedPhoneNumber.countryCode
                 let nationalNumber = parsedPhoneNumber.nationalNumber
             
                 // Assign values to your UI components
-                self.lbl_countrycode.text = dialingCode
+                self.lbl_countrycode.text = "\(dialingCode)"
                 self.txtEnterNumber.text = "\(nationalNumber)"
-                self.img_flag.image = CountryManager.shared.country(withDigitCode: dialingCode)?.flag
+                self.img_flag.image = CountryManager.shared.country(withDigitCode: "+\(dialingCode)")?.flag
                 self.setupButton()
             } catch {
                 print("Error parsing phone number: \(error.localizedDescription)")
