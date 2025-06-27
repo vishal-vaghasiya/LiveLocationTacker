@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyAxiwCbXytBWB2I6nFiUsfvVRkvJieI7Rs</string>
+	<string>AIzaSyCe23FBVDPjBwwsFI6qjpF1ReIxHFpTG8o</string>
 	<key>GCM_SENDER_ID</key>
-	<string>843346805801</string>
+	<string>602295687671</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.DynamicLinkInfo</string>
 	<key>PROJECT_ID</key>
-	<string>ios---phone-tracker</string>
+	<string>dynamiclink-info</string>
 	<key>STORAGE_BUCKET</key>
-	<string>ios---phone-tracker.firebasestorage.app</string>
+	<string>dynamiclink-info.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:843346805801:ios:c1e36482e67b1336878838</string>
+	<string>1:602295687671:ios:c85fb0c450224174d876f2</string>
+	<key>DATABASE_URL</key>
+	<string>https://dynamiclink-info-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>
