@@ -2163,13 +2163,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xQg-70-xuf">
+                            <visualEffectView opaque="NO" alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xQg-70-xuf">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6IY-On-bOU">
                                     <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
-                                <blurEffect style="extraLight"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <blurEffect style="systemUltraThinMaterialDark"/>
                             </visualEffectView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RwR-b1-wdZ">
                                 <rect key="frame" x="20" y="556" width="350" height="240"/>
@@ -2180,7 +2181,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="g7a-j6-FJR">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="125"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQg-wI-9bI" customClass="UIEnableDisable" customModule="LiveLocationTacker" customModuleProvider="target">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQg-wI-9bI" customClass="UIEnableDisable" customModule="LiveLocationTacker" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
                                                         <color key="backgroundColor" name="Color-00BDFF"/>
                                                         <constraints>
@@ -2197,7 +2198,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="btnUpdateAction:" destination="wgt-Eq-BXg" eventType="touchUpInside" id="iEP-OM-dZO"/>
+                                                            <action selector="sourceTypeClick:" destination="lNn-nF-2vQ" eventType="touchUpInside" id="Hh0-Kx-vzx"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWU-gV-PgV" customClass="UIEnableDisable" customModule="LiveLocationTacker" customModuleProvider="target">
@@ -2217,7 +2218,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="btnUpdateAction:" destination="wgt-Eq-BXg" eventType="touchUpInside" id="cY0-IT-vXW"/>
+                                                            <action selector="sourceTypeClick:" destination="lNn-nF-2vQ" eventType="touchUpInside" id="Aea-lu-cA0"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -2240,6 +2241,7 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="btnUpdateAction:" destination="wgt-Eq-BXg" eventType="touchUpInside" id="OP2-Ed-FCb"/>
+                                                    <action selector="cancelClick:" destination="lNn-nF-2vQ" eventType="touchUpInside" id="lWM-2z-A0W"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -2278,6 +2280,10 @@
                             <constraint firstItem="xQg-70-xuf" firstAttribute="top" secondItem="qWU-Ru-9WB" secondAttribute="top" id="xk2-uG-Uoz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnGallery" destination="xWU-gV-PgV" id="y2g-wO-anI"/>
+                        <outlet property="btnTakePhoto" destination="PQg-wI-9bI" id="k6r-TG-f5A"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PXb-9c-HJg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2341,7 +2347,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

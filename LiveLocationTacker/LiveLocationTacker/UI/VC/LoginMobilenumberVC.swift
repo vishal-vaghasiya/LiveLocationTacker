@@ -45,18 +45,18 @@ class LoginMobilenumberVC: UIViewController {
     }
     
     func sendOTP(phoneNumber: String) {
-//        showLoader(text: "Loading...")
-//        groupManager.sendMobileOTP(phoneNumber: phoneNumber.removingSpaces) { success, error in
-//            self.hideLoader()
-//            self.showToastMessage(error ?? "")
-//            if success {
+        showLoader(text: "Loading...")
+        groupManager.sendMobileOTP(phoneNumber: phoneNumber.removingSpaces) { success, error in
+            self.hideLoader()
+            self.showToastMessage(error ?? "")
+            if success {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: "MobileOTPVerificationVC") as! MobileOTPVerificationVC
                 vc.mobileNumber = phoneNumber
                 vc.displayMobileNumber = "\(CountryManager.shared.currentCountry?.dialingCode ?? "") \(self.txtEnterNumber.text ?? "")"
                 self.navigationController?.pushViewController(vc, animated: true)
-//            }
-//        }
+            }
+        }
     }
     
 //    func creatingStaticCircle(){

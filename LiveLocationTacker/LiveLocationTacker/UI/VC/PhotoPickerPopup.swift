@@ -8,27 +8,38 @@
 import UIKit
 
 class PhotoPickerPopup: UIViewController {
-
+    
     // MARK: - OUTLET
+    @IBOutlet weak var btnTakePhoto: UIEnableDisable!
+    @IBOutlet weak var btnGallery: UIEnableDisable!
     
     // MARK: - PROPERTY
-    var selectedChooseType:((NSDictionary)->Void)?
-    /*
-     self.dismiss(animated: false) {
-         self.callManageTeamApi?(self.selectedUser)
-     }
-     */
+    var selectedSourceType:((UIImagePickerController.SourceType)->Void)?
+    
     // MARK: - LIFE CYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupUI()
     }
     
     // MARK: - UI SETUP
+    func setupUI(){
+        btnTakePhoto.isEnabled = true
+        btnGallery.isEnabled = true
+    }
     
     //MARK: - SOCKET EVENT
     
     // MARK: - BUTTON CLICK
+    @IBAction func sourceTypeClick(_ sender: UIButton) {
+        self.dismiss(animated: false) {
+            self.selectedSourceType?(UIImagePickerController.SourceType(rawValue: sender.tag)!)
+        }
+    }
+    
+    @IBAction func cancelClick(_ sender: UIButton) {
+        self.dismiss(animated: false)
+    }
     
     // MARK: - OTHER
     

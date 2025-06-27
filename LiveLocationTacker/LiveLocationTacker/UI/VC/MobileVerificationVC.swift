@@ -103,8 +103,6 @@ class MobileOTPVerificationVC: UIViewController , UIGestureRecognizerDelegate {
     }
     
     @IBAction func verifyClick(_ sender: UIEnableDisable) {
-        self.pushVC(T: SetProfileVC.instantiate(appStoryboard: .main), viewControllerID: String(describing: SetProfileVC.self))
-        /*
         self.showLoader(text: "Loading...")
         self.firebaseManager.verifyOTP(otpCode: txtOTP.text ?? "") { success, error in
             self.hideLoader()
@@ -114,7 +112,7 @@ class MobileOTPVerificationVC: UIViewController , UIGestureRecognizerDelegate {
                     self.creatingStaticCircle()
                 })
             }
-        }*/
+        }
     }
     
     // MARK: - OTHER

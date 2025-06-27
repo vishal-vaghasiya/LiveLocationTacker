@@ -34,21 +34,18 @@ class SetProfileVC: UIViewController {
     }
     
     @IBAction func btnEditimgAction(_ sender: UIButton) {
-//        let imagePickerController = UIImagePickerController()
-//        imagePickerController.delegate = self
-//        imagePickerController.sourceType = .photoLibrary // Allow selecting images from the photo library
-//        imagePickerController.allowsEditing = true
-//        DispatchQueue.main.async {
-//            self.present(imagePickerController, animated: true)
-//        }
-        
-//        let vc = IS_IPHONE ? StoryboardScene.ManageTeam.selectAssignTagVC.instantiate() : StoryboardScene.ManageTeamIPad.selectAssignTagVC.instantiate()
-//        //let vc = IS_IPHONE ? StoryboardScene.ManageTeam.selectTeamTagVC.instantiate() : StoryboardScene.ManageTeamIPad.selectTeamTagVC.instantiate()
-//        vc.callManageTeamApi = { (dict) in
-//            self.getBranchTeamUsers()
-//        }
-//        vc.modalPresentationStyle = .overCurrentContext
-//        self.present(vc, animated: false)
+        let vc = StoryboardScene.Main.photoPickerPopup.instantiate()
+        vc.selectedSourceType = { (type) in
+            let imagePickerController = UIImagePickerController()
+            imagePickerController.delegate = self
+            imagePickerController.sourceType = type
+            imagePickerController.allowsEditing = true
+            DispatchQueue.main.async {
+                self.present(imagePickerController, animated: true)
+            }
+        }
+        vc.modalPresentationStyle = .overCurrentContext
+        self.present(vc, animated: false)
     }
     
     @IBAction func btnUpdateProfileAction(_ sender: UIButton) {
