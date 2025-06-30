@@ -28,8 +28,7 @@ class ProfileVC: UIViewController {
             btnMale.layer.borderColor = UIColor.btncolor.cgColor
             btnMale.layer.borderWidth = 2
             btnFemale.layer.borderWidth = 0
-        }
-        else{
+        } else {
             btnFemale.layer.borderColor = UIColor.btncolor.cgColor
             btnFemale.layer.borderWidth = 2
             btnMale.layer.borderWidth = 0

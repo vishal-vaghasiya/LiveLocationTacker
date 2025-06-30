@@ -27,6 +27,7 @@
 		0FE65B162E12A95D00B713DD /* Compass.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FE65B152E12A95D00B713DD /* Compass.storyboard */; };
 		0FE65B192E12B3A500B713DD /* PopupProfileUpdateSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE65B182E12B3A500B713DD /* PopupProfileUpdateSuccess.swift */; };
 		0FE65B1B2E12B84600B713DD /* PopupDeleteAccountConfirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE65B1A2E12B84600B713DD /* PopupDeleteAccountConfirmation.swift */; };
+		0FE65B1D2E12BF3600B713DD /* PopupShareAppFirstime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE65B1C2E12BF3600B713DD /* PopupShareAppFirstime.swift */; };
 		0FED0F812E0BE87200EB1D5D /* Helper+UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FED0F802E0BE87200EB1D5D /* Helper+UITextField.swift */; };
 		0FED0F832E0BECD000EB1D5D /* MobileVerificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FED0F822E0BECD000EB1D5D /* MobileVerificationVC.swift */; };
 		0FF019492E0E4D5200575BB0 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FF019472E0E4D5200575BB0 /* Poppins-Regular.ttf */; };
@@ -128,6 +129,7 @@
 		0FE65B152E12A95D00B713DD /* Compass.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Compass.storyboard; sourceTree = "<group>"; };
 		0FE65B182E12B3A500B713DD /* PopupProfileUpdateSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupProfileUpdateSuccess.swift; sourceTree = "<group>"; };
 		0FE65B1A2E12B84600B713DD /* PopupDeleteAccountConfirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupDeleteAccountConfirmation.swift; sourceTree = "<group>"; };
+		0FE65B1C2E12BF3600B713DD /* PopupShareAppFirstime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupShareAppFirstime.swift; sourceTree = "<group>"; };
 		0FED0F802E0BE87200EB1D5D /* Helper+UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helper+UITextField.swift"; sourceTree = "<group>"; };
 		0FED0F822E0BECD000EB1D5D /* MobileVerificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileVerificationVC.swift; sourceTree = "<group>"; };
 		0FF019452E0E4D5200575BB0 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				0F17779D2E1266BC000BC3D8 /* PopupFailedSOS.swift */,
 				BD75DDBC2CE8B76500A028BD /* JoinCircleVC.swift */,
 				BD7F29062D1A72810020B37D /* ScantoJoinVC.swift */,
+				0FE65B1C2E12BF3600B713DD /* PopupShareAppFirstime.swift */,
 				0F1777752E12488E000BC3D8 /* XIB */,
 			);
 			path = Circle;
@@ -821,6 +824,7 @@
 				BD9DB14B2CE858D8003615FE /* MainSplashVC.swift in Sources */,
 				BD1A20AA2CD0B3510033A8BA /* PinterestLayout.swift in Sources */,
 				BD1A20922CD0B3510033A8BA /* FSPageControl.swift in Sources */,
+				0FE65B1D2E12BF3600B713DD /* PopupShareAppFirstime.swift in Sources */,
 				0F17779E2E1266BC000BC3D8 /* PopupFailedSOS.swift in Sources */,
 				BDBEC0152D1AC63900D9A739 /* SosVC.swift in Sources */,
 				BD1A20982CD0B3510033A8BA /* FSPageViewLayout.swift in Sources */,

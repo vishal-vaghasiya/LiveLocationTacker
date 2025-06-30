@@ -28,6 +28,8 @@ internal enum StoryboardScene {
 
     internal static let popupFailedSOS = SceneType<LiveLocationTacker.PopupFailedSOS>(storyboard: Circle.self, identifier: "PopupFailedSOS")
 
+    internal static let popupShareAppFirstime = SceneType<LiveLocationTacker.PopupShareAppFirstime>(storyboard: Circle.self, identifier: "PopupShareAppFirstime")
+
     internal static let scantoJoinVC = SceneType<LiveLocationTacker.ScantoJoinVC>(storyboard: Circle.self, identifier: "ScantoJoinVC")
 
     internal static let sosVC = SceneType<LiveLocationTacker.SosVC>(storyboard: Circle.self, identifier: "SosVC")
