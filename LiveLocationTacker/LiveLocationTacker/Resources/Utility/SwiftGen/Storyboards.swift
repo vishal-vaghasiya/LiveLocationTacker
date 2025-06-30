@@ -13,6 +13,30 @@ import UIKit
 // swiftlint:disable explicit_type_interface identifier_name line_length prefer_self_in_static_references
 // swiftlint:disable type_body_length type_name
 internal enum StoryboardScene {
+  internal enum Circle: StoryboardType {
+    internal static let storyboardName = "Circle"
+
+    internal static let initialScene = InitialSceneType<UIKit.UINavigationController>(storyboard: Circle.self)
+
+    internal static let joinCircleVC = SceneType<LiveLocationTacker.JoinCircleVC>(storyboard: Circle.self, identifier: "JoinCircleVC")
+
+    internal static let mapSettingsVC = SceneType<LiveLocationTacker.MapSettingsVC>(storyboard: Circle.self, identifier: "MapSettingsVC")
+
+    internal static let mapVC = SceneType<LiveLocationTacker.MapVC>(storyboard: Circle.self, identifier: "MapVC")
+
+    internal static let popupFailedSOS = SceneType<LiveLocationTacker.PopupFailedSOS>(storyboard: Circle.self, identifier: "PopupFailedSOS")
+
+    internal static let sosVC = SceneType<LiveLocationTacker.SosVC>(storyboard: Circle.self, identifier: "SosVC")
+
+    internal static let userDeatilsVC = SceneType<LiveLocationTacker.UserDeatilsVC>(storyboard: Circle.self, identifier: "UserDeatilsVC")
+  }
+  internal enum Compass: StoryboardType {
+    internal static let storyboardName = "Compass"
+
+    internal static let initialScene = InitialSceneType<UIKit.UINavigationController>(storyboard: Compass.self)
+
+    internal static let compassVC = SceneType<LiveLocationTacker.CompassVC>(storyboard: Compass.self, identifier: "CompassVC")
+  }
   internal enum LaunchScreen: StoryboardType {
     internal static let storyboardName = "LaunchScreen"
 

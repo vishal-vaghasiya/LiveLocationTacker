@@ -2163,17 +2163,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <visualEffectView opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xQg-70-xuf">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R3X-4D-3N8" customClass="VisualEffectView" customModule="LiveLocationTacker" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6IY-On-bOU">
-                                    <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <blurEffect style="systemChromeMaterialDark"/>
-                            </visualEffectView>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="intensity">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="blurStyleInt">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RwR-b1-wdZ">
-                                <rect key="frame" x="20" y="556" width="350" height="240"/>
+                                <rect key="frame" x="20" y="516" width="350" height="240"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="7ZK-yJ-wmw">
                                         <rect key="frame" x="15" y="15" width="320" height="210"/>
@@ -2270,14 +2273,14 @@
                         <viewLayoutGuide key="safeArea" id="qJh-Gx-yMr"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="RwR-b1-wdZ" firstAttribute="bottom" secondItem="qJh-Gx-yMr" secondAttribute="bottom" constant="20" id="3XP-u3-yfq"/>
                             <constraint firstItem="qJh-Gx-yMr" firstAttribute="trailing" secondItem="RwR-b1-wdZ" secondAttribute="trailing" constant="20" id="4xP-IL-6wc"/>
-                            <constraint firstItem="qJh-Gx-yMr" firstAttribute="trailing" secondItem="xQg-70-xuf" secondAttribute="trailing" id="Iyx-Om-R53"/>
-                            <constraint firstAttribute="bottom" secondItem="xQg-70-xuf" secondAttribute="bottom" id="RrR-fG-Wfk"/>
+                            <constraint firstItem="R3X-4D-3N8" firstAttribute="top" secondItem="qWU-Ru-9WB" secondAttribute="top" id="8ea-eN-0tF"/>
+                            <constraint firstItem="qJh-Gx-yMr" firstAttribute="bottom" secondItem="RwR-b1-wdZ" secondAttribute="bottom" constant="20" id="EvW-O6-KJz"/>
+                            <constraint firstAttribute="bottom" secondItem="R3X-4D-3N8" secondAttribute="bottom" id="JbC-6l-tBR"/>
                             <constraint firstItem="RwR-b1-wdZ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="qJh-Gx-yMr" secondAttribute="top" constant="40" id="ShN-nh-umQ"/>
+                            <constraint firstItem="R3X-4D-3N8" firstAttribute="leading" secondItem="qJh-Gx-yMr" secondAttribute="leading" id="Sys-be-UM9"/>
                             <constraint firstItem="RwR-b1-wdZ" firstAttribute="leading" secondItem="qJh-Gx-yMr" secondAttribute="leading" constant="20" id="cbT-XH-Men"/>
-                            <constraint firstItem="xQg-70-xuf" firstAttribute="leading" secondItem="qJh-Gx-yMr" secondAttribute="leading" id="hZ8-yt-Pcm"/>
-                            <constraint firstItem="xQg-70-xuf" firstAttribute="top" secondItem="qWU-Ru-9WB" secondAttribute="top" id="xk2-uG-Uoz"/>
+                            <constraint firstItem="qJh-Gx-yMr" firstAttribute="trailing" secondItem="R3X-4D-3N8" secondAttribute="trailing" id="g58-lI-0h4"/>
                         </constraints>
                     </view>
                     <connections>
