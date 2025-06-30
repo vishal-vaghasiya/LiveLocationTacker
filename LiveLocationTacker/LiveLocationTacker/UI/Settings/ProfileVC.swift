@@ -8,7 +8,7 @@
 import UIKit
 
 class ProfileVC: UIViewController {
-
+    
     @IBOutlet weak var btnFemale: UIButton!
     @IBOutlet weak var btnMale: UIButton!
     @IBOutlet weak var profile_img: UIImageView!
@@ -19,7 +19,6 @@ class ProfileVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //btnUpdate.setButtonTitleAndFunctionality("Update")
         btnUpdate.isEnabled = true
         txt_name.text = Constants.USERDEFAULTS.getCurrentuserName()
         lbl_number.text = Constants.USERDEFAULTS.getCurrentuserNumber()
@@ -54,14 +53,6 @@ class ProfileVC: UIViewController {
         }
         vc.modalPresentationStyle = .overCurrentContext
         self.present(vc, animated: false)
-        
-//        let imagePickerController = UIImagePickerController()
-//        imagePickerController.delegate = self
-//        imagePickerController.sourceType = .photoLibrary // Allow selecting images from the photo library
-//        imagePickerController.allowsEditing = true
-//        DispatchQueue.main.async {
-//            self.present(imagePickerController, animated: true)
-//        }
     }
     
     @IBAction func btnEditNameClick(_ sender: UIButton) {
@@ -83,20 +74,9 @@ class ProfileVC: UIViewController {
     }
     
     @IBAction func btnDeleteAccount(_ sender: UIButton) {
-        showDeleteAccountAlert()
-    }
-    
-    func showDeleteAccountAlert() {
-        // Show confirmation alert
-        let alertController = UIAlertController(
-            title: "Delete Account",
-            message: "Are you sure you want to delete your account? This action cannot be undone.",
-            preferredStyle: .alert
-        )
-
-        // Add "Delete" action
-        alertController.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { [self] _ in
-            showLoader(text: "Deleting...")
+        let vc = StoryboardScene.Settings.popupDeleteAccountConfirmation.instantiate()
+        vc.conformDeleteAction = {
+            self.showLoader(text: "Deleting...")
             
             Constants.USERDEFAULTS.removeObject(forKey: "isIntro")
             Constants.USERDEFAULTS.removeCurrentUserNumber()
@@ -109,47 +89,43 @@ class ProfileVC: UIViewController {
             Constants.USERDEFAULTS.removeCameraSharing()
             Constants.USERDEFAULTS.removeMotionSharing()
             Constants.USERDEFAULTS.removeProfileImage()
-
-            groupManager.deleteUserAccount(userPhoneNumber: lbl_number.text ?? "") { deleted in
+            
+            self.groupManager.deleteUserAccount(userPhoneNumber: self.lbl_number.text ?? "") { success in
                 self.hideLoader()
-                
-                if deleted {
+                if success {
                     self.navigateToOnboarding()
-                }
-                else{
+                } else {
                     self.showAlert(title: "", message: "Some error please try sometimes")
                 }
             }
-        }))
-
-        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        DispatchQueue.main.async {
-            self.present(alertController, animated: true)
         }
+        vc.modalPresentationStyle = .overCurrentContext
+        self.present(vc, animated: false)
     }
     
     @IBAction func btnUpdateAction(_ sender: UIButton) {
         showLoader(text: "Updating...")
         groupManager.updateUserNameInFirebase(userPhonenumber: lbl_number.text ?? "", entername: txt_name.text ?? "") { updated, errorMessage in
             self.hideLoader()
-            
             self.txt_name.isUserInteractionEnabled = false
-            
             if updated {
                 Constants.USERDEFAULTS.saveCurrentuserName(value: self.txt_name.text ?? "")
                 Constants.USERDEFAULTS.saveCurrentuserGender(value: self.btnMale.layer.borderWidth == 2 ? "Male" : "Female")
-                self.navigationController?.popViewController(animated: true)
-            }
-            else{
+                
+                let vc = StoryboardScene.Settings.popupProfileUpdateSuccess.instantiate()
+                vc.closePopup = {
+                    self.navigationController?.popViewController(animated: true)
+                }
+                vc.modalPresentationStyle = .overCurrentContext
+                self.present(vc, animated: false)
+            } else {
                 self.showAlert(title: "", message: errorMessage ?? "")
             }
         }
     }
 }
 
-
 extension ProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
     // This method gets called when the user selects an image
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil) // Dismiss the picker

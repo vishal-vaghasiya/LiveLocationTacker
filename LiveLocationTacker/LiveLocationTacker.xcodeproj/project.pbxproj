@@ -25,6 +25,8 @@
 		0FE65B122E12A01600B713DD /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE65B112E12A01600B713DD /* VisualEffectView.swift */; };
 		0FE65B142E12A86D00B713DD /* Circle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FE65B132E12A86D00B713DD /* Circle.storyboard */; };
 		0FE65B162E12A95D00B713DD /* Compass.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FE65B152E12A95D00B713DD /* Compass.storyboard */; };
+		0FE65B192E12B3A500B713DD /* PopupProfileUpdateSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE65B182E12B3A500B713DD /* PopupProfileUpdateSuccess.swift */; };
+		0FE65B1B2E12B84600B713DD /* PopupDeleteAccountConfirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE65B1A2E12B84600B713DD /* PopupDeleteAccountConfirmation.swift */; };
 		0FED0F812E0BE87200EB1D5D /* Helper+UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FED0F802E0BE87200EB1D5D /* Helper+UITextField.swift */; };
 		0FED0F832E0BECD000EB1D5D /* MobileVerificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FED0F822E0BECD000EB1D5D /* MobileVerificationVC.swift */; };
 		0FF019492E0E4D5200575BB0 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FF019472E0E4D5200575BB0 /* Poppins-Regular.ttf */; };
@@ -124,6 +126,8 @@
 		0FE65B112E12A01600B713DD /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
 		0FE65B132E12A86D00B713DD /* Circle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Circle.storyboard; sourceTree = "<group>"; };
 		0FE65B152E12A95D00B713DD /* Compass.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Compass.storyboard; sourceTree = "<group>"; };
+		0FE65B182E12B3A500B713DD /* PopupProfileUpdateSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupProfileUpdateSuccess.swift; sourceTree = "<group>"; };
+		0FE65B1A2E12B84600B713DD /* PopupDeleteAccountConfirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupDeleteAccountConfirmation.swift; sourceTree = "<group>"; };
 		0FED0F802E0BE87200EB1D5D /* Helper+UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helper+UITextField.swift"; sourceTree = "<group>"; };
 		0FED0F822E0BECD000EB1D5D /* MobileVerificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileVerificationVC.swift; sourceTree = "<group>"; };
 		0FF019452E0E4D5200575BB0 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
@@ -266,6 +270,7 @@
 				BD7FE32E2CEC4AD7006C32D2 /* SettingVC.swift */,
 				BD38B9002CEC66540088D0C7 /* ProfileVC.swift */,
 				F3CAD9D72D527BC8008C7600 /* SubscribeVC.swift */,
+				0FE65B172E12B38800B713DD /* Popup */,
 				0FE65B0C2E12855300B713DD /* XIB */,
 			);
 			path = Settings;
@@ -399,6 +404,15 @@
 				0FE65B0E2E1285AF00B713DD /* SettingTVCell.xib */,
 			);
 			path = XIB;
+			sourceTree = "<group>";
+		};
+		0FE65B172E12B38800B713DD /* Popup */ = {
+			isa = PBXGroup;
+			children = (
+				0FE65B182E12B3A500B713DD /* PopupProfileUpdateSuccess.swift */,
+				0FE65B1A2E12B84600B713DD /* PopupDeleteAccountConfirmation.swift */,
+			);
+			path = Popup;
 			sourceTree = "<group>";
 		};
 		0FF019442E0E4D4300575BB0 /* Fonts */ = {
@@ -825,6 +839,7 @@
 				BD7F29072D1A72810020B37D /* ScantoJoinVC.swift in Sources */,
 				BD1A20992CD0B3510033A8BA /* FSPageViewTransformer.swift in Sources */,
 				BDC25BB32CE87BE6002E865D /* LoginMobilenumberVC.swift in Sources */,
+				0FE65B192E12B3A500B713DD /* PopupProfileUpdateSuccess.swift in Sources */,
 				BD1A20962CD0B3510033A8BA /* FSPagerViewLayoutAttributes.swift in Sources */,
 				BD1A20AE2CD0B3510033A8BA /* UITableView+Extension.swift in Sources */,
 				BD1A20A52CD0B3510033A8BA /* AFWrapper.swift in Sources */,
@@ -848,6 +863,7 @@
 				BD1A209C2CD0B3510033A8BA /* ValidationTextField.swift in Sources */,
 				BD1A20A02CD0B3510033A8BA /* Localize.swift in Sources */,
 				BD75DDB92CE89EC300A028BD /* MapVC.swift in Sources */,
+				0FE65B1B2E12B84600B713DD /* PopupDeleteAccountConfirmation.swift in Sources */,
 				BDC7782E2CECA1B900BEFF66 /* CompassVC.swift in Sources */,
 				F39683412D5F7E8800FD0F49 /* SetProfileVC.swift in Sources */,
 				BD9DB1502CE85971003615FE /* OnboardingFSPagerviewCell.swift in Sources */,

@@ -72,6 +72,10 @@ internal enum StoryboardScene {
 
     internal static let initialScene = InitialSceneType<UIKit.UINavigationController>(storyboard: Settings.self)
 
+    internal static let popupDeleteAccountConfirmation = SceneType<LiveLocationTacker.PopupDeleteAccountConfirmation>(storyboard: Settings.self, identifier: "PopupDeleteAccountConfirmation")
+
+    internal static let popupProfileUpdateSuccess = SceneType<LiveLocationTacker.PopupProfileUpdateSuccess>(storyboard: Settings.self, identifier: "PopupProfileUpdateSuccess")
+
     internal static let profileVC = SceneType<LiveLocationTacker.ProfileVC>(storyboard: Settings.self, identifier: "ProfileVC")
 
     internal static let settingVC = SceneType<LiveLocationTacker.SettingVC>(storyboard: Settings.self, identifier: "SettingVC")
