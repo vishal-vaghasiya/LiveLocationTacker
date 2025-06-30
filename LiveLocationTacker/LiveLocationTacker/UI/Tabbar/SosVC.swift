@@ -85,9 +85,6 @@ class SosVC: UIViewController {
     
     // MARK: - SOS Logic
     private func triggerSOS() {
-        // Optional: Sound alert
-        AudioServicesPlaySystemSound(SystemSoundID(1005)) // Vibrate sound
-        
         lblCountdown.text = ""
         guard let lastLocation = selectedGroupsnapSort?.childSnapshot(forPath: "members").childSnapshot(forPath: Constants.USERDEFAULTS.getCurrentuserNumber()).value as? [String:Any] else { return }
         
@@ -96,6 +93,18 @@ class SosVC: UIViewController {
         sosMSG = sosMSG +  String(lastLocation["latitude"]  as? Double ?? 0) + "," + String(lastLocation["longitude"]  as? Double ?? 0)
         
         if let memberNumber = Array(self.memberList.keys.sorted()) as? [String] {
+            let filterObject = memberNumber.filter { $0 != Constants.USERDEFAULTS.getCurrentuserNumber() }
+            if filterObject.count == 0 {
+                let vc = StoryboardScene.TabBar.popupFailedSOS.instantiate()
+                vc.closePopup = { [weak self] in
+                    self?.dismiss(animated: true)
+                }
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: false)
+                return
+            }
+            // Optional: Sound alert
+            AudioServicesPlaySystemSound(SystemSoundID(1005)) // Vibrate sound
             memberNumber.forEach { phoneNumber in
                 if phoneNumber != Constants.USERDEFAULTS.getCurrentuserNumber() {
                     self.firebaseManager.ref.child("circles").queryOrdered(byChild: "admin").queryEqual(toValue: phoneNumber).observeSingleEvent(of: .value) { snapshot in

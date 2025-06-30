@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0F10067274AF68AB90DAB3F9 /* Pods_LiveLocationTacker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 179C6570F863CE2D05929C3B /* Pods_LiveLocationTacker.framework */; };
+		0F1777742E1244DB000BC3D8 /* MapSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1777732E1244DB000BC3D8 /* MapSettingsVC.swift */; };
+		0F1777782E124932000BC3D8 /* MapTypeCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F1777772E124932000BC3D8 /* MapTypeCVCell.xib */; };
+		0F1777792E124932000BC3D8 /* MapTypeCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1777762E124932000BC3D8 /* MapTypeCVCell.swift */; };
+		0F17779E2E1266BC000BC3D8 /* PopupFailedSOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F17779D2E1266BC000BC3D8 /* PopupFailedSOS.swift */; };
 		0F2DBFA42E0D3D4500243B13 /* UIEnableDisable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2DBFA32E0D3D4100243B13 /* UIEnableDisable.swift */; };
 		0F2DBFA62E0D45CF00243B13 /* NTTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2DBFA52E0D45CF00243B13 /* NTTextField.swift */; };
 		0F2DBFAC2E0D7D8A00243B13 /* PhotoPickerPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2DBFAB2E0D7D8A00243B13 /* PhotoPickerPopup.swift */; };
@@ -97,6 +101,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F1777732E1244DB000BC3D8 /* MapSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSettingsVC.swift; sourceTree = "<group>"; };
+		0F1777762E124932000BC3D8 /* MapTypeCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTypeCVCell.swift; sourceTree = "<group>"; };
+		0F1777772E124932000BC3D8 /* MapTypeCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapTypeCVCell.xib; sourceTree = "<group>"; };
+		0F17779D2E1266BC000BC3D8 /* PopupFailedSOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupFailedSOS.swift; sourceTree = "<group>"; };
 		0F2DBFA32E0D3D4100243B13 /* UIEnableDisable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEnableDisable.swift; sourceTree = "<group>"; };
 		0F2DBFA52E0D45CF00243B13 /* NTTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTTextField.swift; sourceTree = "<group>"; };
 		0F2DBFAB2E0D7D8A00243B13 /* PhotoPickerPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerPopup.swift; sourceTree = "<group>"; };
@@ -204,6 +212,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F1777752E12488E000BC3D8 /* XIB */ = {
+			isa = PBXGroup;
+			children = (
+				0F1777762E124932000BC3D8 /* MapTypeCVCell.swift */,
+				0F1777772E124932000BC3D8 /* MapTypeCVCell.xib */,
+			);
+			path = XIB;
+			sourceTree = "<group>";
+		};
 		0F2DBFAF2E0D7E4100243B13 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +319,7 @@
 		0F2DBFC12E0D7F8200243B13 /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
+				0F1777752E12488E000BC3D8 /* XIB */,
 				BD9DB1372CE856F5003615FE /* TabBar.storyboard */,
 				BD9DB1492CE858D8003615FE /* SplashVC.swift */,
 				BD75DDB62CE89C6B00A028BD /* HomeTabVC.swift */,
@@ -310,6 +328,9 @@
 				BD7F29062D1A72810020B37D /* ScantoJoinVC.swift */,
 				BDBC8B6C2CEB527A00D913F0 /* UserDeatilsVC.swift */,
 				0FF019522E0EAE4000575BB0 /* MyCirclesPopup.swift */,
+				0F1777732E1244DB000BC3D8 /* MapSettingsVC.swift */,
+				BDBEC0142D1AC63900D9A739 /* SosVC.swift */,
+				0F17779D2E1266BC000BC3D8 /* PopupFailedSOS.swift */,
 			);
 			path = Tabbar;
 			sourceTree = "<group>";
@@ -489,7 +510,6 @@
 				BDC7782D2CECA1B900BEFF66 /* CompassVC.swift */,
 				BD38B9002CEC66540088D0C7 /* ProfileVC.swift */,
 				BD7FE32E2CEC4AD7006C32D2 /* SettingVC.swift */,
-				BDBEC0142D1AC63900D9A739 /* SosVC.swift */,
 				F3CAD9D72D527BC8008C7600 /* SubscribeVC.swift */,
 			);
 			path = VC;
@@ -606,6 +626,7 @@
 				BD9DB1382CE856F5003615FE /* TabBar.storyboard in Resources */,
 				BD7FE3372CEC4F46006C32D2 /* SettingHeaderView.xib in Resources */,
 				BD575C462CEC5E0A00C9B313 /* Plus.json in Resources */,
+				0F1777782E124932000BC3D8 /* MapTypeCVCell.xib in Resources */,
 				BD7F290F2D1AA87C0020B37D /* phonetracker.json in Resources */,
 				BD9DB1512CE85971003615FE /* OnboardingFSPagerviewCell.xib in Resources */,
 				BD1A20632CD0B2E10033A8BA /* Base in Resources */,
@@ -722,6 +743,7 @@
 				BD1A20A32CD0B3510033A8BA /* PhotoAlbumManager.swift in Sources */,
 				BDB0BDDE2CE7273800A5E037 /* CircleCVCell.swift in Sources */,
 				BD1A20A42CD0B3510033A8BA /* PushNotificationManager.swift in Sources */,
+				0F1777792E124932000BC3D8 /* MapTypeCVCell.swift in Sources */,
 				F3CAD9D82D527BC9008C7600 /* SubscribeVC.swift in Sources */,
 				BD1A209D2CD0B3510033A8BA /* Connection.swift in Sources */,
 				BD9DB1552CE85B2B003615FE /* IntroVC.swift in Sources */,
@@ -738,6 +760,7 @@
 				BD9DB14B2CE858D8003615FE /* MainSplashVC.swift in Sources */,
 				BD1A20AA2CD0B3510033A8BA /* PinterestLayout.swift in Sources */,
 				BD1A20922CD0B3510033A8BA /* FSPageControl.swift in Sources */,
+				0F17779E2E1266BC000BC3D8 /* PopupFailedSOS.swift in Sources */,
 				BDBEC0152D1AC63900D9A739 /* SosVC.swift in Sources */,
 				BD1A20982CD0B3510033A8BA /* FSPageViewLayout.swift in Sources */,
 				0FED0F812E0BE87200EB1D5D /* Helper+UITextField.swift in Sources */,
@@ -770,6 +793,7 @@
 				BD75DDBD2CE8B76500A028BD /* JoinCircleVC.swift in Sources */,
 				BD1A20B02CD0B3510033A8BA /* UpdateViewController.swift in Sources */,
 				BD1A20AB2CD0B3510033A8BA /* PulseView.swift in Sources */,
+				0F1777742E1244DB000BC3D8 /* MapSettingsVC.swift in Sources */,
 				BD7FE32D2CEC4ACA006C32D2 /* SettingTBVCell.swift in Sources */,
 				BD1A20972CD0B3510033A8BA /* FSPagerViewObjcCompat.m in Sources */,
 				BD1A20AD2CD0B3510033A8BA /* UIColor+Ex.swift in Sources */,

@@ -179,19 +179,27 @@ class MapVC: UIViewController {
     }
     
     @IBAction func btnMapTypeAction(_ sender: UIButton) {
-        UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-        
-        switch currentMapType {
-        case .standard:
-            currentMapType = .satellite
-        case .satellite:
-            currentMapType = .hybrid
-        case .hybrid:
-            currentMapType = .standard
-        default:
-            currentMapType = .standard
+        //UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+        let vc = StoryboardScene.TabBar.mapSettingsVC.instantiate()
+        vc.selectedMapType = currentMapType
+        vc.updateMap = { (mapType) in
+            self.currentMapType = mapType
+            self.map_view.mapType = self.currentMapType
         }
-        map_view.mapType = currentMapType
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: false)
+        
+//        switch currentMapType {
+//        case .standard:
+//            currentMapType = .satellite
+//        case .satellite:
+//            currentMapType = .hybrid
+//        case .hybrid:
+//            currentMapType = .standard
+//        default:
+//            currentMapType = .standard
+//        }
+//        map_view.mapType = currentMapType
     }
     
     @IBAction func btnGpsAction(_ sender: UIButton) {

@@ -52,9 +52,13 @@ internal enum StoryboardScene {
 
     internal static let joinCircleVC = SceneType<LiveLocationTacker.JoinCircleVC>(storyboard: TabBar.self, identifier: "JoinCircleVC")
 
+    internal static let mapSettingsVC = SceneType<LiveLocationTacker.MapSettingsVC>(storyboard: TabBar.self, identifier: "MapSettingsVC")
+
     internal static let mapVC = SceneType<LiveLocationTacker.MapVC>(storyboard: TabBar.self, identifier: "MapVC")
 
     internal static let myCirclesPopup = SceneType<LiveLocationTacker.MyCirclesPopup>(storyboard: TabBar.self, identifier: "MyCirclesPopup")
+
+    internal static let popupFailedSOS = SceneType<LiveLocationTacker.PopupFailedSOS>(storyboard: TabBar.self, identifier: "PopupFailedSOS")
 
     internal static let profileVC = SceneType<LiveLocationTacker.ProfileVC>(storyboard: TabBar.self, identifier: "ProfileVC")
 
