@@ -41,6 +41,15 @@ internal enum StoryboardScene {
 
     internal static let subscribeVC = SceneType<LiveLocationTacker.SubscribeVC>(storyboard: Main.self, identifier: "SubscribeVC")
   }
+  internal enum Settings: StoryboardType {
+    internal static let storyboardName = "Settings"
+
+    internal static let initialScene = InitialSceneType<UIKit.UINavigationController>(storyboard: Settings.self)
+
+    internal static let profileVC = SceneType<LiveLocationTacker.ProfileVC>(storyboard: Settings.self, identifier: "ProfileVC")
+
+    internal static let settingVC = SceneType<LiveLocationTacker.SettingVC>(storyboard: Settings.self, identifier: "SettingVC")
+  }
   internal enum TabBar: StoryboardType {
     internal static let storyboardName = "TabBar"
 
@@ -60,11 +69,7 @@ internal enum StoryboardScene {
 
     internal static let popupFailedSOS = SceneType<LiveLocationTacker.PopupFailedSOS>(storyboard: TabBar.self, identifier: "PopupFailedSOS")
 
-    internal static let profileVC = SceneType<LiveLocationTacker.ProfileVC>(storyboard: TabBar.self, identifier: "ProfileVC")
-
     internal static let scantoJoinVC = SceneType<LiveLocationTacker.ScantoJoinVC>(storyboard: TabBar.self, identifier: "ScantoJoinVC")
-
-    internal static let settingVC = SceneType<LiveLocationTacker.SettingVC>(storyboard: TabBar.self, identifier: "SettingVC")
 
     internal static let sosVC = SceneType<LiveLocationTacker.SosVC>(storyboard: TabBar.self, identifier: "SosVC")
 

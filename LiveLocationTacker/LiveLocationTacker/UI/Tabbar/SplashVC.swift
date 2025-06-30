@@ -28,12 +28,12 @@ class SplashVC: UIViewController {
         print("Call splash")
         showLoader()
         
-        if Constants.USERDEFAULTS.bool(forKey: "pro") == true {
-            Constants.userSubscribeAvailable = true
-        }
-        else{
-            Constants.userSubscribeAvailable = false
-        }
+//        if Constants.USERDEFAULTS.bool(forKey: "pro") == true {
+//            DefaultManager.IS_SUBSCRIPTION = true
+//        }
+//        else{
+//            DefaultManager.IS_SUBSCRIPTION = false
+//        }
         
         guard reachability.connection != .unavailable else {
             self.navigateToHome()

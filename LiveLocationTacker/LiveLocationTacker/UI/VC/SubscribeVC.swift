@@ -228,8 +228,8 @@ extension SubscribeVC {
     }
     
     func dismissModal() {
-        Constants.USERDEFAULTS.set(true, forKey: "pro")
-        Constants.userSubscribeAvailable = true
+//        Constants.USERDEFAULTS.set(true, forKey: "pro")
+        DefaultManager.IS_SUBSCRIPTION = true
         
         // Create the alert controller
         let alertController = UIAlertController(title: "confirmation", message: "your sub confirmed", preferredStyle: .alert)
@@ -252,8 +252,8 @@ extension SubscribeVC {
     func refreshUserDetails() {
         Purchases.shared.getCustomerInfo { (purchaserInfo, error) in
             if purchaserInfo?.entitlements[Constants.entitlementID]?.isActive == true {
-                Constants.USERDEFAULTS.set(true, forKey: "pro")
-                Constants.userSubscribeAvailable = true
+//                Constants.USERDEFAULTS.set(true, forKey: "pro")
+                DefaultManager.IS_SUBSCRIPTION = true
                 
                 // Create the alert controller
                 let alertController = UIAlertController(title: "Restore complete", message: "your sub restored", preferredStyle: .alert)
@@ -274,7 +274,8 @@ extension SubscribeVC {
             }
             else {
                 self.showAlert(title: "no subcribe availble", message: "plz subcribe first")
-                Constants.USERDEFAULTS.removeObject(forKey: "pro")
+                //Constants.USERDEFAULTS.removeObject(forKey: "pro")
+                DefaultManager.IS_SUBSCRIPTION = false
             }
         }
     }

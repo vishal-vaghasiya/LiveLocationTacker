@@ -164,6 +164,8 @@ class MobileOTPVerificationVC: UIViewController , UIGestureRecognizerDelegate {
                 Constants.USERDEFAULTS.saveBatterySharing(value: true)
                 Constants.USERDEFAULTS.saveLocationSharing(value: true)
                 Constants.USERDEFAULTS.saveNotificationSharing(value: true)
+                Constants.USERDEFAULTS.saveCameraSharing(value: true)
+                Constants.USERDEFAULTS.saveMotionSharing(value: true)
                 Constants.USERDEFAULTS.saveProfileImage(value: UIImage(named: "engineer")?.pngData() ?? Data())
                 
                 self.pushVC(T: SetProfileVC.instantiate(appStoryboard: .main), viewControllerID: String(describing: SetProfileVC.self))
@@ -182,6 +184,8 @@ class MobileOTPVerificationVC: UIViewController , UIGestureRecognizerDelegate {
                     Constants.USERDEFAULTS.saveBatterySharing(value: true)
                     Constants.USERDEFAULTS.saveLocationSharing(value: true)
                     Constants.USERDEFAULTS.saveNotificationSharing(value: true)
+                    Constants.USERDEFAULTS.saveCameraSharing(value: true)
+                    Constants.USERDEFAULTS.saveMotionSharing(value: true)
                     Constants.USERDEFAULTS.saveProfileImage(value: UIImage(named: "engineer")?.pngData() ?? Data())
                     
                     self.pushVC(T: SetProfileVC.instantiate(appStoryboard: .main), viewControllerID: String(describing: SetProfileVC.self))

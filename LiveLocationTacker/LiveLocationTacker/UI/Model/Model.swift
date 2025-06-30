@@ -39,7 +39,20 @@ struct AdsDataModel: Codable {
     }
 }
 
+enum SettingOptions {
+    case CHILD_MODE
+    case DARK_MODE
+    
+    case RATE_NOW
+    case SHARE
+    case FEEDBACK
+    case PRIVACY_POLICY
+    case TERMS_CONDITION
+    case SUBSCRIPTION
+}
+
 struct AppCommonModel {
+    var id: SettingOptions
     var image:UIImage?
     var title:String?
     var subtitle:String?

@@ -103,9 +103,11 @@ extension SceneDelegate {
     func refreshUserDetails() {
         Purchases.shared.getCustomerInfo { (purchaserInfo, error) in
             if purchaserInfo?.entitlements[Constants.entitlementID]?.isActive == true {
-                Constants.USERDEFAULTS.set(true, forKey: "pro")
+                //Constants.USERDEFAULTS.set(true, forKey: "pro")
+                DefaultManager.IS_SUBSCRIPTION = true
             } else {
-                Constants.USERDEFAULTS.removeObject(forKey: "pro")
+                //Constants.USERDEFAULTS.removeObject(forKey: "pro")
+                DefaultManager.IS_SUBSCRIPTION = false
             }
         }
     }

@@ -74,7 +74,7 @@ class Constants {
     public static var freeTrailActive = false
     
     public static let device_type = "iOS"
-    public static var userSubscribeAvailable:Bool = false
+    //public static var userSubscribeAvailable:Bool = false
     public static var isFromSubscibeScreen = false
     
     //API

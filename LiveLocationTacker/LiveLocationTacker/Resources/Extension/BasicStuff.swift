@@ -821,12 +821,12 @@ extension UIViewController {
     
     func navigateToHome() {
         DispatchQueue.main.async { [self] in
-            if Constants.USERDEFAULTS.bool(forKey: "pro") == true {
-                Constants.userSubscribeAvailable = true
-            }
-            else{
-                Constants.userSubscribeAvailable = false
-            }
+//            if Constants.USERDEFAULTS.bool(forKey: "pro") == true {
+//                DefaultManager.IS_SUBSCRIPTION = true
+//            }
+//            else{
+//                DefaultManager.IS_SUBSCRIPTION = false
+//            }
             guard let frontViewController = Constants.tab_storyBoard.instantiateViewController(withIdentifier: "HomeTabVC") as? UITabBarController else { return }
             self.view.window?.rootViewController = frontViewController
         }
