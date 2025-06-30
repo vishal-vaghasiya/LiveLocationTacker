@@ -136,7 +136,7 @@ class MapVC: UIViewController {
     }
     
     @IBAction func btnPlusMemberAction(_ sender: UIButton) {
-        let vc = StoryboardScene.TabBar.joinCircleVC.instantiate()
+        let vc = StoryboardScene.Circle.joinCircleVC.instantiate()
         vc.groupCode = selectedGroupsnapSort?.childSnapshot(forPath: "code").value as? String ?? ""
         //vc.groupFcmtoken = selectedGroupsnapSort?.childSnapshot(forPath: "fcmtoken").value as? String ?? ""
         vc.hidesBottomBarWhenPushed = true
@@ -145,7 +145,7 @@ class MapVC: UIViewController {
     
     @IBAction func btnSubscribeAction(_ sender: UIButton) {
         DispatchQueue.main.async {
-            let vc = Constants.main_storyBoard.instantiateViewController(withIdentifier: "SubscribeVC") as! SubscribeVC
+            let vc = StoryboardScene.Settings.subscribeVC.instantiate()
             vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: true)
         }
@@ -154,10 +154,10 @@ class MapVC: UIViewController {
     @IBAction func btnSelectGroupAction(_ sender: UIButton) {
         //UIImpactFeedbackGenerator(style: .medium).impactOccurred()
         //img_vectore.isHighlighted = !img_vectore.isHighlighted
-        let vc = StoryboardScene.TabBar.myCirclesPopup.instantiate()
+        let vc = StoryboardScene.Circle.myCirclesPopup.instantiate()
         vc.groupSnapSortList = self.groupSnapSortList
         vc.joinCircle = {
-            let vc = StoryboardScene.TabBar.joinCircleVC.instantiate()
+            let vc = StoryboardScene.Circle.joinCircleVC.instantiate()
             vc.groupCode = selectedGroupsnapSort?.childSnapshot(forPath: "code").value as? String ?? ""
             vc.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(vc, animated: true)
@@ -180,7 +180,7 @@ class MapVC: UIViewController {
     
     @IBAction func btnMapTypeAction(_ sender: UIButton) {
         //UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-        let vc = StoryboardScene.TabBar.mapSettingsVC.instantiate()
+        let vc = StoryboardScene.Circle.mapSettingsVC.instantiate()
         vc.selectedMapType = currentMapType
         vc.updateMap = { (mapType) in
             self.currentMapType = mapType
@@ -217,9 +217,9 @@ class MapVC: UIViewController {
     
     @IBAction func btnSosAction(_ sender: UIButton) {
         if selectedGroupsnapSort != nil {
-            let vc = Constants.tab_storyBoard.instantiateViewController(withIdentifier: "SosVC") as! SosVC
-            vc.modalPresentationStyle = .overFullScreen
+            let vc = StoryboardScene.Circle.sosVC.instantiate()
             vc.memberList = memberList
+            vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: true)
         }
     }
@@ -330,7 +330,7 @@ extension MapVC : MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         guard let annotation = view.annotation else { return }
-        let vc = Constants.tab_storyBoard.instantiateViewController(withIdentifier: "UserDeatilsVC") as! UserDeatilsVC
+        let vc = StoryboardScene.Circle.userDeatilsVC.instantiate()
         vc.modalPresentationStyle = .overFullScreen
         LocationManager.shared.getAddressFromLatLon(latitude: annotation.coordinate.latitude,
                                                     longitude: annotation.coordinate.longitude) { address in

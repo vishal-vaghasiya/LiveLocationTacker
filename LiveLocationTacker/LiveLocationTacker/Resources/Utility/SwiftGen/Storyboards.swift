@@ -24,7 +24,11 @@ internal enum StoryboardScene {
 
     internal static let mapVC = SceneType<LiveLocationTacker.MapVC>(storyboard: Circle.self, identifier: "MapVC")
 
+    internal static let myCirclesPopup = SceneType<LiveLocationTacker.MyCirclesPopup>(storyboard: Circle.self, identifier: "MyCirclesPopup")
+
     internal static let popupFailedSOS = SceneType<LiveLocationTacker.PopupFailedSOS>(storyboard: Circle.self, identifier: "PopupFailedSOS")
+
+    internal static let scantoJoinVC = SceneType<LiveLocationTacker.ScantoJoinVC>(storyboard: Circle.self, identifier: "ScantoJoinVC")
 
     internal static let sosVC = SceneType<LiveLocationTacker.SosVC>(storyboard: Circle.self, identifier: "SosVC")
 
@@ -62,8 +66,6 @@ internal enum StoryboardScene {
     internal static let photoPickerPopup = SceneType<LiveLocationTacker.PhotoPickerPopup>(storyboard: Main.self, identifier: "PhotoPickerPopup")
 
     internal static let setProfileVC = SceneType<LiveLocationTacker.SetProfileVC>(storyboard: Main.self, identifier: "SetProfileVC")
-
-    internal static let subscribeVC = SceneType<LiveLocationTacker.SubscribeVC>(storyboard: Main.self, identifier: "SubscribeVC")
   }
   internal enum Settings: StoryboardType {
     internal static let storyboardName = "Settings"
@@ -73,33 +75,17 @@ internal enum StoryboardScene {
     internal static let profileVC = SceneType<LiveLocationTacker.ProfileVC>(storyboard: Settings.self, identifier: "ProfileVC")
 
     internal static let settingVC = SceneType<LiveLocationTacker.SettingVC>(storyboard: Settings.self, identifier: "SettingVC")
+
+    internal static let subscribeVC = SceneType<LiveLocationTacker.SubscribeVC>(storyboard: Settings.self, identifier: "SubscribeVC")
   }
   internal enum TabBar: StoryboardType {
     internal static let storyboardName = "TabBar"
 
     internal static let aremaCalculatoreVC = SceneType<LiveLocationTacker.AremaCalculatoreVC>(storyboard: TabBar.self, identifier: "AremaCalculatoreVC")
 
-    internal static let compassVC = SceneType<LiveLocationTacker.CompassVC>(storyboard: TabBar.self, identifier: "CompassVC")
-
     internal static let homeTabVC = SceneType<LiveLocationTacker.HomeTabVC>(storyboard: TabBar.self, identifier: "HomeTabVC")
 
-    internal static let joinCircleVC = SceneType<LiveLocationTacker.JoinCircleVC>(storyboard: TabBar.self, identifier: "JoinCircleVC")
-
-    internal static let mapSettingsVC = SceneType<LiveLocationTacker.MapSettingsVC>(storyboard: TabBar.self, identifier: "MapSettingsVC")
-
-    internal static let mapVC = SceneType<LiveLocationTacker.MapVC>(storyboard: TabBar.self, identifier: "MapVC")
-
-    internal static let myCirclesPopup = SceneType<LiveLocationTacker.MyCirclesPopup>(storyboard: TabBar.self, identifier: "MyCirclesPopup")
-
-    internal static let popupFailedSOS = SceneType<LiveLocationTacker.PopupFailedSOS>(storyboard: TabBar.self, identifier: "PopupFailedSOS")
-
-    internal static let scantoJoinVC = SceneType<LiveLocationTacker.ScantoJoinVC>(storyboard: TabBar.self, identifier: "ScantoJoinVC")
-
-    internal static let sosVC = SceneType<LiveLocationTacker.SosVC>(storyboard: TabBar.self, identifier: "SosVC")
-
     internal static let splashVC = SceneType<LiveLocationTacker.SplashVC>(storyboard: TabBar.self, identifier: "SplashVC")
-
-    internal static let userDeatilsVC = SceneType<LiveLocationTacker.UserDeatilsVC>(storyboard: TabBar.self, identifier: "UserDeatilsVC")
   }
 }
 // swiftlint:enable explicit_type_interface identifier_name line_length prefer_self_in_static_references

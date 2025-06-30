@@ -240,9 +240,12 @@
 				BD75DDB82CE89EC300A028BD /* MapVC.swift */,
 				BDBC8B6C2CEB527A00D913F0 /* UserDeatilsVC.swift */,
 				0F1777732E1244DB000BC3D8 /* MapSettingsVC.swift */,
+				0FF019522E0EAE4000575BB0 /* MyCirclesPopup.swift */,
 				BDBEC0142D1AC63900D9A739 /* SosVC.swift */,
 				0F17779D2E1266BC000BC3D8 /* PopupFailedSOS.swift */,
 				BD75DDBC2CE8B76500A028BD /* JoinCircleVC.swift */,
+				BD7F29062D1A72810020B37D /* ScantoJoinVC.swift */,
+				0F1777752E12488E000BC3D8 /* XIB */,
 			);
 			path = Circle;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				0F1777A22E126BD0000BC3D8 /* Settings.storyboard */,
 				BD7FE32E2CEC4AD7006C32D2 /* SettingVC.swift */,
 				BD38B9002CEC66540088D0C7 /* ProfileVC.swift */,
+				F3CAD9D72D527BC8008C7600 /* SubscribeVC.swift */,
 				0FE65B0C2E12855300B713DD /* XIB */,
 			);
 			path = Settings;
@@ -337,11 +341,11 @@
 			isa = PBXGroup;
 			children = (
 				0FF019512E0E611F00575BB0 /* LaunchScreen */,
+				0F2DBFC02E0D7F7300243B13 /* Main */,
 				0F2DBFC12E0D7F8200243B13 /* Tabbar */,
 				0F17779F2E126B82000BC3D8 /* Circle */,
-				0F1777A12E126B8E000BC3D8 /* Settings */,
 				0F1777A02E126B88000BC3D8 /* Compass */,
-				0F2DBFC02E0D7F7300243B13 /* Main */,
+				0F1777A12E126B8E000BC3D8 /* Settings */,
 				BDB0BDDC2CE7270300A5E037 /* View */,
 				BD9DB1392CE85715003615FE /* VC */,
 				BD9DB13A2CE85740003615FE /* Model */,
@@ -369,12 +373,9 @@
 		0F2DBFC12E0D7F8200243B13 /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
-				0F1777752E12488E000BC3D8 /* XIB */,
 				BD9DB1372CE856F5003615FE /* TabBar.storyboard */,
 				BD9DB1492CE858D8003615FE /* SplashVC.swift */,
 				BD75DDB62CE89C6B00A028BD /* HomeTabVC.swift */,
-				BD7F29062D1A72810020B37D /* ScantoJoinVC.swift */,
-				0FF019522E0EAE4000575BB0 /* MyCirclesPopup.swift */,
 			);
 			path = Tabbar;
 			sourceTree = "<group>";
@@ -554,7 +555,6 @@
 			isa = PBXGroup;
 			children = (
 				BD7FE3322CEC4E27006C32D2 /* AremaCalculatoreVC.swift */,
-				F3CAD9D72D527BC8008C7600 /* SubscribeVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";

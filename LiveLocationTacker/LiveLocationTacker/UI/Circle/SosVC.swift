@@ -95,7 +95,7 @@ class SosVC: UIViewController {
         if let memberNumber = Array(self.memberList.keys.sorted()) as? [String] {
             let filterObject = memberNumber.filter { $0 != Constants.USERDEFAULTS.getCurrentuserNumber() }
             if filterObject.count == 0 {
-                let vc = StoryboardScene.TabBar.popupFailedSOS.instantiate()
+                let vc = StoryboardScene.Circle.popupFailedSOS.instantiate()
                 vc.closePopup = { [weak self] in
                     self?.dismiss(animated: true)
                 }

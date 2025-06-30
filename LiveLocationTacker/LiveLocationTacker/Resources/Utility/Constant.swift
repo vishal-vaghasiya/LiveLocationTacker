@@ -19,8 +19,8 @@ class Constants {
     public static var ROOTVIEW = UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController
     
     //storyBoard
-    public static let main_storyBoard = UIStoryboard(name: "Main", bundle:Bundle.main)
-    public static let tab_storyBoard = UIStoryboard(name: "TabBar", bundle:Bundle.main)
+    //public static let main_storyBoard = UIStoryboard(name: "Main", bundle:Bundle.main)
+    //public static let tab_storyBoard = UIStoryboard(name: "TabBar", bundle:Bundle.main)
     
     //App Information
     public static let APP_ID = "6738461260"

@@ -95,7 +95,7 @@ extension SettingVC : UITableViewDelegate, UITableViewDataSource {
         }
         headerView.onTapSubscribeAction = {
             DispatchQueue.main.async {
-                let vc = Constants.main_storyBoard.instantiateViewController(withIdentifier: "SubscribeVC") as! SubscribeVC
+                let vc = StoryboardScene.Settings.subscribeVC.instantiate()
                 vc.modalPresentationStyle = .overFullScreen
                 self.present(vc, animated: true)
             }

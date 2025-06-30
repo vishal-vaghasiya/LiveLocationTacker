@@ -821,23 +821,17 @@ extension UIViewController {
     
     func navigateToHome() {
         DispatchQueue.main.async { [self] in
-//            if Constants.USERDEFAULTS.bool(forKey: "pro") == true {
-//                DefaultManager.IS_SUBSCRIPTION = true
-//            }
-//            else{
-//                DefaultManager.IS_SUBSCRIPTION = false
-//            }
-            guard let frontViewController = Constants.tab_storyBoard.instantiateViewController(withIdentifier: "HomeTabVC") as? UITabBarController else { return }
-            self.view.window?.rootViewController = frontViewController
+            let vc = StoryboardScene.TabBar.homeTabVC.instantiate()
+            self.view.window?.rootViewController = vc
         }
     }
     
     func navigateToOnboarding() {
         DispatchQueue.main.async {
-            let frontViewController = Constants.main_storyBoard.instantiateViewController(identifier: "IntroVC") as! IntroVC
-            let frontNavigationController = UINavigationController(rootViewController: frontViewController)
-            frontNavigationController.isNavigationBarHidden = true
-            self.view.window?.rootViewController = frontNavigationController
+            let vc = StoryboardScene.Main.introVC.instantiate()
+            let nv = UINavigationController(rootViewController: vc)
+            nv.isNavigationBarHidden = true
+            self.view.window?.rootViewController = nv
         }
     }
     

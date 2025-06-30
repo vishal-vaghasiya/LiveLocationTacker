@@ -70,12 +70,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //MARK: - Continue with Root -
 
 extension SceneDelegate {
-    
     func setupHome() {
-        guard let frontViewController = Constants.tab_storyBoard.instantiateViewController(withIdentifier: "SplashVC") as? SplashVC else { return }
-        let frontNavigationController = UINavigationController(rootViewController: frontViewController)
-        frontNavigationController.isNavigationBarHidden = true
-        window?.rootViewController = frontNavigationController
+        let vc = StoryboardScene.TabBar.splashVC.instantiate()
+        let nv = UINavigationController(rootViewController: vc)
+        nv.isNavigationBarHidden = true
+        window?.rootViewController = nv
     }
 
     func checkforceUpdate(){
@@ -205,7 +204,7 @@ extension UIViewController {
     
     @objc private func didTapProButton(_ sender: UIBarButtonItem) {
         DispatchQueue.main.async {
-            let vc = Constants.main_storyBoard.instantiateViewController(withIdentifier: "SubscribeVC") as! SubscribeVC
+            let vc = StoryboardScene.Settings.subscribeVC.instantiate()
             vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: true)
         }
