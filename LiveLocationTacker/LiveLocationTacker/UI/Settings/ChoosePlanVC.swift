@@ -10,7 +10,7 @@ import ProgressHUD
 import RevenueCat
 
 class ChoosePlanVC: UIViewController {
-
+    
     // MARK: - OUTLET
     @IBOutlet weak var planCV: UICollectionView!
     @IBOutlet weak var btnClose: UIButton!
@@ -48,14 +48,14 @@ class ChoosePlanVC: UIViewController {
     func simulateDragThroughAllIndexes() {
         let totalItems = planCV.numberOfItems(inSection: 0)
         guard totalItems > 0 else { return }
-
+        
         hasAutoScrolled = true
-
+        
         let layout = planCV.collectionViewLayout as! UICollectionViewFlowLayout
         let cellWidthIncludingSpacing = planCV.frame.width / 1.5 + layout.minimumLineSpacing
-
+        
         let group = DispatchGroup()
-
+        
         for i in 0..<totalItems + 1 {
             group.enter()
             let delay = Double(i) * 0.3
@@ -87,7 +87,7 @@ class ChoosePlanVC: UIViewController {
                 }
             }
         }
-
+        
         group.notify(queue: .main) {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.planCV.isHidden = false
@@ -124,23 +124,23 @@ class ChoosePlanVC: UIViewController {
     }
     
     @IBAction func btnSubscribeAction(_ sender: UIButton) {
-//        for i in 0..<(self.offering?.availablePackages.count ?? 0) {
-//            if img_bg_week.isHighlighted == true {
-//                if offering?.availablePackages[i].packageType == .weekly {
-//                    buyProduct(index: i)
-//                }
-//            }
-//            else if img_bg_month.isHighlighted == true {
-//                if offering?.availablePackages[i].packageType == .monthly {
-//                    buyProduct(index: i)
-//                }
-//            }
-//            else if img_bg_year.isHighlighted == true {
-//                if offering?.availablePackages[i].packageType == .annual {
-//                    buyProduct(index: i)
-//                }
-//            }
-//        }
+        //        for i in 0..<(self.offering?.availablePackages.count ?? 0) {
+        //            if img_bg_week.isHighlighted == true {
+        //                if offering?.availablePackages[i].packageType == .weekly {
+        //                    buyProduct(index: i)
+        //                }
+        //            }
+        //            else if img_bg_month.isHighlighted == true {
+        //                if offering?.availablePackages[i].packageType == .monthly {
+        //                    buyProduct(index: i)
+        //                }
+        //            }
+        //            else if img_bg_year.isHighlighted == true {
+        //                if offering?.availablePackages[i].packageType == .annual {
+        //                    buyProduct(index: i)
+        //                }
+        //            }
+        //        }
     }
     
     @IBAction func btnPrivacyPolicyAction(_ sender: UIButton) {
@@ -155,56 +155,57 @@ class ChoosePlanVC: UIViewController {
     
     // MARK: - OTHER
     func refreshUserDetails() {
-//        Purchases.shared.getCustomerInfo { (purchaserInfo, error) in
-//            if purchaserInfo?.entitlements[Constants.entitlementID]?.isActive == true {
-////                Constants.USERDEFAULTS.set(true, forKey: "pro")
-//                DefaultManager.IS_SUBSCRIPTION = true
-//
-//                // Create the alert controller
-//                let alertController = UIAlertController(title: "Restore complete", message: "your sub restored", preferredStyle: .alert)
-//
-//                let okAction = UIAlertAction(title: "ok", style: .default) {
-//                    UIAlertAction in
-//                    if self.isFromTrailProScreen == true{
-//                        self.dismiss(animated: true) {
-//                            self.takingPremuium()
-//                        }
-//                    }
-//                    else{
-//                        self.navigateToHome()
-//                    }
-//                }
-//                alertController.addAction(okAction)
-//                self.present(alertController, animated: true, completion: nil)
-//            }
-//            else {
-//                self.showAlert(title: "no subcribe availble", message: "plz subcribe first")
-//                //Constants.USERDEFAULTS.removeObject(forKey: "pro")
-//                DefaultManager.IS_SUBSCRIPTION = false
-//            }
-//        }
+        //        Purchases.shared.getCustomerInfo { (purchaserInfo, error) in
+        //            if purchaserInfo?.entitlements[Constants.entitlementID]?.isActive == true {
+        ////                Constants.USERDEFAULTS.set(true, forKey: "pro")
+        //                DefaultManager.IS_SUBSCRIPTION = true
+        //
+        //                // Create the alert controller
+        //                let alertController = UIAlertController(title: "Restore complete", message: "your sub restored", preferredStyle: .alert)
+        //
+        //                let okAction = UIAlertAction(title: "ok", style: .default) {
+        //                    UIAlertAction in
+        //                    if self.isFromTrailProScreen == true{
+        //                        self.dismiss(animated: true) {
+        //                            self.takingPremuium()
+        //                        }
+        //                    }
+        //                    else{
+        //                        self.navigateToHome()
+        //                    }
+        //                }
+        //                alertController.addAction(okAction)
+        //                self.present(alertController, animated: true, completion: nil)
+        //            }
+        //            else {
+        //                self.showAlert(title: "no subcribe availble", message: "plz subcribe first")
+        //                //Constants.USERDEFAULTS.removeObject(forKey: "pro")
+        //                DefaultManager.IS_SUBSCRIPTION = false
+        //            }
+        //        }
     }
     
     // MARK: - API CALLING
     
     // MARK: - DELEGATE
-
+    
 }
 extension ChoosePlanVC: UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlanCVCell", for: indexPath) as! PlanCVCell
-        cell.contentView.backgroundColor = selectIndex == indexPath.row ? .systemBlue : .red
+
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("You selected cell #\(indexPath.item)!")
+        self.selectIndex = indexPath.row
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let w = collectionView.frame.size.width/1.5
         let h = collectionView.frame.size.height
@@ -245,6 +246,20 @@ extension ChoosePlanVC: UICollectionViewDataSource,UICollectionViewDelegate,UICo
         var index = newTargetOffset / pageWidth
         self.selectIndex = Int(index)
         
+        for visibleCell in self.planCV.visibleCells {
+            if let cell = visibleCell as? PlanCVCell,
+               let indexPath = self.planCV.indexPath(for: cell) {
+                
+                cell.lblPrice.textColor = indexPath.row == self.selectIndex ? Asset.color00BDFF.color : Asset.colorFFFFFF.color
+                cell.ivSelection.image = indexPath.row == self.selectIndex ? Asset.iconTickCircleSelected.image : Asset.iconTickCircle.image
+                cell.ivLocation.image = indexPath.row == self.selectIndex ? Asset.iconPremiumLocation.image : Asset.iconPremiumLocationDisable.image
+                cell.ivNotification.image = indexPath.row == self.selectIndex ? Asset.iconPremiumNotification.image : Asset.iconPremiumNotificationDisable.image
+                cell.ivBattery.image = indexPath.row == self.selectIndex ? Asset.iconPremiumBattery.image : Asset.iconPremiumBatteryDisable.image
+                cell.ivNoAds.image = indexPath.row == self.selectIndex ? Asset.iconPremiumNoAds.image : Asset.iconPremiumNoAdsDisable.image
+                
+            }
+        }
+        
         let cell = self.planCV.cellForItem(at: IndexPath(row: Int(index), section: 0))!
         if (index == 0){ // If first index
             animation(duration: duration, cell: cell as! PlanCVCell)
@@ -281,9 +296,9 @@ extension ChoosePlanVC: UICollectionViewDataSource,UICollectionViewDelegate,UICo
         }, completion: nil)
     }
     
-    func reloadDateWhenAnimated1(cell:PlanCVCell){
-        selectIndexB = false
-        animation(duration: 0.0, cell: cell)
-    }
-
+    //    func reloadDateWhenAnimated1(cell:PlanCVCell){
+    //        selectIndexB = false
+    //        animation(duration: 0.0, cell: cell)
+    //    }
+    
 }

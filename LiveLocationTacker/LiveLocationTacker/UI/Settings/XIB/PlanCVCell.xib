@@ -59,7 +59,7 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_tick_circle" highlightedImage="icon_tick_circle_selected" translatesAutoresizingMaskIntoConstraints="NO" id="eU3-Uv-04h">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_tick_circle" translatesAutoresizingMaskIntoConstraints="NO" id="eU3-Uv-04h">
                                         <rect key="frame" x="181.66666666666666" y="7.9999999999999982" width="16.333333333333343" height="16.333333333333329"/>
                                     </imageView>
                                 </subviews>
@@ -92,7 +92,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mYY-Ht-XW3">
                                         <rect key="frame" x="0.0" y="0.0" width="185.66666666666666" height="25"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_premium_location" translatesAutoresizingMaskIntoConstraints="NO" id="F2V-kQ-QdS">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_premium_location_disable" translatesAutoresizingMaskIntoConstraints="NO" id="F2V-kQ-QdS">
                                                 <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="F2V-kQ-QdS" secondAttribute="height" id="Bbw-k7-wLK"/>
@@ -110,7 +110,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3HZ-gZ-QB4">
                                         <rect key="frame" x="0.0" y="31" width="142.66666666666666" height="25"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_premium_notification" translatesAutoresizingMaskIntoConstraints="NO" id="rev-Yt-EYd">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_premium_notification_disable" translatesAutoresizingMaskIntoConstraints="NO" id="rev-Yt-EYd">
                                                 <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="25" id="8Zh-Gc-1aM"/>
@@ -128,7 +128,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0XZ-eq-bYV">
                                         <rect key="frame" x="0.0" y="62" width="189.33333333333334" height="25"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_premium_battery" translatesAutoresizingMaskIntoConstraints="NO" id="dTn-QL-UHt">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_premium_battery_disable" translatesAutoresizingMaskIntoConstraints="NO" id="dTn-QL-UHt">
                                                 <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="25" id="S9N-aC-dGC"/>
@@ -146,7 +146,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Zdx-Ji-fRL">
                                         <rect key="frame" x="0.0" y="93" width="81" height="25"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_premium_noAds" translatesAutoresizingMaskIntoConstraints="NO" id="Tdc-93-aVv">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_premium_noAds_disable" translatesAutoresizingMaskIntoConstraints="NO" id="Tdc-93-aVv">
                                                 <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="25" id="ZIu-wv-4xe"/>
@@ -200,17 +200,25 @@
                 <constraint firstItem="ffR-U8-a0s" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="qdx-KZ-SKz"/>
                 <constraint firstAttribute="bottom" secondItem="oJk-5L-PCB" secondAttribute="bottom" id="x1T-eO-DPf"/>
             </constraints>
+            <connections>
+                <outlet property="ivBattery" destination="dTn-QL-UHt" id="mp4-8T-hQB"/>
+                <outlet property="ivLocation" destination="F2V-kQ-QdS" id="Oog-uK-b2X"/>
+                <outlet property="ivNoAds" destination="Tdc-93-aVv" id="hZe-fF-W93"/>
+                <outlet property="ivNotification" destination="rev-Yt-EYd" id="5mW-Nn-0WM"/>
+                <outlet property="ivSelection" destination="eU3-Uv-04h" id="DF7-U9-fM3"/>
+                <outlet property="lblPrice" destination="4Tt-zf-i5l" id="tsz-lI-bfC"/>
+                <outlet property="lblPricePerMonth" destination="R7k-pD-khk" id="Deb-aI-aRC"/>
+            </connections>
             <point key="canvasLocation" x="-143.5114503816794" y="-11.619718309859156"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="free_trial_bg" width="118.33333587646484" height="26"/>
-        <image name="icon_premium_battery" width="24.333333969116211" height="24.666666030883789"/>
-        <image name="icon_premium_location" width="24.333333969116211" height="24.666666030883789"/>
-        <image name="icon_premium_noAds" width="24.333333969116211" height="24.333333969116211"/>
-        <image name="icon_premium_notification" width="24.333333969116211" height="24.666666030883789"/>
+        <image name="icon_premium_battery_disable" width="20.333333969116211" height="20.666666030883789"/>
+        <image name="icon_premium_location_disable" width="20.333333969116211" height="20.333333969116211"/>
+        <image name="icon_premium_noAds_disable" width="20.333333969116211" height="20.666666030883789"/>
+        <image name="icon_premium_notification_disable" width="20.333333969116211" height="20.666666030883789"/>
         <image name="icon_tick_circle" width="16.333333969116211" height="16.333333969116211"/>
-        <image name="icon_tick_circle_selected" width="18.333333969116211" height="18"/>
         <namedColor name="Color-00131A">
             <color red="0.0" green="0.074509803921568626" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
