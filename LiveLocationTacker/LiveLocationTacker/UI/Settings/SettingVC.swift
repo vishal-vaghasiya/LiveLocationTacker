@@ -19,7 +19,7 @@ class SettingVC: UIViewController {
         super.viewDidLoad()
         settingDeatils = [
             AppCommonModel(id: .CHILD_MODE, image: UIImage(named: "icon_permission_childmode"), title: "Child Mode"),
-            AppCommonModel(id: .DARK_MODE, image: UIImage(named: "icon_dark_mode"), title: "Dark Mode"),
+            //AppCommonModel(id: .DARK_MODE, image: UIImage(named: "icon_dark_mode"), title: "Dark Mode"),
             
             AppCommonModel(id: .RATE_NOW, image: UIImage(named: "icon_rate_us"), title: "Rate now"),
             AppCommonModel(id: .SHARE, image: UIImage(named: "icon_share_app"), title: "Share app"),

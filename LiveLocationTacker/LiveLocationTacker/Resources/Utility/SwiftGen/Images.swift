@@ -22,12 +22,15 @@ internal typealias AssetColorTypeAlias = ColorAsset.Color
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 internal enum Asset {
+  internal static let color00000020 = ColorAsset(name: "Color-000000-20")
+  internal static let color00000030 = ColorAsset(name: "Color-000000-30")
   internal static let color000000 = ColorAsset(name: "Color-000000")
   internal static let color00131A = ColorAsset(name: "Color-00131A")
   internal static let color00BDFF10 = ColorAsset(name: "Color-00BDFF-10")
   internal static let color00BDFF15 = ColorAsset(name: "Color-00BDFF-15")
   internal static let color00BDFF20 = ColorAsset(name: "Color-00BDFF-20")
   internal static let color00BDFF = ColorAsset(name: "Color-00BDFF")
+  internal static let color02020230 = ColorAsset(name: "Color-020202-30")
   internal static let color1C2327 = ColorAsset(name: "Color-1C2327")
   internal static let color334248 = ColorAsset(name: "Color-334248")
   internal static let color404C50 = ColorAsset(name: "Color-404C50")
@@ -37,6 +40,7 @@ internal enum Asset {
   internal static let colorFF6961 = ColorAsset(name: "Color-FF6961")
   internal static let colorFFFFFF10 = ColorAsset(name: "Color-FFFFFF-10")
   internal static let colorFFFFFF15 = ColorAsset(name: "Color-FFFFFF-15")
+  internal static let colorFFFFFF20 = ColorAsset(name: "Color-FFFFFF-20")
   internal static let backgroundColor = ColorAsset(name: "backgroundColor")
   internal static let bgcolor = ColorAsset(name: "bgcolor")
   internal static let btncolor = ColorAsset(name: "btncolor")

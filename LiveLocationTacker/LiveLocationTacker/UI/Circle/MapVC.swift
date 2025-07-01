@@ -52,6 +52,14 @@ class MapVC: UIViewController {
         animationView.frame = plus_lottieview.bounds
         plus_lottieview.addSubview(animationView)
         animationView.play()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+            let vc = StoryboardScene.Settings.choosePlanVC.instantiate()
+            vc.modalPresentationStyle = .fullScreen
+            vc.hidesBottomBarWhenPushed = true
+            //self.present(vc, animated: true)
+            self.navigationController?.pushViewController(vc, animated: true)
+        })
     }
     
     override func viewWillAppear(_ animated: Bool) {

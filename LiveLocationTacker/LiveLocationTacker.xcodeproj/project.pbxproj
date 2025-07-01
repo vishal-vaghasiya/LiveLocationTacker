@@ -13,6 +13,14 @@
 		0F1777792E124932000BC3D8 /* MapTypeCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1777762E124932000BC3D8 /* MapTypeCVCell.swift */; };
 		0F17779E2E1266BC000BC3D8 /* PopupFailedSOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F17779D2E1266BC000BC3D8 /* PopupFailedSOS.swift */; };
 		0F1777A32E126BD0000BC3D8 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F1777A22E126BD0000BC3D8 /* Settings.storyboard */; };
+		0F18328D2E13ABB400D03B9B /* ActiveSubscriptionListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F18328C2E13ABB400D03B9B /* ActiveSubscriptionListVC.swift */; };
+		0F1832902E13AE3A00D03B9B /* ActiveSubscriptionCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F18328F2E13AE3A00D03B9B /* ActiveSubscriptionCVCell.xib */; };
+		0F1832912E13AE3A00D03B9B /* ActiveSubscriptionCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F18328E2E13AE3A00D03B9B /* ActiveSubscriptionCVCell.swift */; };
+		0F1832942E13B97C00D03B9B /* ChangePlanButtonCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F1832932E13B97C00D03B9B /* ChangePlanButtonCVCell.xib */; };
+		0F1832952E13B97C00D03B9B /* ChangePlanButtonCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1832922E13B97C00D03B9B /* ChangePlanButtonCVCell.swift */; };
+		0F1832972E13D84A00D03B9B /* ChoosePlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1832962E13D84A00D03B9B /* ChoosePlanVC.swift */; };
+		0F18329A2E13DC6E00D03B9B /* PlanCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1832982E13DC6E00D03B9B /* PlanCVCell.swift */; };
+		0F18329B2E13DC6E00D03B9B /* PlanCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F1832992E13DC6E00D03B9B /* PlanCVCell.xib */; };
 		0F2DBFA42E0D3D4500243B13 /* UIEnableDisable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2DBFA32E0D3D4100243B13 /* UIEnableDisable.swift */; };
 		0F2DBFA62E0D45CF00243B13 /* NTTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2DBFA52E0D45CF00243B13 /* NTTextField.swift */; };
 		0F2DBFAC2E0D7D8A00243B13 /* PhotoPickerPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2DBFAB2E0D7D8A00243B13 /* PhotoPickerPopup.swift */; };
@@ -115,6 +123,14 @@
 		0F1777772E124932000BC3D8 /* MapTypeCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapTypeCVCell.xib; sourceTree = "<group>"; };
 		0F17779D2E1266BC000BC3D8 /* PopupFailedSOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupFailedSOS.swift; sourceTree = "<group>"; };
 		0F1777A22E126BD0000BC3D8 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		0F18328C2E13ABB400D03B9B /* ActiveSubscriptionListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveSubscriptionListVC.swift; sourceTree = "<group>"; };
+		0F18328E2E13AE3A00D03B9B /* ActiveSubscriptionCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveSubscriptionCVCell.swift; sourceTree = "<group>"; };
+		0F18328F2E13AE3A00D03B9B /* ActiveSubscriptionCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActiveSubscriptionCVCell.xib; sourceTree = "<group>"; };
+		0F1832922E13B97C00D03B9B /* ChangePlanButtonCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePlanButtonCVCell.swift; sourceTree = "<group>"; };
+		0F1832932E13B97C00D03B9B /* ChangePlanButtonCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePlanButtonCVCell.xib; sourceTree = "<group>"; };
+		0F1832962E13D84A00D03B9B /* ChoosePlanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePlanVC.swift; sourceTree = "<group>"; };
+		0F1832982E13DC6E00D03B9B /* PlanCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanCVCell.swift; sourceTree = "<group>"; };
+		0F1832992E13DC6E00D03B9B /* PlanCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanCVCell.xib; sourceTree = "<group>"; };
 		0F2DBFA32E0D3D4100243B13 /* UIEnableDisable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEnableDisable.swift; sourceTree = "<group>"; };
 		0F2DBFA52E0D45CF00243B13 /* NTTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTTextField.swift; sourceTree = "<group>"; };
 		0F2DBFAB2E0D7D8A00243B13 /* PhotoPickerPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerPopup.swift; sourceTree = "<group>"; };
@@ -272,7 +288,9 @@
 				0F1777A22E126BD0000BC3D8 /* Settings.storyboard */,
 				BD7FE32E2CEC4AD7006C32D2 /* SettingVC.swift */,
 				BD38B9002CEC66540088D0C7 /* ProfileVC.swift */,
+				0F1832962E13D84A00D03B9B /* ChoosePlanVC.swift */,
 				F3CAD9D72D527BC8008C7600 /* SubscribeVC.swift */,
+				0F18328C2E13ABB400D03B9B /* ActiveSubscriptionListVC.swift */,
 				0FE65B172E12B38800B713DD /* Popup */,
 				0FE65B0C2E12855300B713DD /* XIB */,
 			);
@@ -405,6 +423,12 @@
 				BD7FE32C2CEC4ACA006C32D2 /* SettingTBVCell.swift */,
 				0FE65B0D2E1285AF00B713DD /* SettingTVCell.swift */,
 				0FE65B0E2E1285AF00B713DD /* SettingTVCell.xib */,
+				0F18328E2E13AE3A00D03B9B /* ActiveSubscriptionCVCell.swift */,
+				0F18328F2E13AE3A00D03B9B /* ActiveSubscriptionCVCell.xib */,
+				0F1832922E13B97C00D03B9B /* ChangePlanButtonCVCell.swift */,
+				0F1832932E13B97C00D03B9B /* ChangePlanButtonCVCell.xib */,
+				0F1832982E13DC6E00D03B9B /* PlanCVCell.swift */,
+				0F1832992E13DC6E00D03B9B /* PlanCVCell.xib */,
 			);
 			path = XIB;
 			sourceTree = "<group>";
@@ -682,6 +706,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD1A20602CD0B2E10033A8BA /* Assets.xcassets in Resources */,
+				0F18329B2E13DC6E00D03B9B /* PlanCVCell.xib in Resources */,
 				BD9DB1382CE856F5003615FE /* TabBar.storyboard in Resources */,
 				0FE65B142E12A86D00B713DD /* Circle.storyboard in Resources */,
 				BD7FE3372CEC4F46006C32D2 /* SettingHeaderView.xib in Resources */,
@@ -697,6 +722,7 @@
 				0FF019502E0E5C8500575BB0 /* GoogleService-Info.plist in Resources */,
 				0FF0194B2E0E4D5200575BB0 /* Poppins-Bold.ttf in Resources */,
 				0FF0194C2E0E4D5200575BB0 /* Poppins-Medium.ttf in Resources */,
+				0F1832942E13B97C00D03B9B /* ChangePlanButtonCVCell.xib in Resources */,
 				BD1A20B32CD0B4570033A8BA /* Color.xcassets in Resources */,
 				BD1A205E2CD0B2E00033A8BA /* Base in Resources */,
 				BD1A20B12CD0B3510033A8BA /* UpdateViewController.xib in Resources */,
@@ -704,6 +730,7 @@
 				0FE65B162E12A95D00B713DD /* Compass.storyboard in Resources */,
 				0F2DBFAE2E0D7E2500243B13 /* swiftgen.yml in Resources */,
 				0F1777A32E126BD0000BC3D8 /* Settings.storyboard in Resources */,
+				0F1832902E13AE3A00D03B9B /* ActiveSubscriptionCVCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -815,6 +842,7 @@
 				BD38B9012CEC66540088D0C7 /* ProfileVC.swift in Sources */,
 				BD9DB14C2CE858D8003615FE /* SplashVC.swift in Sources */,
 				BD1A20AF2CD0B3510033A8BA /* DefaultManager.swift in Sources */,
+				0F1832952E13B97C00D03B9B /* ChangePlanButtonCVCell.swift in Sources */,
 				BD1A20A72CD0B3510033A8BA /* BasicStuff.swift in Sources */,
 				BD1A20A22CD0B3510033A8BA /* PermissionManager.swift in Sources */,
 				BD75DDBB2CE8A1A600A028BD /* MemberTBVCell.swift in Sources */,
@@ -841,12 +869,14 @@
 				BDBC8B6D2CEB527A00D913F0 /* UserDeatilsVC.swift in Sources */,
 				BD1A20AC2CD0B3510033A8BA /* QuickLookManager.swift in Sources */,
 				BD7F29072D1A72810020B37D /* ScantoJoinVC.swift in Sources */,
+				0F1832912E13AE3A00D03B9B /* ActiveSubscriptionCVCell.swift in Sources */,
 				BD1A20992CD0B3510033A8BA /* FSPageViewTransformer.swift in Sources */,
 				BDC25BB32CE87BE6002E865D /* LoginMobilenumberVC.swift in Sources */,
 				0FE65B192E12B3A500B713DD /* PopupProfileUpdateSuccess.swift in Sources */,
 				BD1A20962CD0B3510033A8BA /* FSPagerViewLayoutAttributes.swift in Sources */,
 				BD1A20AE2CD0B3510033A8BA /* UITableView+Extension.swift in Sources */,
 				BD1A20A52CD0B3510033A8BA /* AFWrapper.swift in Sources */,
+				0F18328D2E13ABB400D03B9B /* ActiveSubscriptionListVC.swift in Sources */,
 				BD1A20A82CD0B3510033A8BA /* CollectionView+Extension.swift in Sources */,
 				0F2DBFBA2E0D7F3300243B13 /* Fonts.swift in Sources */,
 				BD1A20A92CD0B3510033A8BA /* Constant.swift in Sources */,
@@ -874,7 +904,9 @@
 				BD1A20952CD0B3510033A8BA /* FSPagerViewCell.swift in Sources */,
 				0FE65B122E12A01600B713DD /* VisualEffectView.swift in Sources */,
 				BD1A20592CD0B2E00033A8BA /* SceneDelegate.swift in Sources */,
+				0F1832972E13D84A00D03B9B /* ChoosePlanVC.swift in Sources */,
 				BD1A20942CD0B3510033A8BA /* FSPagerView.swift in Sources */,
+				0F18329A2E13DC6E00D03B9B /* PlanCVCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
