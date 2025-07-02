@@ -35,7 +35,7 @@ class Constants {
     public static var TERMS = "https://ikameinfotech.xyz/iPhoneTracker/iPhoneTrackerTermConditions.html"
     
     //Revenucat
-    public static let REVANUE_API = ""
+//    public static let REVANUE_API = ""
     public static let entitlementID = ""
     
     //AdS ID

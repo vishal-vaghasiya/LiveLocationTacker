@@ -35,6 +35,7 @@
 		0F9BD0702E15347300B0D189 /* PopupInviteChildMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9BD06F2E15347300B0D189 /* PopupInviteChildMode.swift */; };
 		0F9BD0782E153BF500B0D189 /* ChildModeCircleTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9BD0762E153BF500B0D189 /* ChildModeCircleTVCell.swift */; };
 		0F9BD0792E153BF500B0D189 /* ChildModeCircleTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F9BD0772E153BF500B0D189 /* ChildModeCircleTVCell.xib */; };
+		0F9BD07B2E154CA800B0D189 /* RevenueCatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9BD07A2E154CA700B0D189 /* RevenueCatManager.swift */; };
 		0FE65B0F2E1285AF00B713DD /* SettingTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE65B0D2E1285AF00B713DD /* SettingTVCell.swift */; };
 		0FE65B102E1285AF00B713DD /* SettingTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FE65B0E2E1285AF00B713DD /* SettingTVCell.xib */; };
 		0FE65B122E12A01600B713DD /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE65B112E12A01600B713DD /* VisualEffectView.swift */; };
@@ -152,6 +153,7 @@
 		0F9BD06F2E15347300B0D189 /* PopupInviteChildMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupInviteChildMode.swift; sourceTree = "<group>"; };
 		0F9BD0762E153BF500B0D189 /* ChildModeCircleTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildModeCircleTVCell.swift; sourceTree = "<group>"; };
 		0F9BD0772E153BF500B0D189 /* ChildModeCircleTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChildModeCircleTVCell.xib; sourceTree = "<group>"; };
+		0F9BD07A2E154CA700B0D189 /* RevenueCatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevenueCatManager.swift; sourceTree = "<group>"; };
 		0FE65B0D2E1285AF00B713DD /* SettingTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTVCell.swift; sourceTree = "<group>"; };
 		0FE65B0E2E1285AF00B713DD /* SettingTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTVCell.xib; sourceTree = "<group>"; };
 		0FE65B112E12A01600B713DD /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 		0F2DBFB32E0D7EAD00243B13 /* ClassManager */ = {
 			isa = PBXGroup;
 			children = (
+				0F9BD07A2E154CA700B0D189 /* RevenueCatManager.swift */,
 				0FE65B112E12A01600B713DD /* VisualEffectView.swift */,
 				0F2DBFA32E0D3D4100243B13 /* UIEnableDisable.swift */,
 				0F2DBFA52E0D45CF00243B13 /* NTTextField.swift */,
@@ -947,6 +950,7 @@
 				BD9DB1502CE85971003615FE /* OnboardingFSPagerviewCell.swift in Sources */,
 				BD1A20952CD0B3510033A8BA /* FSPagerViewCell.swift in Sources */,
 				0FE65B122E12A01600B713DD /* VisualEffectView.swift in Sources */,
+				0F9BD07B2E154CA800B0D189 /* RevenueCatManager.swift in Sources */,
 				BD1A20592CD0B2E00033A8BA /* SceneDelegate.swift in Sources */,
 				0F1832972E13D84A00D03B9B /* ChoosePlanVC.swift in Sources */,
 				BD1A20942CD0B3510033A8BA /* FSPagerView.swift in Sources */,

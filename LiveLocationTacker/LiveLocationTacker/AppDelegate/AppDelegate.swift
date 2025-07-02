@@ -67,9 +67,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
         UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffset(horizontal: -1000, vertical: 0), for: .default)
         
         // inAppppurchage
-        Purchases.logLevel = .debug
-        Purchases.configure(withAPIKey: Constants.REVANUE_API)
-        Purchases.shared.delegate = self
+//        Purchases.logLevel = .debug
+//        Purchases.configure(withAPIKey: Constants.REVANUE_API)
+//        Purchases.shared.delegate = self
+        RevenueCatManager.shared.configureRevenueCat(userId: nil) // or pass custom user ID
         
 //        ApplicationDelegate.shared.application(
 //            application,
