@@ -10,8 +10,7 @@ import FirebaseDatabase
 import CoreLocation
 import SwiftJWT
 import FirebaseAuth
-
-
+import FirebaseStorage
 
 struct GoogleJWTClaims: Claims {
     let iss: String // Issuer (email from service account)
@@ -25,7 +24,7 @@ struct GoogleJWTClaims: Claims {
 class FirebaseManager {
     
     let ref: DatabaseReference
-
+    
     init() {
         ref = Database.database().reference()
     }
@@ -63,12 +62,12 @@ class FirebaseManager {
             completion(false ,"No verification ID found.")
             return
         }
-
+        
         let credential = PhoneAuthProvider.provider().credential(
             withVerificationID: verificationID,
             verificationCode: otpCode
         )
-
+        
         Auth.auth().signIn(with: credential) { authResult, error in
             if let error = error {
                 print("OTP verification failed: \(error.localizedDescription)")
@@ -83,7 +82,7 @@ class FirebaseManager {
     // Create a circle with a unique invitation code
     func createCircle(name: String,userName:String,userPhone: String, batteryLevel: Int, completion: @escaping (String?) -> Void) {
         let code = UUID().uuidString.prefix(6) // Short code
-
+        
         LocationManager.shared.getCurrentLocation { location in
             
             let circleData: [String: Any] = [
@@ -101,7 +100,7 @@ class FirebaseManager {
                     ]
                 ]
             ]
-
+            
             self.ref.child("circles").childByAutoId().setValue(circleData) { error, _ in
                 if let error = error {
                     print("Error creating circle: \(error.localizedDescription)")
@@ -113,7 +112,7 @@ class FirebaseManager {
             }
         }
     }
-
+    
     func saveFcmTokenFirebase(){
         if Constants.USERDEFAULTS.getFCMToken().isEmpty == false {
             ref.child("circles").queryOrdered(byChild: "admin").queryEqual(toValue: Constants.USERDEFAULTS.getCurrentuserNumber()).observeSingleEvent(of: .value) { snapshot in
@@ -213,38 +212,38 @@ class FirebaseManager {
     }
     
     
-//    func fetchCirclesForMember(completion: @escaping ([DataSnapshot]) -> Void) {
-//        
-//        
-////        ref.child("circles").child().child("members").observeSingleEvent(of: .value) { snapSort in
-////
-////            print(snapSort.key)
-////        }
-//        
-////        ref.child("circles").observeSingleEvent(of: .value) { snapshot in
-////            var userCircles:[DataSnapshot] = []
-////            
-////            for case let circleSnapshot as DataSnapshot in snapshot.children {
-////                if let circleData = circleSnapshot.value as? [String: Any],
-////                   let members = circleData["members"] as? [String: Any] {
-////                    
-////                    // Check if the user's phone number is in the members list
-////                    if members.keys.contains(phoneNumber) {
-////                        userCircles.append(circleData)
-////                    }
-////                }
-////            }
-////            
-////            if !userCircles.isEmpty {
-////                completion(userCircles)
-////            }
-////            else {
-////                print("No circles found for the given phone number.")
-////                completion([],"")
-////            }
-////        }
-//    }
-
+    //    func fetchCirclesForMember(completion: @escaping ([DataSnapshot]) -> Void) {
+    //
+    //
+    ////        ref.child("circles").child().child("members").observeSingleEvent(of: .value) { snapSort in
+    ////
+    ////            print(snapSort.key)
+    ////        }
+    //
+    ////        ref.child("circles").observeSingleEvent(of: .value) { snapshot in
+    ////            var userCircles:[DataSnapshot] = []
+    ////
+    ////            for case let circleSnapshot as DataSnapshot in snapshot.children {
+    ////                if let circleData = circleSnapshot.value as? [String: Any],
+    ////                   let members = circleData["members"] as? [String: Any] {
+    ////
+    ////                    // Check if the user's phone number is in the members list
+    ////                    if members.keys.contains(phoneNumber) {
+    ////                        userCircles.append(circleData)
+    ////                    }
+    ////                }
+    ////            }
+    ////
+    ////            if !userCircles.isEmpty {
+    ////                completion(userCircles)
+    ////            }
+    ////            else {
+    ////                print("No circles found for the given phone number.")
+    ////                completion([],"")
+    ////            }
+    ////        }
+    //    }
+    
     func fetchMemberDetailsFromID(ID: String, completion: @escaping (String,Int) -> Void){
         ref.child("circles").child(ID).child("members").observeSingleEvent(of: .value) { snapshot in
             guard let members = snapshot.value as? [String: Any] else {
@@ -323,7 +322,7 @@ class FirebaseManager {
         let group = DispatchGroup()
         var updateSuccess = true
         var errorMessage: String?
-
+        
         // Query circles where the user is the admin
         ref.queryOrdered(byChild: "admin").queryEqual(toValue: userPhonenumber).observeSingleEvent(of: .value) { snapshot in
             if snapshot.exists() {
@@ -374,18 +373,18 @@ class FirebaseManager {
             .queryOrdered(byChild: "admin")
             .queryEqual(toValue: phoneNumber)
             .observeSingleEvent(of: .value) { snapshot in
-
-            guard
-                let data = snapshot.value as? [String: Any],
-                let firstCircle = data.first,
-                let circleDict = firstCircle.value as? [String: Any]
-            else {
-                completion(false, nil) // No user found
-                return
+                
+                guard
+                    let data = snapshot.value as? [String: Any],
+                    let firstCircle = data.first,
+                    let circleDict = firstCircle.value as? [String: Any]
+                else {
+                    completion(false, nil) // No user found
+                    return
+                }
+                
+                completion(true, circleDict) // User found
             }
-
-            completion(true, circleDict) // User found
-        }
     }
     
     func deleteUserAccount(userPhoneNumber: String, completion: @escaping (Bool) -> Void) {
@@ -440,7 +439,41 @@ class FirebaseManager {
             }
         }
     }
-
+    
+    func uploadProfileImage(_ image: UIImage, completion: @escaping (Result<URL, Error>) -> Void) {
+        guard let compressedData = image.jpegData(compressionQuality: 0.5),
+              let userId = Auth.auth().currentUser?.uid else {
+            return
+        }
+        
+        let storageRef = Storage.storage().reference().child("profile_images/\(userId).jpg")
+        
+        storageRef.putData(compressedData, metadata: nil) { _, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            
+            storageRef.downloadURL { url, error in
+                if let error = error {
+                    completion(.failure(error))
+                } else if let url = url {
+                    completion(.success(url))
+                }
+            }
+        }
+    }
+    
+    func updateUserProfile(with imageURL: URL, completion: @escaping (Error?) -> Void) {
+        if let user = Auth.auth().currentUser {
+            let changeRequest = user.createProfileChangeRequest()
+            changeRequest.photoURL = imageURL
+            changeRequest.commitChanges { error in
+                completion(error)
+            }
+        }
+    }
+    
     func generateAccessToken(completion: @escaping (String?) -> Void) {
         // Path to your Service Account JSON file
         guard let filePath = Bundle.main.path(forResource: "phonetracker", ofType: "json"),
@@ -452,10 +485,10 @@ class FirebaseManager {
             completion(nil)
             return
         }
-
+        
         let currentTime = Int(Date().timeIntervalSince1970)
         let expirationTime = currentTime + 3600 // Token valid for 1 hour
-
+        
         // Create JWT claims
         let claims = GoogleJWTClaims(
             iss: clientEmail,
@@ -464,7 +497,7 @@ class FirebaseManager {
             exp: expirationTime,
             iat: currentTime
         )
-
+        
         // Create JWT signer
         var jwt = JWT(claims: claims)
         guard let privateKeyData = privateKey.data(using: .utf8) else {
@@ -472,7 +505,7 @@ class FirebaseManager {
             completion(nil)
             return
         }
-
+        
         let jwtSigner = JWTSigner.rs256(privateKey: privateKeyData)
         
         // Encode JWT
@@ -481,16 +514,16 @@ class FirebaseManager {
             completion(nil)
             return
         }
-
+        
         // Request Access Token
         let url = URL(string: "https://oauth2.googleapis.com/token")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-
+        
         let bodyString = "grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer&assertion=\(jwtString)"
         request.httpBody = bodyString.data(using: .utf8)
-
+        
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil,
                   let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
@@ -499,12 +532,12 @@ class FirebaseManager {
                 completion(nil)
                 return
             }
-
+            
             completion(accessToken)
         }
         task.resume()
     }
-
+    
     func sendPushNotification(fcmToken: String, title: String = Constants.APP_NAME, body: String) {
         generateAccessToken { accessToken in
             guard let accessToken = accessToken else {
@@ -519,7 +552,7 @@ class FirebaseManager {
             request.httpMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
-
+            
             let message: [String: Any] = [
                 "message": [
                     "token": fcmToken,
@@ -529,20 +562,20 @@ class FirebaseManager {
                     ]
                 ]
             ]
-
+            
             guard let jsonData = try? JSONSerialization.data(withJSONObject: message, options: []) else {
                 print("Error: Unable to serialize JSON.")
                 return
             }
-
+            
             request.httpBody = jsonData
-
+            
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 if let error = error {
                     print("Error sending notification: \(error)")
                     return
                 }
-
+                
                 if let data = data, let responseString = String(data: data, encoding: .utf8) {
                     print("Notification sent successfully: \(responseString)")
                 }
@@ -551,62 +584,62 @@ class FirebaseManager {
         }
     }
     
-//    func fetchTodayLocations(for userNumber: String, completion: @escaping ([UserLocationModel]) -> Void) {
-//        let calendar = Calendar.current
-//        let now = Date()
-//        
-//        let startOfToday = Calendar.current.startOfDay(for: now)
-//        let endOfToday = calendar.date(byAdding: DateComponents(day: 1, second: -1), to: startOfToday)!
-//        
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-//        formatter.timeZone = .current
-//
-//        let formattedStartOfToday = formatter.string(from: startOfToday)
-//        let formattedEndOfToday = formatter.string(from: endOfToday)
-//        
-//        let formatter1 = DateFormatter()
-//        formatter1.dateFormat = "yyyy-MM-dd HH:mm:ss"
-//        formatter1.timeZone = .init(secondsFromGMT: 0)
-//        
-//        guard let startOfDay = formatter1.date(from: formattedStartOfToday) else {
-//            print("❌ Failed to convert formatted string back to Date.")
-//            return
-//        }
-//        
-//        guard let endOfDay = formatter1.date(from: formattedEndOfToday) else {
-//            print("❌ Failed to convert formatted string back to Date.")
-//            return
-//        }
-//        
-//        // Convert to UTC timestamps
-//        let startTimestamp = startOfDay.getCurrentUTCTimestampInfo().timestampSeconds
-//        let endTimestamp = endOfDay.getCurrentUTCTimestampInfo().timestampSeconds
-//
-//        // Reference to user's location data
-//        let ref = Database.database().reference()
-//        let userRef = ref.child("user_locations").child(userNumber)
-//        
-//        userRef.observeSingleEvent(of: .value) { snapshot in
-//            guard let data = snapshot.value as? [String: [String: Any]] else {
-//                print("❌ No data")
-//                completion([])
-//                return
-//            }
-//            
-//            let todayModels: [UserLocationModel] = data.compactMap { (_, value) in
-//                guard let timestamp = value["timestamp"] as? Int,
-//                      timestamp >= startTimestamp,
-//                      timestamp <= endTimestamp else {
-//                    return nil
-//                }
-//                print(value["timestamp"])
-//                return UserLocationModel(from: value)
-//            }
-//            
-//            completion(todayModels)
-//        }
-//    }
+    //    func fetchTodayLocations(for userNumber: String, completion: @escaping ([UserLocationModel]) -> Void) {
+    //        let calendar = Calendar.current
+    //        let now = Date()
+    //
+    //        let startOfToday = Calendar.current.startOfDay(for: now)
+    //        let endOfToday = calendar.date(byAdding: DateComponents(day: 1, second: -1), to: startOfToday)!
+    //
+    //        let formatter = DateFormatter()
+    //        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+    //        formatter.timeZone = .current
+    //
+    //        let formattedStartOfToday = formatter.string(from: startOfToday)
+    //        let formattedEndOfToday = formatter.string(from: endOfToday)
+    //
+    //        let formatter1 = DateFormatter()
+    //        formatter1.dateFormat = "yyyy-MM-dd HH:mm:ss"
+    //        formatter1.timeZone = .init(secondsFromGMT: 0)
+    //
+    //        guard let startOfDay = formatter1.date(from: formattedStartOfToday) else {
+    //            print("❌ Failed to convert formatted string back to Date.")
+    //            return
+    //        }
+    //
+    //        guard let endOfDay = formatter1.date(from: formattedEndOfToday) else {
+    //            print("❌ Failed to convert formatted string back to Date.")
+    //            return
+    //        }
+    //
+    //        // Convert to UTC timestamps
+    //        let startTimestamp = startOfDay.getCurrentUTCTimestampInfo().timestampSeconds
+    //        let endTimestamp = endOfDay.getCurrentUTCTimestampInfo().timestampSeconds
+    //
+    //        // Reference to user's location data
+    //        let ref = Database.database().reference()
+    //        let userRef = ref.child("user_locations").child(userNumber)
+    //
+    //        userRef.observeSingleEvent(of: .value) { snapshot in
+    //            guard let data = snapshot.value as? [String: [String: Any]] else {
+    //                print("❌ No data")
+    //                completion([])
+    //                return
+    //            }
+    //
+    //            let todayModels: [UserLocationModel] = data.compactMap { (_, value) in
+    //                guard let timestamp = value["timestamp"] as? Int,
+    //                      timestamp >= startTimestamp,
+    //                      timestamp <= endTimestamp else {
+    //                    return nil
+    //                }
+    //                print(value["timestamp"])
+    //                return UserLocationModel(from: value)
+    //            }
+    //
+    //            completion(todayModels)
+    //        }
+    //    }
     
     func fetchTodayLocations(for userNumber: String, completion: @escaping ([UserLocationModel]) -> Void) {
         
@@ -616,7 +649,7 @@ class FirebaseManager {
         
         let localStart = calendar.startOfDay(for: now)
         let localEnd = calendar.date(byAdding: .day, value: 1, to: localStart)!.addingTimeInterval(-1)
-
+        
         // Step 2: Firebase reference
         let ref = Database.database().reference()
         let userRef = ref.child("user_locations").child(userNumber)
@@ -632,7 +665,7 @@ class FirebaseManager {
                 guard let timestamp = value["timestamp"] as? Int else {
                     return nil
                 }
-
+                
                 // Convert UTC timestamp to Date
                 let utcDate = Date(timeIntervalSince1970: TimeInterval(timestamp))
                 
@@ -640,7 +673,7 @@ class FirebaseManager {
                 guard utcDate >= localStart && utcDate <= localEnd else {
                     return nil
                 }
-
+                
                 return UserLocationModel(from: value)
             }
             
@@ -648,69 +681,69 @@ class FirebaseManager {
         }
     }
     
-//    func deleteUserAccount(userPhoneNumber: String, completion: @escaping (Bool) -> Void) {
-//        self.ref.child("circles").queryOrdered(byChild: "admin").queryEqual(toValue: userPhoneNumber).observeSingleEvent(of: .value) { snapshot in
-//            guard snapshot.exists() else {
-//                completion(false) // No circles found for the user
-//                return
-//            }
-//            
-//            let group = DispatchGroup() // To ensure all deletions are complete
-//            
-//            for snap in snapshot.children.allObjects as! [DataSnapshot] {
-//                group.enter() // Enter for circle deletion
-//                
-//                // Remove the circle where the user is the admin
-//                self.ref.child("circles").child(snap.key).removeValue { error, _ in
-//                    if let error = error {
-//                        print("Error deleting circle: \(error.localizedDescription)")
-//                    }
-//                    group.leave() // Leave for circle deletion
-//                }
-//            }
-//            
-//            // Delete user from "members" section in all circles
-//            self.ref.child("circles").observeSingleEvent(of: .value) { allCirclesSnapshot in
-//                for circleSnap in allCirclesSnapshot.children.allObjects as! [DataSnapshot] {
-//                    if circleSnap.childSnapshot(forPath: "members").hasChild(userPhoneNumber) {
-//                        group.enter() // Enter for member removal
-//                        self.ref.child("circles").child(circleSnap.key).child("members").child(userPhoneNumber).removeValue { error, _ in
-//                            if let error = error {
-//                                print("Error removing member: \(error.localizedDescription)")
-//                            }
-//                            group.leave() // Leave for member removal
-//                        }
-//                    }
-//                }
-//            }
-//            
-//            // Notify completion after all deletions
-//            group.notify(queue: .main) {
-//                completion(true)
-//            }
-//        }
-//    }
-
+    //    func deleteUserAccount(userPhoneNumber: String, completion: @escaping (Bool) -> Void) {
+    //        self.ref.child("circles").queryOrdered(byChild: "admin").queryEqual(toValue: userPhoneNumber).observeSingleEvent(of: .value) { snapshot in
+    //            guard snapshot.exists() else {
+    //                completion(false) // No circles found for the user
+    //                return
+    //            }
+    //
+    //            let group = DispatchGroup() // To ensure all deletions are complete
+    //
+    //            for snap in snapshot.children.allObjects as! [DataSnapshot] {
+    //                group.enter() // Enter for circle deletion
+    //
+    //                // Remove the circle where the user is the admin
+    //                self.ref.child("circles").child(snap.key).removeValue { error, _ in
+    //                    if let error = error {
+    //                        print("Error deleting circle: \(error.localizedDescription)")
+    //                    }
+    //                    group.leave() // Leave for circle deletion
+    //                }
+    //            }
+    //
+    //            // Delete user from "members" section in all circles
+    //            self.ref.child("circles").observeSingleEvent(of: .value) { allCirclesSnapshot in
+    //                for circleSnap in allCirclesSnapshot.children.allObjects as! [DataSnapshot] {
+    //                    if circleSnap.childSnapshot(forPath: "members").hasChild(userPhoneNumber) {
+    //                        group.enter() // Enter for member removal
+    //                        self.ref.child("circles").child(circleSnap.key).child("members").child(userPhoneNumber).removeValue { error, _ in
+    //                            if let error = error {
+    //                                print("Error removing member: \(error.localizedDescription)")
+    //                            }
+    //                            group.leave() // Leave for member removal
+    //                        }
+    //                    }
+    //                }
+    //            }
+    //
+    //            // Notify completion after all deletions
+    //            group.notify(queue: .main) {
+    //                completion(true)
+    //            }
+    //        }
+    //    }
     
-//    func deleteUserAccount(userPhoneNumber: String, completion: @escaping (Bool) -> Void) {
-//        self.ref.child("circles").queryOrdered(byChild: "admin").queryEqual(toValue: userPhoneNumber).observeSingleEvent(of: .value) { snapshot in
-//            if snapshot.exists() {
-//                for snap in snapshot.children.allObjects as! [DataSnapshot] {
-//                    // Remove each circle where the user is the admin
-//                    self.ref.child("circles").child(snap.key).removeValue { error, _ in
-//                        if error != nil {
-//                            completion(false)
-//                            return
-//                        }
-//                        else{
-//                            completion(true)
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//    }
-
+    
+    //    func deleteUserAccount(userPhoneNumber: String, completion: @escaping (Bool) -> Void) {
+    //        self.ref.child("circles").queryOrdered(byChild: "admin").queryEqual(toValue: userPhoneNumber).observeSingleEvent(of: .value) { snapshot in
+    //            if snapshot.exists() {
+    //                for snap in snapshot.children.allObjects as! [DataSnapshot] {
+    //                    // Remove each circle where the user is the admin
+    //                    self.ref.child("circles").child(snap.key).removeValue { error, _ in
+    //                        if error != nil {
+    //                            completion(false)
+    //                            return
+    //                        }
+    //                        else{
+    //                            completion(true)
+    //                        }
+    //                    }
+    //                }
+    //            }
+    //        }
+    //    }
+    
 }
 
 
@@ -798,7 +831,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         let alert = UIAlertController(title: "Permission Required",
                                       message: "Please enable permissions in Settings",
                                       preferredStyle: .alert)
-
+        
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Open Settings", style: .default, handler: { _ in
             if let settingsURL = URL(string: UIApplication.openSettingsURLString),
@@ -806,7 +839,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
                 UIApplication.shared.open(settingsURL)
             }
         }))
-
+        
         // Present the alert from top ViewController
         if let topController = UIApplication.shared.windows.first?.rootViewController {
             topController.present(alert, animated: true)
@@ -877,20 +910,20 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
             completion(nil)
             return
         }
-
+        
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
                 print("❌ API Error: \(error.localizedDescription)")
                 completion(nil)
                 return
             }
-
+            
             guard let data = data else {
                 print("❗️No data")
                 completion(nil)
                 return
             }
-
+            
             do {
                 if let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
                    let results = json["results"] as? [[String: Any]],
@@ -911,28 +944,28 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         // Make your API call to update user location
         print("✅ Sending updated location to server: \(lat), \(long)")
         
-//        let geocoder = CLGeocoder()
-//        geocoder.reverseGeocodeLocation(CLLocation(latitude: lat, longitude: long)) { placemarks, error in
-//            if let error = error {
-//                //print("❌ Reverse geocoding failed: \(error.localizedDescription)")
-//                return
-//            }
-//            
-//            guard let placemark = placemarks?.first else {
-//                //print("❗️No address found")
-//                return
-//            }
-//            
-//            let address = """
-//                                \(placemark.name ?? "")
-//                                \(placemark.locality ?? ""), \(placemark.administrativeArea ?? "")
-//                                \(placemark.postalCode ?? "") \(placemark.country ?? "")
-//                                """
-//            
-//            print("📍 Full Address:\n\(address)")
-//        }
+        //        let geocoder = CLGeocoder()
+        //        geocoder.reverseGeocodeLocation(CLLocation(latitude: lat, longitude: long)) { placemarks, error in
+        //            if let error = error {
+        //                //print("❌ Reverse geocoding failed: \(error.localizedDescription)")
+        //                return
+        //            }
+        //
+        //            guard let placemark = placemarks?.first else {
+        //                //print("❗️No address found")
+        //                return
+        //            }
+        //
+        //            let address = """
+        //                                \(placemark.name ?? "")
+        //                                \(placemark.locality ?? ""), \(placemark.administrativeArea ?? "")
+        //                                \(placemark.postalCode ?? "") \(placemark.country ?? "")
+        //                                """
+        //
+        //            print("📍 Full Address:\n\(address)")
+        //        }
         
-//        FirebaseManager().updateLocationInFirebase(latitude: lat, longitude: long, userPhonenumber: Constants.USERDEFAULTS.getCurrentuserNumber())
+        //        FirebaseManager().updateLocationInFirebase(latitude: lat, longitude: long, userPhonenumber: Constants.USERDEFAULTS.getCurrentuserNumber())
         FirebaseManager().updateUserwiseLocationInFirebase(latitude: lat, longitude: long, userPhonenumber: Constants.USERDEFAULTS.getCurrentuserNumber())
     }
     

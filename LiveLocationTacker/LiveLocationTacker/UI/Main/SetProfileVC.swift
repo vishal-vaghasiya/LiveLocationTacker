@@ -17,7 +17,7 @@ class SetProfileVC: UIViewController {
     @IBOutlet weak var round_imgview: UIView!
     @IBOutlet weak var pencil_view: UIView!
     @IBOutlet weak var txt_name: UITextField!
-    let groupManager = FirebaseManager()
+    let firebaseManager = FirebaseManager()
     override func viewDidLoad() {
         super.viewDidLoad()
         round_imgview.makeRounded()
@@ -64,7 +64,7 @@ class SetProfileVC: UIViewController {
     @IBAction func btnUpdateAction(_ sender: UIButton) {
         showLoader(text: "Updating...")
         
-        groupManager.updateUserNameInFirebase(userPhonenumber: Constants.USERDEFAULTS.getCurrentuserNumber(),entername: txt_name.text ?? "") { updated, errorMessage in
+        firebaseManager.updateUserNameInFirebase(userPhonenumber: Constants.USERDEFAULTS.getCurrentuserNumber(),entername: txt_name.text ?? "") { updated, errorMessage in
             self.hideLoader()
             if updated {
                 Constants.USERDEFAULTS.set(true, forKey: "isIntro")
@@ -90,16 +90,34 @@ extension SetProfileVC: UIImagePickerControllerDelegate, UINavigationControllerD
     // This method gets called when the user selects an image
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil) // Dismiss the picker
-        
-        if let selectedImage = info[.editedImage] as? UIImage {
+        var selectedImage = UIImage()
+        if let editedImage = info[.editedImage] as? UIImage {
             print("Selected edited image: \(selectedImage)")
+            selectedImage = editedImage
             profile_img.image = selectedImage
         }
         else if let originalImage = info[.originalImage] as? UIImage {
             print("Selected original image: \(originalImage)")
+            selectedImage = originalImage
             profile_img.image = originalImage
         }
         Constants.USERDEFAULTS.saveProfileImage(value: profile_img.image?.pngData() ?? Data())
+        
+        firebaseManager.uploadProfileImage(selectedImage) { result in
+            switch result {
+            case .success(let url):
+//                updateUserProfile(with: url) { error in
+//                    if let error = error {
+//                        print("Profile update failed: \(error)")
+//                    } else {
+//                        print("Profile updated successfully!")
+//                    }
+//                }
+            case .failure(let error):
+                print("Upload failed: \(error)")
+            }
+        }
+        
     }
     
     // This method gets called when the user cancels the picker

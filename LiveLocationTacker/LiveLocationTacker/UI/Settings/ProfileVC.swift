@@ -15,7 +15,7 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var btnUpdate: UIEnableDisable!
     @IBOutlet weak var lbl_number: UILabel!
     @IBOutlet weak var txt_name: UITextField!
-    let groupManager = FirebaseManager()
+    let firebaseManager = FirebaseManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,7 +89,7 @@ class ProfileVC: UIViewController {
             Constants.USERDEFAULTS.removeMotionSharing()
             Constants.USERDEFAULTS.removeProfileImage()
             
-            self.groupManager.deleteUserAccount(userPhoneNumber: self.lbl_number.text ?? "") { success in
+            self.firebaseManager.deleteUserAccount(userPhoneNumber: self.lbl_number.text ?? "") { success in
                 self.hideLoader()
                 if success {
                     self.navigateToOnboarding()
@@ -104,7 +104,7 @@ class ProfileVC: UIViewController {
     
     @IBAction func btnUpdateAction(_ sender: UIButton) {
         showLoader(text: "Updating...")
-        groupManager.updateUserNameInFirebase(userPhonenumber: lbl_number.text ?? "", entername: txt_name.text ?? "") { updated, errorMessage in
+        firebaseManager.updateUserNameInFirebase(userPhonenumber: lbl_number.text ?? "", entername: txt_name.text ?? "") { updated, errorMessage in
             self.hideLoader()
             self.txt_name.isUserInteractionEnabled = false
             if updated {
@@ -128,16 +128,33 @@ extension ProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDele
     // This method gets called when the user selects an image
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil) // Dismiss the picker
-        
-        if let selectedImage = info[.editedImage] as? UIImage {
+        var selectedImage = UIImage()
+        if let editedImage = info[.editedImage] as? UIImage {
             print("Selected edited image: \(selectedImage)")
+            selectedImage = editedImage
             profile_img.image = selectedImage
         }
         else if let originalImage = info[.originalImage] as? UIImage {
             print("Selected original image: \(originalImage)")
+            selectedImage = originalImage
             profile_img.image = originalImage
         }
         Constants.USERDEFAULTS.saveProfileImage(value: profile_img.image?.pngData() ?? Data())
+        
+        firebaseManager.uploadProfileImage(selectedImage) { result in
+            switch result {
+            case .success(let url):
+                //                updateUserProfile(with: url) { error in
+                //                    if let error = error {
+                //                        print("Profile update failed: \(error)")
+                //                    } else {
+                //                        print("Profile updated successfully!")
+                //                    }
+                //                }
+            case .failure(let error):
+                print("Upload failed: \(error)")
+            }
+        }
     }
     
     // This method gets called when the user cancels the picker

@@ -27,6 +27,7 @@ target 'LiveLocationTacker' do
   pod 'FirebaseCrashlytics', '~> 11.15'
   pod 'FirebaseAnalytics', '~> 11.15'
   pod 'FirebaseDatabase', '~> 11.15'
+  pod 'FirebaseStorage', '~> 11.15'
   
   pod 'SwiftJWT'
   pod 'RevenueCat'
