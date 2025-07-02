@@ -113,6 +113,7 @@ extension SetProfileVC: UIImagePickerControllerDelegate, UINavigationControllerD
 //                        print("Profile updated successfully!")
 //                    }
 //                }
+                break
             case .failure(let error):
                 print("Upload failed: \(error)")
             }

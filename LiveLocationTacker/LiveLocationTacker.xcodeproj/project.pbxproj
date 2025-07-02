@@ -28,6 +28,13 @@
 		0F2DBFBA2E0D7F3300243B13 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2DBFB92E0D7F3200243B13 /* Fonts.swift */; };
 		0F2DBFBC2E0D7F3B00243B13 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2DBFBB2E0D7F3A00243B13 /* Images.swift */; };
 		0F2DBFBE2E0D7F4500243B13 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2DBFBD2E0D7F4300243B13 /* Storyboards.swift */; };
+		0F9BD0682E14ED8D00B0D189 /* ChildMode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F9BD0672E14ED8D00B0D189 /* ChildMode.storyboard */; };
+		0F9BD06A2E14F3A700B0D189 /* PopupEnableChildmode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9BD0692E14F3A700B0D189 /* PopupEnableChildmode.swift */; };
+		0F9BD06C2E1513D700B0D189 /* PopupRequestToDisable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9BD06B2E1513D700B0D189 /* PopupRequestToDisable.swift */; };
+		0F9BD06E2E15282700B0D189 /* AddMemberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9BD06D2E15282700B0D189 /* AddMemberVC.swift */; };
+		0F9BD0702E15347300B0D189 /* PopupInviteChildMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9BD06F2E15347300B0D189 /* PopupInviteChildMode.swift */; };
+		0F9BD0782E153BF500B0D189 /* ChildModeCircleTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9BD0762E153BF500B0D189 /* ChildModeCircleTVCell.swift */; };
+		0F9BD0792E153BF500B0D189 /* ChildModeCircleTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F9BD0772E153BF500B0D189 /* ChildModeCircleTVCell.xib */; };
 		0FE65B0F2E1285AF00B713DD /* SettingTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE65B0D2E1285AF00B713DD /* SettingTVCell.swift */; };
 		0FE65B102E1285AF00B713DD /* SettingTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FE65B0E2E1285AF00B713DD /* SettingTVCell.xib */; };
 		0FE65B122E12A01600B713DD /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE65B112E12A01600B713DD /* VisualEffectView.swift */; };
@@ -138,6 +145,13 @@
 		0F2DBFB92E0D7F3200243B13 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		0F2DBFBB2E0D7F3A00243B13 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		0F2DBFBD2E0D7F4300243B13 /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
+		0F9BD0672E14ED8D00B0D189 /* ChildMode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChildMode.storyboard; sourceTree = "<group>"; };
+		0F9BD0692E14F3A700B0D189 /* PopupEnableChildmode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupEnableChildmode.swift; sourceTree = "<group>"; };
+		0F9BD06B2E1513D700B0D189 /* PopupRequestToDisable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupRequestToDisable.swift; sourceTree = "<group>"; };
+		0F9BD06D2E15282700B0D189 /* AddMemberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemberVC.swift; sourceTree = "<group>"; };
+		0F9BD06F2E15347300B0D189 /* PopupInviteChildMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupInviteChildMode.swift; sourceTree = "<group>"; };
+		0F9BD0762E153BF500B0D189 /* ChildModeCircleTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildModeCircleTVCell.swift; sourceTree = "<group>"; };
+		0F9BD0772E153BF500B0D189 /* ChildModeCircleTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChildModeCircleTVCell.xib; sourceTree = "<group>"; };
 		0FE65B0D2E1285AF00B713DD /* SettingTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTVCell.swift; sourceTree = "<group>"; };
 		0FE65B0E2E1285AF00B713DD /* SettingTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTVCell.xib; sourceTree = "<group>"; };
 		0FE65B112E12A01600B713DD /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
@@ -291,6 +305,7 @@
 				0F1832962E13D84A00D03B9B /* ChoosePlanVC.swift */,
 				F3CAD9D72D527BC8008C7600 /* SubscribeVC.swift */,
 				0F18328C2E13ABB400D03B9B /* ActiveSubscriptionListVC.swift */,
+				0F9BD0662E14ED7600B0D189 /* ChildMode */,
 				0FE65B172E12B38800B713DD /* Popup */,
 				0FE65B0C2E12855300B713DD /* XIB */,
 			);
@@ -413,6 +428,28 @@
 				BD575C452CEC5E0A00C9B313 /* Plus.json */,
 			);
 			path = Json;
+			sourceTree = "<group>";
+		};
+		0F9BD0662E14ED7600B0D189 /* ChildMode */ = {
+			isa = PBXGroup;
+			children = (
+				0F9BD0672E14ED8D00B0D189 /* ChildMode.storyboard */,
+				0F9BD0692E14F3A700B0D189 /* PopupEnableChildmode.swift */,
+				0F9BD06B2E1513D700B0D189 /* PopupRequestToDisable.swift */,
+				0F9BD06F2E15347300B0D189 /* PopupInviteChildMode.swift */,
+				0F9BD06D2E15282700B0D189 /* AddMemberVC.swift */,
+				0F9BD0712E153B2C00B0D189 /* XIB */,
+			);
+			path = ChildMode;
+			sourceTree = "<group>";
+		};
+		0F9BD0712E153B2C00B0D189 /* XIB */ = {
+			isa = PBXGroup;
+			children = (
+				0F9BD0762E153BF500B0D189 /* ChildModeCircleTVCell.swift */,
+				0F9BD0772E153BF500B0D189 /* ChildModeCircleTVCell.xib */,
+			);
+			path = XIB;
 			sourceTree = "<group>";
 		};
 		0FE65B0C2E12855300B713DD /* XIB */ = {
@@ -716,6 +753,7 @@
 				BD9DB1512CE85971003615FE /* OnboardingFSPagerviewCell.xib in Resources */,
 				BD1A20632CD0B2E10033A8BA /* Base in Resources */,
 				BD1A209B2CD0B3510033A8BA /* success.png in Resources */,
+				0F9BD0792E153BF500B0D189 /* ChildModeCircleTVCell.xib in Resources */,
 				BD1A209A2CD0B3510033A8BA /* error.png in Resources */,
 				0FF019492E0E4D5200575BB0 /* Poppins-Regular.ttf in Resources */,
 				0FF0194A2E0E4D5200575BB0 /* Poppins-SemiBold.ttf in Resources */,
@@ -726,6 +764,7 @@
 				BD1A20B32CD0B4570033A8BA /* Color.xcassets in Resources */,
 				BD1A205E2CD0B2E00033A8BA /* Base in Resources */,
 				BD1A20B12CD0B3510033A8BA /* UpdateViewController.xib in Resources */,
+				0F9BD0682E14ED8D00B0D189 /* ChildMode.storyboard in Resources */,
 				0FE65B102E1285AF00B713DD /* SettingTVCell.xib in Resources */,
 				0FE65B162E12A95D00B713DD /* Compass.storyboard in Resources */,
 				0F2DBFAE2E0D7E2500243B13 /* swiftgen.yml in Resources */,
@@ -763,9 +802,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-LiveLocationTacker/Pods-LiveLocationTacker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-LiveLocationTacker/Pods-LiveLocationTacker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -827,14 +870,17 @@
 				BD7FE32F2CEC4AD7006C32D2 /* SettingVC.swift in Sources */,
 				0F2DBFBE2E0D7F4500243B13 /* Storyboards.swift in Sources */,
 				BD1A20A32CD0B3510033A8BA /* PhotoAlbumManager.swift in Sources */,
+				0F9BD06A2E14F3A700B0D189 /* PopupEnableChildmode.swift in Sources */,
 				0FE65B0F2E1285AF00B713DD /* SettingTVCell.swift in Sources */,
 				BDB0BDDE2CE7273800A5E037 /* CircleCVCell.swift in Sources */,
 				BD1A20A42CD0B3510033A8BA /* PushNotificationManager.swift in Sources */,
 				0F1777792E124932000BC3D8 /* MapTypeCVCell.swift in Sources */,
+				0F9BD0702E15347300B0D189 /* PopupInviteChildMode.swift in Sources */,
 				F3CAD9D82D527BC9008C7600 /* SubscribeVC.swift in Sources */,
 				BD1A209D2CD0B3510033A8BA /* Connection.swift in Sources */,
 				BD9DB1552CE85B2B003615FE /* IntroVC.swift in Sources */,
 				BD65AC7B2CEB3BEE001DBA8C /* CircleListTBVCell.swift in Sources */,
+				0F9BD06E2E15282700B0D189 /* AddMemberVC.swift in Sources */,
 				BD38B9012CEC66540088D0C7 /* ProfileVC.swift in Sources */,
 				BD9DB14C2CE858D8003615FE /* SplashVC.swift in Sources */,
 				BD1A20AF2CD0B3510033A8BA /* DefaultManager.swift in Sources */,
@@ -853,6 +899,7 @@
 				BDBEC0152D1AC63900D9A739 /* SosVC.swift in Sources */,
 				BD1A20982CD0B3510033A8BA /* FSPageViewLayout.swift in Sources */,
 				0FED0F812E0BE87200EB1D5D /* Helper+UITextField.swift in Sources */,
+				0F9BD0782E153BF500B0D189 /* ChildModeCircleTVCell.swift in Sources */,
 				BD1A20932CD0B3510033A8BA /* FSPagerCollectionView.swift in Sources */,
 				0F2DBFBC2E0D7F3B00243B13 /* Images.swift in Sources */,
 				0FED0F832E0BECD000EB1D5D /* MobileVerificationVC.swift in Sources */,
@@ -862,6 +909,7 @@
 				0FF019532E0EAE4000575BB0 /* MyCirclesPopup.swift in Sources */,
 				BDB0BDDB2CE7032B00A5E037 /* FirebaseManager.swift in Sources */,
 				0F2DBFA42E0D3D4500243B13 /* UIEnableDisable.swift in Sources */,
+				0F9BD06C2E1513D700B0D189 /* PopupRequestToDisable.swift in Sources */,
 				BDBC8B6D2CEB527A00D913F0 /* UserDeatilsVC.swift in Sources */,
 				BD1A20AC2CD0B3510033A8BA /* QuickLookManager.swift in Sources */,
 				BD7F29072D1A72810020B37D /* ScantoJoinVC.swift in Sources */,

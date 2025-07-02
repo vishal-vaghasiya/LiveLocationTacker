@@ -13,6 +13,17 @@ import UIKit
 // swiftlint:disable explicit_type_interface identifier_name line_length prefer_self_in_static_references
 // swiftlint:disable type_body_length type_name
 internal enum StoryboardScene {
+  internal enum ChildMode: StoryboardType {
+    internal static let storyboardName = "ChildMode"
+
+    internal static let addMemberVC = SceneType<LiveLocationTacker.AddMemberVC>(storyboard: ChildMode.self, identifier: "AddMemberVC")
+
+    internal static let popupEnableChildmode = SceneType<LiveLocationTacker.PopupEnableChildmode>(storyboard: ChildMode.self, identifier: "PopupEnableChildmode")
+
+    internal static let popupInviteChildMode = SceneType<LiveLocationTacker.PopupInviteChildMode>(storyboard: ChildMode.self, identifier: "PopupInviteChildMode")
+
+    internal static let popupRequestToDisable = SceneType<LiveLocationTacker.PopupRequestToDisable>(storyboard: ChildMode.self, identifier: "PopupRequestToDisable")
+  }
   internal enum Circle: StoryboardType {
     internal static let storyboardName = "Circle"
 
