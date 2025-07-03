@@ -62,7 +62,7 @@ extension PushNotificationManager: MessagingDelegate {
         print("FcmToken == > \(fcmToken)")
         print("Firebase registration token: \(String(describing: fcmToken))")
         FCMTokenManager.shared.currentToken = fcmToken // 6
-        Constants.USERDEFAULTS.saveFCMToken(value: fcmToken)
+        DefaultManager.User.FCM_TOKEN = fcmToken
     }
 }
 

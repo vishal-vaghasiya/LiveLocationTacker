@@ -30,11 +30,11 @@ class SettingHeaderView: UITableViewHeaderFooterView {
         profile_img.makeRounded()
         profile_img.contentMode = .scaleAspectFill
         
-        location_switch.isOn = Constants.USERDEFAULTS.getLocationSharing()
-        battery_switch.isOn = Constants.USERDEFAULTS.getBatterySharing()
-        notification_switch.isOn = Constants.USERDEFAULTS.getNotificationSharing()
-        camera_switch.isOn = Constants.USERDEFAULTS.getCameraSharing()
-        motion_switch.isOn = Constants.USERDEFAULTS.getMotionSharing()
+        location_switch.isOn = DefaultManager.Permission.LOCATION
+        battery_switch.isOn = DefaultManager.Permission.BATTERY
+        notification_switch.isOn = DefaultManager.Permission.NOTIFICATION
+        camera_switch.isOn = DefaultManager.Permission.CAMERA
+        motion_switch.isOn = DefaultManager.Permission.MOTION
     }
     
     @IBAction func btnProfileAction(_ sender: UIButton) {
@@ -48,15 +48,15 @@ class SettingHeaderView: UITableViewHeaderFooterView {
     @IBAction func switchAction(_ sender: UISwitch) {
         switch sender.tag {
         case 0:
-            Constants.USERDEFAULTS.saveLocationSharing(value: sender.isOn)
+            DefaultManager.Permission.LOCATION = sender.isOn
         case 1:
-            Constants.USERDEFAULTS.saveBatterySharing(value: sender.isOn)
+            DefaultManager.Permission.BATTERY = sender.isOn
         case 2:
-            Constants.USERDEFAULTS.saveNotificationSharing(value: sender.isOn)
+            DefaultManager.Permission.NOTIFICATION = sender.isOn
         case 3:
-            Constants.USERDEFAULTS.saveCameraSharing(value: sender.isOn)
+            DefaultManager.Permission.CAMERA = sender.isOn
         case 4:
-            Constants.USERDEFAULTS.saveMotionSharing(value: sender.isOn)
+            DefaultManager.Permission.MOTION = sender.isOn
         default:
             break
         }

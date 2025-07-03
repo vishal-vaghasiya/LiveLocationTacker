@@ -69,7 +69,7 @@ extension ScantoJoinVC : QRScannerCodeDelegate {
             
             if success {
                 print("Friend successfully joined the circle!")
-                let myname = Constants.USERDEFAULTS.getCurrentuserName() + " " + NSLocalizedString("FriendQRPushMSG", comment: "")
+                let myname = DefaultManager.User.NAME + " " + NSLocalizedString("FriendQRPushMSG", comment: "")
                 self.firebaseManager.sendPushNotification(fcmToken: friendfcmtoken, body: myname)
                 self.navigateToHome()
             }

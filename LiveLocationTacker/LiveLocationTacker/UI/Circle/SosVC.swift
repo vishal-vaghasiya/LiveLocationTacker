@@ -86,14 +86,14 @@ class SosVC: UIViewController {
     // MARK: - SOS Logic
     private func triggerSOS() {
         lblCountdown.text = ""
-        guard let lastLocation = selectedGroupsnapSort?.childSnapshot(forPath: "members").childSnapshot(forPath: Constants.USERDEFAULTS.getCurrentuserNumber()).value as? [String:Any] else { return }
+        guard let lastLocation = selectedGroupsnapSort?.childSnapshot(forPath: "members").childSnapshot(forPath: DefaultManager.User.PHONE).value as? [String:Any] else { return }
         
-        var sosMSG = Constants.USERDEFAULTS.getCurrentuserName()
+        var sosMSG = DefaultManager.User.NAME
         sosMSG = sosMSG +  NSLocalizedString(" SOSPUSHCONTENT", comment: "") + " @"
         sosMSG = sosMSG +  String(lastLocation["latitude"]  as? Double ?? 0) + "," + String(lastLocation["longitude"]  as? Double ?? 0)
         
         if let memberNumber = Array(self.memberList.keys.sorted()) as? [String] {
-            let filterObject = memberNumber.filter { $0 != Constants.USERDEFAULTS.getCurrentuserNumber() }
+            let filterObject = memberNumber.filter { $0 != DefaultManager.User.PHONE }
             if filterObject.count == 0 {
                 let vc = StoryboardScene.Circle.popupFailedSOS.instantiate()
                 vc.closePopup = { [weak self] in
@@ -106,7 +106,7 @@ class SosVC: UIViewController {
             // Optional: Sound alert
             AudioServicesPlaySystemSound(SystemSoundID(1005)) // Vibrate sound
             memberNumber.forEach { phoneNumber in
-                if phoneNumber != Constants.USERDEFAULTS.getCurrentuserNumber() {
+                if phoneNumber != DefaultManager.User.PHONE {
                     self.firebaseManager.ref.child("circles").queryOrdered(byChild: "admin").queryEqual(toValue: phoneNumber).observeSingleEvent(of: .value) { snapshot in
                         if snapshot.exists() {
                             for snap in snapshot.children.allObjects as! [DataSnapshot] {

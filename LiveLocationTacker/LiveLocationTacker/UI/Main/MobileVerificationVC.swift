@@ -157,36 +157,42 @@ class MobileOTPVerificationVC: UIViewController , UIGestureRecognizerDelegate {
                 let existingNumber = data?["admin"] as? String ?? ""
                 let existingName = data?["name"] as? String ?? ""
                 let existingCode = data?["code"] as? String ?? ""
+                let existingCountryCode = "91"
                 
-                Constants.USERDEFAULTS.saveCurrentuserNumber(value: existingNumber)
-                Constants.USERDEFAULTS.saveCurrentuserName(value: existingName)
-                Constants.USERDEFAULTS.saveCurrentuserCode(value: existingCode)
-                Constants.USERDEFAULTS.saveBatterySharing(value: true)
-                Constants.USERDEFAULTS.saveLocationSharing(value: true)
-                Constants.USERDEFAULTS.saveNotificationSharing(value: true)
-                Constants.USERDEFAULTS.saveCameraSharing(value: true)
-                Constants.USERDEFAULTS.saveMotionSharing(value: true)
+                DefaultManager.User.COUNTRY_CODE = existingCountryCode//Need to update
+                DefaultManager.User.PHONE = existingNumber
+                DefaultManager.User.NAME = existingName
+                DefaultManager.Permission.LOCATION = true
+                DefaultManager.Permission.BATTERY = true
+                DefaultManager.Permission.NOTIFICATION = true
+                DefaultManager.Permission.CAMERA = true
+                DefaultManager.Permission.MOTION = true
                 Constants.USERDEFAULTS.saveProfileImage(value: UIImage(named: "engineer")?.pngData() ?? Data())
+                
+                Constants.USERDEFAULTS.saveCurrentuserCode(value: existingCode)
                 
                 self.pushVC(T: SetProfileVC.instantiate(appStoryboard: .main), viewControllerID: String(describing: SetProfileVC.self))
                 
             } else {
                 self.firebaseManager.createCircle(name: "My Circles",
                                                   userName: self.name,
+                                                  countryCode: self.phoneCode,
                                                   userPhone: self.phoneNumber.digitsOnly,
                                                   batteryLevel: batteryLevel) { [self] generatedCode in
                     print("Share this code with your friend: \(generatedCode ?? "")")
                     self.hideLoader()
                     
-                    Constants.USERDEFAULTS.saveCurrentuserNumber(value: mobileNumber.digitsOnly)
-                    Constants.USERDEFAULTS.saveCurrentuserName(value: name)
-                    Constants.USERDEFAULTS.saveCurrentuserCode(value: generatedCode ?? "")
-                    Constants.USERDEFAULTS.saveBatterySharing(value: true)
-                    Constants.USERDEFAULTS.saveLocationSharing(value: true)
-                    Constants.USERDEFAULTS.saveNotificationSharing(value: true)
-                    Constants.USERDEFAULTS.saveCameraSharing(value: true)
-                    Constants.USERDEFAULTS.saveMotionSharing(value: true)
+                    DefaultManager.User.COUNTRY_CODE = phoneCode
+                    DefaultManager.User.PHONE = mobileNumber.digitsOnly
+                    DefaultManager.User.NAME = name
+                    DefaultManager.Permission.LOCATION = true
+                    DefaultManager.Permission.BATTERY = true
+                    DefaultManager.Permission.NOTIFICATION = true
+                    DefaultManager.Permission.CAMERA = true
+                    DefaultManager.Permission.MOTION = true
                     Constants.USERDEFAULTS.saveProfileImage(value: UIImage(named: "engineer")?.pngData() ?? Data())
+                    
+                    Constants.USERDEFAULTS.saveCurrentuserCode(value: generatedCode ?? "")
                     
                     self.pushVC(T: SetProfileVC.instantiate(appStoryboard: .main), viewControllerID: String(describing: SetProfileVC.self))
                 }

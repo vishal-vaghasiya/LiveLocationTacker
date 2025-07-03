@@ -22,7 +22,7 @@ struct GoogleJWTClaims: Claims {
 
 enum FirebaseTableName: String {
     case users = "users"
-    case circle = "circles"
+    case circle = "circles_temp"
     case userLocations = "user_locations"
     
     var name: String {
@@ -157,8 +157,66 @@ class FirebaseManager {
      }
      */
     
+    //MARK: - Create circle
+    func createCircle(name: String, completion: @escaping (Bool, String, [String: Any]?) -> Void) {
+        let code = UUID().uuidString.prefix(6)
+        
+        let circleData: [String: Any] = [
+            "code": String(code),
+            "name": name,
+            "country_code": DefaultManager.User.COUNTRY_CODE,
+            "owner_phone": DefaultManager.User.PHONE,
+            "owner_name": DefaultManager.User.NAME,
+            "date": Int(Date().timeIntervalSince1970),
+            "members": [
+                DefaultManager.User.PHONE
+            ]
+        ]
+        
+        ref.child(FirebaseTableName.circle.name).childByAutoId().setValue(circleData) { error, _ in
+            if let error = error {
+                completion(false, error.localizedDescription, nil)
+            } else {
+                completion(true, "Circle created successfully.", circleData)
+            }
+        }
+    }
+    
+    //MARK: - Join circle
+    func joinCircle(inviteCode: String, completion: @escaping (Bool, String, [String: Any]?) -> Void) {
+        let circlesRef = ref.child(FirebaseTableName.circle.name)
+        
+        circlesRef.queryOrdered(byChild: "code").queryEqual(toValue: inviteCode)
+            .observeSingleEvent(of: .value) { snapshot in
+                guard snapshot.exists() else {
+                    completion(false, "Invalid circle code.", nil)
+                    return
+                }
+                
+                for child in snapshot.children {
+                    if let snap = child as? DataSnapshot {
+                        let circleId = snap.key // Found circleId
+                        let memberRef = circlesRef.child(circleId).child("members").child(DefaultManager.User.PHONE)
+                        
+                        let memberData: [String: Any] = [
+                            "country_code": DefaultManager.User.COUNTRY_CODE,
+                            "user_phone": DefaultManager.User.PHONE
+                        ]
+                        
+                        memberRef.setValue(memberData) { error, _ in
+                            if let error = error {
+                                completion(false, error.localizedDescription, nil)
+                            } else {
+                                completion(true, "Joined circle successfully.", ["circleId": circleId])
+                            }
+                        }
+                    }
+                }
+            }
+    }
+    
     // Create a circle with a unique invitation code
-    func createCircle(name: String,userName:String,userPhone: String, batteryLevel: Int, completion: @escaping (String?) -> Void) {
+    func createCircle(name: String,userName:String, countryCode: String ,userPhone: String, batteryLevel: Int, completion: @escaping (String?) -> Void) {
         let code = UUID().uuidString.prefix(6) // Short code
         
         LocationManager.shared.getCurrentLocation { location in
@@ -171,6 +229,7 @@ class FirebaseManager {
                 "members": [
                     userPhone: [
                         "username": "Me",
+                        "country_code": countryCode,
                         "userPhone": userPhone,
                         "batteryLevel": batteryLevel,
                         "latitude": location.coordinate.latitude,
@@ -192,17 +251,14 @@ class FirebaseManager {
     }
     
     func saveFcmTokenFirebase(){
-        if Constants.USERDEFAULTS.getFCMToken().isEmpty == false {
-            ref.child("circles").queryOrdered(byChild: "admin").queryEqual(toValue: Constants.USERDEFAULTS.getCurrentuserNumber()).observeSingleEvent(of: .value) { snapshot in
+        if !DefaultManager.User.FCM_TOKEN.isEmpty {
+            ref.child("circles").queryOrdered(byChild: "admin").queryEqual(toValue: DefaultManager.User.PHONE).observeSingleEvent(of: .value) { snapshot in
                 if snapshot.exists() {
                     for snap in snapshot.children.allObjects as! [DataSnapshot] {
-                        self.ref.child("circles").child(snap.key).updateChildValues(["fcmtoken": Constants.USERDEFAULTS.getFCMToken()])
+                        self.ref.child("circles").child(snap.key).updateChildValues(["fcmtoken": DefaultManager.User.FCM_TOKEN])
                     }
                 }
             }
-        }
-        else{
-            print("fcmtoken is empty")
         }
     }
     
@@ -349,7 +405,7 @@ class FirebaseManager {
                    let members = circleData["members"] as? [String: Any] {
                     
                     // Check if the user's phone number is in the members list
-                    if members.keys.contains(userPhone) && Constants.USERDEFAULTS.getBatterySharing() {
+                    if members.keys.contains(userPhone) && DefaultManager.Permission.BATTERY {
                         self.ref.child("circles").child(circleSnapshot.key).child("members").child(userPhone).child("batteryLevel").setValue(batteryLevel)
                     }
                 }
@@ -365,7 +421,7 @@ class FirebaseManager {
                    let members = circleData["members"] as? [String: Any] {
                     
                     // Check if the user's phone number is in the members list
-                    if members.keys.contains(userPhonenumber) && Constants.USERDEFAULTS.getLocationSharing() {
+                    if members.keys.contains(userPhonenumber) && DefaultManager.Permission.LOCATION {
                         self.ref.child("circles").child(circleSnapshot.key).child("members").child(userPhonenumber).updateChildValues(["latitude": latitude, "longitude": longitude])
                     }
                 }
@@ -375,7 +431,7 @@ class FirebaseManager {
     
     func updateUserwiseLocationInFirebase(latitude: Double, longitude: Double,userPhonenumber:String) {
         updateLocationInFirebase(latitude: latitude, longitude: longitude, userPhonenumber: userPhonenumber)
-        if Constants.USERDEFAULTS.getLocationSharing() {
+        if DefaultManager.Permission.LOCATION {
             let userRef = self.ref.child("user_locations").child(userPhonenumber)
             let timestamp = Date().getCurrentUTCTimestampInfo().timestampSeconds
             
@@ -1044,7 +1100,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         //        }
         
         //        FirebaseManager().updateLocationInFirebase(latitude: lat, longitude: long, userPhonenumber: Constants.USERDEFAULTS.getCurrentuserNumber())
-        FirebaseManager().updateUserwiseLocationInFirebase(latitude: lat, longitude: long, userPhonenumber: Constants.USERDEFAULTS.getCurrentuserNumber())
+        FirebaseManager().updateUserwiseLocationInFirebase(latitude: lat, longitude: long, userPhonenumber: DefaultManager.User.PHONE)
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

@@ -24,7 +24,7 @@ class SetProfileVC: UIViewController {
         pencil_view.makeRounded()
         
         //btnUpdate.setButtonTitleAndFunctionality("Done")
-        //txt_name.text = Constants.USERDEFAULTS.getCurrentuserName()
+        txt_name.text = DefaultManager.User.NAME
         //profile_img.image = UIImage(data: Constants.USERDEFAULTS.getProfileImage() ?? Data())
         txt_name.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
@@ -63,14 +63,12 @@ class SetProfileVC: UIViewController {
     
     @IBAction func btnUpdateAction(_ sender: UIButton) {
         showLoader(text: "Updating...")
-        
-        firebaseManager.updateUserNameInFirebase(userPhonenumber: Constants.USERDEFAULTS.getCurrentuserNumber(),entername: txt_name.text ?? "") { updated, errorMessage in
+        firebaseManager.updateUserNameInFirebase(userPhonenumber: DefaultManager.User.PHONE,entername: txt_name.text ?? "") { updated, errorMessage in
             self.hideLoader()
             if updated {
                 Constants.USERDEFAULTS.set(true, forKey: "isIntro")
-                Constants.USERDEFAULTS.saveCurrentuserName(value: self.txt_name.text ?? "")
-                Constants.USERDEFAULTS.saveCurrentuserGender(value: self.btnMale.layer.borderWidth == 2 ? "Male" : "Female")
-                
+                DefaultManager.User.NAME = self.txt_name.text ?? ""
+                DefaultManager.User.GENDER = self.btnMale.layer.borderWidth == 2 ? "Male" : "Female"
                 self.navigateToHome()
             }
             else{

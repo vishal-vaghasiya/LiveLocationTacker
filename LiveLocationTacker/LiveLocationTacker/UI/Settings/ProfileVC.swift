@@ -20,11 +20,11 @@ class ProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         btnUpdate.isEnabled = true
-        txt_name.text = Constants.USERDEFAULTS.getCurrentuserName()
-        lbl_number.text = Constants.USERDEFAULTS.getCurrentuserNumber()
+        txt_name.text = DefaultManager.User.NAME
+        lbl_number.text = DefaultManager.User.PHONE
         profile_img.image = UIImage(data: Constants.USERDEFAULTS.getProfileImage() ?? Data())
         
-        if Constants.USERDEFAULTS.getCurrentuserGender() == "Male" {
+        if DefaultManager.User.GENDER == "Male" {
             btnMale.layer.borderColor = UIColor.btncolor.cgColor
             btnMale.layer.borderWidth = 2
             btnFemale.layer.borderWidth = 0
@@ -78,15 +78,16 @@ class ProfileVC: UIViewController {
             self.showLoader(text: "Deleting...")
             
             Constants.USERDEFAULTS.removeObject(forKey: "isIntro")
-            Constants.USERDEFAULTS.removeCurrentUserNumber()
-            Constants.USERDEFAULTS.removeCurrentUserName()
-            Constants.USERDEFAULTS.removeCurrentUserGender()
+            DefaultManager.User.COUNTRY_CODE = ""
+            DefaultManager.User.PHONE = ""
+            DefaultManager.User.NAME = ""
+            DefaultManager.User.GENDER = ""
             Constants.USERDEFAULTS.removeCurrentUserCode()
-            Constants.USERDEFAULTS.removeBatterySharing()
-            Constants.USERDEFAULTS.removeLocationSharing()
-            Constants.USERDEFAULTS.removeNotificationSharing()
-            Constants.USERDEFAULTS.removeCameraSharing()
-            Constants.USERDEFAULTS.removeMotionSharing()
+            DefaultManager.Permission.LOCATION = false
+            DefaultManager.Permission.BATTERY = false
+            DefaultManager.Permission.NOTIFICATION = false
+            DefaultManager.Permission.CAMERA = false
+            DefaultManager.Permission.MOTION = false
             Constants.USERDEFAULTS.removeProfileImage()
             
             self.firebaseManager.deleteUserAccount(userPhoneNumber: self.lbl_number.text ?? "") { success in
@@ -108,8 +109,8 @@ class ProfileVC: UIViewController {
             self.hideLoader()
             self.txt_name.isUserInteractionEnabled = false
             if updated {
-                Constants.USERDEFAULTS.saveCurrentuserName(value: self.txt_name.text ?? "")
-                Constants.USERDEFAULTS.saveCurrentuserGender(value: self.btnMale.layer.borderWidth == 2 ? "Male" : "Female")
+                DefaultManager.User.NAME = self.txt_name.text ?? ""
+                DefaultManager.User.GENDER = self.btnMale.layer.borderWidth == 2 ? "Male" : "Female"
                 
                 let vc = StoryboardScene.Settings.popupProfileUpdateSuccess.instantiate()
                 vc.closePopup = {

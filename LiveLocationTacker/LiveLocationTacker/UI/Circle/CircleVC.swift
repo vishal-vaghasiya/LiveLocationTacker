@@ -226,7 +226,7 @@ class CircleVC: UIViewController {
     
     func fetchAllCircle() {
         groupManager.saveFcmTokenFirebase()
-        groupManager.fetchAllCircles(phoneNumber: Constants.USERDEFAULTS.getCurrentuserNumber()) { ListSnapSort in
+        groupManager.fetchAllCircles(phoneNumber: DefaultManager.User.PHONE) { ListSnapSort in
             DispatchQueue.main.async {
                 self.groupSnapSortList = ListSnapSort
                 selectedGroupsnapSort = ListSnapSort.first
@@ -248,7 +248,7 @@ class CircleVC: UIViewController {
     
     @objc func batteryLevelDidChange() {
         let currentBatteryLevel = Int(UIDevice.current.batteryLevel * 100) // Convert to percentage
-        groupManager.updateBatteryLevel(userPhone:  Constants.USERDEFAULTS.getCurrentuserNumber() , batteryLevel: currentBatteryLevel)
+        groupManager.updateBatteryLevel(userPhone:  DefaultManager.User.PHONE , batteryLevel: currentBatteryLevel)
     }
 }
 

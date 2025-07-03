@@ -83,8 +83,8 @@ extension SettingVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableHeaderFooterView(withType: SettingHeaderView.self)
-        headerView.lbl_name.text = Constants.USERDEFAULTS.getCurrentuserName()
-        headerView.lbl_number.text = Constants.USERDEFAULTS.getCurrentuserNumber()
+        headerView.lbl_name.text = DefaultManager.User.NAME
+        headerView.lbl_number.text = DefaultManager.User.PHONE
         headerView.profile_img.image = UIImage(data: Constants.USERDEFAULTS.getProfileImage() ?? Data())
         
         headerView.onTapProfileAction = {

@@ -54,8 +54,9 @@ class MyCirclesPopup: UIViewController {
         let batteryLevel = Int(UIDevice.current.batteryLevel * 100)
         
         firebaseManager.createCircle(name: name,
-                                  userName: Constants.USERDEFAULTS.getCurrentuserName(),
-                                  userPhone: Constants.USERDEFAULTS.getCurrentuserNumber(),
+                                     userName: DefaultManager.User.NAME,
+                                     countryCode: DefaultManager.User.COUNTRY_CODE,
+                                  userPhone: DefaultManager.User.PHONE,
                                   batteryLevel: batteryLevel) { [self] generatedCode in
             print("Share this code with your friend: \(generatedCode ?? "")")
             self.hideLoader()
@@ -88,7 +89,7 @@ class MyCirclesPopup: UIViewController {
     // MARK: - API CALLING
     func fetchAllCircle() {
         firebaseManager.saveFcmTokenFirebase()
-        firebaseManager.fetchAllCircles(phoneNumber: Constants.USERDEFAULTS.getCurrentuserNumber()) { ListSnapSort in
+        firebaseManager.fetchAllCircles(phoneNumber: DefaultManager.User.PHONE) { ListSnapSort in
             DispatchQueue.main.async {
                 self.groupSnapSortList = ListSnapSort
                 selectedGroupsnapSort = ListSnapSort.first

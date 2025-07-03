@@ -24,8 +24,8 @@ class JoinCircleVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        lbl_name.text = Constants.USERDEFAULTS.getCurrentuserName()
-        lbl_number.text = Constants.USERDEFAULTS.getCurrentuserNumber()
+        lbl_name.text = DefaultManager.User.NAME
+        lbl_number.text = DefaultManager.User.PHONE
         lbl_code.text = groupCode
         btnJoincircle.isEnabled = false
         //btnJoincircle.setButtonTitleAndFunctionality("Join Circle")
