@@ -20,6 +20,15 @@ struct GoogleJWTClaims: Claims {
     let iat: Int
 }
 
+enum FirebaseTableName: String {
+    case users = "users"
+    case circle = "circles"
+    case userLocations = "user_locations"
+    
+    var name: String {
+        return self.rawValue
+    }
+}
 
 class FirebaseManager {
     
@@ -78,6 +87,75 @@ class FirebaseManager {
             // Proceed to next screen
         }
     }
+    
+    //MARK: - Save user to Firebase Realtime Database
+    func checkAndSaveUser(phoneNumber: String, param: [String: Any], completion: @escaping (Bool, String, [String: Any]?) -> Void) {
+        let userRef = ref.child(FirebaseTableName.users.name).child(phoneNumber)
+        
+        // First: Check if user exists
+        userRef.observeSingleEvent(of: .value) { snapshot in
+            if let userData = snapshot.value as? [String: Any] {
+                // User already exists
+                completion(true, "User already exists.", userData)
+            } else {
+                // User doesn't exist, save user
+                userRef.setValue(param) { error, _ in
+                    if let error = error {
+                        completion(false, error.localizedDescription, nil)
+                    } else {
+                        completion(true, "User registered successfully.", param)
+                    }
+                }
+            }
+        }
+    }
+    
+    func updateUserData(phoneNumber: String, updatedValues: [String: Any], completion: @escaping (Bool, String) -> Void) {
+        let userRef = ref.child(FirebaseTableName.users.name).child(phoneNumber)
+        
+        userRef.updateChildValues(updatedValues) { error, _ in
+            if let error = error {
+                print("Error updating user: \(error.localizedDescription)")
+                completion(false, error.localizedDescription)
+            } else {
+                print("User data updated successfully.")
+                completion(true, "User data updated successfully.")
+            }
+        }
+    }
+    
+    //MARK: - HOW TO REGISTER
+    /* LocationManager.shared.getCurrentLocation { location in
+         let param: [String: Any] = [
+             "name": "Vishal Vaghasiya",
+             "gender": "male",
+             "code": "91",
+             "phone": "9725992972",
+             "profile_pic": "",
+             "battery_level": 100,
+             "fcmtoken": Constants.USERDEFAULTS.getFCMToken(),
+             "latitude": location.coordinate.latitude,
+             "longitude": location.coordinate.longitude,
+             "date": Int(Date().timeIntervalSince1970)
+         ]
+         FirebaseManager().checkAndSaveUser(phoneNumber: "9725992972", param: param) { success, message, userData  in
+             print(message)
+             if let user = userData {
+                 print("User Data: \(user)")
+             }
+             
+             let updatedData: [String: Any] = [
+                 "name": "Vishal Vaghasiya",
+                 "date": Int(Date().timeIntervalSince1970)
+             ]
+             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                 FirebaseManager().updateUserData(phoneNumber: "9725992972", updatedValues: updatedData) { success, message in
+                     print(message)
+                 }
+             })
+         }
+     }
+     */
     
     // Create a circle with a unique invitation code
     func createCircle(name: String,userName:String,userPhone: String, batteryLevel: Int, completion: @escaping (String?) -> Void) {

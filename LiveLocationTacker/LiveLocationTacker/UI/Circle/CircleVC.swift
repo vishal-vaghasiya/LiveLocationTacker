@@ -1,5 +1,5 @@
 //
-//  MapVC.swift
+//  CircleVC.swift
 //  LiveLocationTacker
 //
 //  Created by DREAMWORLD on 16/11/24.
@@ -14,7 +14,7 @@ import Lottie
 var selectedGroupsnapSort:DataSnapshot?
 
 
-class MapVC: UIViewController {
+class CircleVC: UIViewController {
 
     @IBOutlet weak var lbl_circleName: UILabel!
     @IBOutlet weak var img_vectore: UIImageView!
@@ -34,11 +34,11 @@ class MapVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         bottom_view.makeTopCornerRound(20)
         circle_view.addShadow()
         fetchAllCircle()
-                
+        
         map_view.delegate = self
         map_view.showsUserLocation = false
         locationManager.startUpdatingLocation()
@@ -255,7 +255,7 @@ class MapVC: UIViewController {
 
 //MARK: - Datasource
 
-extension MapVC: UITableViewDelegate, UITableViewDataSource {
+extension CircleVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return memberList.count
     }
@@ -289,7 +289,7 @@ extension MapVC: UITableViewDelegate, UITableViewDataSource {
 }
 
 
-extension MapVC : MKMapViewDelegate {
+extension CircleVC : MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let identifier = "CustomPin"
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)

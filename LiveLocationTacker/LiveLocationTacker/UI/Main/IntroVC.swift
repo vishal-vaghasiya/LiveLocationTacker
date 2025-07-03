@@ -34,8 +34,8 @@ class IntroVC: UIViewController {
         let termsRange = (text as NSString).range(of: "Terms of Use")
         
         // Apply links
-        attributedString.addAttribute(.link, value: "https://yourdomain.com/privacy-policy", range: privacyRange)
-        attributedString.addAttribute(.link, value: "https://yourdomain.com/terms-of-use", range: termsRange)
+        attributedString.addAttribute(.link, value: Constants.PRIVACY, range: privacyRange)
+        attributedString.addAttribute(.link, value: Constants.TERMS, range: termsRange)
 
         // Set font and style
         attributedString.addAttribute(.font, value: UIFont(name: "Poppins-Regular", size: 12) ?? UIFont.systemFont(ofSize: 12), range: NSMakeRange(0, text.count))

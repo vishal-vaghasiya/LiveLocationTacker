@@ -29,11 +29,11 @@ internal enum StoryboardScene {
 
     internal static let initialScene = InitialSceneType<UIKit.UINavigationController>(storyboard: Circle.self)
 
+    internal static let circleVC = SceneType<LiveLocationTacker.CircleVC>(storyboard: Circle.self, identifier: "CircleVC")
+
     internal static let joinCircleVC = SceneType<LiveLocationTacker.JoinCircleVC>(storyboard: Circle.self, identifier: "JoinCircleVC")
 
     internal static let mapSettingsVC = SceneType<LiveLocationTacker.MapSettingsVC>(storyboard: Circle.self, identifier: "MapSettingsVC")
-
-    internal static let mapVC = SceneType<LiveLocationTacker.MapVC>(storyboard: Circle.self, identifier: "MapVC")
 
     internal static let myCirclesPopup = SceneType<LiveLocationTacker.MyCirclesPopup>(storyboard: Circle.self, identifier: "MyCirclesPopup")
 

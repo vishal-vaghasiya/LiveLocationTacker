@@ -51,10 +51,10 @@
             </objects>
             <point key="canvasLocation" x="365.64885496183206" y="-319.01408450704224"/>
         </scene>
-        <!--MapVC-->
+        <!--CircleVC-->
         <scene sceneID="pp6-n2-kK5">
             <objects>
-                <viewController storyboardIdentifier="MapVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1iC-7I-efH" customClass="MapVC" customModule="LiveLocationTacker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CircleVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1iC-7I-efH" customClass="CircleVC" customModule="LiveLocationTacker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lhx-yV-ahd">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -411,7 +411,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JPL-aR-m77" customClass="VisualEffectView" customModule="Proximity" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JPL-aR-m77" customClass="VisualEffectView" customModule="LiveLocationTacker" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>

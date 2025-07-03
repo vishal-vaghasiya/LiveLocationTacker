@@ -94,7 +94,7 @@
 		BD575C462CEC5E0A00C9B313 /* Plus.json in Resources */ = {isa = PBXBuildFile; fileRef = BD575C452CEC5E0A00C9B313 /* Plus.json */; };
 		BD65AC7B2CEB3BEE001DBA8C /* CircleListTBVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD65AC7A2CEB3BEE001DBA8C /* CircleListTBVCell.swift */; };
 		BD75DDB72CE89C6B00A028BD /* HomeTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD75DDB62CE89C6B00A028BD /* HomeTabVC.swift */; };
-		BD75DDB92CE89EC300A028BD /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD75DDB82CE89EC300A028BD /* MapVC.swift */; };
+		BD75DDB92CE89EC300A028BD /* CircleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD75DDB82CE89EC300A028BD /* CircleVC.swift */; };
 		BD75DDBB2CE8A1A600A028BD /* MemberTBVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD75DDBA2CE8A1A600A028BD /* MemberTBVCell.swift */; };
 		BD75DDBD2CE8B76500A028BD /* JoinCircleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD75DDBC2CE8B76500A028BD /* JoinCircleVC.swift */; };
 		BD7F29072D1A72810020B37D /* ScantoJoinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7F29062D1A72810020B37D /* ScantoJoinVC.swift */; };
@@ -218,7 +218,7 @@
 		BD65AC792CEB1983001DBA8C /* LiveLocationTacker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LiveLocationTacker.entitlements; sourceTree = "<group>"; };
 		BD65AC7A2CEB3BEE001DBA8C /* CircleListTBVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleListTBVCell.swift; sourceTree = "<group>"; };
 		BD75DDB62CE89C6B00A028BD /* HomeTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabVC.swift; sourceTree = "<group>"; };
-		BD75DDB82CE89EC300A028BD /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		BD75DDB82CE89EC300A028BD /* CircleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleVC.swift; sourceTree = "<group>"; };
 		BD75DDBA2CE8A1A600A028BD /* MemberTBVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberTBVCell.swift; sourceTree = "<group>"; };
 		BD75DDBC2CE8B76500A028BD /* JoinCircleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinCircleVC.swift; sourceTree = "<group>"; };
 		BD7F29062D1A72810020B37D /* ScantoJoinVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScantoJoinVC.swift; sourceTree = "<group>"; };
@@ -275,7 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				0FE65B132E12A86D00B713DD /* Circle.storyboard */,
-				BD75DDB82CE89EC300A028BD /* MapVC.swift */,
+				BD75DDB82CE89EC300A028BD /* CircleVC.swift */,
 				BDBC8B6C2CEB527A00D913F0 /* UserDeatilsVC.swift */,
 				0F1777732E1244DB000BC3D8 /* MapSettingsVC.swift */,
 				0FF019522E0EAE4000575BB0 /* MyCirclesPopup.swift */,
@@ -943,7 +943,7 @@
 				BD9DB14A2CE858D8003615FE /* OnBoardingVC.swift in Sources */,
 				BD1A209C2CD0B3510033A8BA /* ValidationTextField.swift in Sources */,
 				BD1A20A02CD0B3510033A8BA /* Localize.swift in Sources */,
-				BD75DDB92CE89EC300A028BD /* MapVC.swift in Sources */,
+				BD75DDB92CE89EC300A028BD /* CircleVC.swift in Sources */,
 				0FE65B1B2E12B84600B713DD /* PopupDeleteAccountConfirmation.swift in Sources */,
 				BDC7782E2CECA1B900BEFF66 /* CompassVC.swift in Sources */,
 				F39683412D5F7E8800FD0F49 /* SetProfileVC.swift in Sources */,
