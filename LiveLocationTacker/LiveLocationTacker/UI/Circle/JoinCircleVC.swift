@@ -18,7 +18,7 @@ class JoinCircleVC: UIViewController {
     @IBOutlet weak var btnJoincircle: UIEnableDisable!
     @IBOutlet weak var otpTextField: AEOTPTextField!
     var friendEnterCode = String()
-    let groupManager = FirebaseManager()
+    let firebaseManager = FirebaseManager()
     var groupCode = String()
     
     override func viewDidLoad() {
@@ -57,7 +57,7 @@ class JoinCircleVC: UIViewController {
         showLoader(text: "Joing...")
         UIDevice.current.isBatteryMonitoringEnabled = true
         let batteryLevel = Int(UIDevice.current.batteryLevel * 100)
-        groupManager.joinCircle(withCode: friendEnterCode,
+        firebaseManager.joinCircle(withCode: friendEnterCode,
                                 circleId: groupCode,
                                 batteryLevel: batteryLevel) { success in
             self.hideLoader()

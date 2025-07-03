@@ -23,7 +23,7 @@ struct GoogleJWTClaims: Claims {
 enum FirebaseTableName: String {
     case users = "users"
     case circle = "circles_temp"
-    case userLocations = "user_locations"
+    case locations = "locations"
     
     var name: String {
         return self.rawValue
@@ -169,7 +169,10 @@ class FirebaseManager {
             "owner_name": DefaultManager.User.NAME,
             "date": Int(Date().timeIntervalSince1970),
             "members": [
-                DefaultManager.User.PHONE
+                String(code): [
+                    "country_code": DefaultManager.User.COUNTRY_CODE,
+                    "user_phone": DefaultManager.User.PHONE
+                ]
             ]
         ]
         
@@ -183,31 +186,33 @@ class FirebaseManager {
     }
     
     //MARK: - Join circle
-    func joinCircle(inviteCode: String, completion: @escaping (Bool, String, [String: Any]?) -> Void) {
+    func joinCircle(inviteCode: String, completion: @escaping (Bool, String) -> Void) {
         let circlesRef = ref.child(FirebaseTableName.circle.name)
         
+        // Find circle with invite code
         circlesRef.queryOrdered(byChild: "code").queryEqual(toValue: inviteCode)
             .observeSingleEvent(of: .value) { snapshot in
                 guard snapshot.exists() else {
-                    completion(false, "Invalid circle code.", nil)
+                    completion(false, "Invalid circle code.")
                     return
                 }
                 
                 for child in snapshot.children {
                     if let snap = child as? DataSnapshot {
-                        let circleId = snap.key // Found circleId
-                        let memberRef = circlesRef.child(circleId).child("members").child(DefaultManager.User.PHONE)
+                        let circleId = snap.key
+                        let membersRef = circlesRef.child(circleId).child("members")
                         
-                        let memberData: [String: Any] = [
+                        // Add new member using phone number as key
+                        let newMemberData: [String: Any] = [
                             "country_code": DefaultManager.User.COUNTRY_CODE,
                             "user_phone": DefaultManager.User.PHONE
                         ]
                         
-                        memberRef.setValue(memberData) { error, _ in
+                        membersRef.child(DefaultManager.User.PHONE).setValue(newMemberData) { error, _ in
                             if let error = error {
-                                completion(false, error.localizedDescription, nil)
+                                completion(false, error.localizedDescription)
                             } else {
-                                completion(true, "Joined circle successfully.", ["circleId": circleId])
+                                completion(true, "Joined circle successfully.")
                             }
                         }
                     }
@@ -432,7 +437,7 @@ class FirebaseManager {
     func updateUserwiseLocationInFirebase(latitude: Double, longitude: Double,userPhonenumber:String) {
         updateLocationInFirebase(latitude: latitude, longitude: longitude, userPhonenumber: userPhonenumber)
         if DefaultManager.Permission.LOCATION {
-            let userRef = self.ref.child("user_locations").child(userPhonenumber)
+            let userRef = self.ref.child(FirebaseTableName.locations.name).child(userPhonenumber)
             let timestamp = Date().getCurrentUTCTimestampInfo().timestampSeconds
             
             let locationData: [String: Any] = [
@@ -752,7 +757,7 @@ class FirebaseManager {
     //
     //        // Reference to user's location data
     //        let ref = Database.database().reference()
-    //        let userRef = ref.child("user_locations").child(userNumber)
+    //        let userRef = ref.child(FirebaseTableName.locations.name).child(userNumber)
     //
     //        userRef.observeSingleEvent(of: .value) { snapshot in
     //            guard let data = snapshot.value as? [String: [String: Any]] else {
@@ -786,7 +791,7 @@ class FirebaseManager {
         
         // Step 2: Firebase reference
         let ref = Database.database().reference()
-        let userRef = ref.child("user_locations").child(userNumber)
+        let userRef = ref.child(FirebaseTableName.locations.name).child(userNumber)
         
         userRef.observeSingleEvent(of: .value) { snapshot in
             guard let data = snapshot.value as? [String: [String: Any]] else {
