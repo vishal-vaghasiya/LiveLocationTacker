@@ -28,6 +28,7 @@
 		0F2DBFBA2E0D7F3300243B13 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2DBFB92E0D7F3200243B13 /* Fonts.swift */; };
 		0F2DBFBC2E0D7F3B00243B13 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2DBFBB2E0D7F3A00243B13 /* Images.swift */; };
 		0F2DBFBE2E0D7F4500243B13 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2DBFBD2E0D7F4300243B13 /* Storyboards.swift */; };
+		0F84C9F02E16A52F00DD1012 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F84C9EF2E16A52D00DD1012 /* LocationManager.swift */; };
 		0F9BD0682E14ED8D00B0D189 /* ChildMode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F9BD0672E14ED8D00B0D189 /* ChildMode.storyboard */; };
 		0F9BD06A2E14F3A700B0D189 /* PopupEnableChildmode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9BD0692E14F3A700B0D189 /* PopupEnableChildmode.swift */; };
 		0F9BD06C2E1513D700B0D189 /* PopupRequestToDisable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9BD06B2E1513D700B0D189 /* PopupRequestToDisable.swift */; };
@@ -146,6 +147,7 @@
 		0F2DBFB92E0D7F3200243B13 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		0F2DBFBB2E0D7F3A00243B13 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		0F2DBFBD2E0D7F4300243B13 /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
+		0F84C9EF2E16A52D00DD1012 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		0F9BD0672E14ED8D00B0D189 /* ChildMode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChildMode.storyboard; sourceTree = "<group>"; };
 		0F9BD0692E14F3A700B0D189 /* PopupEnableChildmode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupEnableChildmode.swift; sourceTree = "<group>"; };
 		0F9BD06B2E1513D700B0D189 /* PopupRequestToDisable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupRequestToDisable.swift; sourceTree = "<group>"; };
@@ -357,6 +359,8 @@
 		0F2DBFB32E0D7EAD00243B13 /* ClassManager */ = {
 			isa = PBXGroup;
 			children = (
+				0F84C9EF2E16A52D00DD1012 /* LocationManager.swift */,
+				BDB0BDDA2CE7032B00A5E037 /* FirebaseManager.swift */,
 				0F9BD07A2E154CA700B0D189 /* RevenueCatManager.swift */,
 				0FE65B112E12A01600B713DD /* VisualEffectView.swift */,
 				0F2DBFA32E0D3D4100243B13 /* UIEnableDisable.swift */,
@@ -652,7 +656,6 @@
 			isa = PBXGroup;
 			children = (
 				BDC7782F2CECA25700BEFF66 /* DegreeScaleView.swift */,
-				BDB0BDDA2CE7032B00A5E037 /* FirebaseManager.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -904,6 +907,7 @@
 				0FED0F812E0BE87200EB1D5D /* Helper+UITextField.swift in Sources */,
 				0F9BD0782E153BF500B0D189 /* ChildModeCircleTVCell.swift in Sources */,
 				BD1A20932CD0B3510033A8BA /* FSPagerCollectionView.swift in Sources */,
+				0F84C9F02E16A52F00DD1012 /* LocationManager.swift in Sources */,
 				0F2DBFBC2E0D7F3B00243B13 /* Images.swift in Sources */,
 				0FED0F832E0BECD000EB1D5D /* MobileVerificationVC.swift in Sources */,
 				BD1A20A12CD0B3510033A8BA /* LocalNetworkAuthorization.swift in Sources */,
