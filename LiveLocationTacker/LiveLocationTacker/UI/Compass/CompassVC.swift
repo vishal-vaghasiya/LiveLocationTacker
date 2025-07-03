@@ -138,9 +138,6 @@ extension CompassVC: CLLocationManagerDelegate {
         let newLongitudeStr = longitudeStr.DegreeToString(d: Double(longitudeStr)!)
         let newlatitudeStr = latitudeStr.DegreeToString(d: Double(latitudeStr)!)
         
-        print("Latitude: \(currLocation.coordinate.latitude)")
-        print("Longitude: \(currLocation.coordinate.longitude)")
-        
         self.latitudeAndLongitudeLabel.text = "Latitude \(newlatitudeStr)  Longitude \(newLongitudeStr)"
         self.altitudeLabel.text = "Altitude: \(altitudeStr) meters"
         
@@ -195,15 +192,12 @@ extension String {
     func DegreeToString(d: Double) -> String {
         /// Degree
         let degree = Int(d)
-        print("Degree: \(degree)°")
         /// Temporary minute
         let tempMinute = Float(d - Double(degree)) * 60
         /// Minute
         let minutes = Int(tempMinute)   // Round down
-        print("Minute: \(minutes)′")
         /// Second
         let second = Int((tempMinute - Float(minutes)) * 60)
-        print("Second: \(second)\"")
         return "\(degree)°\(minutes)′\(second)″"
     }
 }
