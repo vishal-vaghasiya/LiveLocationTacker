@@ -11,8 +11,10 @@ import FirebaseDatabase
 import Lottie
 
 var selectedGroupsnapSort:DataSnapshot?
+
 class CircleVC: UIViewController {
     
+    // MARK: - Outlets
     @IBOutlet weak var lbl_circleName: UILabel!
     @IBOutlet weak var img_vectore: UIImageView!
     @IBOutlet weak var circle_view: UIView!
@@ -21,6 +23,7 @@ class CircleVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var plus_lottieview: UIView!
     
+    // MARK: - Properties
     let groupManager = FirebaseManager.shared
     let locationManager = CLLocationManager()
     var memberList:[String:Any] = [:]
@@ -29,6 +32,7 @@ class CircleVC: UIViewController {
     
     var locationPoints: [UserLocationModel] = []
     
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchAllCircle()
@@ -64,48 +68,36 @@ class CircleVC: UIViewController {
         self.requestTrackingPermission { }
     }
     
-    func plotRoute() {
-        // Only remove overlays (keep member pins/annotations as-is)
-        map_view.removeOverlays(map_view.overlays)
-        
-        // Guard: need at least 2 points to draw a route.
-        guard locationPoints.count >= 2 else {
-            print("No route to draw — not enough coordinates.")
-            return
-        }
-        
-        // Draw directions-based route for each segment
-        for i in 0..<locationPoints.count - 1 {
-            let sourceCoord = CLLocationCoordinate2D(
-                latitude: locationPoints[i].latitude,
-                longitude: locationPoints[i].longitude
-            )
-            let destCoord = CLLocationCoordinate2D(
-                latitude: locationPoints[i + 1].latitude,
-                longitude: locationPoints[i + 1].longitude
-            )
-            
-            let source = MKPlacemark(coordinate: sourceCoord)
-            let destination = MKPlacemark(coordinate: destCoord)
-            
-            let request = MKDirections.Request()
-            request.source = MKMapItem(placemark: source)
-            request.destination = MKMapItem(placemark: destination)
-            request.transportType = .automobile
-            
-            let directions = MKDirections(request: request)
-            directions.calculate { [weak self] response, error in
-                if let error = error {
-                    print("❌ Failed to calculate route: \(error.localizedDescription)")
-                    return
-                }
-                guard let route = response?.routes.first else { return }
-                self?.map_view.addOverlay(route.polyline)
-                // Don't reset region for every segment; let caller decide if/when to zoom.
+    // MARK: - Firebase & API Methods
+    func fetchAllCircle() {
+        groupManager.saveFcmTokenFirebase()
+        groupManager.fetchAllCircles(phoneNumber: DefaultManager.User.PHONE) { ListSnapSort in
+            DispatchQueue.main.async {
+                self.groupSnapSortList = ListSnapSort
+                selectedGroupsnapSort = ListSnapSort.first
+                self.lbl_circleName.text = selectedGroupsnapSort?.childSnapshot(forPath: "name").value as? String ?? ""
+                DefaultManager.Cirlce.CURRENT_CODE = selectedGroupsnapSort?.childSnapshot(forPath: "code").value as? String ?? ""
+                self.getMemberList()
             }
         }
     }
     
+    func getMemberList() {
+        fetchMemberListFromCircle()
+    }
+    
+    func fetchMemberListFromCircle(){
+        self.memberList = selectedGroupsnapSort?.childSnapshot(forPath: "members").value as? [String:Any] ?? [:]
+        self.tableView.reloadData()
+        self.addMemberPinsToMap()
+    }
+    
+    @objc func batteryLevelDidChange() {
+        let currentBatteryLevel = Int(UIDevice.current.batteryLevel * 100) // Convert to percentage
+        groupManager.updateBatteryLevel(userPhone:  DefaultManager.User.PHONE , batteryLevel: currentBatteryLevel)
+    }
+    
+    // MARK: - Button Actions
     @IBAction func btnPlusMemberAction(_ sender: UIButton) {
         let vc = StoryboardScene.Circle.joinCircleVC.instantiate()
         vc.groupCode = selectedGroupsnapSort?.childSnapshot(forPath: "code").value as? String ?? ""
@@ -186,37 +178,70 @@ class CircleVC: UIViewController {
         }
     }
     
-    func fetchAllCircle() {
-        groupManager.saveFcmTokenFirebase()
-        groupManager.fetchAllCircles(phoneNumber: DefaultManager.User.PHONE) { ListSnapSort in
-            DispatchQueue.main.async {
-                self.groupSnapSortList = ListSnapSort
-                selectedGroupsnapSort = ListSnapSort.first
-                self.lbl_circleName.text = selectedGroupsnapSort?.childSnapshot(forPath: "name").value as? String ?? ""
-                DefaultManager.Cirlce.CURRENT_CODE = selectedGroupsnapSort?.childSnapshot(forPath: "code").value as? String ?? ""
-                self.getMemberList()
+    // MARK: - Map Methods
+    func plotRoute() {
+        // Only remove overlays (keep member pins/annotations as-is)
+        map_view.removeOverlays(map_view.overlays)
+        
+        // Guard: need at least 2 points to draw a route.
+        guard locationPoints.count >= 2 else {
+            print("No route to draw — not enough coordinates.")
+            return
+        }
+        
+        // Draw directions-based route for each segment
+        for i in 0..<locationPoints.count - 1 {
+            let sourceCoord = CLLocationCoordinate2D(
+                latitude: locationPoints[i].latitude,
+                longitude: locationPoints[i].longitude
+            )
+            let destCoord = CLLocationCoordinate2D(
+                latitude: locationPoints[i + 1].latitude,
+                longitude: locationPoints[i + 1].longitude
+            )
+            
+            let source = MKPlacemark(coordinate: sourceCoord)
+            let destination = MKPlacemark(coordinate: destCoord)
+            
+            let request = MKDirections.Request()
+            request.source = MKMapItem(placemark: source)
+            request.destination = MKMapItem(placemark: destination)
+            request.transportType = .automobile
+            
+            let directions = MKDirections(request: request)
+            directions.calculate { [weak self] response, error in
+                if let error = error {
+                    print("❌ Failed to calculate route: \(error.localizedDescription)")
+                    return
+                }
+                guard let route = response?.routes.first else { return }
+                self?.map_view.addOverlay(route.polyline)
+                // Don't reset region for every segment; let caller decide if/when to zoom.
             }
         }
     }
     
-    func getMemberList(){
-        self.fetchMemberListFromCircle()
-    }
-    
-    func fetchMemberListFromCircle(){
-        self.memberList = selectedGroupsnapSort?.childSnapshot(forPath: "members").value as? [String:Any] ?? [:]
-        self.tableView.reloadData()
-        self.addMemberPinsToMap()
-    }
-    
-    @objc func batteryLevelDidChange() {
-        let currentBatteryLevel = Int(UIDevice.current.batteryLevel * 100) // Convert to percentage
-        groupManager.updateBatteryLevel(userPhone:  DefaultManager.User.PHONE , batteryLevel: currentBatteryLevel)
+    func addMemberPinsToMap() {
+        map_view.removeAnnotations(map_view.annotations)
+        for (_, member) in memberList {
+            if let memberData = member as? [String: Any],
+               let latitude = memberData["latitude"] as? Double,
+               let longitude = memberData["longitude"] as? Double,
+               let username = memberData["username"] as? String,
+               let userPhone = memberData["userPhone"] as? String { // Get phone number
+                
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+                annotation.title = username
+                annotation.subtitle = userPhone // Use phone number as the subtitle
+                map_view.addAnnotation(annotation)
+            }
+        }
     }
 }
 
 
-//MARK: - Datasource
+// MARK: - UITableView Delegate & DataSource
 
 extension CircleVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -251,6 +276,8 @@ extension CircleVC: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+
+// MARK: - MKMapViewDelegate
 
 extension CircleVC : MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -301,24 +328,6 @@ extension CircleVC : MKMapViewDelegate {
             vc.username = (annotation.title ?? "") ?? ""
             vc.usernumber = (annotation.subtitle ?? "") ?? ""
             self.present(vc, animated: false)
-        }
-    }
-    
-    func addMemberPinsToMap() {
-        map_view.removeAnnotations(map_view.annotations)
-        for (_, member) in memberList {
-            if let memberData = member as? [String: Any],
-               let latitude = memberData["latitude"] as? Double,
-               let longitude = memberData["longitude"] as? Double,
-               let username = memberData["username"] as? String,
-               let userPhone = memberData["userPhone"] as? String { // Get phone number
-                
-                let annotation = MKPointAnnotation()
-                annotation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-                annotation.title = username
-                annotation.subtitle = userPhone // Use phone number as the subtitle
-                map_view.addAnnotation(annotation)
-            }
         }
     }
     
