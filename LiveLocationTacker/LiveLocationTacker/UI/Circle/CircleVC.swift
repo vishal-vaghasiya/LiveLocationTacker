@@ -10,12 +10,9 @@ import MapKit
 import FirebaseDatabase
 import Lottie
 
-
 var selectedGroupsnapSort:DataSnapshot?
-
-
 class CircleVC: UIViewController {
-
+    
     @IBOutlet weak var lbl_circleName: UILabel!
     @IBOutlet weak var img_vectore: UIImageView!
     @IBOutlet weak var circle_view: UIView!
@@ -31,7 +28,7 @@ class CircleVC: UIViewController {
     var currentMapType: MKMapType = .standard
     
     var locationPoints: [UserLocationModel] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,13 +53,11 @@ class CircleVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         navigationController?.navigationBar.isHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
         navigationController?.navigationBar.isHidden = false
     }
     
@@ -72,37 +67,16 @@ class CircleVC: UIViewController {
         self.requestTrackingPermission { }
     }
     
-//    func plotRoute() {
-//        let coordinates = locationPoints.map {
-//            CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude)
-//        }
-//
-//        for coordinate in coordinates {
-//            let annotation = MKPointAnnotation()
-//            annotation.coordinate = coordinate
-//            map_view.addAnnotation(annotation)
-//        }
-//
-//        let polyline = MKPolyline(coordinates: coordinates, count: coordinates.count)
-//        map_view.addOverlay(polyline)
-//
-//        if let first = coordinates.first {
-//            map_view.setRegion(MKCoordinateRegion(center: first, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)), animated: true)
-//        }
-//    }
-    
     func plotRoute() {
         // Only remove overlays (keep member pins/annotations as-is)
         map_view.removeOverlays(map_view.overlays)
-
-        // Don't addMemberPinsToMap() here; pins are handled elsewhere.
-
+        
         // Guard: need at least 2 points to draw a route.
         guard locationPoints.count >= 2 else {
             print("No route to draw — not enough coordinates.")
             return
         }
-
+        
         // Draw directions-based route for each segment
         for i in 0..<locationPoints.count - 1 {
             let sourceCoord = CLLocationCoordinate2D(
@@ -113,15 +87,15 @@ class CircleVC: UIViewController {
                 latitude: locationPoints[i + 1].latitude,
                 longitude: locationPoints[i + 1].longitude
             )
-
+            
             let source = MKPlacemark(coordinate: sourceCoord)
             let destination = MKPlacemark(coordinate: destCoord)
-
+            
             let request = MKDirections.Request()
             request.source = MKMapItem(placemark: source)
             request.destination = MKMapItem(placemark: destination)
             request.transportType = .automobile
-
+            
             let directions = MKDirections(request: request)
             directions.calculate { [weak self] response, error in
                 if let error = error {
@@ -138,7 +112,6 @@ class CircleVC: UIViewController {
     @IBAction func btnPlusMemberAction(_ sender: UIButton) {
         let vc = StoryboardScene.Circle.joinCircleVC.instantiate()
         vc.groupCode = selectedGroupsnapSort?.childSnapshot(forPath: "code").value as? String ?? ""
-        //vc.groupFcmtoken = selectedGroupsnapSort?.childSnapshot(forPath: "fcmtoken").value as? String ?? ""
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -152,8 +125,6 @@ class CircleVC: UIViewController {
     }
     
     @IBAction func btnSelectGroupAction(_ sender: UIButton) {
-        //UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-        //img_vectore.isHighlighted = !img_vectore.isHighlighted
         let vc = StoryboardScene.Circle.myCirclesPopup.instantiate()
         vc.groupSnapSortList = self.groupSnapSortList
         vc.joinCircle = {
@@ -179,7 +150,6 @@ class CircleVC: UIViewController {
     }
     
     @IBAction func btnMapTypeAction(_ sender: UIButton) {
-        //UIImpactFeedbackGenerator(style: .medium).impactOccurred()
         let vc = StoryboardScene.Circle.mapSettingsVC.instantiate()
         vc.selectedMapType = currentMapType
         vc.updateMap = { (mapType) in
@@ -188,18 +158,6 @@ class CircleVC: UIViewController {
         }
         vc.modalPresentationStyle = .overFullScreen
         self.present(vc, animated: false)
-        
-//        switch currentMapType {
-//        case .standard:
-//            currentMapType = .satellite
-//        case .satellite:
-//            currentMapType = .hybrid
-//        case .hybrid:
-//            currentMapType = .standard
-//        default:
-//            currentMapType = .standard
-//        }
-//        map_view.mapType = currentMapType
     }
     
     @IBAction func btnGpsAction(_ sender: UIButton) {
@@ -211,14 +169,14 @@ class CircleVC: UIViewController {
             self.map_view.setRegion(region, animated: true)
         }
         /*
-        guard let userLocation = map_view.userLocation.location else {
-            print("User location not available.")
-            return
-        }
-        let region = MKCoordinateRegion(center: userLocation.coordinate,
-                                        latitudinalMeters: 500,
-                                        longitudinalMeters: 500)
-        map_view.setRegion(region, animated: true)
+         guard let userLocation = map_view.userLocation.location else {
+         print("User location not available.")
+         return
+         }
+         let region = MKCoordinateRegion(center: userLocation.coordinate,
+         latitudinalMeters: 500,
+         longitudinalMeters: 500)
+         map_view.setRegion(region, animated: true)
          */
     }
     
@@ -320,14 +278,14 @@ extension CircleVC : MKMapViewDelegate {
             print("User location not available")
             return
         }
-
+        
         let number = (annotation.subtitle ?? "") ?? ""
         if number.isEmpty { return }
-
+        
         FirebaseManager.shared.fetchTodayLocations(for: number) { locations in
             self.locationPoints = locations.sorted { $0.timestamp < $1.timestamp }
             self.plotRoute()
-
+            
             // Reselect the annotation after drawing route to keep callout open
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 mapView.selectAnnotation(annotation, animated: false)
@@ -349,7 +307,7 @@ extension CircleVC : MKMapViewDelegate {
     }
     
     func addMemberPinsToMap() {
-        map_view.removeAnnotations(map_view.annotations) // Remove any existing annotations
+        map_view.removeAnnotations(map_view.annotations)
         for (_, member) in memberList {
             if let memberData = member as? [String: Any],
                let latitude = memberData["latitude"] as? Double,

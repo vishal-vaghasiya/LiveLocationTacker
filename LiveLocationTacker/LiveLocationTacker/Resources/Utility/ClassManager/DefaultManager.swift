@@ -8,8 +8,36 @@
 import Foundation
 
 class DefaultManager {
-
+    
+    static func removeAll() {
+        //        UserDefaults.standard.dictionaryRepresentation().keys.forEach {
+        //            UserDefaults.standard.removeObject(forKey: $0)
+        //        }
+        DefaultManager.IS_INITIAL_SETUP = false
+        DefaultManager.User.COUNTRY_CODE = ""
+        DefaultManager.User.PHONE = ""
+        DefaultManager.User.NAME = ""
+        DefaultManager.User.GENDER = ""
+        DefaultManager.Permission.LOCATION = false
+        DefaultManager.Permission.BATTERY = false
+        DefaultManager.Permission.NOTIFICATION = false
+        DefaultManager.Permission.CAMERA = false
+        DefaultManager.Permission.MOTION = false
+        Constants.USERDEFAULTS.removeCurrentUserCode()
+        Constants.USERDEFAULTS.removeProfileImage()
+    }
+    
     static var IS_SUBSCRIPTION: Bool {
+        get {
+            return (UserDefaults.standard.bool(forKey: #function))
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: #function)
+            UserDefaults.standard.synchronize()
+        }
+    }
+    
+    static var IS_INITIAL_SETUP: Bool {
         get {
             return (UserDefaults.standard.bool(forKey: #function))
         }
@@ -151,45 +179,6 @@ enum UserDefaultsKeys : String {
 
 extension UserDefaults {
     
-    // Mobile Number
-//    func saveCurrentuserNumber(value: String) {
-//        set(value, forKey: UserDefaultsKeys.save_mobilenumer.rawValue)
-//    }
-//    
-//    func getCurrentuserNumber() -> String {
-//        return string(forKey: UserDefaultsKeys.save_mobilenumer.rawValue) ?? ""
-//    }
-//    
-//    func removeCurrentUserNumber() {
-//        removeObject(forKey: UserDefaultsKeys.save_mobilenumer.rawValue)
-//    }
-    
-    // User Name
-//    func saveCurrentuserName(value: String) {
-//        set(value, forKey: UserDefaultsKeys.save_name.rawValue)
-//    }
-//    
-//    func getCurrentuserName() -> String {
-//        return string(forKey: UserDefaultsKeys.save_name.rawValue) ?? ""
-//    }
-//    
-//    func removeCurrentUserName() {
-//        removeObject(forKey: UserDefaultsKeys.save_name.rawValue)
-//    }
-    
-    // User Geneder
-//    func saveCurrentuserGender(value: String) {
-//        set(value, forKey: UserDefaultsKeys.save_gender.rawValue)
-//    }
-//    
-//    func getCurrentuserGender() -> String {
-//        return string(forKey: UserDefaultsKeys.save_gender.rawValue) ?? ""
-//    }
-//    
-//    func removeCurrentUserGender() {
-//        removeObject(forKey: UserDefaultsKeys.save_gender.rawValue)
-//    }
-    
     // User Code
     func saveCurrentuserCode(value: String) {
         set(value, forKey: UserDefaultsKeys.save_code.rawValue)
@@ -202,71 +191,6 @@ extension UserDefaults {
     func removeCurrentUserCode() {
         removeObject(forKey: UserDefaultsKeys.save_code.rawValue)
     }
-    
-    // Location Sharing
-//    func saveLocationSharing(value: Bool) {
-//        set(value, forKey: UserDefaultsKeys.location_sharing.rawValue)
-//    }
-//    
-//    func getLocationSharing() -> Bool {
-//        return bool(forKey: UserDefaultsKeys.location_sharing.rawValue)
-//    }
-//    
-//    func removeLocationSharing() {
-//        removeObject(forKey: UserDefaultsKeys.location_sharing.rawValue)
-//    }
-    
-    // Battery Sharing
-//    func saveBatterySharing(value: Bool) {
-//        set(value, forKey: UserDefaultsKeys.battery_sharing.rawValue)
-//    }
-//    
-//    func getBatterySharing() -> Bool {
-//        return bool(forKey: UserDefaultsKeys.battery_sharing.rawValue)
-//    }
-//    
-//    func removeBatterySharing() {
-//        removeObject(forKey: UserDefaultsKeys.battery_sharing.rawValue)
-//    }
-    
-    // Notification Sharing
-//    func saveNotificationSharing(value: Bool) {
-//        set(value, forKey: UserDefaultsKeys.notification_sharing.rawValue)
-//    }
-//    
-//    func getNotificationSharing() -> Bool {
-//        return bool(forKey: UserDefaultsKeys.notification_sharing.rawValue)
-//    }
-//    
-//    func removeNotificationSharing() {
-//        removeObject(forKey: UserDefaultsKeys.notification_sharing.rawValue)
-//    }
-    
-    // Camera Permission
-//    func saveCameraSharing(value: Bool) {
-//        set(value, forKey: UserDefaultsKeys.camera_sharing.rawValue)
-//    }
-//    
-//    func getCameraSharing() -> Bool {
-//        return bool(forKey: UserDefaultsKeys.camera_sharing.rawValue)
-//    }
-//    
-//    func removeCameraSharing() {
-//        removeObject(forKey: UserDefaultsKeys.camera_sharing.rawValue)
-//    }
-    
-    // Motion Permission
-//    func saveMotionSharing(value: Bool) {
-//        set(value, forKey: UserDefaultsKeys.motion_sharing.rawValue)
-//    }
-//    
-//    func getMotionSharing() -> Bool {
-//        return bool(forKey: UserDefaultsKeys.motion_sharing.rawValue)
-//    }
-//    
-//    func removeMotionSharing() {
-//        removeObject(forKey: UserDefaultsKeys.motion_sharing.rawValue)
-//    }
     
     // Profile Image
     func saveProfileImage(value: Data) {
@@ -281,18 +205,5 @@ extension UserDefaults {
         removeObject(forKey: UserDefaultsKeys.profile_img.rawValue)
     }
     
-    // FCM token
-//    func saveFCMToken(value: String) {
-//        set(value, forKey: UserDefaultsKeys.fcm_token.rawValue)
-//    }
-//
-//    func getFCMToken() -> String {
-//        return string(forKey: UserDefaultsKeys.fcm_token.rawValue) ?? ""
-//    }
-//
-//    func removeFCMToken() {
-//        removeObject(forKey: UserDefaultsKeys.fcm_token.rawValue)
-//    }
-
 }
 

@@ -104,7 +104,7 @@ class SubscribeVC: UIViewController {
     
     @IBAction func btnCloseAction(_ sender: UIButton) {
         if isFromSplash {
-            Constants.USERDEFAULTS.set(true, forKey: "isIntro")
+            DefaultManager.IS_INITIAL_SETUP = true
             self.navigateToHome()
         }
         else{

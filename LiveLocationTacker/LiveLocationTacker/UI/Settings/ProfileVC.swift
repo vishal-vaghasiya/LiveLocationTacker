@@ -77,18 +77,7 @@ class ProfileVC: UIViewController {
         vc.conformDeleteAction = {
             self.showLoader(text: "Deleting...")
             
-            Constants.USERDEFAULTS.removeObject(forKey: "isIntro")
-            DefaultManager.User.COUNTRY_CODE = ""
-            DefaultManager.User.PHONE = ""
-            DefaultManager.User.NAME = ""
-            DefaultManager.User.GENDER = ""
-            Constants.USERDEFAULTS.removeCurrentUserCode()
-            DefaultManager.Permission.LOCATION = false
-            DefaultManager.Permission.BATTERY = false
-            DefaultManager.Permission.NOTIFICATION = false
-            DefaultManager.Permission.CAMERA = false
-            DefaultManager.Permission.MOTION = false
-            Constants.USERDEFAULTS.removeProfileImage()
+            DefaultManager.removeAll()
             
             self.firebaseManager.deleteUserAccount(userPhoneNumber: self.lbl_number.text ?? "") { success in
                 self.hideLoader()

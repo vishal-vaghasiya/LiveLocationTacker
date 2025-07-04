@@ -24,8 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window?.overrideUserInterfaceStyle = .light
         refreshUserDetails()
-        
-        if Constants.USERDEFAULTS.bool(forKey: "isIntro") == true {
+        if DefaultManager.IS_INITIAL_SETUP {
             setupHome()
         }
     }

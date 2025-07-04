@@ -26,46 +26,6 @@ class SosVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.startCountdown()
-        //        guard let lastLocation = selectedGroupsnapSort?.childSnapshot(forPath: "members").childSnapshot(forPath: Constants.USERDEFAULTS.getCurrentuserNumber()).value as? [String:Any] else { return }
-        
-        //send sos to friends
-        //        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-        //            if self.sosTime < 1{
-        //
-        //                var sosMSG = Constants.USERDEFAULTS.getCurrentuserName()
-        //                sosMSG = sosMSG +  NSLocalizedString(" SOSPUSHCONTENT", comment: "") + " @"
-        //                sosMSG = sosMSG +  String(lastLocation["latitude"]  as? Double ?? 0) + "," + String(lastLocation["longitude"]  as? Double ?? 0)
-        //
-        //                if let memberNumber = Array(self.memberList.keys.sorted()) as? [String] {
-        //
-        //                    memberNumber.forEach { phoneNumber in
-        //
-        //                        if phoneNumber != Constants.USERDEFAULTS.getCurrentuserNumber() {
-        //                            self.firebaseManager.ref.child("circles").queryOrdered(byChild: "admin").queryEqual(toValue: phoneNumber).observeSingleEvent(of: .value) { snapshot in
-        //                                if snapshot.exists() {
-        //                                    for snap in snapshot.children.allObjects as! [DataSnapshot] {
-        //                                        if let circleData = snap.value as? [String: Any],
-        //                                           let fcmToken = circleData["fcmtoken"] as? String {
-        //                                            print("sosMSG ==> \(sosMSG)")
-        //                                            self.firebaseManager.sendPushNotification(fcmToken: fcmToken, body: sosMSG)
-        //                                        }
-        //                                        else {
-        //                                            print("FCM token not found for admin \(phoneNumber).")
-        //                                        }
-        //                                    }
-        //                                }
-        //                            }
-        //                        }
-        //                    }
-        //                }
-        //                print("SOS timeer CALLED")
-        //                self.sosTime = 10
-        //                timer.invalidate()
-        //                self.dismiss(animated: true)
-        //            }
-        //            self.sosTime = self.sosTime - 1
-        //            self.lbl_timer.text = "\(self.sosTime)"
-        //        }
     }
     
     // MARK: - UI SETUP

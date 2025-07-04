@@ -42,9 +42,7 @@ class ScantoJoinVC: UIViewController {
     }
 }
 
-
 // MARK: - create qrcode -
-
 extension ScantoJoinVC : QRScannerCodeDelegate {
     
     func qrScanner(_ controller: UIViewController, didScanQRCodeWithResult result: String) {

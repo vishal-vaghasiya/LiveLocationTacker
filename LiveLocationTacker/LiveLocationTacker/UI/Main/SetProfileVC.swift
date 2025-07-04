@@ -66,7 +66,7 @@ class SetProfileVC: UIViewController {
         firebaseManager.updateUserNameInFirebase(userPhonenumber: DefaultManager.User.PHONE,entername: txt_name.text ?? "") { updated, errorMessage in
             self.hideLoader()
             if updated {
-                Constants.USERDEFAULTS.set(true, forKey: "isIntro")
+                DefaultManager.IS_INITIAL_SETUP = true
                 DefaultManager.User.NAME = self.txt_name.text ?? ""
                 DefaultManager.User.GENDER = self.btnMale.layer.borderWidth == 2 ? "Male" : "Female"
                 self.navigateToHome()
