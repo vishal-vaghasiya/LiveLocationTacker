@@ -66,7 +66,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     }
     
     func startMonitoring() {
-        let currentStatus = CLLocationManager.authorizationStatus()
+        let currentStatus = locationManager.authorizationStatus
         switch currentStatus {
         case .notDetermined:
             // Request location access
