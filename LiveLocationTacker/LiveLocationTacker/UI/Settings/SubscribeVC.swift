@@ -9,8 +9,6 @@ import RevenueCat
 import ProgressHUD
 import AppTrackingTransparency
 
-
-
 class SubscribeVC: UIViewController {
     
     @IBOutlet weak var mainView: UIView!
@@ -35,10 +33,12 @@ class SubscribeVC: UIViewController {
     @IBOutlet weak var btnRestore: UIButton!
     
     var offering: Offering?
-    var isFromTrailProScreen:Bool = false
-    var takingPremuium:(()->()) = { }
+    var isFromTrailProScreen: Bool = false
+    var takingPremuium: () -> () = { }
     var isFromSplash = false
-    var onTapDismissControllerAction:(()->()) = { }
+    var onTapDismissControllerAction: () -> () = { }
+    
+    // MARK: - Lifecycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,12 +55,12 @@ class SubscribeVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
             self.btnClose.isHidden = false
-        })
+        }
     }
     
-    func initView(){
+    func initView() {
         img_bg_year.isHighlighted = true
         
         yearView.backgroundColor = .maincolor
@@ -73,9 +73,8 @@ class SubscribeVC: UIViewController {
         lbl_month_price.textColor = .fontGraycolor
     }
     
-    func getOfferFromRevenuecut(){
+    func getOfferFromRevenuecut() {
         Purchases.shared.getOfferings { [self] (offerings, error) in
-
             if let error = error {
                 print(error.localizedDescription)
                 return
@@ -84,16 +83,13 @@ class SubscribeVC: UIViewController {
             btnSubscibeNow.isEnabled = true
             
             if let packages = self.offering?.availablePackages {
-                for (_,package) in packages.enumerated() {
-
+                for (_, package) in packages.enumerated() {
                     if package.packageType == .annual {
                         self.lbl_year_price.text = "\(package.localizedPriceString) / \("Yearly")"
                         self.lbl_3daytrail.text = "\(package.localizedPriceString) / \("bottom_trail")"
-                    }
-                    else if package.packageType == .monthly{
+                    } else if package.packageType == .monthly {
                         self.lbl_month_price.text = "\(package.localizedPriceString) / \("Monthly")"
-                    }
-                    else if package.packageType == .weekly {
+                    } else if package.packageType == .weekly {
                         self.lbl_week_price.text = "\(package.localizedPriceString) / \("Weekly")"
                     }
                 }
@@ -101,18 +97,18 @@ class SubscribeVC: UIViewController {
         }
     }
     
+    // MARK: - Button Actions
+    
     @IBAction func btnCloseAction(_ sender: UIButton) {
         if isFromSplash {
             DefaultManager.IS_INITIAL_SETUP = true
             self.navigateToHome()
-        }
-        else{
+        } else {
             dismiss(animated: true) {
                 self.onTapDismissControllerAction()
             }
         }
     }
-    
     
     @IBAction func btnRestoreAction(_ sender: UIButton) {
         ProgressHUD.animate(interaction: false)
@@ -129,7 +125,7 @@ class SubscribeVC: UIViewController {
         let weekSelected = sender.tag == 0
         let monthSelected = sender.tag == 1
         let yearSelected = sender.tag == 2
-    
+        
         img_bg_week.isHighlighted = weekSelected
         img_bg_month.isHighlighted = monthSelected
         img_bg_year.isHighlighted = yearSelected
@@ -138,14 +134,14 @@ class SubscribeVC: UIViewController {
         case 0:
             weekView.backgroundColor = .maincolor
             lbl_week_price.textColor = .white
-                
+            
             monthView.backgroundColor = .cellBg
             lbl_month_price.textColor = .fontGraycolor
             
             yearView.backgroundColor = .cellBg
             lbl_year_price.textColor = .fontGraycolor
             
-            self.lbl_3daytrail.text = "\(offering?.weekly?.localizedPriceString ?? "") / Weekly , Automatic Reneuwal and Cancel anytime."
+            self.lbl_3daytrail.text = "\(offering?.weekly?.localizedPriceString ?? "") / Weekly , Automatic Renewal and Cancel anytime."
         case 1:
             monthView.backgroundColor = .maincolor
             lbl_month_price.textColor = .white
@@ -156,7 +152,7 @@ class SubscribeVC: UIViewController {
             yearView.backgroundColor = .cellBg
             lbl_year_price.textColor = .fontGraycolor
             
-            self.lbl_3daytrail.text = "\(offering?.monthly?.localizedPriceString ?? "") / Monthly , Automatic Reneuwal and Cancel anytime."
+            self.lbl_3daytrail.text = "\(offering?.monthly?.localizedPriceString ?? "") / Monthly , Automatic Renewal and Cancel anytime."
         case 2:
             yearView.backgroundColor = .maincolor
             lbl_year_price.textColor = .white
@@ -167,29 +163,27 @@ class SubscribeVC: UIViewController {
             monthView.backgroundColor = .cellBg
             lbl_month_price.textColor = .fontGraycolor
             
-            self.lbl_3daytrail.text = "\(offering?.annual?.localizedPriceString ?? "") / Yearly , Automatic Reneuwal and Cancel anytime."
+            self.lbl_3daytrail.text = "\(offering?.annual?.localizedPriceString ?? "") / Yearly , Automatic Renewal and Cancel anytime."
         default:
             break
         }
     }
-
-
+    
     @IBAction func btnSubscribeAction(_ sender: UIButton) {
-        for i in 0..<(self.offering?.availablePackages.count ?? 0) {
-            if img_bg_week.isHighlighted == true {
-                if offering?.availablePackages[i].packageType == .weekly {
-                    buyProduct(index: i)
-                }
-            }
-            else if img_bg_month.isHighlighted == true {
-                if offering?.availablePackages[i].packageType == .monthly {
-                    buyProduct(index: i)
-                }
-            }
-            else if img_bg_year.isHighlighted == true {
-                if offering?.availablePackages[i].packageType == .annual {
-                    buyProduct(index: i)
-                }
+        guard let packages = self.offering?.availablePackages else { return }
+        
+        for i in 0..<packages.count {
+            let package = packages[i]
+            
+            if img_bg_week.isHighlighted, package.packageType == .weekly {
+                buyProduct(index: i)
+                break
+            } else if img_bg_month.isHighlighted, package.packageType == .monthly {
+                buyProduct(index: i)
+                break
+            } else if img_bg_year.isHighlighted, package.packageType == .annual {
+                buyProduct(index: i)
+                break
             }
         }
     }
@@ -205,21 +199,19 @@ class SubscribeVC: UIViewController {
     }
 }
 
-
-//MARK: - Subscribe -
+// MARK: - RevenueCat Purchase Methods
 
 extension SubscribeVC {
     
-    func buyProduct(index : Int){
+    func buyProduct(index: Int) {
         showLoader(text: "loading")
         
         if let package = offering?.availablePackages[index] {
             Purchases.shared.purchase(package: package) { (transaction, purchaserInfo, error, userCancelled) in
                 ProgressHUD.dismiss()
                 if let error = error {
-//                    self.present(self.errorAlert(message: error.localizedDescription), animated: true, completion: nil)
-                }
-                else {
+                    // Handle error if needed
+                } else {
                     self.dismissModal()
                 }
             }
@@ -227,20 +219,16 @@ extension SubscribeVC {
     }
     
     func dismissModal() {
-//        Constants.USERDEFAULTS.set(true, forKey: "pro")
         DefaultManager.IS_SUBSCRIPTION = true
         
-        // Create the alert controller
-        let alertController = UIAlertController(title: "confirmation", message: "your sub confirmed", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Subscription Confirmed", message: "Your subscription has been successfully activated.", preferredStyle: .alert)
         
-        let okAction = UIAlertAction(title: "ok", style: .default) {
-            UIAlertAction in
-            if self.isFromTrailProScreen == true{
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            if self.isFromTrailProScreen {
                 self.dismiss(animated: true) {
                     self.takingPremuium()
                 }
-            }
-            else{
+            } else {
                 self.navigateToHome()
             }
         }
@@ -251,29 +239,23 @@ extension SubscribeVC {
     func refreshUserDetails() {
         Purchases.shared.getCustomerInfo { (purchaserInfo, error) in
             if purchaserInfo?.entitlements[Constants.entitlementID]?.isActive == true {
-//                Constants.USERDEFAULTS.set(true, forKey: "pro")
                 DefaultManager.IS_SUBSCRIPTION = true
                 
-                // Create the alert controller
-                let alertController = UIAlertController(title: "Restore complete", message: "your sub restored", preferredStyle: .alert)
+                let alertController = UIAlertController(title: "Restore Complete", message: "Your subscription has been successfully restored.", preferredStyle: .alert)
                 
-                let okAction = UIAlertAction(title: "ok", style: .default) {
-                    UIAlertAction in
-                    if self.isFromTrailProScreen == true{
+                let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+                    if self.isFromTrailProScreen {
                         self.dismiss(animated: true) {
                             self.takingPremuium()
                         }
-                    }
-                    else{
+                    } else {
                         self.navigateToHome()
                     }
                 }
                 alertController.addAction(okAction)
                 self.present(alertController, animated: true, completion: nil)
-            }
-            else {
-                self.showAlert(title: "no subcribe availble", message: "plz subcribe first")
-                //Constants.USERDEFAULTS.removeObject(forKey: "pro")
+            } else {
+                self.showAlert(title: "No Subscription Available", message: "Please subscribe first.")
                 DefaultManager.IS_SUBSCRIPTION = false
             }
         }
@@ -285,4 +267,3 @@ extension SubscribeVC {
         return errorAlert
     }
 }
-

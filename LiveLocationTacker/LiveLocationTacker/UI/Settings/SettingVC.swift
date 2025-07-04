@@ -19,7 +19,6 @@ class SettingVC: UIViewController {
         settingDeatils = [
             AppCommonModel(id: .CHILD_MODE, image: UIImage(named: "icon_permission_childmode"), title: "Child Mode"),
             //AppCommonModel(id: .DARK_MODE, image: UIImage(named: "icon_dark_mode"), title: "Dark Mode"),
-            
             AppCommonModel(id: .RATE_NOW, image: UIImage(named: "icon_rate_us"), title: "Rate now"),
             AppCommonModel(id: .SHARE, image: UIImage(named: "icon_share_app"), title: "Share app"),
             AppCommonModel(id: .FEEDBACK, image: UIImage(named: "icon_feedback_app"), title: "Feedback"),
@@ -39,6 +38,7 @@ class SettingVC: UIViewController {
     }
 }
 
+// MARK: - UITableViewDelegate & UITableViewDataSource
 extension SettingVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return settingDeatils.count
@@ -109,7 +109,7 @@ extension SettingVC : UITableViewDelegate, UITableViewDataSource {
         return UITableView.automaticDimension
     }
     
-    // FEEDBACK
+    // MARK: - Feedback
     func presentFeedbackMailComposer() {
         if MFMailComposeViewController.canSendMail() {
             let mailComposer = MFMailComposeViewController()
@@ -128,7 +128,7 @@ extension SettingVC : UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    // PRIVACY
+    // MARK: - Privacy Policy
     func openPrivacyPolicy() {
         // Replace with your actual privacy policy URL
         guard let privacyPolicyURL = URL(string: PRIVACY) else {
@@ -143,7 +143,7 @@ extension SettingVC : UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    // Terms
+    // MARK: - Terms & Conditions
     func openTermCondition() {
         // Replace with your actual privacy policy URL
         guard let privacyPolicyURL = URL(string: TERMS) else {
@@ -158,7 +158,7 @@ extension SettingVC : UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    // RATING
+    // MARK: - App Rating
     func openAppStoreForRating() {
         guard let appStoreURL = URL(string: RATE_URL) else {
             print("Invalid App Store URL")
@@ -170,8 +170,7 @@ extension SettingVC : UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    
-    //Restore
+    // MARK: - Subscription Restore
     func restorePurchase(){
         showLoader(text: "loading")
         
@@ -184,28 +183,25 @@ extension SettingVC : UITableViewDelegate, UITableViewDataSource {
     func refreshUserDetails() {
         Purchases.shared.getCustomerInfo { (purchaserInfo, error) in
             if purchaserInfo?.entitlements[Constants.entitlementID]?.isActive == true {
-                //Constants.USERDEFAULTS.set(true, forKey: "pro")
                 DefaultManager.IS_SUBSCRIPTION = true
                 
-                // Create the alert controller
-                let alertController = UIAlertController(title: "restore_complete", message: "yoursubrestored", preferredStyle: .alert)
+                let alertController = UIAlertController(title: "Restore Complete", message: "Your subscription has been restored.", preferredStyle: .alert)
                 
-                let okAction = UIAlertAction(title: "ok", style: .default) {
-                    UIAlertAction in
+                let okAction = UIAlertAction(title: "ok", style: .default) { _ in
                     self.navigateToHome()
                 }
                 alertController.addAction(okAction)
                 self.present(alertController, animated: true, completion: nil)
             }
             else {
-                self.showAlert(title: "nosubavailble", message: "plzsubcribefirst")
-//                Constants.USERDEFAULTS.removeObject(forKey: "pro")
+                self.showAlert(title: "No Subscription Available", message: "Please subscribe first.")
                 DefaultManager.IS_SUBSCRIPTION = false
             }
         }
     }
 }
 
+// MARK: - MFMailComposeViewControllerDelegate
 extension SettingVC: MFMailComposeViewControllerDelegate {
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {

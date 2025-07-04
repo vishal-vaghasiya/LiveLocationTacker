@@ -17,6 +17,8 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var txt_name: UITextField!
     let firebaseManager = FirebaseManager.shared
     
+    // MARK: - Lifecycle Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         btnUpdate.isEnabled = true
@@ -34,6 +36,8 @@ class ProfileVC: UIViewController {
             btnMale.layer.borderWidth = 0
         }
     }
+    
+    // MARK: - Button Actions
     
     @IBAction func backClick(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
@@ -64,8 +68,7 @@ class ProfileVC: UIViewController {
             btnMale.layer.borderColor = UIColor.btncolor.cgColor
             btnMale.layer.borderWidth = 2
             btnFemale.layer.borderWidth = 0
-        }
-        else{
+        } else {
             btnFemale.layer.borderColor = UIColor.btncolor.cgColor
             btnFemale.layer.borderWidth = 2
             btnMale.layer.borderWidth = 0
@@ -84,7 +87,7 @@ class ProfileVC: UIViewController {
                 if success {
                     self.navigateToOnboarding()
                 } else {
-                    self.showAlert(title: "", message: "Some error please try sometimes")
+                    self.showAlert(title: "Error", message: "Something went wrong. Please try again later.")
                 }
             }
         }
@@ -114,17 +117,18 @@ class ProfileVC: UIViewController {
     }
 }
 
+// MARK: - UIImagePickerControllerDelegate & UINavigationControllerDelegate
+
 extension ProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     // This method gets called when the user selects an image
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        picker.dismiss(animated: true, completion: nil) // Dismiss the picker
+        picker.dismiss(animated: true)
         var selectedImage = UIImage()
         if let editedImage = info[.editedImage] as? UIImage {
-            print("Selected edited image: \(selectedImage)")
+            print("Selected edited image: \(editedImage)")
             selectedImage = editedImage
             profile_img.image = selectedImage
-        }
-        else if let originalImage = info[.originalImage] as? UIImage {
+        } else if let originalImage = info[.originalImage] as? UIImage {
             print("Selected original image: \(originalImage)")
             selectedImage = originalImage
             profile_img.image = originalImage
@@ -132,7 +136,7 @@ extension ProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDele
         DefaultManager.User.PROFILE_DATA = profile_img.image?.pngData() ?? Data()
         firebaseManager.uploadProfileImage(selectedImage) { result in
             switch result {
-            case .success(let url):
+            case .success(_):
                 //                updateUserProfile(with: url) { error in
                 //                    if let error = error {
                 //                        print("Profile update failed: \(error)")
@@ -149,7 +153,7 @@ extension ProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDele
     
     // This method gets called when the user cancels the picker
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
+        picker.dismiss(animated: true)
         print("Image picker cancelled")
     }
 }
