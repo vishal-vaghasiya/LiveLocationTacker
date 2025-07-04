@@ -1,6 +1,5 @@
 //
 //  Constant.swift
-//  WhatsAppWeb
 //
 //  Created by DREAMWORLD on 09/12/23.
 //
@@ -10,7 +9,7 @@ import UIKit
 
 let IS_IPHONE = UIDevice.current.userInterfaceIdiom == .phone
 
-let APP_ID = "6738461260"
+let APP_ID = ""
 let APP_URL = "https://apps.apple.com/app/id\(APP_ID)"
 
 let RATE_URL = "\(APP_URL)" + "?action=write-review"

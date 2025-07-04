@@ -1,6 +1,5 @@
 //
 //  QuickLookManager.swift
-//  Sharemefile
 //
 //  Created by DREAMWORLD on 28/09/24.
 //

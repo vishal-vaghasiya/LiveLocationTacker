@@ -1,15 +1,10 @@
 //
 //  Connection.swift
-//  reachability-playground
 //
-//  Created by Neo Ighodaro on 27/10/2017.
-//  Copyright © 2017 CreativityKills Co. All rights reserved.
 //
 
 import Foundation
 import Reachability
-
-
 class ConnectionManager {
     
     static let sharedInstance = ConnectionManager()
@@ -53,4 +48,3 @@ class ConnectionManager {
         }
     }
 }
-

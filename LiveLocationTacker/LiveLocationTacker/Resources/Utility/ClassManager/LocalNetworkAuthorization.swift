@@ -2,7 +2,6 @@ import Foundation
 import Network
 import UIKit
 
-
 class LocalNetworkPrivacy : NSObject {
     let service: NetService
 

@@ -1,8 +1,6 @@
 //
 //  DefaultManager.swift
-//  InterviewTask
 //
-//  Created by d3vil_mind on 03/08/21.
 //
 
 import Foundation

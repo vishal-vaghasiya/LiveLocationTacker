@@ -1,6 +1,5 @@
 //
 //  ApiManager.swift
-//  WhatsAppWeb
 //
 //  Created by Apple on 20/12/23.
 //

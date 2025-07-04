@@ -12,7 +12,5 @@ class HomeTabVC: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        tabBar.addShadow()
-//        tabBar.makeTopCornerRound(20)
     }
 }

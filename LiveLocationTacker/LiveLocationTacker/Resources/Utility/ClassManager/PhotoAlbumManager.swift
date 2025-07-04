@@ -1,13 +1,10 @@
 //
-//  VideoPlayerView.swift
-//  Ardrawing
 //
 //  Created by DREAMWORLD on 25/12/23.
 //
 
 import UIKit
 import Photos
-
 
 class PhotoAlbumManager {
 

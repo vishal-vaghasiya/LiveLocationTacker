@@ -1,9 +1,5 @@
 
 //  DegreeScaleView.swift
-//  CompassExample
-//
-//  Created by Liu Chuan on 2018/3/8.
-//  Copyright © 2018年 LC. All rights reserved.
 //
 
 import UIKit

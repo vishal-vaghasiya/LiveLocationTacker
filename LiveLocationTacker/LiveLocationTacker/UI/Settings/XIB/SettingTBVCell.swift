@@ -1,6 +1,5 @@
 //
 //  SettingTBVCell.swift
-//  GBWhatsApp
 //
 //  Created by DREAMWORLD on 25/10/24.
 //

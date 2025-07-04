@@ -1,6 +1,5 @@
 //
 //  PushNotificationManager.swift
-//  WhatsAppWeb
 //
 //  Created by Apple on 20/12/23.
 //
@@ -8,8 +7,6 @@
 import Foundation
 import FirebaseMessaging
 import UIKit
-
-
 
 class PushNotificationManager: NSObject, ObservableObject {
 

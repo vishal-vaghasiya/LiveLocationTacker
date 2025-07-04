@@ -1,6 +1,5 @@
 //
 //  MainSplashVC.swift
-//  ScreenMirroring
 //
 //  Created by DREAMWORLD on 21/09/24.
 //

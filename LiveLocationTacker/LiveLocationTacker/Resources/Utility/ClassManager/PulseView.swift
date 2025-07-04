@@ -1,6 +1,5 @@
 //
 //  PulseView.swift
-//  Sample
 //
 //  Created by Schaheer Saleem on 1/14/20.
 //  Copyright © 2020 Schaheer Saleem. All rights reserved.

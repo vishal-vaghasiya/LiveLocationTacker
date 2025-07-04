@@ -1,6 +1,5 @@
 //
 //  Model.swift
-//  ScreenMirroring
 //
 //  Created by DREAMWORLD on 13/09/24.
 //

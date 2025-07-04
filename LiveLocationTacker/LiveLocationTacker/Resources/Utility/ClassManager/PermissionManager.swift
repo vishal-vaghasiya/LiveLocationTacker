@@ -1,6 +1,5 @@
 //
 //  PermissionManager.swift
-//  Ardrawing
 //
 //  Created by DREAMWORLD on 21/12/23.
 //
@@ -13,12 +12,9 @@ import CoreLocation
 import Network
 import MediaPlayer
 import CoreMotion
-
-
 class PermissionManager {
     
     // MARK: - Contact Permission
-    
     static func requestContactPermission(completion: @escaping (Bool) -> Void) {
         CNContactStore().requestAccess(for: .contacts) { granted, error in
             DispatchQueue.main.async {
@@ -32,7 +28,6 @@ class PermissionManager {
     }
     
     // MARK: - Camera Permission
-    
     static func requestCameraPermission(completion: @escaping (Bool) -> Void) {
         AVCaptureDevice.requestAccess(for: .video) { granted in
             DispatchQueue.main.async {
@@ -46,7 +41,6 @@ class PermissionManager {
     }
     
     // MARK: - Photo Library Permission
-    
     static func requestPhotoLibraryPermission(completion: @escaping (Bool) -> Void) {
         PHPhotoLibrary.requestAuthorization { status in
             DispatchQueue.main.async {
@@ -60,7 +54,6 @@ class PermissionManager {
     }
     
     // MARK: - Microphone Permission
-    
     static func requestMicrophonePermission(completion: @escaping (Bool) -> Void) {
         AVAudioSession.sharedInstance().requestRecordPermission { granted in
             DispatchQueue.main.async {
@@ -74,7 +67,6 @@ class PermissionManager {
     }
     
     // MARK: - Location Permission
-    
     static func requestLocationPermission(completion: @escaping (Bool) -> Void) {
         let currentStatus = CLLocationManager.authorizationStatus()
         let locationManager: CLLocationManager = CLLocationManager()
@@ -114,23 +106,7 @@ class PermissionManager {
         return CLLocationManager.authorizationStatus() == .authorizedWhenInUse || CLLocationManager.authorizationStatus() == .authorizedAlways
     }
     
-    func LocalNetworkRequestPermission(){
-        DispatchQueue.main.async {
-            let networkPermissionChecker: LocalNetworkPermissionChecker?
-            networkPermissionChecker = LocalNetworkPermissionChecker(host: "255.255.255.255", port: 4567,
-                                                                     granted: {
-                //Perform some action here...
-            },
-                                                                     failure: { error in
-                if let error = error {
-                    print("Failed with error: \(error.localizedDescription)")
-                }
-            })
-        }
-    }
-    
     // MARK: - Music Library Permission
-    
     static func requestMusicLibraryPermission(completion: @escaping (Bool) -> Void) {
         MPMediaLibrary.requestAuthorization { status in
             DispatchQueue.main.async {
@@ -145,7 +121,6 @@ class PermissionManager {
     
     
     // MARK: - Notification Permission
-    
     static func requestNotificationPermission(completion: @escaping (Bool) -> Void) {
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
@@ -176,7 +151,6 @@ class PermissionManager {
     
     
     // MARK: - Motion Permission
-    
     static func requestMotionPermission(completion: @escaping (Bool) -> Void) {
         let motionManager = CMMotionActivityManager()
         if CMMotionActivityManager.authorizationStatus() == .notDetermined {

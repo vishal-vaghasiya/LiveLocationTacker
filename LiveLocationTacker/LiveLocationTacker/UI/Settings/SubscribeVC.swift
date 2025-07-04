@@ -1,6 +1,5 @@
 //
 //  SubscribeVC.swift
-//  ScreenMirroring
 //
 //  Created by DREAMWORLD on 19/09/24.
 //

@@ -1,8 +1,6 @@
 //
 //  UITableView+Extension.swift
-//  Taala
 //
-//  Created by DK on 15/12/21.
 //
 
 import UIKit

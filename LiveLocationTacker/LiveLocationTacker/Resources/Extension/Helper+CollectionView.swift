@@ -1,8 +1,6 @@
 //
 //  CollectionView+Extension.swift
-//  Taala
 //
-//  Created by JDBTechs on 25/02/21.
 //
 
 import UIKit

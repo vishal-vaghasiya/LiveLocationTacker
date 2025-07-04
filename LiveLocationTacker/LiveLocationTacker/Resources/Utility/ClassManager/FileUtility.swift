@@ -1,6 +1,5 @@
 //
 //  File.swift
-//  InstaSaver
 //
 //  Created by DREAMWORLD on 18/01/24.
 //
@@ -8,9 +7,6 @@
 import Foundation
 import UIKit
 import Photos
-
-
-
 
 class FileUtility {
 

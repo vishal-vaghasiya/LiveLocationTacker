@@ -1,6 +1,5 @@
 //
 //  UpdateViewController.swift
-//  ChatAI - AI SmartChat
 //
 //  Created by DREAMWORLD on 09/09/23.
 //
