@@ -144,12 +144,12 @@ class ChoosePlanVC: UIViewController {
     }
     
     @IBAction func btnPrivacyPolicyAction(_ sender: UIButton) {
-        guard let url = URL(string: Constants.PRIVACY) else { return }
+        guard let url = URL(string: PRIVACY) else { return }
         UIApplication.shared.open(url)
     }
     
     @IBAction func btnTermofUseAction(_ sender: UIButton) {
-        guard let url = URL(string: Constants.TERMS) else { return }
+        guard let url = URL(string: TERMS) else { return }
         UIApplication.shared.open(url)
     }
     

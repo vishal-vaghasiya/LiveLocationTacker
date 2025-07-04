@@ -35,7 +35,7 @@ class ScantoJoinVC: UIViewController {
     @IBAction func btnShareBarcodeAction(_ sender: UIButton) {
         guard let imgeBarcode = img_barcode.image  else { return }
         DispatchQueue.main.async {
-            let activityVC = UIActivityViewController(activityItems: [imgeBarcode,Constants.APP_URL], applicationActivities: nil)
+            let activityVC = UIActivityViewController(activityItems: [imgeBarcode,APP_URL], applicationActivities: nil)
             activityVC.popoverPresentationController?.sourceView = sender
             self.present(activityVC, animated: true, completion: nil)
         }

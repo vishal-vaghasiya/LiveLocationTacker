@@ -19,7 +19,7 @@ class UpdateViewController: UIViewController {
     }
 
     @IBAction func btnUpdateClicked(_ sender: UIButton) {
-        if let url = URL(string: Constants.APP_URL) {
+        if let url = URL(string: APP_URL) {
             UIApplication.shared.open(url)
         }
     }

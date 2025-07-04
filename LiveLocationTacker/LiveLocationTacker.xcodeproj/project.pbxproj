@@ -400,6 +400,7 @@
 		0F2DBFBF2E0D7F5900243B13 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				BD1A20912CD0B3510033A8BA /* ForceUpdate */,
 				0FF019512E0E611F00575BB0 /* LaunchScreen */,
 				0F2DBFC02E0D7F7300243B13 /* Main */,
 				0F2DBFC12E0D7F8200243B13 /* Tabbar */,
@@ -558,7 +559,6 @@
 				0F2DBFB02E0D7E4D00243B13 /* AppDelegate */,
 				0F2DBFAF2E0D7E4100243B13 /* Resources */,
 				BD1A20822CD0B3510033A8BA /* ExtenalLibrary */,
-				BD1A20912CD0B3510033A8BA /* UpdateViewController */,
 				BD9DB13A2CE85740003615FE /* Model */,
 				0F2DBFBF2E0D7F5900243B13 /* UI */,
 				BD1A20642CD0B2E10033A8BA /* Info.plist */,
@@ -639,13 +639,13 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
-		BD1A20912CD0B3510033A8BA /* UpdateViewController */ = {
+		BD1A20912CD0B3510033A8BA /* ForceUpdate */ = {
 			isa = PBXGroup;
 			children = (
 				BD1A208F2CD0B3510033A8BA /* UpdateViewController.swift */,
 				BD1A20902CD0B3510033A8BA /* UpdateViewController.xib */,
 			);
-			path = UpdateViewController;
+			path = ForceUpdate;
 			sourceTree = "<group>";
 		};
 		BD9DB1392CE85715003615FE /* Other */ = {

@@ -162,14 +162,15 @@ class MobileOTPVerificationVC: UIViewController , UIGestureRecognizerDelegate {
                 DefaultManager.User.COUNTRY_CODE = existingCountryCode//Need to update
                 DefaultManager.User.PHONE = existingNumber
                 DefaultManager.User.NAME = existingName
+                DefaultManager.User.PROFILE_DATA = UIImage(named: "engineer")?.pngData() ?? Data()
+                
                 DefaultManager.Permission.LOCATION = true
                 DefaultManager.Permission.BATTERY = true
                 DefaultManager.Permission.NOTIFICATION = true
                 DefaultManager.Permission.CAMERA = true
                 DefaultManager.Permission.MOTION = true
-                Constants.USERDEFAULTS.saveProfileImage(value: UIImage(named: "engineer")?.pngData() ?? Data())
                 
-                Constants.USERDEFAULTS.saveCurrentuserCode(value: existingCode)
+                DefaultManager.Cirlce.CURRENT_CODE = existingCode
                 
                 let vc = StoryboardScene.Main.setProfileVC.instantiate()
                 vc.hidesBottomBarWhenPushed = true
@@ -186,14 +187,15 @@ class MobileOTPVerificationVC: UIViewController , UIGestureRecognizerDelegate {
                     DefaultManager.User.COUNTRY_CODE = phoneCode
                     DefaultManager.User.PHONE = mobileNumber.digitsOnly
                     DefaultManager.User.NAME = name
+                    DefaultManager.User.PROFILE_DATA = UIImage(named: "engineer")?.pngData() ?? Data()
+                    
                     DefaultManager.Permission.LOCATION = true
                     DefaultManager.Permission.BATTERY = true
                     DefaultManager.Permission.NOTIFICATION = true
                     DefaultManager.Permission.CAMERA = true
                     DefaultManager.Permission.MOTION = true
-                    Constants.USERDEFAULTS.saveProfileImage(value: UIImage(named: "engineer")?.pngData() ?? Data())
                     
-                    Constants.USERDEFAULTS.saveCurrentuserCode(value: generatedCode ?? "")
+                    DefaultManager.Cirlce.CURRENT_CODE = generatedCode ?? ""
                     
                     let vc = StoryboardScene.Main.setProfileVC.instantiate()
                     vc.hidesBottomBarWhenPushed = true

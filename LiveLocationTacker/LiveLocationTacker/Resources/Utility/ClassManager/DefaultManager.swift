@@ -18,13 +18,14 @@ class DefaultManager {
         DefaultManager.User.PHONE = ""
         DefaultManager.User.NAME = ""
         DefaultManager.User.GENDER = ""
+        DefaultManager.User.PROFILE_PIC = ""
+        DefaultManager.User.PROFILE_DATA = nil
         DefaultManager.Permission.LOCATION = false
         DefaultManager.Permission.BATTERY = false
         DefaultManager.Permission.NOTIFICATION = false
         DefaultManager.Permission.CAMERA = false
         DefaultManager.Permission.MOTION = false
-        Constants.USERDEFAULTS.removeCurrentUserCode()
-        Constants.USERDEFAULTS.removeProfileImage()
+        DefaultManager.Cirlce.CURRENT_CODE = ""
     }
     
     static var IS_SUBSCRIPTION: Bool {
@@ -98,6 +99,16 @@ class DefaultManager {
             }
         }
         
+        static var PROFILE_DATA: Data? {
+            get {
+                return (UserDefaults.standard.data(forKey: #function))
+            }
+            set {
+                UserDefaults.standard.set(newValue, forKey: #function)
+                UserDefaults.standard.synchronize()
+            }
+        }
+        
         static var FCM_TOKEN: String {
             get {
                 return (UserDefaults.standard.string(forKey: #function) ?? "")
@@ -161,49 +172,16 @@ class DefaultManager {
         }
     }
     
-}
-
-enum UserDefaultsKeys : String {
-    case save_mobilenumer
-    case save_name
-    case save_gender
-    case save_code
-    case location_sharing
-    case battery_sharing
-    case notification_sharing
-    case camera_sharing
-    case motion_sharing
-    case profile_img
-    case fcm_token
-}
-
-extension UserDefaults {
-    
-    // User Code
-    func saveCurrentuserCode(value: String) {
-        set(value, forKey: UserDefaultsKeys.save_code.rawValue)
-    }
-    
-    func getCurrentuserCode() -> String {
-        return string(forKey: UserDefaultsKeys.save_code.rawValue) ?? ""
-    }
-    
-    func removeCurrentUserCode() {
-        removeObject(forKey: UserDefaultsKeys.save_code.rawValue)
-    }
-    
-    // Profile Image
-    func saveProfileImage(value: Data) {
-        set(value, forKey: UserDefaultsKeys.profile_img.rawValue)
-    }
-    
-    func getProfileImage() -> Data? {
-        return data(forKey: UserDefaultsKeys.profile_img.rawValue)
-    }
-    
-    func removeProfileImage() {
-        removeObject(forKey: UserDefaultsKeys.profile_img.rawValue)
+    struct Cirlce {
+        static var CURRENT_CODE: String {
+            get {
+                return UserDefaults.standard.string(forKey: #function) ?? ""
+            }
+            set {
+                UserDefaults.standard.set(newValue, forKey: #function)
+            }
+        }
+ 
     }
     
 }
-

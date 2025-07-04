@@ -196,6 +196,7 @@ class CircleVC: UIViewController {
                 self.groupSnapSortList = ListSnapSort
                 selectedGroupsnapSort = ListSnapSort.first
                 self.lbl_circleName.text = selectedGroupsnapSort?.childSnapshot(forPath: "name").value as? String ?? ""
+                DefaultManager.Cirlce.CURRENT_CODE = selectedGroupsnapSort?.childSnapshot(forPath: "code").value as? String ?? ""
                 self.getMemberList()
             }
         }

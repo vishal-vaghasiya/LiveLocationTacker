@@ -371,7 +371,7 @@ class PhotoAlbumManager {
         alertController.addAction(okAction)
         alertController.addAction(settingAction)
         DispatchQueue.main.async {
-            Constants.ROOTVIEW?.present(alertController, animated: true, completion: nil)
+            ROOTVIEW?.present(alertController, animated: true, completion: nil)
         }
     }
 }

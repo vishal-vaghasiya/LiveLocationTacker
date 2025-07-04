@@ -899,7 +899,7 @@ class FirebaseManager {
         task.resume()
     }
     
-    func sendPushNotification(fcmToken: String, title: String = Constants.APP_NAME, body: String) {
+    func sendPushNotification(fcmToken: String, title: String = APP_NAME, body: String) {
         generateAccessToken { accessToken in
             guard let accessToken = accessToken else {
                 print("Error: Unable to generate access token.")

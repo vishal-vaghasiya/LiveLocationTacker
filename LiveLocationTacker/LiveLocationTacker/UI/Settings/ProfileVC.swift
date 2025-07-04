@@ -22,7 +22,7 @@ class ProfileVC: UIViewController {
         btnUpdate.isEnabled = true
         txt_name.text = DefaultManager.User.NAME
         lbl_number.text = DefaultManager.User.PHONE
-        profile_img.image = UIImage(data: Constants.USERDEFAULTS.getProfileImage() ?? Data())
+        profile_img.image = UIImage(data: DefaultManager.User.PROFILE_DATA ?? Data())
         
         if DefaultManager.User.GENDER == "Male" {
             btnMale.layer.borderColor = UIColor.btncolor.cgColor
@@ -129,8 +129,7 @@ extension ProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDele
             selectedImage = originalImage
             profile_img.image = originalImage
         }
-        Constants.USERDEFAULTS.saveProfileImage(value: profile_img.image?.pngData() ?? Data())
-        
+        DefaultManager.User.PROFILE_DATA = profile_img.image?.pngData() ?? Data()
         firebaseManager.uploadProfileImage(selectedImage) { result in
             switch result {
             case .success(let url):

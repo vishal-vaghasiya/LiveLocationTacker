@@ -108,7 +108,7 @@ extension UIViewController {
     func copyTextToClipboard(_ text: String) {
         let pasteboard = UIPasteboard.general
         pasteboard.string = text
-        Constants.ROOTVIEW?.showToastMessage("Copy clipboard")
+        ROOTVIEW?.showToastMessage("Copy clipboard")
     }
     
     func hideKeyboardWhenTappedAround() {

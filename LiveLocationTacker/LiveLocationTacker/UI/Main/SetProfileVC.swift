@@ -99,7 +99,7 @@ extension SetProfileVC: UIImagePickerControllerDelegate, UINavigationControllerD
             selectedImage = originalImage
             profile_img.image = originalImage
         }
-        Constants.USERDEFAULTS.saveProfileImage(value: profile_img.image?.pngData() ?? Data())
+        DefaultManager.User.PROFILE_DATA = profile_img.image?.pngData() ?? Data()
         
         firebaseManager.uploadProfileImage(selectedImage) { result in
             switch result {

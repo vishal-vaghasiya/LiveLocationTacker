@@ -10,29 +10,26 @@ import UIKit
 
 let IS_IPHONE = UIDevice.current.userInterfaceIdiom == .phone
 
+let APP_ID = "6738461260"
+let APP_URL = "https://apps.apple.com/app/id\(APP_ID)"
+
+let RATE_URL = "\(APP_URL)" + "?action=write-review"
+let APP_NAME = "Phone Tracker : Family Locator"
+let FEEDBACK_MAILID = "tanavighinaiya@gmail.com"
+var MORE_APP_URL = ""
+
+var PRIVACY = "https://ikameinfotech.xyz/iPhoneTracker/iPhoneTrackerPrivacyPolicy.html"
+var TERMS = "https://ikameinfotech.xyz/iPhoneTracker/iPhoneTrackerTermConditions.html"
+
+let deviceType = "iOS"
+
+let networkUnavailable = "Network unavailable. Please check your internet connectivity"
+
+let USERDEFAULTS = UserDefaults.standard
+var ROOTVIEW = UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController
+
+
 class Constants {
-    
-    public static let NetworkUnavailable = "Network unavailable. Please check your internet connectivity"
-    static var NotificationPermission = false
-    
-    public static let USERDEFAULTS = UserDefaults.standard
-    public static var ROOTVIEW = UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController
-    
-    //storyBoard
-    //public static let main_storyBoard = UIStoryboard(name: "Main", bundle:Bundle.main)
-    //public static let tab_storyBoard = UIStoryboard(name: "TabBar", bundle:Bundle.main)
-    
-    //App Information
-    public static let APP_ID = "6738461260"
-    public static let APP_URL = "https://apps.apple.com/app/id\(Constants.APP_ID)"
-    
-    public static let RATE_URL = "\(Constants.APP_URL)" + "?action=write-review"
-    public static let APP_NAME = "Phone Tracker : Family Locator"
-    public static let FEEDBACK_MAILID = "tanavighinaiya@gmail.com"
-    public static var MORE_APP_URL = ""
-    
-    public static var PRIVACY = "https://ikameinfotech.xyz/iPhoneTracker/iPhoneTrackerPrivacyPolicy.html"
-    public static var TERMS = "https://ikameinfotech.xyz/iPhoneTracker/iPhoneTrackerTermConditions.html"
     
     //Revenucat
 //    public static let REVANUE_API = ""
@@ -58,7 +55,6 @@ class Constants {
     public static var Native_adsShow = ""
     public static var Appopen_adsShow = ""
     
-    
     public static var firsttime_counter = Int()
     public static var firstTimeadsShow = false
     public static var ads_counter = Int()
@@ -73,13 +69,12 @@ class Constants {
     public static var isForApple = false
     public static var freeTrailActive = false
     
-    public static let device_type = "iOS"
     //public static var userSubscribeAvailable:Bool = false
-    public static var isFromSubscibeScreen = false
+//    public static var isFromSubscibeScreen = false
     
     //API
-    public static let SPLASH_API = "https://narolaapps.xyz/ios_test.json"
-    static var FCM_USER_TOKEN = ""
+//    public static let SPLASH_API = "https://narolaapps.xyz/ios_test.json"
+//    static var FCM_USER_TOKEN = ""
 }
 
 

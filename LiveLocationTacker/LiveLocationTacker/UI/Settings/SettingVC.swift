@@ -67,7 +67,7 @@ extension SettingVC : UITableViewDelegate, UITableViewDataSource {
         case .RATE_NOW:
             openAppStoreForRating()
         case .SHARE:
-            self.share(message: "", link: Constants.APP_URL)
+            self.share(message: "", link: APP_URL)
         case .FEEDBACK:
             presentFeedbackMailComposer()
         case .PRIVACY_POLICY:
@@ -85,7 +85,7 @@ extension SettingVC : UITableViewDelegate, UITableViewDataSource {
         let headerView = tableView.dequeueReusableHeaderFooterView(withType: SettingHeaderView.self)
         headerView.lbl_name.text = DefaultManager.User.NAME
         headerView.lbl_number.text = DefaultManager.User.PHONE
-        headerView.profile_img.image = UIImage(data: Constants.USERDEFAULTS.getProfileImage() ?? Data())
+        headerView.profile_img.image = UIImage(data: DefaultManager.User.PROFILE_DATA ?? Data())
         
         headerView.onTapProfileAction = {
             let vc = StoryboardScene.Settings.profileVC.instantiate()
@@ -115,8 +115,8 @@ extension SettingVC : UITableViewDelegate, UITableViewDataSource {
         if MFMailComposeViewController.canSendMail() {
             let mailComposer = MFMailComposeViewController()
             mailComposer.mailComposeDelegate = self
-            mailComposer.setToRecipients([Constants.FEEDBACK_MAILID]) // Replace with your email address
-            mailComposer.setSubject("Feedback for Our \(Constants.APP_NAME)")
+            mailComposer.setToRecipients([FEEDBACK_MAILID]) // Replace with your email address
+            mailComposer.setSubject("Feedback for Our \(APP_NAME)")
             mailComposer.setMessageBody("Please provide your feedback here...", isHTML: false)
             
             DispatchQueue.main.async {
@@ -132,7 +132,7 @@ extension SettingVC : UITableViewDelegate, UITableViewDataSource {
     // PRIVACY
     func openPrivacyPolicy() {
         // Replace with your actual privacy policy URL
-        guard let privacyPolicyURL = URL(string: Constants.PRIVACY) else {
+        guard let privacyPolicyURL = URL(string: PRIVACY) else {
             print("Invalid URL")
             return
         }
@@ -147,7 +147,7 @@ extension SettingVC : UITableViewDelegate, UITableViewDataSource {
     // Terms
     func openTermCondition() {
         // Replace with your actual privacy policy URL
-        guard let privacyPolicyURL = URL(string: Constants.TERMS) else {
+        guard let privacyPolicyURL = URL(string: TERMS) else {
             print("Invalid URL")
             return
         }
@@ -161,7 +161,7 @@ extension SettingVC : UITableViewDelegate, UITableViewDataSource {
     
     // RATING
     func openAppStoreForRating() {
-        guard let appStoreURL = URL(string: Constants.RATE_URL) else {
+        guard let appStoreURL = URL(string: RATE_URL) else {
             print("Invalid App Store URL")
             return
         }

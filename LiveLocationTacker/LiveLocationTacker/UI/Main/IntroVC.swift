@@ -17,7 +17,7 @@ class IntroVC: UIViewController {
         super.viewDidLoad()
 
         btnContinue.setButtonTitleAndFunctionality("Continue")
-        lbl_appname.text = Constants.APP_NAME
+        lbl_appname.text = APP_NAME
     
         setupTermsTextView()
     }
@@ -36,8 +36,8 @@ class IntroVC: UIViewController {
         let termsRange = (text as NSString).range(of: "Terms of Use")
         
         // Apply links
-        attributedString.addAttribute(.link, value: Constants.PRIVACY, range: privacyRange)
-        attributedString.addAttribute(.link, value: Constants.TERMS, range: termsRange)
+        attributedString.addAttribute(.link, value: PRIVACY, range: privacyRange)
+        attributedString.addAttribute(.link, value: TERMS, range: termsRange)
 
         // Set font and style
         attributedString.addAttribute(.font, value: UIFont(name: "Poppins-Regular", size: 12) ?? UIFont.systemFont(ofSize: 12), range: NSMakeRange(0, text.count))

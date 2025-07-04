@@ -118,6 +118,7 @@ extension MyCirclesPopup: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let groupDicValue = groupSnapSortList[indexPath.row]
         selectedGroupsnapSort = groupDicValue
+        DefaultManager.Cirlce.CURRENT_CODE = selectedGroupsnapSort?.childSnapshot(forPath: "code").value as? String ?? ""
         self.dismiss(animated: false) {
             self.selectedGroup?(self.groupSnapSortList)
         }
