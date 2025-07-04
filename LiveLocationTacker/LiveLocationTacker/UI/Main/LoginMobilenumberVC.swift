@@ -22,7 +22,7 @@ class LoginMobilenumberVC: UIViewController {
     @IBOutlet weak var txtEnterNumber: UITextField!
     @IBOutlet weak var btnContinue: UIEnableDisable!
     let phoneNumberKit = PhoneNumberKit()
-    let groupManager = FirebaseManager()
+    let firebaseManager = FirebaseManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +46,7 @@ class LoginMobilenumberVC: UIViewController {
     
     func sendOTP(phoneNumber: String) {
         showLoader(text: "Loading...")
-        groupManager.sendMobileOTP(phoneNumber: phoneNumber.removingSpaces) { success, error in
+        firebaseManager.sendMobileOTP(phoneNumber: phoneNumber.removingSpaces) { success, error in
             self.hideLoader()
             self.showToastMessage(error ?? "")
             if success {

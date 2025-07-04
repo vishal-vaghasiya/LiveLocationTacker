@@ -17,7 +17,7 @@ class SetProfileVC: UIViewController {
     @IBOutlet weak var round_imgview: UIView!
     @IBOutlet weak var pencil_view: UIView!
     @IBOutlet weak var txt_name: UITextField!
-    let firebaseManager = FirebaseManager()
+    let firebaseManager = FirebaseManager.shared
     override func viewDidLoad() {
         super.viewDidLoad()
         round_imgview.makeRounded()

@@ -17,7 +17,7 @@ class SosVC: UIViewController {
     var timer: Timer?
     private var countdown = 5
     
-    let firebaseManager = FirebaseManager()
+    let firebaseManager = FirebaseManager.shared
     var memberList:[String:Any] = [:]
     
     // MARK: - PROPERTY

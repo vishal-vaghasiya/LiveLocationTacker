@@ -36,7 +36,7 @@ class MobileOTPVerificationVC: UIViewController , UIGestureRecognizerDelegate {
     var phoneCode = String()
     var phoneNumber = String()
     var selectedContryID = Int()
-    let firebaseManager = FirebaseManager()
+    let firebaseManager = FirebaseManager.shared
     // MARK: - LIFE CYCLE
     override func viewDidLoad() {
         super.viewDidLoad()

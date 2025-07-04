@@ -15,7 +15,7 @@ class MyCirclesPopup: UIViewController {
     
     // MARK: - PROPERTY
     var groupSnapSortList = [DataSnapshot]()
-    let firebaseManager = FirebaseManager()
+    let firebaseManager = FirebaseManager.shared
     var selectedGroup:(([DataSnapshot])->Void)?
     var updateCircle:(([DataSnapshot])->Void)?
     var joinCircle:(()->Void)?

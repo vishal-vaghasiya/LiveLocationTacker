@@ -24,7 +24,7 @@ class CircleVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var plus_lottieview: UIView!
     
-    let groupManager = FirebaseManager()
+    let groupManager = FirebaseManager.shared
     let locationManager = CLLocationManager()
     var memberList:[String:Any] = [:]
     var groupSnapSortList = [DataSnapshot]()
@@ -204,7 +204,13 @@ class CircleVC: UIViewController {
     
     @IBAction func btnGpsAction(_ sender: UIButton) {
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-        
+        LocationManager.shared.getCurrentLocation { location in
+            let region = MKCoordinateRegion(center: location.coordinate,
+                                            latitudinalMeters: 500,
+                                            longitudinalMeters: 500)
+            self.map_view.setRegion(region, animated: true)
+        }
+        /*
         guard let userLocation = map_view.userLocation.location else {
             print("User location not available.")
             return
@@ -213,6 +219,7 @@ class CircleVC: UIViewController {
                                         latitudinalMeters: 500,
                                         longitudinalMeters: 500)
         map_view.setRegion(region, animated: true)
+         */
     }
     
     @IBAction func btnSosAction(_ sender: UIButton) {
@@ -317,7 +324,7 @@ extension CircleVC : MKMapViewDelegate {
         let number = (annotation.subtitle ?? "") ?? ""
         if number.isEmpty { return }
 
-        FirebaseManager().fetchTodayLocations(for: number) { locations in
+        FirebaseManager.shared.fetchTodayLocations(for: number) { locations in
             self.locationPoints = locations.sorted { $0.timestamp < $1.timestamp }
             self.plotRoute()
 

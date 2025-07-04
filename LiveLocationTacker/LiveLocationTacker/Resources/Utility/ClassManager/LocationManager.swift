@@ -203,31 +203,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     
     func updateUserLocationToServer(lat: CLLocationDegrees, long: CLLocationDegrees) {
         // Make your API call to update user location
-        print("✅ Sending updated location to server: \(lat), \(long)")
-        
-        //        let geocoder = CLGeocoder()
-        //        geocoder.reverseGeocodeLocation(CLLocation(latitude: lat, longitude: long)) { placemarks, error in
-        //            if let error = error {
-        //                //print("❌ Reverse geocoding failed: \(error.localizedDescription)")
-        //                return
-        //            }
-        //
-        //            guard let placemark = placemarks?.first else {
-        //                //print("❗️No address found")
-        //                return
-        //            }
-        //
-        //            let address = """
-        //                                \(placemark.name ?? "")
-        //                                \(placemark.locality ?? ""), \(placemark.administrativeArea ?? "")
-        //                                \(placemark.postalCode ?? "") \(placemark.country ?? "")
-        //                                """
-        //
-        //            print("📍 Full Address:\n\(address)")
-        //        }
-        
-        //        FirebaseManager().updateLocationInFirebase(latitude: lat, longitude: long, userPhonenumber: Constants.USERDEFAULTS.getCurrentuserNumber())
-        FirebaseManager().updateUserwiseLocationInFirebase(latitude: lat, longitude: long, userPhonenumber: DefaultManager.User.PHONE)
+        FirebaseManager.shared.updateUserwiseLocationInFirebase(latitude: lat, longitude: long, userPhonenumber: DefaultManager.User.PHONE)
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

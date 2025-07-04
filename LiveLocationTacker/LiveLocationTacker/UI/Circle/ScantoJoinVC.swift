@@ -11,7 +11,7 @@ class ScantoJoinVC: UIViewController {
     
     @IBOutlet weak var img_barcode: UIImageView!
     @IBOutlet weak var qr_view: UIView!
-    let firebaseManager = FirebaseManager()
+    let firebaseManager = FirebaseManager.shared
     var groupCode = String()
     var groupFcmtoken = String()
     

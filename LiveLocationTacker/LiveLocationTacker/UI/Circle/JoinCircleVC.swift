@@ -18,7 +18,7 @@ class JoinCircleVC: UIViewController {
     @IBOutlet weak var btnJoincircle: UIEnableDisable!
     @IBOutlet weak var otpTextField: AEOTPTextField!
     var friendEnterCode = String()
-    let firebaseManager = FirebaseManager()
+    let firebaseManager = FirebaseManager.shared
     var groupCode = String()
     
     override func viewDidLoad() {

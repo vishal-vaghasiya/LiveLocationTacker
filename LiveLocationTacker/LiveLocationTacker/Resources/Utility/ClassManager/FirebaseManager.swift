@@ -33,15 +33,15 @@ enum FirebaseTableName: String {
 // MARK: - Firebase Manager (Singleton)
 class FirebaseManager {
     
-//    static let shared = FirebaseManager()
+    static let shared = FirebaseManager()
     let ref: DatabaseReference
     
-    init() {
-        ref = Database.database().reference()
-    }
-//    private init() {
+//    init() {
 //        ref = Database.database().reference()
 //    }
+    private init() {
+        ref = Database.database().reference()
+    }
     
     // MARK: - Firebase OTP Operations
     
@@ -124,7 +124,7 @@ class FirebaseManager {
         let userRef = ref.child(FirebaseTableName.users.name).child(DefaultManager.User.PHONE)
         
         var param = updatedValues
-        param["date"] = Int(Date().timeIntervalSince1970)
+        param["date"] = Date().getCurrentUTCTimestampInfo().timestampSeconds
         
         userRef.updateChildValues(param) { error, _ in
             if let error = error {
@@ -151,7 +151,7 @@ class FirebaseManager {
                 "latitude": location.coordinate.latitude,
                 "longitude": location.coordinate.longitude,
                 "address": address ?? "N/A",
-                "date": Int(Date().timeIntervalSince1970)
+                "date": Date().getCurrentUTCTimestampInfo().timestampSeconds
             ]
             FirebaseManager().checkAndSaveUser(phoneNumber: "9725992972", param: param) { success, message, userData  in
                 print(message)
@@ -161,7 +161,7 @@ class FirebaseManager {
                 
                 let updatedData: [String: Any] = [
                     "name": "Vishal Vaghasiya",
-                    "date": Int(Date().timeIntervalSince1970)
+                    "date": Date().getCurrentUTCTimestampInfo().timestampSeconds
                 ]
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                     FirebaseManager().updateUserData(phoneNumber: "9725992972", updatedValues: updatedData) { success, message in
@@ -172,7 +172,6 @@ class FirebaseManager {
         }
     }*/
      
-    
     //MARK: - Create circle
     func createCircle(name: String, completion: @escaping (Bool, String, [String: Any]?) -> Void) {
         let code = UUID().uuidString.prefix(6)
@@ -182,7 +181,7 @@ class FirebaseManager {
             "name": name,
             "country_code": DefaultManager.User.COUNTRY_CODE,
             "owner_phone": DefaultManager.User.PHONE,
-            "date": Int(Date().timeIntervalSince1970),
+            "date": Date().getCurrentUTCTimestampInfo().timestampSeconds,
             "members": [
                 String(code): [
                     "country_code": DefaultManager.User.COUNTRY_CODE,
@@ -257,7 +256,7 @@ class FirebaseManager {
             
             let param = [
                 "battery_level": "batteryLevel",
-                "date": Int(Date().timeIntervalSince1970)
+                "date": Date().getCurrentUTCTimestampInfo().timestampSeconds
             ] as [String : Any]
             
             // Update battery level in user's profile
@@ -281,7 +280,7 @@ class FirebaseManager {
                     "address": address ?? "",
                     "latitude": latitude,
                     "longitude": longitude,
-                    "date": Int(Date().timeIntervalSince1970)
+                    "date": Date().getCurrentUTCTimestampInfo().timestampSeconds
                 ]
                 
                 userRef.updateChildValues(param) { error, _ in
@@ -326,7 +325,7 @@ class FirebaseManager {
         
         let param: [String: Any] = [
             "profile_pic": DefaultManager.User.PROFILE_PIC,
-            "date": Int(Date().timeIntervalSince1970)
+            "date": Date().getCurrentUTCTimestampInfo().timestampSeconds
         ]
         
         userRef.updateChildValues(param) { error, _ in
@@ -848,7 +847,7 @@ class FirebaseManager {
             return
         }
         
-        let currentTime = Int(Date().timeIntervalSince1970)
+        let currentTime = Date().getCurrentUTCTimestampInfo().timestampSeconds
         let expirationTime = currentTime + 3600 // Token valid for 1 hour
         
         // Create JWT claims

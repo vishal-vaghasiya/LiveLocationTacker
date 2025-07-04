@@ -15,7 +15,7 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var btnUpdate: UIEnableDisable!
     @IBOutlet weak var lbl_number: UILabel!
     @IBOutlet weak var txt_name: UITextField!
-    let firebaseManager = FirebaseManager()
+    let firebaseManager = FirebaseManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
