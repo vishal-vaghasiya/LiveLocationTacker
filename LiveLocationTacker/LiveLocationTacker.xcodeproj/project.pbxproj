@@ -33,6 +33,8 @@
 		0F9BD0702E15347300B0D189 /* PopupInviteChildMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9BD06F2E15347300B0D189 /* PopupInviteChildMode.swift */; };
 		0F9BD0782E153BF500B0D189 /* ChildModeCircleTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9BD0762E153BF500B0D189 /* ChildModeCircleTVCell.swift */; };
 		0F9BD0792E153BF500B0D189 /* ChildModeCircleTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F9BD0772E153BF500B0D189 /* ChildModeCircleTVCell.xib */; };
+		0FA5FFEF2E17E75100B1CCDF /* ChildCircelTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FA5FFEE2E17E75100B1CCDF /* ChildCircelTVCell.xib */; };
+		0FA5FFF02E17E75100B1CCDF /* ChildCircelTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA5FFED2E17E75100B1CCDF /* ChildCircelTVCell.swift */; };
 		0FE65B0F2E1285AF00B713DD /* SettingTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE65B0D2E1285AF00B713DD /* SettingTVCell.swift */; };
 		0FE65B102E1285AF00B713DD /* SettingTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FE65B0E2E1285AF00B713DD /* SettingTVCell.xib */; };
 		0FE65B142E12A86D00B713DD /* Circle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FE65B132E12A86D00B713DD /* Circle.storyboard */; };
@@ -128,6 +130,8 @@
 		0F9BD06F2E15347300B0D189 /* PopupInviteChildMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupInviteChildMode.swift; sourceTree = "<group>"; };
 		0F9BD0762E153BF500B0D189 /* ChildModeCircleTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildModeCircleTVCell.swift; sourceTree = "<group>"; };
 		0F9BD0772E153BF500B0D189 /* ChildModeCircleTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChildModeCircleTVCell.xib; sourceTree = "<group>"; };
+		0FA5FFED2E17E75100B1CCDF /* ChildCircelTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildCircelTVCell.swift; sourceTree = "<group>"; };
+		0FA5FFEE2E17E75100B1CCDF /* ChildCircelTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChildCircelTVCell.xib; sourceTree = "<group>"; };
 		0FE65B0D2E1285AF00B713DD /* SettingTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTVCell.swift; sourceTree = "<group>"; };
 		0FE65B0E2E1285AF00B713DD /* SettingTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTVCell.xib; sourceTree = "<group>"; };
 		0FE65B132E12A86D00B713DD /* Circle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Circle.storyboard; sourceTree = "<group>"; };
@@ -384,6 +388,8 @@
 			children = (
 				0F9BD0762E153BF500B0D189 /* ChildModeCircleTVCell.swift */,
 				0F9BD0772E153BF500B0D189 /* ChildModeCircleTVCell.xib */,
+				0FA5FFED2E17E75100B1CCDF /* ChildCircelTVCell.swift */,
+				0FA5FFEE2E17E75100B1CCDF /* ChildCircelTVCell.xib */,
 			);
 			path = XIB;
 			sourceTree = "<group>";
@@ -669,6 +675,7 @@
 				0F9BD0792E153BF500B0D189 /* ChildModeCircleTVCell.xib in Resources */,
 				BD1A209A2CD0B3510033A8BA /* error.png in Resources */,
 				0FF019492E0E4D5200575BB0 /* Poppins-Regular.ttf in Resources */,
+				0FA5FFEF2E17E75100B1CCDF /* ChildCircelTVCell.xib in Resources */,
 				0FF0194A2E0E4D5200575BB0 /* Poppins-SemiBold.ttf in Resources */,
 				0FF019502E0E5C8500575BB0 /* GoogleService-Info.plist in Resources */,
 				0FF0194B2E0E4D5200575BB0 /* Poppins-Bold.ttf in Resources */,
@@ -800,6 +807,7 @@
 				BD1A20922CD0B3510033A8BA /* FSPageControl.swift in Sources */,
 				0FE65B1D2E12BF3600B713DD /* PopupShareAppFirstime.swift in Sources */,
 				0F17779E2E1266BC000BC3D8 /* PopupFailedSOS.swift in Sources */,
+				0FA5FFF02E17E75100B1CCDF /* ChildCircelTVCell.swift in Sources */,
 				BDBEC0152D1AC63900D9A739 /* SosVC.swift in Sources */,
 				BD1A20982CD0B3510033A8BA /* FSPageViewLayout.swift in Sources */,
 				0F9BD0782E153BF500B0D189 /* ChildModeCircleTVCell.swift in Sources */,
