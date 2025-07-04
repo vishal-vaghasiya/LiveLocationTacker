@@ -21,7 +21,7 @@ class MobileOTPVerificationVC: UIViewController , UIGestureRecognizerDelegate {
     
     @IBOutlet weak var resentStackView: UIStackView!
     @IBOutlet weak var lblResendOTP: UILabel!
-   
+    
     @IBOutlet var viewOTP: [UIView]!
     
     
@@ -83,7 +83,7 @@ class MobileOTPVerificationVC: UIViewController , UIGestureRecognizerDelegate {
         let labels = [label1, label2, label3, label4, label5, label6]
         labels.forEach { $0?.text = "" }
     }
-
+    
     // MARK: - BUTTON CLICK
     @IBAction func cancelClick(_ sender: UIButton) {
         self.navigationController?.popToRootViewController(animated: true)
@@ -117,7 +117,7 @@ class MobileOTPVerificationVC: UIViewController , UIGestureRecognizerDelegate {
     }
     
     // MARK: - OTHER
-
+    
     // MARK: - DELEGATE
     @objc func textFieldDidChange(_ textField: UITextField) {
         guard let text = textField.text else { return }
@@ -171,7 +171,9 @@ class MobileOTPVerificationVC: UIViewController , UIGestureRecognizerDelegate {
                 
                 Constants.USERDEFAULTS.saveCurrentuserCode(value: existingCode)
                 
-                self.pushVC(T: SetProfileVC.instantiate(appStoryboard: .main), viewControllerID: String(describing: SetProfileVC.self))
+                let vc = StoryboardScene.Main.setProfileVC.instantiate()
+                vc.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(vc, animated: true)
                 
             } else {
                 self.firebaseManager.createCircle(name: "My Circles",
@@ -179,9 +181,8 @@ class MobileOTPVerificationVC: UIViewController , UIGestureRecognizerDelegate {
                                                   countryCode: self.phoneCode,
                                                   userPhone: self.phoneNumber.digitsOnly,
                                                   batteryLevel: batteryLevel) { [self] generatedCode in
-                    print("Share this code with your friend: \(generatedCode ?? "")")
                     self.hideLoader()
-                    
+
                     DefaultManager.User.COUNTRY_CODE = phoneCode
                     DefaultManager.User.PHONE = mobileNumber.digitsOnly
                     DefaultManager.User.NAME = name
@@ -194,38 +195,11 @@ class MobileOTPVerificationVC: UIViewController , UIGestureRecognizerDelegate {
                     
                     Constants.USERDEFAULTS.saveCurrentuserCode(value: generatedCode ?? "")
                     
-                    self.pushVC(T: SetProfileVC.instantiate(appStoryboard: .main), viewControllerID: String(describing: SetProfileVC.self))
+                    let vc = StoryboardScene.Main.setProfileVC.instantiate()
+                    vc.hidesBottomBarWhenPushed = true
+                    self.navigationController?.pushViewController(vc, animated: true)
                 }
             }
         }
     }
-    
 }
-
-extension String {
-
-    var length: Int {
-        return count
-    }
-
-    subscript (i: Int) -> String {
-        return self[i ..< i + 1]
-    }
-
-    func substring(fromIndex: Int) -> String {
-        return self[min(fromIndex, length) ..< length]
-    }
-
-    func substring(toIndex: Int) -> String {
-        return self[0 ..< max(0, toIndex)]
-    }
-
-    subscript (r: Range<Int>) -> String {
-        let range = Range(uncheckedBounds: (lower: max(0, min(length, r.lowerBound)),
-                                            upper: min(length, max(0, r.upperBound))))
-        let start = index(startIndex, offsetBy: range.lowerBound)
-        let end = index(start, offsetBy: range.upperBound - range.lowerBound)
-        return String(self[start ..< end])
-    }
-}
-

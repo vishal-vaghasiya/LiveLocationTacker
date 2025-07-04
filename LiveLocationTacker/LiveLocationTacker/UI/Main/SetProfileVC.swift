@@ -20,8 +20,8 @@ class SetProfileVC: UIViewController {
     let firebaseManager = FirebaseManager.shared
     override func viewDidLoad() {
         super.viewDidLoad()
-        round_imgview.makeRounded()
-        pencil_view.makeRounded()
+//        round_imgview.makeRounded()
+//        pencil_view.makeRounded()
         
         //btnUpdate.setButtonTitleAndFunctionality("Done")
         txt_name.text = DefaultManager.User.NAME

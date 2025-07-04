@@ -59,35 +59,6 @@ class LoginMobilenumberVC: UIViewController {
         }
     }
     
-//    func creatingStaticCircle(){
-//        showLoader(text: "Loading...")
-//        
-//        UIDevice.current.isBatteryMonitoringEnabled = true
-//        let batteryLevel = Int(UIDevice.current.batteryLevel * 100)
-//        
-//        //groupManager.deleteUserAccount(userPhoneNumber: txtEnterNumber.text ?? "") { [self] isDeleted in
-//        groupManager.createCircle(name: "My Circles",
-//                                  userName: txt_entername.text ?? "",
-//                                  userPhone: txtEnterNumber.text ?? "",
-//                                  batteryLevel: batteryLevel) { [self] generatedCode in
-//            print("Share this code with your friend: \(generatedCode ?? "")")
-//            
-//            Constants.USERDEFAULTS.saveCurrentuserNumber(value: txtEnterNumber.text ?? "")
-//            Constants.USERDEFAULTS.saveCurrentuserName(value: txt_entername.text ?? "")
-//            Constants.USERDEFAULTS.saveCurrentuserCode(value: generatedCode ?? "")
-//            Constants.USERDEFAULTS.saveBatterySharing(value: true)
-//            Constants.USERDEFAULTS.saveLocationSharing(value: true)
-//            Constants.USERDEFAULTS.saveNotificationSharing(value: true)
-//            Constants.USERDEFAULTS.saveProfileImage(value: UIImage(named: "engineer")?.pngData() ?? Data())
-//            
-//            self.hideLoader()
-//            
-//            self.pushVC(T: SetProfileVC.instantiate(appStoryboard: .main), viewControllerID: String(describing: SetProfileVC.self))
-//        }
-//        //}
-//    }
-    
-    
     @IBAction func btnChooseFromContactAction(_ sender: UIButton) {
         showContactPicker()
     }

@@ -26,9 +26,6 @@ class SettingHeaderView: UITableViewHeaderFooterView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
-        profile_img.makeRounded()
-        profile_img.contentMode = .scaleAspectFill
         
         location_switch.isOn = DefaultManager.Permission.LOCATION
         battery_switch.isOn = DefaultManager.Permission.BATTERY

@@ -88,7 +88,6 @@ extension SettingVC : UITableViewDelegate, UITableViewDataSource {
         headerView.profile_img.image = UIImage(data: Constants.USERDEFAULTS.getProfileImage() ?? Data())
         
         headerView.onTapProfileAction = {
-            //self.pushVC(T: ProfileVC.instantiate(appStoryboard: .tabbar), viewControllerID: String(describing: ProfileVC.self ))
             let vc = StoryboardScene.Settings.profileVC.instantiate()
             vc.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(vc, animated: true)

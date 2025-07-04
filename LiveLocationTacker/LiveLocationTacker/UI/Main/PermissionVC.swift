@@ -82,7 +82,9 @@ class PermissionVC: UIViewController {
     
     @IBAction func btnLetsStartAction(_ sender: UIButton) {
         if location_switch.isOn && camera_switch.isOn && notification_switch.isOn && motion_switch.isOn {
-            self.pushVC(T: LoginMobilenumberVC.instantiate(appStoryboard: .main), viewControllerID: String(describing: LoginMobilenumberVC.self ))
+            let vc = StoryboardScene.Main.loginMobilenumberVC.instantiate()
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
         }
         else{
             showAlert(title: "", message: "Please grant all premission")

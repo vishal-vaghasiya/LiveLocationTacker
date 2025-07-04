@@ -50,13 +50,15 @@ class OnBoardingVC: UIViewController {
         
         self.btnNext.setButtonTitleAndFunctionality("Next")
         
-        bottom_view.addShadow()
-        bottom_view.makeTopCornerRound(20)
+//        bottom_view.addShadow()
+//        bottom_view.makeTopCornerRound(20)
     }
     
     @IBAction func btnNextAction(_ sender: UIButton) {
         if pagerView.currentIndex == self.introTitle.count - 1 {
-            self.pushVC(T: PermissionVC.instantiate(appStoryboard: .main), viewControllerID: String(describing: PermissionVC.self ))
+            let vc = StoryboardScene.Main.permissionVC.instantiate()
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
         }
         else{
             let nextIndex = pagerView.currentIndex + 1 < numberOfItems(in:self.pagerView) ? pagerView.currentIndex + 1 : 0

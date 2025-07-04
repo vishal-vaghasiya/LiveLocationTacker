@@ -29,7 +29,6 @@ class JoinCircleVC: UIViewController {
         lbl_code.text = groupCode
         btnJoincircle.isEnabled = false
         profile_img.image = UIImage(data: Constants.USERDEFAULTS.getProfileImage() ?? Data())
-        profile_img.makeRounded()
         
         otpTextField.otpDelegate = self
         otpTextField.otpCornerRaduis = 5

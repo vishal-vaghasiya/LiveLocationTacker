@@ -32,8 +32,8 @@ class CircleVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        bottom_view.makeTopCornerRound(20)
-        circle_view.addShadow()
+//        bottom_view.makeTopCornerRound(20)
+//        circle_view.addShadow()
         fetchAllCircle()
         
         map_view.delegate = self

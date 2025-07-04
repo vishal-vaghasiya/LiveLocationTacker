@@ -2,10 +2,20 @@
 import Foundation
 import UIKit
 
-
-
 extension UIColor {
     static let themeColor = hexStringToUIColor(hex: "#30a3a0")
+    
+    static let fontColor = UIColor(named: "fontcolor") ?? UIColor()
+    static let mainColor = UIColor(named: "maincolor") ?? UIColor()
+    static let fontGrayColor = UIColor(named: "fontGraycolor") ?? UIColor()
+    static let bgColor = UIColor(named: "bgcolor") ?? UIColor()
+    static let button_color = UIColor(named: "btncolor") ?? UIColor()
+    static let backgroundColor = UIColor(named: "backgroundColor") ?? UIColor()
+   
+    static var placeholderGray: UIColor {
+        return UIColor(red: 0, green: 0, blue: 0.0980392, alpha: 0.22)
+    }
+    
 }
 
 extension CGColor {
@@ -29,7 +39,6 @@ extension CGColor {
     }
 }
 
-
 func hexStringToUIColor (hex:String) -> UIColor {
     var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
 
@@ -51,7 +60,6 @@ func hexStringToUIColor (hex:String) -> UIColor {
         alpha: CGFloat(1.0)
     )
 }
-
 
 func globalGradientColor() -> UIColor {
     let gradientLayer = CAGradientLayer()

@@ -23,7 +23,9 @@ class IntroVC: UIViewController {
     }
 
     @IBAction func btnContinueAction(_ sender: UIButton) {
-        self.pushVC(T: OnBoardingVC.instantiate(appStoryboard: .main), viewControllerID: String(describing: OnBoardingVC.self ))
+        let vc = StoryboardScene.Main.onBoardingVC.instantiate()
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func setupTermsTextView() {

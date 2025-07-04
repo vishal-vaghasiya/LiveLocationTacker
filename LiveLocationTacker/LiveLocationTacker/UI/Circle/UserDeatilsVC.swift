@@ -21,9 +21,6 @@ class UserDeatilsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        main_view.makeTopCornerRound(20)
-        main_view.addShadow()
-        
         lbl_lastupdate.text = formatDate()
         lbl_address.text = address
         lbl_name.text = username
