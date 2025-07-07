@@ -76,6 +76,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
 //            application,
 //            didFinishLaunchingWithOptions: launchOptions
 //        )
+        
+//        _ = BatteryManager.shared  // Initializes and starts monitoring 
         return true
     }
     

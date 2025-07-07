@@ -203,5 +203,30 @@ class MobileOTPVerificationVC: UIViewController , UIGestureRecognizerDelegate {
                 }
             }
         }
+        
+        /*LocationManager.shared.getCurrentLocation { location in
+            LocationManager.shared.getGoogleAddress(lat: location.coordinate.latitude, long: location.coordinate.longitude) { address in
+                let param: [String: Any] = [
+                    "name": "Vishal Vaghasiya",
+                    "gender": "male",
+                    "country_code": "91",
+                    "phone": "9725992972",
+                    "profile_pic": "",
+                    "battery_level": 100,
+                    "fcmtoken": DefaultManager.User.FCM_TOKEN,
+                    "latitude": location.coordinate.latitude,
+                    "longitude": location.coordinate.longitude,
+                    "address": address ?? "N/A",
+                    "date": Date().getCurrentUTCTimestampInfo().timestampSeconds
+                ]
+                FirebaseManager().checkAndSaveUser(phoneNumber: "9725992972", param: param) { success, message, userData  in
+                    print(message)
+                    if let user = userData {
+                        print("User Data: \(user)")
+                    }
+                }
+            }
+        }*/
+        
     }
 }

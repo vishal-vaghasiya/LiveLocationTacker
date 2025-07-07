@@ -124,7 +124,7 @@ class FirebaseManager {
         let userRef = ref.child(FirebaseTableName.users.name).child(DefaultManager.User.PHONE)
         
         var param = updatedValues
-        param["date"] = Date().getCurrentUTCTimestampInfo().timestampSeconds
+        param["timestamp"] = Date().getCurrentUTCTimestampInfo().timestampSeconds
         
         userRef.updateChildValues(param) { error, _ in
             if let error = error {
@@ -143,7 +143,7 @@ class FirebaseManager {
             let param: [String: Any] = [
                 "name": "Vishal Vaghasiya",
                 "gender": "male",
-                "code": "91",
+                "country_code": "91",
                 "phone": "9725992972",
                 "profile_pic": "",
                 "battery_level": 100,
@@ -151,7 +151,7 @@ class FirebaseManager {
                 "latitude": location.coordinate.latitude,
                 "longitude": location.coordinate.longitude,
                 "address": address ?? "N/A",
-                "date": Date().getCurrentUTCTimestampInfo().timestampSeconds
+                "timestamp": Date().getCurrentUTCTimestampInfo().timestampSeconds
             ]
             FirebaseManager().checkAndSaveUser(phoneNumber: "9725992972", param: param) { success, message, userData  in
                 print(message)
@@ -161,7 +161,7 @@ class FirebaseManager {
                 
                 let updatedData: [String: Any] = [
                     "name": "Vishal Vaghasiya",
-                    "date": Date().getCurrentUTCTimestampInfo().timestampSeconds
+                    "timestamp": Date().getCurrentUTCTimestampInfo().timestampSeconds
                 ]
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                     FirebaseManager().updateUserData(phoneNumber: "9725992972", updatedValues: updatedData) { success, message in
@@ -181,7 +181,7 @@ class FirebaseManager {
             "name": name,
             "country_code": DefaultManager.User.COUNTRY_CODE,
             "owner_phone": DefaultManager.User.PHONE,
-            "date": Date().getCurrentUTCTimestampInfo().timestampSeconds,
+            "timestamp": Date().getCurrentUTCTimestampInfo().timestampSeconds,
             "members": [
                 String(code): [
                     "country_code": DefaultManager.User.COUNTRY_CODE,
@@ -234,6 +234,34 @@ class FirebaseManager {
             }
     }
     
+    // MARK: - Fetch My Circles (Where User Is a Member)
+    func getMyCircle(completion: @escaping (Bool, String, [DataSnapshot]) -> Void) {
+        let circlesRef = ref.child(FirebaseTableName.circle.name)
+        
+        circlesRef.observeSingleEvent(of: .value) { snapshot in
+            guard snapshot.exists(), let allCircles = snapshot.children.allObjects as? [DataSnapshot] else {
+                completion(false, "No circles available.", [])
+                return
+            }
+            
+            var matchedCircles: [DataSnapshot] = []
+            
+            for circle in allCircles {
+                if let circleData = circle.value as? [String: Any],
+                   let members = circleData["members"] as? [String: Any],
+                   members[DefaultManager.User.PHONE] != nil {
+                    matchedCircles.append(circle)
+                }
+            }
+            
+            if matchedCircles.isEmpty {
+                completion(false, "You are not a member of any circle.", [])
+            } else {
+                completion(true, "Circles fetched successfully.", matchedCircles)
+            }
+        }
+    }
+    
     // MARK: - FCM Token Update
     func updateFCMToken(){
         if !DefaultManager.User.FCM_TOKEN.isEmpty {
@@ -256,7 +284,7 @@ class FirebaseManager {
             
             let param = [
                 "battery_level": "batteryLevel",
-                "date": Date().getCurrentUTCTimestampInfo().timestampSeconds
+                "timestamp": Date().getCurrentUTCTimestampInfo().timestampSeconds
             ] as [String : Any]
             
             // Update battery level in user's profile
@@ -280,7 +308,7 @@ class FirebaseManager {
                     "address": address ?? "",
                     "latitude": latitude,
                     "longitude": longitude,
-                    "date": Date().getCurrentUTCTimestampInfo().timestampSeconds
+                    "timestamp": Date().getCurrentUTCTimestampInfo().timestampSeconds
                 ]
                 
                 userRef.updateChildValues(param) { error, _ in
@@ -325,7 +353,7 @@ class FirebaseManager {
         
         let param: [String: Any] = [
             "profile_pic": DefaultManager.User.PROFILE_PIC,
-            "date": Date().getCurrentUTCTimestampInfo().timestampSeconds
+            "timestamp": Date().getCurrentUTCTimestampInfo().timestampSeconds
         ]
         
         userRef.updateChildValues(param) { error, _ in

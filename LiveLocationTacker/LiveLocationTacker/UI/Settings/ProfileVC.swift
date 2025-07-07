@@ -16,7 +16,7 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var lbl_number: UILabel!
     @IBOutlet weak var txt_name: UITextField!
     let firebaseManager = FirebaseManager.shared
-    
+    var profileURL = String()
     // MARK: - Lifecycle Methods
     
     override func viewDidLoad() {
@@ -114,6 +114,20 @@ class ProfileVC: UIViewController {
                 self.showAlert(title: "", message: errorMessage ?? "")
             }
         }
+        
+        /*
+        let updatedData: [String: Any] = [
+            "name": txt_name.text ?? "",
+            "profile_pic": profileURL,
+            "date": Date().getCurrentUTCTimestampInfo().timestampSeconds
+        ]
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+            FirebaseManager().updateUserData(phoneNumber: "9725992972", updatedValues: updatedData) { success, message in
+                print(message)
+            }
+        })
+         */
     }
 }
 
@@ -136,7 +150,8 @@ extension ProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDele
         DefaultManager.User.PROFILE_DATA = profile_img.image?.pngData() ?? Data()
         firebaseManager.uploadProfileImage(selectedImage) { result in
             switch result {
-            case .success(_):
+            case .success(let url):
+                self.profileURL = url.absoluteString
                 //                updateUserProfile(with: url) { error in
                 //                    if let error = error {
                 //                        print("Profile update failed: \(error)")

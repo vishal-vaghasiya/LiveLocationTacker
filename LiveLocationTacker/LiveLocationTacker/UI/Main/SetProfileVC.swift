@@ -18,6 +18,7 @@ class SetProfileVC: UIViewController {
     @IBOutlet weak var pencil_view: UIView!
     @IBOutlet weak var txt_name: UITextField!
     let firebaseManager = FirebaseManager.shared
+    var profileURL = String()
     override func viewDidLoad() {
         super.viewDidLoad()
         txt_name.text = DefaultManager.User.NAME
@@ -71,6 +72,20 @@ class SetProfileVC: UIViewController {
                 self.showAlert(title: "", message: errorMessage ?? "")
             }
         }
+        
+        /*
+        let updatedData: [String: Any] = [
+            "name": txt_name.text ?? "",
+            "profile_pic": profileURL,
+            "date": Date().getCurrentUTCTimestampInfo().timestampSeconds
+        ]
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+            FirebaseManager().updateUserData(phoneNumber: "9725992972", updatedValues: updatedData) { success, message in
+                print(message)
+            }
+        })
+         */
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
@@ -100,13 +115,7 @@ extension SetProfileVC: UIImagePickerControllerDelegate, UINavigationControllerD
         firebaseManager.uploadProfileImage(selectedImage) { result in
             switch result {
             case .success(let url):
-                self.firebaseManager.updateUserData(updatedValues: ["profile_pic": url.absoluteString]) { success, error in
-                    if success {
-                        print("Profile updated successfully!")
-                    } else {
-                        print("Profile update failed: \(error)")
-                    }
-                }
+                self.profileURL = url.absoluteString
                 break
             case .failure(let error):
                 print("Upload failed: \(error)")
