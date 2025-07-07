@@ -1319,14 +1319,16 @@
                                                                 <color key="textColor" name="fontcolor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kg0-gu-CbC">
+                                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kg0-gu-CbC" customClass="UIEnableDisable" customModule="LiveLocationTacker" customModuleProvider="target">
                                                                 <rect key="frame" x="15" y="760" width="363" height="55"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="55" id="X0I-tm-Z3h">
                                                                         <variation key="heightClass=regular-widthClass=regular" constant="75"/>
                                                                     </constraint>
                                                                 </constraints>
+                                                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="18"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="Subscribe Now"/>
                                                                 <connections>
                                                                     <action selector="btnSubscribeAction:" destination="9Xe-p1-cnJ" eventType="touchUpInside" id="k1c-6d-cIc"/>
                                                                 </connections>
@@ -1537,7 +1539,7 @@
             <color red="0.0" green="0.74117647058823533" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

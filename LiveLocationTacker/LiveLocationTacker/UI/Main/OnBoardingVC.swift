@@ -6,20 +6,16 @@
 //
 
 import UIKit
-
-
-
 class OnBoardingVC: UIViewController {
     
     @IBOutlet weak var bottom_view: UIView!
-    @IBOutlet weak var btnNext: UIButton!
+    @IBOutlet weak var btnNext: UIEnableDisable!
     @IBOutlet weak var pageControl: FSPageControl!
     @IBOutlet weak var pagerView: FSPagerView! {
         didSet{
             self.pagerView.register(UINib(nibName: "OnboardingFSPagerviewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
         }
     }
-    
     
     var introTitle = [
         "Stay in touch with your loved ones",
@@ -48,11 +44,8 @@ class OnBoardingVC: UIViewController {
         pageControl.setImage(UIImage.init(named: "pagecontrol_unselect"), for: .normal)
         pageControl.setImage(UIImage.init(named: "pagecontrol_select"), for: .selected)
         
-        self.btnNext.setButtonTitleAndFunctionality("Next")
-        
-//        bottom_view.addShadow()
-//        bottom_view.makeTopCornerRound(20)
-    }
+        self.btnNext.isEnabled = true
+     }
     
     @IBAction func btnNextAction(_ sender: UIButton) {
         if pagerView.currentIndex == self.introTitle.count - 1 {
@@ -90,12 +83,5 @@ extension OnBoardingVC : FSPagerViewDelegate, FSPagerViewDataSource {
     
     func pagerViewDidScroll(_ pagerView: FSPagerView) {
         self.pageControl.currentPage = pagerView.currentIndex
-        
-        if pagerView.currentIndex == self.introTitle.count - 1 {
-            self.btnNext.setButtonTitleAndFunctionality("Next"/*"Lets get"*/)
-        }
-        else {
-            self.btnNext.setButtonTitleAndFunctionality("Next")
-        }
     }
 }

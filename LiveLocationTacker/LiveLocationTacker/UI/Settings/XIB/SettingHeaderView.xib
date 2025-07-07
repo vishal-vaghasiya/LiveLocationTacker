@@ -32,6 +32,11 @@
                                         <constraint firstAttribute="height" constant="40" id="CFx-EE-WA0"/>
                                         <constraint firstAttribute="width" secondItem="rUT-j4-ddN" secondAttribute="height" multiplier="1:1" id="wSF-Uv-pv8"/>
                                     </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="20"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
                                 </imageView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="URj-PD-gi1">
                                     <rect key="frame" x="65" y="14" width="334" height="46"/>

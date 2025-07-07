@@ -8,13 +8,13 @@ import UIKit
 
 class UpdateViewController: UIViewController {
 
-    @IBOutlet weak var btnUpdate: UIButton!
+    @IBOutlet weak var btnUpdate: UIEnableDisable!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.btnUpdate.setButtonTitleAndFunctionality("Update")
+        self.btnUpdate.isEnabled = true
     }
 
     @IBAction func btnUpdateClicked(_ sender: UIButton) {

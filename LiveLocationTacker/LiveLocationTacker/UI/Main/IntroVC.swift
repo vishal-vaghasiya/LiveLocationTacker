@@ -10,13 +10,12 @@ import UIKit
 class IntroVC: UIViewController {
 
     @IBOutlet weak var lbl_appname: UILabel!
-    @IBOutlet weak var btnContinue: UIButton!
+    @IBOutlet weak var btnContinue: UIEnableDisable!
     @IBOutlet weak var termsTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        btnContinue.setButtonTitleAndFunctionality("Continue")
+        btnContinue.isEnabled = true
         lbl_appname.text = APP_NAME
     
         setupTermsTextView()

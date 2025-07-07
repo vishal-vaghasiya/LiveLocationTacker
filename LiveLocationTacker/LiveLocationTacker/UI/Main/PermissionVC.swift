@@ -12,7 +12,7 @@ import AVFoundation
 
 class PermissionVC: UIViewController {
 
-    @IBOutlet weak var btnLetsStart: UIButton!
+    @IBOutlet weak var btnLetsStart: UIEnableDisable!
     @IBOutlet var shadow_view: [UIView]!
 
     @IBOutlet weak var location_switch: UISwitch!
@@ -25,10 +25,8 @@ class PermissionVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        btnLetsStart.setButtonTitleAndFunctionality("Continue"/*"Get Started"*/)
-//        shadow_view.forEach({ $0.addLightShadow() })
+        btnLetsStart.isEnabled = true
         checkPermission()
-        
         locationManager.delegate = self
     }
     

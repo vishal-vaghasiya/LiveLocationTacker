@@ -20,13 +20,9 @@ class SetProfileVC: UIViewController {
     let firebaseManager = FirebaseManager.shared
     override func viewDidLoad() {
         super.viewDidLoad()
-//        round_imgview.makeRounded()
-//        pencil_view.makeRounded()
-        
-        //btnUpdate.setButtonTitleAndFunctionality("Done")
         txt_name.text = DefaultManager.User.NAME
-        //profile_img.image = UIImage(data: Constants.USERDEFAULTS.getProfileImage() ?? Data())
         txt_name.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        btnUpdate.isEnabled = txt_name.text?.count ?? 0 > 0
     }
     
     @IBAction func cancelClick(_ sender: UIButton) {

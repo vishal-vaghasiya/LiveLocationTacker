@@ -17,7 +17,7 @@ class SubscribeVC: UIViewController {
     @IBOutlet weak var lbl_year_price: UILabel!
     @IBOutlet weak var lbl_month_price: UILabel!
     @IBOutlet weak var lbl_week_price: UILabel!
-    @IBOutlet weak var btnSubscibeNow: UIButton!
+    @IBOutlet weak var btnSubscibeNow: UIEnableDisable!
     
     @IBOutlet weak var img_bg_year: UIImageView!
     @IBOutlet weak var img_bg_month: UIImageView!
@@ -48,7 +48,7 @@ class SubscribeVC: UIViewController {
         }
         
         initView()
-        btnSubscibeNow.setButtonTitleAndFunctionality("Subscribe Now")
+        btnSubscibeNow.isEnabled = true
         getOfferFromRevenuecut()
     }
     

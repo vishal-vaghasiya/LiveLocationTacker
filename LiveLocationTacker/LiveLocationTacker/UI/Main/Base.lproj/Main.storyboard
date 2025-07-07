@@ -148,14 +148,15 @@
                                             <constraint firstItem="e4N-6h-dOp" firstAttribute="centerY" secondItem="gxP-io-lDx" secondAttribute="centerY" id="y2Q-5z-WkU"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pz-5n-iek">
+                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pz-5n-iek" customClass="UIEnableDisable" customModule="LiveLocationTacker" customModuleProvider="target">
                                         <rect key="frame" x="60" y="621" width="270" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="lfs-dO-c2Y"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="18"/>
                                         <color key="tintColor" name="fontcolor"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Continue" image="icon_arrow_next"/>
                                         <connections>
                                             <action selector="btnContinueAction:" destination="eOd-tz-fah" eventType="touchUpInside" id="rDp-0y-R8T"/>
                                         </connections>
@@ -482,12 +483,14 @@
                                                     </constraint>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJX-GO-KAz">
+                                            <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJX-GO-KAz" customClass="UIEnableDisable" customModule="LiveLocationTacker" customModuleProvider="target">
                                                 <rect key="frame" x="85" y="35" width="220" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="TIv-Bn-hm2"/>
                                                 </constraints>
+                                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="18"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Next" image="icon_arrow_next"/>
                                                 <connections>
                                                     <action selector="btnNextAction:" destination="Obd-R8-i9m" eventType="touchUpInside" id="MZq-qq-hmT"/>
                                                 </connections>
@@ -735,13 +738,14 @@
                                                             </view>
                                                         </subviews>
                                                     </stackView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qlU-o8-q3B">
+                                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qlU-o8-q3B" customClass="UIEnableDisable" customModule="LiveLocationTacker" customModuleProvider="target">
                                                         <rect key="frame" x="60" y="734" width="270" height="60"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="60" id="OjD-E0-cLm"/>
                                                         </constraints>
+                                                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="18"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="Button"/>
+                                                        <state key="normal" title="Continue" image="icon_arrow_next"/>
                                                         <connections>
                                                             <action selector="btnLetsStartAction:" destination="Typ-CJ-MQg" eventType="touchUpInside" id="W4e-m7-AKR"/>
                                                         </connections>
@@ -1515,12 +1519,17 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </imageView>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kib-V1-SHM">
+                                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kib-V1-SHM">
                                                                 <rect key="frame" x="110" y="0.0" width="120" height="120"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_default_profile" translatesAutoresizingMaskIntoConstraints="NO" id="WEv-TV-zNM">
                                                                         <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="60"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </imageView>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1532,6 +1541,11 @@
                                                                     <constraint firstAttribute="bottom" secondItem="WEv-TV-zNM" secondAttribute="bottom" id="gx0-YT-czh"/>
                                                                     <constraint firstItem="WEv-TV-zNM" firstAttribute="leading" secondItem="kib-V1-SHM" secondAttribute="leading" id="sgm-0n-a7q"/>
                                                                 </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="60"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HoU-Ha-HeM">
                                                                 <rect key="frame" x="190" y="80.000000000000028" width="40" height="40"/>
@@ -1981,7 +1995,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
