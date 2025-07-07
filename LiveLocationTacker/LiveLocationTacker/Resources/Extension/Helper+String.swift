@@ -142,4 +142,17 @@ extension String {
     var digitsOnly: String {
         return self.filter { $0.isWholeNumber }
     }
+    
+    func DegreeToString(d: Double) -> String {
+        /// Degree
+        let degree = Int(d)
+        /// Temporary minute
+        let tempMinute = Float(d - Double(degree)) * 60
+        /// Minute
+        let minutes = Int(tempMinute)   // Round down
+        /// Second
+        let second = Int((tempMinute - Float(minutes)) * 60)
+        return "\(degree)°\(minutes)′\(second)″"
+    }
+    
 }
