@@ -100,13 +100,13 @@ extension SetProfileVC: UIImagePickerControllerDelegate, UINavigationControllerD
         firebaseManager.uploadProfileImage(selectedImage) { result in
             switch result {
             case .success(let url):
-//                updateUserProfile(with: url) { error in
-//                    if let error = error {
-//                        print("Profile update failed: \(error)")
-//                    } else {
-//                        print("Profile updated successfully!")
-//                    }
-//                }
+                self.firebaseManager.updateUserData(updatedValues: ["profile_pic": url.absoluteString]) { success, error in
+                    if success {
+                        print("Profile updated successfully!")
+                    } else {
+                        print("Profile update failed: \(error)")
+                    }
+                }
                 break
             case .failure(let error):
                 print("Upload failed: \(error)")
