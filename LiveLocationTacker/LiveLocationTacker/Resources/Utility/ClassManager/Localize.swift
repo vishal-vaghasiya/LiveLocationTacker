@@ -73,9 +73,6 @@ extension Bundle {
         UserDefaults.standard.synchronize()
         let path = Bundle.main.path(forResource: lang, ofType: "lproj")
         bundle = Bundle(path: path!)
-        let defaults = UserDefaults()
-        defaults.isArabic()
-        
     }
 }
 
@@ -90,26 +87,7 @@ extension String {
     }
 }
 
-
-//MARK: - ChangeUIView Direction when LanguageUpdate -
-
-extension UserDefaults{
-    
-    func isArabic(){
-        if UserDefaults.standard.string(forKey: "Applanguage") == "ar"{
-            UIView.appearance().semanticContentAttribute = .forceRightToLeft
-            UIButton.appearance().semanticContentAttribute = .forceRightToLeft
-        }
-        else{
-            UIView.appearance().semanticContentAttribute = .forceLeftToRight
-            UIButton.appearance().semanticContentAttribute = .forceLeftToRight
-        }
-    }
-    
-}
-
 //MARK: - When Language update ChnageUI ATTime -
-
 extension UIViewController{
     
     func changeUIRuntime() {

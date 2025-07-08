@@ -35,7 +35,6 @@ class CompassVC: UIViewController {
         
         compass_view.addSubview(dScaView)
         createLocationManager()
-        setRightSideButtonInNavigationBar()
     }
     
     override func viewWillAppear(_ animated:Bool) {
