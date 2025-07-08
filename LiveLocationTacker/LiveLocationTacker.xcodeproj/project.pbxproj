@@ -54,9 +54,6 @@
 		BD1A20972CD0B3510033A8BA /* FSPagerViewObjcCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1A20702CD0B3510033A8BA /* FSPagerViewObjcCompat.m */; };
 		BD1A20982CD0B3510033A8BA /* FSPageViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1A20712CD0B3510033A8BA /* FSPageViewLayout.swift */; };
 		BD1A20992CD0B3510033A8BA /* FSPageViewTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1A20722CD0B3510033A8BA /* FSPageViewTransformer.swift */; };
-		BD1A209A2CD0B3510033A8BA /* error.png in Resources */ = {isa = PBXBuildFile; fileRef = BD1A20742CD0B3510033A8BA /* error.png */; };
-		BD1A209B2CD0B3510033A8BA /* success.png in Resources */ = {isa = PBXBuildFile; fileRef = BD1A20752CD0B3510033A8BA /* success.png */; };
-		BD1A209C2CD0B3510033A8BA /* ValidationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1A20772CD0B3510033A8BA /* ValidationTextField.swift */; };
 		BD1A20B02CD0B3510033A8BA /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1A208F2CD0B3510033A8BA /* UpdateViewController.swift */; };
 		BD1A20B12CD0B3510033A8BA /* UpdateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD1A20902CD0B3510033A8BA /* UpdateViewController.xib */; };
 		BD38B9012CEC66540088D0C7 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD38B9002CEC66540088D0C7 /* ProfileVC.swift */; };
@@ -142,9 +139,6 @@
 		BD1A20702CD0B3510033A8BA /* FSPagerViewObjcCompat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSPagerViewObjcCompat.m; sourceTree = "<group>"; };
 		BD1A20712CD0B3510033A8BA /* FSPageViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPageViewLayout.swift; sourceTree = "<group>"; };
 		BD1A20722CD0B3510033A8BA /* FSPageViewTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPageViewTransformer.swift; sourceTree = "<group>"; };
-		BD1A20742CD0B3510033A8BA /* error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = error.png; sourceTree = "<group>"; };
-		BD1A20752CD0B3510033A8BA /* success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = success.png; sourceTree = "<group>"; };
-		BD1A20772CD0B3510033A8BA /* ValidationTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationTextField.swift; sourceTree = "<group>"; };
 		BD1A208F2CD0B3510033A8BA /* UpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
 		BD1A20902CD0B3510033A8BA /* UpdateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpdateViewController.xib; sourceTree = "<group>"; };
 		BD38B9002CEC66540088D0C7 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
@@ -428,37 +422,10 @@
 			path = FSPagerView;
 			sourceTree = "<group>";
 		};
-		BD1A20762CD0B3510033A8BA /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				BD1A20742CD0B3510033A8BA /* error.png */,
-				BD1A20752CD0B3510033A8BA /* success.png */,
-			);
-			path = Assets;
-			sourceTree = "<group>";
-		};
-		BD1A20782CD0B3510033A8BA /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				BD1A20772CD0B3510033A8BA /* ValidationTextField.swift */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		BD1A20792CD0B3510033A8BA /* ValidationTextField */ = {
-			isa = PBXGroup;
-			children = (
-				BD1A20762CD0B3510033A8BA /* Assets */,
-				BD1A20782CD0B3510033A8BA /* Classes */,
-			);
-			path = ValidationTextField;
-			sourceTree = "<group>";
-		};
 		BD1A20822CD0B3510033A8BA /* Library */ = {
 			isa = PBXGroup;
 			children = (
 				BD1A20732CD0B3510033A8BA /* FSPagerView */,
-				BD1A20792CD0B3510033A8BA /* ValidationTextField */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -575,9 +542,7 @@
 				0F1777782E124932000BC3D8 /* MapTypeCVCell.xib in Resources */,
 				BD9DB1512CE85971003615FE /* OnboardingFSPagerviewCell.xib in Resources */,
 				BD1A20632CD0B2E10033A8BA /* Base in Resources */,
-				BD1A209B2CD0B3510033A8BA /* success.png in Resources */,
 				0F9BD0792E153BF500B0D189 /* ChildModeCircleTVCell.xib in Resources */,
-				BD1A209A2CD0B3510033A8BA /* error.png in Resources */,
 				0FA5FFEF2E17E75100B1CCDF /* ChildCircelTVCell.xib in Resources */,
 				0FF019502E0E5C8500575BB0 /* GoogleService-Info.plist in Resources */,
 				0F1832942E13B97C00D03B9B /* ChangePlanButtonCVCell.xib in Resources */,
@@ -732,7 +697,6 @@
 				BD7FE32D2CEC4ACA006C32D2 /* SettingTBVCell.swift in Sources */,
 				BD1A20972CD0B3510033A8BA /* FSPagerViewObjcCompat.m in Sources */,
 				BD9DB14A2CE858D8003615FE /* OnBoardingVC.swift in Sources */,
-				BD1A209C2CD0B3510033A8BA /* ValidationTextField.swift in Sources */,
 				BD75DDB92CE89EC300A028BD /* CircleVC.swift in Sources */,
 				0FE65B1B2E12B84600B713DD /* PopupDeleteAccountConfirmation.swift in Sources */,
 				BDC7782E2CECA1B900BEFF66 /* CompassVC.swift in Sources */,
@@ -917,7 +881,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -966,7 +930,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

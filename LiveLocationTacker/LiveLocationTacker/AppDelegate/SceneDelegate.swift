@@ -97,10 +97,8 @@ extension SceneDelegate {
     func refreshUserDetails() {
         Purchases.shared.getCustomerInfo { (purchaserInfo, error) in
             if purchaserInfo?.entitlements[Constants.entitlementID]?.isActive == true {
-                //Constants.USERDEFAULTS.set(true, forKey: "pro")
                 DefaultManager.IS_SUBSCRIPTION = true
             } else {
-                //Constants.USERDEFAULTS.removeObject(forKey: "pro")
                 DefaultManager.IS_SUBSCRIPTION = false
             }
         }
@@ -150,34 +148,8 @@ extension UIViewController {
     //    }
     
     func requestTrackingPermission(completion:@escaping()->()) {
-        // Check if iOS 14.5 or later
-        if #available(iOS 14.5, *) {
-            ATTrackingManager.requestTrackingAuthorization { status in
-                switch status {
-                case .authorized:
-                    print("Tracking authorized")
-                    // You can now access the IDFA (Identifier for Advertisers)
-                    let idfa = ASIdentifierManager.shared().advertisingIdentifier
-                    print("IDFA: \(idfa)")
-                    
-                case .denied:
-                    print("Tracking denied")
-                    
-                case .restricted:
-                    print("Tracking restricted")
-                    
-                case .notDetermined:
-                    print("Tracking permission not determined")
-                    
-                @unknown default:
-                    print("Unknown status")
-                }
-                completion()
-            }
-        }
-        else {
+        ATTrackingManager.requestTrackingAuthorization { status in
             completion()
-            print("ATT framework is not available. Default behavior applies.")
         }
     }
 }

@@ -21,6 +21,8 @@ class CompassVC: UIViewController {
     // MARK: - PROPERTY
     var lastAngle: Int = 0 // To store the last angle for comparison
     var generator: UIImpactFeedbackGenerator? = UIImpactFeedbackGenerator(style: .medium)
+    var lastLocation: CLLocation?
+    var lastAddressUpdateTime: Date?
     
     private lazy var dScaView: DegreeScaleView = {
         let viewF = CGRect(x: 0, y: compass_view.frame.origin.y, width: compass_view.frame.width, height: compass_view.frame.height)
@@ -40,11 +42,15 @@ class CompassVC: UIViewController {
     override func viewWillAppear(_ animated:Bool) {
         super.viewWillAppear(animated)
         generator = UIImpactFeedbackGenerator(style: .medium)
+        locationManager.startUpdatingLocation()
+        locationManager.startUpdatingHeading()
     }
     
     override func viewWillDisappear(_ animated:Bool) {
         super.viewWillDisappear(animated)
         generator = nil
+        locationManager.stopUpdatingLocation()
+        locationManager.stopUpdatingHeading()
     }
     
     // MARK: - UI SETUP
@@ -143,9 +149,26 @@ extension CompassVC: CLLocationManagerDelegate {
         self.latitudeAndLongitudeLabel.text = "Latitude \(newlatitudeStr)  Longitude \(newLongitudeStr)"
         self.altitudeLabel.text = "Altitude: \(altitudeStr) meters"
         
-        LocationManager.shared.getAddressFromLatLon(latitude: currLocation.coordinate.latitude,
-                                                    longitude: currLocation.coordinate.longitude) { adress in
-            self.lbl_address.text = adress
+        let distanceThreshold: CLLocationDistance = 50  // in meters
+        let timeIntervalThreshold: TimeInterval = 60  // in seconds
+        
+        let shouldUpdate: Bool = {
+            if let lastLoc = lastLocation, let lastTime = lastAddressUpdateTime {
+                let distance = currLocation.distance(from: lastLoc)
+                let timeDiff = Date().timeIntervalSince(lastTime)
+                return distance > distanceThreshold || timeDiff > timeIntervalThreshold
+            }
+            return true // First-time update
+        }()
+        
+        if shouldUpdate {
+            lastLocation = currLocation
+            lastAddressUpdateTime = Date()
+            
+            LocationManager.shared.getAddressFromLatLon(latitude: currLocation.coordinate.latitude,
+                                                        longitude: currLocation.coordinate.longitude) { address in
+                self.lbl_address.text = address
+            }
         }
     }
     

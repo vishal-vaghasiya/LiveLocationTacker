@@ -31,10 +31,8 @@ class ConnectionManager {
         switch reachability.connection {
         case .cellular:
             NotificationCenter.default.post(name: Notification.Name("internetReachable"), object: nil)
-            print("Network available via Cellular Data.")
             break
         case .wifi:
-            print("Network available via WiFi.")
             NotificationCenter.default.post(name: Notification.Name("internetReachable"), object: nil)
             break
         case .none:
