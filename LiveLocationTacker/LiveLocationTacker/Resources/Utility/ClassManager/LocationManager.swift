@@ -11,25 +11,23 @@ import UIKit
 class LocationManager: NSObject, CLLocationManagerDelegate {
     
     static let shared = LocationManager()
-    var locationManager: CLLocationManager = CLLocationManager()
+    
+    let locationManager = CLLocationManager()
     var requestLocationAuthorizationCallback: ((CLAuthorizationStatus) -> Void)?
     var locationCallback: ((CLLocation) -> Void)?
     var lastRecordedLocation: CLLocation?
     
     override private init() {
         super.init()
-        
         self.locationManager.delegate = self
         self.locationManager.allowsBackgroundLocationUpdates = true
         self.locationManager.pausesLocationUpdatesAutomatically = false
     }
     
     public func requestLocationPermission(completion: @escaping (Bool) -> Void) {
-        let currentStatus = CLLocationManager.authorizationStatus()
-        
-        switch currentStatus {
+        let status = locationManager.authorizationStatus
+        switch status {
         case .notDetermined:
-            // Request location access
             if #available(iOS 13.4, *) {
                 locationManager.requestWhenInUseAuthorization()
             } else {
@@ -52,7 +50,6 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         // Handle changes in authorization status
         self.requestLocationAuthorizationCallback?(status)
-        
         switch status {
         case .authorizedAlways, .authorizedWhenInUse:
             locationManager.requestAlwaysAuthorization()
@@ -66,10 +63,9 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     }
     
     func startMonitoring() {
-        let currentStatus = locationManager.authorizationStatus
-        switch currentStatus {
+        let status = locationManager.authorizationStatus
+        switch status {
         case .notDetermined:
-            // Request location access
             if #available(iOS 13.4, *) {
                 locationManager.requestWhenInUseAuthorization()
             } else {
@@ -110,7 +106,6 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     private func startLocationUpdates() {
         startMonitazation()
         startUpdatingLocation()
-        print("Started location updates.")
     }
     
     func startUpdatingLocation() {
@@ -163,7 +158,16 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         locationCallback = nil // Reset callback after use
     }
     
-    func getGoogleAddress(lat: CLLocationDegrees, long: CLLocationDegrees, completion: @escaping (String?) -> Void) {
+    private func updateUserLocationToServer(lat: CLLocationDegrees, long: CLLocationDegrees) {
+        // Make your API call to update user location
+        FirebaseManager.shared.updateUserwiseLocationInFirebase(latitude: lat, longitude: long, userPhonenumber: DefaultManager.User.PHONE)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Failed to find user's location: \(error.localizedDescription)")
+    }
+    
+    private func getGoogleAddress(lat: CLLocationDegrees, long: CLLocationDegrees, completion: @escaping (String?) -> Void) {
         let apiKey = "AIzaSyBMtqBk10Mt4qgTb71tvsYxGGZxkuAY7tY"
         let urlStr = "https://maps.googleapis.com/maps/api/geocode/json?latlng=\(lat),\(long)&key=\(apiKey)"
         
@@ -199,15 +203,6 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
                 completion(nil)
             }
         }.resume()
-    }
-    
-    func updateUserLocationToServer(lat: CLLocationDegrees, long: CLLocationDegrees) {
-        // Make your API call to update user location
-        FirebaseManager.shared.updateUserwiseLocationInFirebase(latitude: lat, longitude: long, userPhonenumber: DefaultManager.User.PHONE)
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("Failed to find user's location: \(error.localizedDescription)")
     }
     
     func getAddressFromLatLon(latitude: Double, longitude: Double, completion: @escaping (String?) -> Void) {
