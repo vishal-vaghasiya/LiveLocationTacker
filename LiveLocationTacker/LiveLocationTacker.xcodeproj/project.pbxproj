@@ -32,6 +32,8 @@
 		0F9BD0792E153BF500B0D189 /* ChildModeCircleTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F9BD0772E153BF500B0D189 /* ChildModeCircleTVCell.xib */; };
 		0FA5FFEF2E17E75100B1CCDF /* ChildCircelTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FA5FFEE2E17E75100B1CCDF /* ChildCircelTVCell.xib */; };
 		0FA5FFF02E17E75100B1CCDF /* ChildCircelTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA5FFED2E17E75100B1CCDF /* ChildCircelTVCell.swift */; };
+		0FD7531F2E1D41E800ACF0BD /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 0FD7531E2E1D41E800ACF0BD /* SDWebImage */; };
+		0FD753212E1D41E800ACF0BD /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0FD753202E1D41E800ACF0BD /* SDWebImageMapKit */; };
 		0FE65B0F2E1285AF00B713DD /* SettingTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE65B0D2E1285AF00B713DD /* SettingTVCell.swift */; };
 		0FE65B102E1285AF00B713DD /* SettingTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FE65B0E2E1285AF00B713DD /* SettingTVCell.xib */; };
 		0FE65B142E12A86D00B713DD /* Circle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FE65B132E12A86D00B713DD /* Circle.storyboard */; };
@@ -182,7 +184,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FD7531F2E1D41E800ACF0BD /* SDWebImage in Frameworks */,
 				0F10067274AF68AB90DAB3F9 /* Pods_LiveLocationTacker.framework in Frameworks */,
+				0FD753212E1D41E800ACF0BD /* SDWebImageMapKit in Frameworks */,
 				BD7F290D2D1A7CE70020B37D /* SwiftQRCodeScanner in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -489,6 +493,8 @@
 			name = LiveLocationTacker;
 			packageProductDependencies = (
 				BD7F290C2D1A7CE70020B37D /* SwiftQRCodeScanner */,
+				0FD7531E2E1D41E800ACF0BD /* SDWebImage */,
+				0FD753202E1D41E800ACF0BD /* SDWebImageMapKit */,
 			);
 			productName = LiveLocationTacker;
 			productReference = BD1A20532CD0B2E00033A8BA /* LiveLocationTacker.app */;
@@ -520,6 +526,7 @@
 			mainGroup = BD1A204A2CD0B2E00033A8BA;
 			packageReferences = (
 				BD7F290B2D1A7CE70020B37D /* XCRemoteSwiftPackageReference "SwiftQRCodeScanner" */,
+				0FD7531D2E1D41E800ACF0BD /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = BD1A20542CD0B2E00033A8BA /* Products */;
 			projectDirPath = "";
@@ -973,6 +980,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		0FD7531D2E1D41E800ACF0BD /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.21.1;
+			};
+		};
 		BD7F290B2D1A7CE70020B37D /* XCRemoteSwiftPackageReference "SwiftQRCodeScanner" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/vinodiOS/SwiftQRCodeScanner.git";
@@ -984,6 +999,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0FD7531E2E1D41E800ACF0BD /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0FD7531D2E1D41E800ACF0BD /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		0FD753202E1D41E800ACF0BD /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0FD7531D2E1D41E800ACF0BD /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
 		BD7F290C2D1A7CE70020B37D /* SwiftQRCodeScanner */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BD7F290B2D1A7CE70020B37D /* XCRemoteSwiftPackageReference "SwiftQRCodeScanner" */;

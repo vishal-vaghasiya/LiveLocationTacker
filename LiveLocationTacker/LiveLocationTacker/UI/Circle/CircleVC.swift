@@ -278,8 +278,12 @@ extension CircleVC: UITableViewDelegate, UITableViewDataSource {
         if let memberKeys = Array(memberList.keys.sorted()) as? [String],
            let memberDicvalue = memberList[memberKeys[indexPath.row]]  as? [String:Any] {
             
+            let name = memberDicvalue["username"] as? String ?? ""
             cell.member_battery.text = "\(memberDicvalue["batteryLevel"] as? Int ?? 0)%"
-            cell.member_name.text = memberDicvalue["username"] as? String ?? ""
+            cell.member_name.text = name
+            
+            let profile = memberDicvalue["profile_pic"] as? String ?? ""
+            cell.mrmber_image.setImage(urlString: profile, name: name, placeholderImage: Asset.iconDefaultProfile.image, width: cell.mrmber_image.frame.width * 2, height: cell.mrmber_image.frame.height * 2)
             
             LocationManager.shared.getGoogleAddress(lat: memberDicvalue["latitude"] as? Double ?? 0, long: memberDicvalue["longitude"] as? Double ?? 0) { address in
                 DispatchQueue.main.async {

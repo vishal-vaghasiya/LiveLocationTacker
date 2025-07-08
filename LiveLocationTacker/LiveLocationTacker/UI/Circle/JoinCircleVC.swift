@@ -28,7 +28,10 @@ class JoinCircleVC: UIViewController {
         lbl_number.text = DefaultManager.User.PHONE
         lbl_code.text = groupCode
         btnJoincircle.isEnabled = false
-        profile_img.image = UIImage(data: DefaultManager.User.PROFILE_DATA ?? Data())
+        //profile_img.image = UIImage(data: DefaultManager.User.PROFILE_DATA ?? Data())
+        
+        let profile = DefaultManager.User.PROFILE_PIC
+        profile_img.setImage(urlString: profile, name: DefaultManager.User.NAME, placeholderImage: Asset.iconDefaultProfile.image, width: profile_img.frame.width * 2, height: profile_img.frame.height * 2)
         
         otpTextField.otpDelegate = self
         otpTextField.otpCornerRaduis = 5

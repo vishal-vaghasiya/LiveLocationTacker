@@ -84,7 +84,8 @@ extension SettingVC : UITableViewDelegate, UITableViewDataSource {
         let headerView = tableView.dequeueReusableHeaderFooterView(withType: SettingHeaderView.self)
         headerView.lbl_name.text = DefaultManager.User.NAME
         headerView.lbl_number.text = DefaultManager.User.PHONE
-        headerView.profile_img.image = UIImage(data: DefaultManager.User.PROFILE_DATA ?? Data())
+        //headerView.profile_img.image = UIImage(data: DefaultManager.User.PROFILE_DATA ?? Data())
+        headerView.profile_img.setImage(urlString: DefaultManager.User.PROFILE_PIC, name: DefaultManager.User.NAME, placeholderImage: Asset.iconDefaultProfile.image, width: headerView.profile_img.frame.width * 2, height: headerView.profile_img.frame.height * 2)
         
         headerView.onTapProfileAction = {
             let vc = StoryboardScene.Settings.profileVC.instantiate()

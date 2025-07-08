@@ -193,13 +193,18 @@
                                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kcV-lC-swI">
                                                                     <rect key="frame" x="15" y="10" width="363" height="61"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="engineer" translatesAutoresizingMaskIntoConstraints="NO" id="San-ed-mbx">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="engineer" translatesAutoresizingMaskIntoConstraints="NO" id="San-ed-mbx">
                                                                             <rect key="frame" x="10" y="5.6666666666666643" width="50" height="50"/>
                                                                             <color key="tintColor" name="maincolor"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" secondItem="San-ed-mbx" secondAttribute="height" multiplier="1:1" id="OPn-Lt-Qmc"/>
                                                                                 <constraint firstAttribute="height" constant="50" id="SYV-MV-nhj"/>
                                                                             </constraints>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                    <real key="value" value="25"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                            </userDefinedRuntimeAttributes>
                                                                         </imageView>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ZgY-br-vbu">
                                                                             <rect key="frame" x="72" y="12" width="219" height="37"/>
@@ -583,12 +588,17 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K53-Fk-Ec1">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="106"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="engineer" translatesAutoresizingMaskIntoConstraints="NO" id="XSG-0S-JXH">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="engineer" translatesAutoresizingMaskIntoConstraints="NO" id="XSG-0S-JXH">
                                                         <rect key="frame" x="15" y="25" width="50" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="XSG-0S-JXH" secondAttribute="height" multiplier="1:1" id="Ef9-lq-NRj"/>
                                                             <constraint firstAttribute="height" constant="50" id="KUW-Tv-Pmm"/>
                                                         </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="25"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZtF-Ms-f6L">
                                                         <rect key="frame" x="80" y="25" width="298" height="25.333333333333329"/>
@@ -877,12 +887,17 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eub-Ye-Gdm">
                                                                     <rect key="frame" x="10" y="10" width="313" height="60"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="engineer" translatesAutoresizingMaskIntoConstraints="NO" id="bWo-O6-2HN">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="engineer" translatesAutoresizingMaskIntoConstraints="NO" id="bWo-O6-2HN">
                                                                             <rect key="frame" x="10" y="10" width="40" height="40"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="40" id="ZNz-rA-fyN"/>
                                                                                 <constraint firstAttribute="width" secondItem="bWo-O6-2HN" secondAttribute="height" multiplier="1:1" id="j8f-Oy-EnC"/>
                                                                             </constraints>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                    <real key="value" value="20"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                            </userDefinedRuntimeAttributes>
                                                                         </imageView>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Nuc-6P-VGE">
                                                                             <rect key="frame" x="60" y="9" width="213" height="42"/>
@@ -1328,12 +1343,17 @@ Your SOS Signal</string>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_select_profile" translatesAutoresizingMaskIntoConstraints="NO" id="Eq5-Hc-gET">
                                                                 <rect key="frame" x="0.0" y="65" width="363" height="151"/>
                                                             </imageView>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="engineer" translatesAutoresizingMaskIntoConstraints="NO" id="sUt-E6-iKP">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="engineer" translatesAutoresizingMaskIntoConstraints="NO" id="sUt-E6-iKP">
                                                                 <rect key="frame" x="131.66666666666666" y="15" width="100" height="100"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="sUt-E6-iKP" secondAttribute="height" multiplier="1:1" id="V8Q-Rz-iFm"/>
                                                                     <constraint firstAttribute="height" constant="100" id="iMR-LB-hrv"/>
                                                                 </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="50"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLD-IW-oYe">
                                                                 <rect key="frame" x="15" y="125" width="333" height="30"/>

@@ -24,7 +24,7 @@ class ProfileVC: UIViewController {
         btnUpdate.isEnabled = true
         txt_name.text = DefaultManager.User.NAME
         lbl_number.text = DefaultManager.User.PHONE
-        profile_img.image = UIImage(data: DefaultManager.User.PROFILE_DATA ?? Data())
+        profile_img.setImage(urlString: DefaultManager.User.PROFILE_PIC, name: DefaultManager.User.NAME, placeholderImage: Asset.iconDefaultProfile.image, width: profile_img.frame.width * 2, height: profile_img.frame.height * 2)
         
         if DefaultManager.User.GENDER == "Male" {
             btnMale.layer.borderColor = UIColor.btncolor.cgColor
