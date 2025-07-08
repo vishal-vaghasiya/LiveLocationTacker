@@ -1,20 +1,20 @@
 //
-//  LocationManager.swift
+//  LocationManagerNew.swift
 //  LiveLocationTacker
 //
-//  Created by Nexios Technologies on 03/07/25.
+//  Created by Nexios Technologies on 08/07/25.
 //
 
 import CoreLocation
 import UIKit
 
-class LocationManager: NSObject, CLLocationManagerDelegate {
+class LocationManagerNew: NSObject {
     
-    static let shared = LocationManager()
+    static let shared = LocationManagerNew()
     
     let locationManager = CLLocationManager()
-    var requestLocationAuthorizationCallback: ((CLAuthorizationStatus) -> Void)?
-    var locationCallback: ((CLLocation) -> Void)?
+    var authorizationStatusHandler: ((CLAuthorizationStatus) -> Void)?
+    var locationUpdateHandler: ((CLLocation) -> Void)?
     var lastRecordedLocation: CLLocation?
     
     override private init() {
@@ -24,7 +24,9 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         self.locationManager.pausesLocationUpdatesAutomatically = false
     }
     
-    public func requestLocationPermission(completion: @escaping (Bool) -> Void) {
+    // MARK: - Location Authorization
+    
+    public func requestLocationAuthorization(completion: @escaping (Bool) -> Void) {
         let status = locationManager.authorizationStatus
         switch status {
         case .notDetermined:
@@ -45,24 +47,9 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         }
     }
     
-    // MARK: - CLLocationManagerDelegate
+    // MARK: - Location Monitoring
     
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        // Handle changes in authorization status
-        self.requestLocationAuthorizationCallback?(status)
-        switch status {
-        case .authorizedAlways, .authorizedWhenInUse:
-            locationManager.requestAlwaysAuthorization()
-            startLocationUpdates()
-        case .denied, .restricted:
-            print("Location access denied or restricted.")
-            // Optionally, show an alert to guide users to settings
-        default:
-            break
-        }
-    }
-    
-    func startMonitoring() {
+    func startMonitoringLocationChanges() {
         let status = locationManager.authorizationStatus
         switch status {
         case .notDetermined:
@@ -104,7 +91,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     }
     
     private func startLocationUpdates() {
-        startMonitazation()
+        startMonitoringLocationChanges()
         startUpdatingLocation()
     }
     
@@ -112,62 +99,66 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
     }
     
-    func startMonitazation() {
-        locationManager.startMonitoringSignificantLocationChanges()
-    }
-    
-    func stopMonitazation() {
+    func stopMonitoringLocationChanges() {
         locationManager.stopMonitoringSignificantLocationChanges()
     }
     
-    func getCurrentLocation(completion: @escaping (CLLocation) -> Void) {
-        locationCallback = completion
+    func fetchCurrentLocation(completion: @escaping (CLLocation) -> Void) {
+        locationUpdateHandler = completion
         locationManager.requestLocation() // This triggers didUpdateLocations
     }
     
+    private func uploadLocationToServer(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
+        FirebaseManager.shared.saveUserLocationHistory(latitude: latitude, longitude: longitude)
+    }
+}
+
+// MARK: - CLLocationManagerDelegate
+
+extension LocationManagerNew: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        authorizationStatusHandler?(status)
+        switch status {
+        case .authorizedAlways, .authorizedWhenInUse:
+            locationManager.requestAlwaysAuthorization()
+            startLocationUpdates()
+        case .denied, .restricted:
+            print("Location access denied or restricted.")
+        default:
+            break
+        }
+    }
+
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let currentLocation = locations.last else { return }
-        
-        // If no previous location, store and return
         guard let lastLocation = lastRecordedLocation else {
             lastRecordedLocation = currentLocation
             return
         }
-        //        print(lastLocation)
-        
-        //        getGoogleAddress(lat: lastLocation.coordinate.latitude, long: lastLocation.coordinate.longitude) { address in
-        //            print(address)
-        //        }
-        
-        // Calculate distance in meters
+
         let distance = currentLocation.distance(from: lastLocation)
         
         if distance >= 20 {
             print("📍 User moved \(distance) meters — updating location to database.")
-            // ✅ Call your API here with `currentLocation.coordinate.latitude` & `.longitude`
-            updateUserLocationToServer(lat: currentLocation.coordinate.latitude,
-                                       long: currentLocation.coordinate.longitude)
-            
-            // Update last recorded location
+            uploadLocationToServer(latitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude)
             lastRecordedLocation = currentLocation
-        } else {
-            //print("🔁 Moved only \(distance) meters — not updating.")
         }
         
-        locationCallback?(currentLocation)
-        locationCallback = nil // Reset callback after use
+        locationUpdateHandler?(currentLocation)
+        locationUpdateHandler = nil
     }
-    
-    private func updateUserLocationToServer(lat: CLLocationDegrees, long: CLLocationDegrees) {
-        // Make your API call to update user location
-        FirebaseManager.shared.updateUserwiseLocationInFirebase(latitude: lat, longitude: long, userPhonenumber: DefaultManager.User.PHONE)
-    }
-    
+
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Failed to find user's location: \(error.localizedDescription)")
     }
+}
+
+// MARK: - Reverse Geocoding
+
+extension LocationManagerNew {
     
-    func getGoogleAddress(lat: CLLocationDegrees, long: CLLocationDegrees, completion: @escaping (String?) -> Void) {
+    func fetchAddressFromGoogleAPI(lat: CLLocationDegrees, long: CLLocationDegrees, completion: @escaping (String?) -> Void) {
         let apiKey = "AIzaSyBMtqBk10Mt4qgTb71tvsYxGGZxkuAY7tY"
         let urlStr = "https://maps.googleapis.com/maps/api/geocode/json?latlng=\(lat),\(long)&key=\(apiKey)"
         
@@ -205,24 +196,23 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         }.resume()
     }
     
-    func getAddressFromLatLon(latitude: Double, longitude: Double, completion: @escaping (String?) -> Void) {
+    func reverseGeocodeLocation(latitude: Double, longitude: Double, completion: @escaping (String?) -> Void) {
         let location = CLLocation(latitude: latitude, longitude: longitude)
         let geocoder = CLGeocoder()
         
         geocoder.reverseGeocodeLocation(location) { placemarks, error in
             if let error = error {
                 print("Geocoding error: \(error.localizedDescription)")
-                completion(nil) // Return nil in case of an error
+                completion(nil)
                 return
             }
             
             guard let placemark = placemarks?.first else {
                 print("No placemarks found")
-                completion(nil) // Return nil if no placemarks are available
+                completion(nil)
                 return
             }
             
-            // Build the address string
             var addressString = ""
             if let subLocality = placemark.subLocality {
                 addressString += "\(subLocality), "
@@ -240,7 +230,6 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
                 addressString += "\(postalCode)"
             }
             
-            // Trim trailing commas and whitespace
             addressString = addressString.trimmingCharacters(in: .whitespacesAndNewlines)
             completion(addressString)
         }

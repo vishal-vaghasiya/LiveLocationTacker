@@ -32,7 +32,6 @@ class LoginMobilenumberVC: UIViewController {
         img_flag.image = CountryManager.shared.currentCountry?.flag
         invalid_view.isHidden =  true
         txtEnterNumber.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        //sendOTP(phoneNumber: "+919725992972")
     }
     
     @IBAction func btnCancelAction(_ sender: UIButton) {

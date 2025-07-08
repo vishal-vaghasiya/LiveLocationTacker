@@ -9,7 +9,6 @@ import UIKit
 import CoreLocation
 import AVFoundation
 
-
 class PermissionVC: UIViewController {
 
     @IBOutlet weak var btnLetsStart: UIEnableDisable!
@@ -31,10 +30,10 @@ class PermissionVC: UIViewController {
     }
     
     func checkPermission(){
-        location_switch.isOn = PermissionManager.checkLocationPermission()
-        notification_switch.isOn = PermissionManager.checkNotificationPermission()
-        motion_switch.isOn = PermissionManager.checkMotionPermission()
-        camera_switch.isOn = PermissionManager.checkCameraPermission()
+        location_switch.isOn = PermissionManager.isLocationPermissionGranted
+        notification_switch.isOn = PermissionManager.isNotificationPermissionGranted
+        motion_switch.isOn = PermissionManager.isMotionPermissionGranted
+        camera_switch.isOn = PermissionManager.isCameraPermissionGranted
     }
 
     @IBAction func switchValueChangeAction(_ sender: UISwitch) {
