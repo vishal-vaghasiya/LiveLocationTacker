@@ -124,7 +124,7 @@ class FirebaseManager {
         let userRef = ref.child(FirebaseTableName.users.name).child(DefaultManager.User.PHONE)
         
         var param = updatedValues
-        param["timestamp"] = Date().getCurrentUTCTimestampInfo().timestampSeconds
+        param[FirebaseKeys.timestamp] = Date().getCurrentUTCTimestampInfo().timestampSeconds
         
         userRef.updateChildValues(param) { error, _ in
             if let error = error {
@@ -177,15 +177,15 @@ class FirebaseManager {
         let code = UUID().uuidString.prefix(6)
         
         let circleData: [String: Any] = [
-            "code": String(code),
-            "name": name,
-            "country_code": DefaultManager.User.COUNTRY_CODE,
-            "owner_phone": DefaultManager.User.PHONE,
-            "timestamp": Date().getCurrentUTCTimestampInfo().timestampSeconds,
-            "members": [
+            FirebaseKeys.code: String(code),
+            FirebaseKeys.name: name,
+            FirebaseKeys.countryCode: DefaultManager.User.COUNTRY_CODE,
+            FirebaseKeys.ownerPhone: DefaultManager.User.PHONE,
+            FirebaseKeys.timestamp: Date().getCurrentUTCTimestampInfo().timestampSeconds,
+            FirebaseKeys.members: [
                 String(code): [
-                    "country_code": DefaultManager.User.COUNTRY_CODE,
-                    "user_phone": DefaultManager.User.PHONE
+                    FirebaseKeys.countryCode: DefaultManager.User.COUNTRY_CODE,
+                    FirebaseKeys.phone: DefaultManager.User.PHONE
                 ]
             ]
         ]
@@ -204,7 +204,7 @@ class FirebaseManager {
         let circlesRef = ref.child(FirebaseTableName.circle.name)
         
         // Find circle with invite code
-        circlesRef.queryOrdered(byChild: "code").queryEqual(toValue: inviteCode)
+        circlesRef.queryOrdered(byChild: FirebaseKeys.code).queryEqual(toValue: inviteCode)
             .observeSingleEvent(of: .value) { snapshot in
                 guard snapshot.exists() else {
                     completion(false, "Invalid circle code.")
@@ -214,12 +214,12 @@ class FirebaseManager {
                 for child in snapshot.children {
                     if let snap = child as? DataSnapshot {
                         let circleId = snap.key
-                        let membersRef = circlesRef.child(circleId).child("members")
+                        let membersRef = circlesRef.child(circleId).child(FirebaseKeys.members)
                         
                         // Add new member using phone number as key
                         let newMemberData: [String: Any] = [
-                            "country_code": DefaultManager.User.COUNTRY_CODE,
-                            "user_phone": DefaultManager.User.PHONE
+                            FirebaseKeys.countryCode: DefaultManager.User.COUNTRY_CODE,
+                            FirebaseKeys.phone: DefaultManager.User.PHONE
                         ]
                         
                         membersRef.child(DefaultManager.User.PHONE).setValue(newMemberData) { error, _ in
@@ -248,7 +248,7 @@ class FirebaseManager {
             
             for circle in allCircles {
                 if let circleData = circle.value as? [String: Any],
-                   let members = circleData["members"] as? [String: Any],
+                   let members = circleData[FirebaseKeys.members] as? [String: Any],
                    members[DefaultManager.User.PHONE] != nil {
                     matchedCircles.append(circle)
                 }
@@ -267,7 +267,7 @@ class FirebaseManager {
         if !DefaultManager.User.FCM_TOKEN.isEmpty {
             let userRef = ref.child(FirebaseTableName.users.name).child(DefaultManager.User.PHONE)
             // Update FCM token in user's profile
-            userRef.updateChildValues(["fcmtoken": DefaultManager.User.FCM_TOKEN]) { error, _ in
+            userRef.updateChildValues([FirebaseKeys.fcmtoken: DefaultManager.User.FCM_TOKEN]) { error, _ in
                 if let error = error {
                     print("Failed to update user FCM token: \(error.localizedDescription)")
                 } else {
@@ -283,8 +283,8 @@ class FirebaseManager {
             let userRef = ref.child(FirebaseTableName.users.name).child(DefaultManager.User.PHONE)
             
             let param = [
-                "battery_level": "batteryLevel",
-                "timestamp": Date().getCurrentUTCTimestampInfo().timestampSeconds
+                FirebaseKeys.batteryLevel: batteryLevel,
+                FirebaseKeys.timestamp: Date().getCurrentUTCTimestampInfo().timestampSeconds
             ] as [String : Any]
             
             // Update battery level in user's profile
@@ -305,10 +305,10 @@ class FirebaseManager {
             
             LocationManager.shared.getGoogleAddress(lat: latitude, long: longitude) { address in
                 let param: [String: Any] = [
-                    "address": address ?? "",
-                    "latitude": latitude,
-                    "longitude": longitude,
-                    "timestamp": Date().getCurrentUTCTimestampInfo().timestampSeconds
+                    FirebaseKeys.address: address ?? "",
+                    FirebaseKeys.latitude: latitude,
+                    FirebaseKeys.longitude: longitude,
+                    FirebaseKeys.timestamp: Date().getCurrentUTCTimestampInfo().timestampSeconds
                 ]
                 
                 userRef.updateChildValues(param) { error, _ in
@@ -332,9 +332,9 @@ class FirebaseManager {
             let timestamp = Date().getCurrentUTCTimestampInfo().timestampSeconds
             
             let locationData: [String: Any] = [
-                "latitude": latitude,
-                "longitude": longitude,
-                "timestamp": timestamp
+                FirebaseKeys.latitude: latitude,
+                FirebaseKeys.longitude: longitude,
+                FirebaseKeys.timestamp: timestamp
             ]
             
             userRef.child("\(timestamp)").setValue(locationData) { error, _ in
@@ -352,8 +352,8 @@ class FirebaseManager {
         let userRef = ref.child(FirebaseTableName.users.name).child(DefaultManager.User.PHONE)
         
         let param: [String: Any] = [
-            "profile_pic": DefaultManager.User.PROFILE_PIC,
-            "timestamp": Date().getCurrentUTCTimestampInfo().timestampSeconds
+            FirebaseKeys.profilePicture: DefaultManager.User.PROFILE_PIC,
+            FirebaseKeys.timestamp: Date().getCurrentUTCTimestampInfo().timestampSeconds
         ]
         
         userRef.updateChildValues(param) { error, _ in
@@ -397,7 +397,7 @@ class FirebaseManager {
         
         // Delete circles where user is admin
         func deleteOwnedCircles(completion: @escaping (Bool) -> Void) {
-            circleRef.queryOrdered(byChild: "owner_phone").queryEqual(toValue: DefaultManager.User.PHONE).observeSingleEvent(of: .value) { snapshot in
+            circleRef.queryOrdered(byChild: FirebaseKeys.ownerPhone).queryEqual(toValue: DefaultManager.User.PHONE).observeSingleEvent(of: .value) { snapshot in
                 guard snapshot.exists() else {
                     completion(true)
                     return
@@ -429,9 +429,9 @@ class FirebaseManager {
                 var encounteredError = false
                 
                 for circleSnap in snapshot.children.allObjects as! [DataSnapshot] {
-                    if circleSnap.childSnapshot(forPath: "members").hasChild(DefaultManager.User.PHONE) {
+                    if circleSnap.childSnapshot(forPath: FirebaseKeys.members).hasChild(DefaultManager.User.PHONE) {
                         pending += 1
-                        circleRef.child(circleSnap.key).child("members").child(DefaultManager.User.PHONE).removeValue { error, _ in
+                        circleRef.child(circleSnap.key).child(FirebaseKeys.members).child(DefaultManager.User.PHONE).removeValue { error, _ in
                             if let error = error {
                                 print("❌ Error removing member: \(error.localizedDescription)")
                                 encounteredError = true
@@ -501,6 +501,42 @@ class FirebaseManager {
          }
      }
      */
+    
+    // MARK: - Fetch Today's Locations for User
+
+    func fetchTodayUserLocations(for userNumber: String, completion: @escaping ([UserLocationModel]) -> Void) {
+        
+        // Step 1: Define today's local start and end time
+        let calendar = Calendar.current
+        let now = Date()
+        
+        let localStart = calendar.startOfDay(for: now)
+        let localEnd = calendar.date(byAdding: .day, value: 1, to: localStart)?.addingTimeInterval(-1) ?? now
+        
+        // Step 2: Firebase reference
+        let ref = Database.database().reference()
+        let userRef = ref.child(FirebaseTableName.locations.name).child(userNumber)
+        
+        userRef.observeSingleEvent(of: .value) { snapshot  in
+            guard let data = snapshot.value as? [String: [String: Any]] else {
+                print("❌ No data found for user \(userNumber)")
+                completion([])
+                return
+            }
+            
+            // Step 3: Filter today's locations
+            let todayModels: [UserLocationModel] = data.compactMap { (_, value) in
+                guard let timestamp = value[FirebaseKeys.timestamp] as? Int else { return nil }
+                
+                let utcDate = Date(timeIntervalSince1970: TimeInterval(timestamp))
+                guard utcDate >= localStart && utcDate <= localEnd else { return nil }
+                
+                return UserLocationModel(from: value)
+            }
+            
+            completion(todayModels)
+        }
+    }
     
     //MARK: ------------------------------------------------------------------------------------------------------------------------------------
     
