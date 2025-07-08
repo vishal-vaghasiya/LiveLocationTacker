@@ -66,6 +66,16 @@ class JoinCircleVC: UIViewController {
                 self.showAlert(title: "Enter code Incorrect !!", message: "Failed to join the circle.")
             }
         }
+        
+        /*firebaseManager.joinCircle(inviteCode: friendEnterCode) { success, message in
+            if success {
+                print("Friend successfully joined the circle!")
+                self.navigateToHome()
+            } else {
+                self.showToastMessage(message)
+            }
+        }*/
+        
     }
 }
 

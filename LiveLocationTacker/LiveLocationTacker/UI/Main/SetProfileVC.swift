@@ -73,19 +73,26 @@ class SetProfileVC: UIViewController {
             }
         }
         
-        /*
-        let updatedData: [String: Any] = [
-            "name": txt_name.text ?? "",
-            "profile_pic": profileURL,
-            "date": Date().getCurrentUTCTimestampInfo().timestampSeconds
+        /*let updatedData: [String: Any] = [
+            FirebaseKeys.name: txt_name.text ?? "",
+            FirebaseKeys.gender: self.btnMale.layer.borderWidth == 2 ? "Male" : "Female",
+            FirebaseKeys.profilePicture: profileURL
         ]
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-            FirebaseManager().updateUserData(phoneNumber: "9725992972", updatedValues: updatedData) { success, message in
-                print(message)
+        firebaseManager.updateUserData(updatedValues: updatedData) { success, message in
+            print(message)
+            self.hideLoader()
+            if success {
+                DefaultManager.IS_INITIAL_SETUP = true
+                DefaultManager.User.NAME = self.txt_name.text ?? ""
+                DefaultManager.User.GENDER = self.btnMale.layer.borderWidth == 2 ? "Male" : "Female"
+                DefaultManager.User.PROFILE_PIC = self.profileURL
+                self.navigateToHome()
+            } else {
+                self.showToastMessage(message)
             }
-        })
-         */
+        }*/
+
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {

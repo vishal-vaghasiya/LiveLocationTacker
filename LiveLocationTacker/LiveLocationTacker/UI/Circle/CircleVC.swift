@@ -24,7 +24,7 @@ class CircleVC: UIViewController {
     @IBOutlet weak var plus_lottieview: UIView!
     
     // MARK: - Properties
-    let groupManager = FirebaseManager.shared
+    let firebaseManager = FirebaseManager.shared
     let locationManager = CLLocationManager()
     var memberList:[String:Any] = [:]
     var groupSnapSortList = [DataSnapshot]()
@@ -70,8 +70,8 @@ class CircleVC: UIViewController {
     
     // MARK: - Firebase & API Methods
     func fetchAllCircle() {
-        groupManager.saveFcmTokenFirebase()
-        groupManager.fetchAllCircles(phoneNumber: DefaultManager.User.PHONE) { ListSnapSort in
+        firebaseManager.saveFcmTokenFirebase()
+        firebaseManager.fetchAllCircles(phoneNumber: DefaultManager.User.PHONE) { ListSnapSort in
             DispatchQueue.main.async {
                 self.groupSnapSortList = ListSnapSort
                 selectedGroupsnapSort = ListSnapSort.first
@@ -80,6 +80,20 @@ class CircleVC: UIViewController {
                 self.getMemberList()
             }
         }
+        
+        /*self.showLoader(text: "Loading...")
+         firebaseManager.getMyCircle(completion: { success,message,snapshot  in
+            self.hideLoader()
+            if success {
+                DispatchQueue.main.async {
+                    self.groupSnapSortList = snapshot
+                    selectedGroupsnapSort = snapshot.first
+                    self.lbl_circleName.text = selectedGroupsnapSort?.childSnapshot(forPath: "name").value as? String ?? ""
+                    DefaultManager.Cirlce.CURRENT_CODE = selectedGroupsnapSort?.childSnapshot(forPath: "code").value as? String ?? ""
+                    self.getMemberList()
+                }
+            }
+        })*/
     }
     
     func getMemberList() {
@@ -88,13 +102,24 @@ class CircleVC: UIViewController {
     
     func fetchMemberListFromCircle(){
         self.memberList = selectedGroupsnapSort?.childSnapshot(forPath: "members").value as? [String:Any] ?? [:]
+        /*if let phoneNumbers = Array(memberList.keys.sorted()) as? [String] {
+            print(phoneNumbers)
+            firebaseManager.fetchUsersData(phoneNumbers: phoneNumbers) { result in
+                switch result {
+                case .success(let users):
+                    print("Fetched Users: \(users)")
+                case .failure(let error):
+                    print("Error: \(error.localizedDescription)")
+                }
+            }
+        }*/
         self.tableView.reloadData()
         self.addMemberPinsToMap()
     }
     
     @objc func batteryLevelDidChange() {
         let currentBatteryLevel = Int(UIDevice.current.batteryLevel * 100) // Convert to percentage
-        groupManager.updateBatteryLevel(userPhone:  DefaultManager.User.PHONE , batteryLevel: currentBatteryLevel)
+        firebaseManager.updateBatteryLevel(userPhone:  DefaultManager.User.PHONE , batteryLevel: currentBatteryLevel)
     }
     
     // MARK: - Button Actions

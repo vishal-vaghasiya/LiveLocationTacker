@@ -62,6 +62,17 @@ class MyCirclesPopup: UIViewController {
             self.hideLoader()
             fetchAllCircle()
         }
+        
+//        firebaseManager.createCircle(name: name) { success, message, data in
+//            self.hideLoader()
+//            if success {
+//                if let _ = data {
+//                    self.fetchAllCircle()
+//                }
+//            } else {
+//                self.showToastMessage(message)
+//            }
+//        }
     }
     
     func createNewGroupTapped() {
@@ -97,6 +108,14 @@ class MyCirclesPopup: UIViewController {
                 self.groupTableview.reloadData()
             }
         }
+        
+//        firebaseManager.getMyCircle(completion: { success,message,snapshot  in
+//            DispatchQueue.main.async {
+//                self.groupSnapSortList = snapshot
+//                selectedGroupsnapSort = snapshot.first
+//                self.groupTableview.reloadData()
+//            }
+//        })
     }
     
     // MARK: - DELEGATE

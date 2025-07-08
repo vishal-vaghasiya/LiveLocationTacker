@@ -22,11 +22,15 @@ struct GoogleJWTClaims: Claims {
 
 enum FirebaseTableName: String {
     case users = "users"
-    case circle = "circles_temp"
+    case circle = "circles"
     case locations = "locations"
     
     var name: String {
+#if DEBUG
+        return self.rawValue + "_dev"
+#else
         return self.rawValue
+#endif
     }
 }
 
@@ -171,7 +175,90 @@ class FirebaseManager {
             }
         }
     }*/
+    
+    // MARK: - Fetch User Data
+    func fetchUserData(completion: @escaping (Result<[String: Any], Error>, String) -> Void) {
+        let userRef = ref.child(FirebaseTableName.users.name).child(DefaultManager.User.PHONE)
+        
+        userRef.observeSingleEvent(of: .value) { snapshot in
+            if snapshot.exists(), let userData = snapshot.value as? [String: Any] {
+                print("✅ User data fetched successfully.")
+                completion(.success(userData), "User data fetched successfully.")
+            } else {
+                let error = NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "User data not found."])
+                print("⚠️ User data not found.")
+                completion(.failure(error), "User data not found.")
+            }
+        } withCancel: { error in
+            print("❌ Failed to fetch user data: \(error.localizedDescription)")
+            completion(.failure(error), error.localizedDescription)
+        }
+    }
+    //MARK: Example:
+    /*
+     fetchUserData(byPhoneNumber: DefaultManager.User.PHONE) { result, message in
+         switch result {
+         case .success(let userData):
+             // Handle success here
+             print("User Data: \(userData)")
+         case .failure(let error):
+             // Handle error here
+             print("Error: \(error.localizedDescription)")
+         }
+     }
+     */
      
+    // MARK: - Fetch Multiple Users by Phone Numbers
+    func fetchUsersData(phoneNumbers: [String], completion: @escaping (Result<[[String: Any]], Error>) -> Void) {
+        let usersRef = ref.child(FirebaseTableName.users.name)
+        var usersArray: [[String: Any]] = []
+        var errors: [Error] = []
+        let dispatchGroup = DispatchGroup()
+        
+        for phone in phoneNumbers {
+            dispatchGroup.enter()
+            usersRef.child(phone).observeSingleEvent(of: .value) { snapshot in
+                if snapshot.exists(), let userData = snapshot.value as? [String: Any] {
+                    usersArray.append(userData)
+                } else {
+                    let error = NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "User not found for phone: \(phone)"])
+                    errors.append(error)
+                }
+                dispatchGroup.leave()
+            } withCancel: { error in
+                errors.append(error)
+                dispatchGroup.leave()
+            }
+        }
+        
+        dispatchGroup.notify(queue: .main) {
+            if !usersArray.isEmpty {
+                print("✅ Successfully fetched \(usersArray.count) users.")
+                completion(.success(usersArray))
+            } else if let firstError = errors.first {
+                print("❌ Failed to fetch any users.")
+                completion(.failure(firstError))
+            } else {
+                let error = NSError(domain: "", code: -2, userInfo: [NSLocalizedDescriptionKey: "Unknown error occurred."])
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    //MARK: Example:
+    /*
+     let phoneNumbers = ["123456897", "12345677890"]
+
+     fetchUsersData(phoneNumbers: phoneNumbers) { result in
+         switch result {
+         case .success(let users):
+             print("Fetched Users: \(users)")
+         case .failure(let error):
+             print("Error: \(error.localizedDescription)")
+         }
+     }
+     */
+    
     //MARK: - Create circle
     func createCircle(name: String, completion: @escaping (Bool, String, [String: Any]?) -> Void) {
         let code = UUID().uuidString.prefix(6)
@@ -179,18 +266,16 @@ class FirebaseManager {
         let circleData: [String: Any] = [
             FirebaseKeys.code: String(code),
             FirebaseKeys.name: name,
-            FirebaseKeys.countryCode: DefaultManager.User.COUNTRY_CODE,
             FirebaseKeys.ownerPhone: DefaultManager.User.PHONE,
             FirebaseKeys.timestamp: Date().getCurrentUTCTimestampInfo().timestampSeconds,
             FirebaseKeys.members: [
-                String(code): [
-                    FirebaseKeys.countryCode: DefaultManager.User.COUNTRY_CODE,
+                DefaultManager.User.PHONE: [
                     FirebaseKeys.phone: DefaultManager.User.PHONE
                 ]
             ]
         ]
         
-        ref.child(FirebaseTableName.circle.name).childByAutoId().setValue(circleData) { error, _ in
+        ref.child(FirebaseTableName.circle.name).childByAutoId().setValue(circleData) { error, data in
             if let error = error {
                 completion(false, error.localizedDescription, nil)
             } else {

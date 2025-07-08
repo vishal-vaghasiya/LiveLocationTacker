@@ -206,25 +206,55 @@ class MobileOTPVerificationVC: UIViewController , UIGestureRecognizerDelegate {
         
         /*LocationManager.shared.getCurrentLocation { location in
             LocationManager.shared.getGoogleAddress(lat: location.coordinate.latitude, long: location.coordinate.longitude) { address in
+                
                 let param: [String: Any] = [
-                    "name": "Vishal Vaghasiya",
-                    "gender": "male",
-                    "country_code": "91",
-                    "phone": "9725992972",
-                    "profile_pic": "",
-                    "battery_level": 100,
-                    "fcmtoken": DefaultManager.User.FCM_TOKEN,
-                    "latitude": location.coordinate.latitude,
-                    "longitude": location.coordinate.longitude,
-                    "address": address ?? "N/A",
-                    "date": Date().getCurrentUTCTimestampInfo().timestampSeconds
+                    FirebaseKeys.name: self.name,
+                    FirebaseKeys.gender: "",
+                    FirebaseKeys.countryCode: self.phoneCode,
+                    FirebaseKeys.phone: self.phoneNumber.digitsOnly,
+                    FirebaseKeys.profilePicture: "",
+                    FirebaseKeys.batteryLevel: batteryLevel,
+                    FirebaseKeys.fcmtoken: DefaultManager.User.FCM_TOKEN,
+                    FirebaseKeys.latitude: location.coordinate.latitude,
+                    FirebaseKeys.longitude: location.coordinate.longitude,
+                    FirebaseKeys.address: address ?? "N/A",
+                    FirebaseKeys.timestamp: Date().getCurrentUTCTimestampInfo().timestampSeconds
                 ]
-                FirebaseManager().checkAndSaveUser(phoneNumber: "9725992972", param: param) { success, message, userData  in
+                
+                self.firebaseManager.checkAndSaveUser(phoneNumber: self.phoneNumber.digitsOnly, param: param) { success, message, userData  in
+                    self.hideLoader()
                     print(message)
-                    if let user = userData {
-                        print("User Data: \(user)")
+                    if success {
+                        if let user = userData {
+                            print("User Data: \(user)")
+                            
+                            let name = user[FirebaseKeys.name] as? String ?? ""
+                            let gender = user[FirebaseKeys.gender] as? String ?? ""
+                            let countryCode = user[FirebaseKeys.countryCode] as? String ?? ""
+                            let phone = user[FirebaseKeys.phone] as? String ?? ""
+                            let profile = user[FirebaseKeys.profilePicture] as? String ?? ""
+                            
+                            DefaultManager.User.NAME = name
+                            DefaultManager.User.GENDER = gender
+                            DefaultManager.User.COUNTRY_CODE = countryCode
+                            DefaultManager.User.PHONE = phone
+                            DefaultManager.User.PROFILE_PIC = profile
+                            
+                            DefaultManager.Permission.LOCATION = true
+                            DefaultManager.Permission.BATTERY = true
+                            DefaultManager.Permission.NOTIFICATION = true
+                            DefaultManager.Permission.CAMERA = true
+                            DefaultManager.Permission.MOTION = true
+                            
+                            let vc = StoryboardScene.Main.setProfileVC.instantiate()
+                            vc.hidesBottomBarWhenPushed = true
+                            self.navigationController?.pushViewController(vc, animated: true)
+                        }
+                    } else {
+                        self.showToastMessage(message)
                     }
                 }
+                
             }
         }*/
         

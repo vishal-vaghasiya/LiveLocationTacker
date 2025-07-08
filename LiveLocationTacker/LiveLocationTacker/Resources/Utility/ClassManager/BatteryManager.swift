@@ -24,7 +24,7 @@ final class BatteryManager {
     
     @objc private func batteryLevelDidChange(notification: Notification) {
         let level = Int(UIDevice.current.batteryLevel * 100)
-        print("Battery Level Changed: \(level * 100)%")
+        print("Battery Level Changed: \(level)%")
         
         // You can post your own notification or handle it here globally
         firebaseManager.updateBatteryLevel(batteryLevel: level)
