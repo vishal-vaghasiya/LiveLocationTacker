@@ -480,7 +480,7 @@
 				BD1A20502CD0B2E00033A8BA /* Frameworks */,
 				BD1A20512CD0B2E00033A8BA /* Resources */,
 				8BD117719BFC1038B582D2F8 /* [CP] Embed Pods Frameworks */,
-				BDA880382CEEE5EE00C8E641 /* ShellScript */,
+				BDA880382CEEE5EE00C8E641 /* FirebaseCrashlytics */,
 				0F2DBFC32E0D7FCB00243B13 /* SwiftGen */,
 			);
 			buildRules = (
@@ -606,7 +606,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LiveLocationTacker/Pods-LiveLocationTacker-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BDA880382CEEE5EE00C8E641 /* ShellScript */ = {
+		BDA880382CEEE5EE00C8E641 /* FirebaseCrashlytics */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -620,6 +620,7 @@
 				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/GoogleService-Info.plist",
 				"$(TARGET_BUILD_DIR)/$(EXECUTABLE_PATH)",
 			);
+			name = FirebaseCrashlytics;
 			outputFileListPaths = (
 			);
 			outputPaths = (
