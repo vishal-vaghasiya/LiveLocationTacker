@@ -52,3 +52,18 @@ func getTopMostViewController() -> UIViewController? {
         return topMostViewController
     }
 }
+
+func goToOnboarding() {
+    DispatchQueue.main.async {
+        let vc = StoryboardScene.Main.introVC.instantiate()
+        let nv = UINavigationController(rootViewController: vc)
+        nv.isNavigationBarHidden = true
+        
+        // For SceneDelegate-based apps (iOS 13+)
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let window = windowScene.windows.first {
+            window.rootViewController = nv
+            window.makeKeyAndVisible()
+        }
+    }
+}

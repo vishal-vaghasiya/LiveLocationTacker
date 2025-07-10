@@ -40,9 +40,6 @@ class FirebaseManager {
     static let shared = FirebaseManager()
     let ref: DatabaseReference
     
-//    init() {
-//        ref = Database.database().reference()
-//    }
     private init() {
         ref = Database.database().reference()
     }
@@ -104,6 +101,15 @@ class FirebaseManager {
     
     //MARK: - Save user to Firebase Realtime Database
     func checkAndSaveUser(phoneNumber: String, param: [String: Any], completion: @escaping (Bool, String, [String: Any]?) -> Void) {
+        // ✅ Step 1: Check Authentication
+        guard let currentUser = Auth.auth().currentUser else {
+            goToOnboarding()
+            completion(false, "User is not authenticated.", nil)
+            return
+        }
+        
+        print("Authenticated UID: \(currentUser.uid)")
+        
         let userRef = ref.child(FirebaseTableName.users.name).child(phoneNumber)
         
         // First: Check if user exists
@@ -125,6 +131,13 @@ class FirebaseManager {
     }
     
     func updateUserData(updatedValues: [String: Any], completion: @escaping (Bool, String) -> Void) {
+        // ✅ Step 1: Check Authentication
+        guard let _ = Auth.auth().currentUser else {
+            goToOnboarding()
+            completion(false, "User is not authenticated.")
+            return
+        }
+        
         let userRef = ref.child(FirebaseTableName.users.name).child(DefaultManager.User.PHONE)
         
         var param = updatedValues
@@ -178,6 +191,14 @@ class FirebaseManager {
     
     // MARK: - Fetch User Data
     func fetchUserData(completion: @escaping (Result<[String: Any], Error>, String) -> Void) {
+        // ✅ Step 1: Check Authentication
+        guard let _ = Auth.auth().currentUser else {
+            goToOnboarding()
+            let error = NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "User is not authenticated."])
+            completion(.failure(error), "User is not authenticated.")
+            return
+        }
+        
         let userRef = ref.child(FirebaseTableName.users.name).child(DefaultManager.User.PHONE)
         
         userRef.observeSingleEvent(of: .value) { snapshot in
@@ -210,6 +231,14 @@ class FirebaseManager {
      
     // MARK: - Fetch Multiple Users by Phone Numbers
     func fetchUsersData(phoneNumbers: [String], completion: @escaping (Result<[[String: Any]], Error>) -> Void) {
+        // ✅ Step 1: Check Authentication
+        guard let _ = Auth.auth().currentUser else {
+            goToOnboarding()
+            let error = NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "User is not authenticated."])
+            completion(.failure(error))
+            return
+        }
+        
         let usersRef = ref.child(FirebaseTableName.users.name)
         var usersArray: [[String: Any]] = []
         var errors: [Error] = []
@@ -261,6 +290,13 @@ class FirebaseManager {
     
     //MARK: - Create circle
     func createCircle(name: String, completion: @escaping (Bool, String, [String: Any]?) -> Void) {
+        // ✅ Step 1: Check Authentication
+        guard let _ = Auth.auth().currentUser else {
+            goToOnboarding()
+            completion(false, "User is not authenticated.", [:])
+            return
+        }
+        
         let code = UUID().uuidString.prefix(6)
         
         let circleData: [String: Any] = [
@@ -286,6 +322,13 @@ class FirebaseManager {
     
     //MARK: - Join circle
     func joinCircle(inviteCode: String, completion: @escaping (Bool, String) -> Void) {
+        // ✅ Step 1: Check Authentication
+        guard let _ = Auth.auth().currentUser else {
+            goToOnboarding()
+            completion(false, "User is not authenticated.")
+            return
+        }
+        
         let circlesRef = ref.child(FirebaseTableName.circle.name)
         
         // Find circle with invite code
@@ -321,6 +364,13 @@ class FirebaseManager {
     
     // MARK: - Fetch My Circles (Where User Is a Member)
     func getMyCircle(completion: @escaping (Bool, String, [DataSnapshot]) -> Void) {
+        // ✅ Step 1: Check Authentication
+        guard let _ = Auth.auth().currentUser else {
+            goToOnboarding()
+            completion(false, "User is not authenticated.", [])
+            return
+        }
+        
         let circlesRef = ref.child(FirebaseTableName.circle.name)
         
         circlesRef.observeSingleEvent(of: .value) { snapshot in
@@ -350,6 +400,12 @@ class FirebaseManager {
     // MARK: - FCM Token Update
     func updateFCMToken(){
         if !DefaultManager.User.FCM_TOKEN.isEmpty {
+            // ✅ Step 1: Check Authentication
+            guard let _ = Auth.auth().currentUser else {
+                goToOnboarding()
+                return
+            }
+            
             let userRef = ref.child(FirebaseTableName.users.name).child(DefaultManager.User.PHONE)
             // Update FCM token in user's profile
             userRef.updateChildValues([FirebaseKeys.fcmtoken: DefaultManager.User.FCM_TOKEN]) { error, _ in
@@ -365,6 +421,11 @@ class FirebaseManager {
     // MARK: - Battery Level Update
     func updateBatteryLevel(batteryLevel: Int) {
         if DefaultManager.Permission.BATTERY {
+            // ✅ Step 1: Check Authentication
+            guard let _ = Auth.auth().currentUser else {
+                return
+            }
+            
             let userRef = ref.child(FirebaseTableName.users.name).child(DefaultManager.User.PHONE)
             
             let param = [
@@ -386,6 +447,12 @@ class FirebaseManager {
     // MARK: - Location Update
     func updateUserLocation(latitude: Double, longitude: Double) {
         if DefaultManager.Permission.LOCATION {
+            // ✅ Step 1: Check Authentication
+            guard let _ = Auth.auth().currentUser else {
+                goToOnboarding()
+                return
+            }
+            
             let userRef = ref.child(FirebaseTableName.users.name).child(DefaultManager.User.PHONE)
             
             LocationManager.shared.getGoogleAddress(lat: latitude, long: longitude) { address in
@@ -413,6 +480,12 @@ class FirebaseManager {
         updateUserLocation(latitude: latitude, longitude: longitude)
         
         if DefaultManager.Permission.LOCATION {
+            // ✅ Step 1: Check Authentication
+            guard let _ = Auth.auth().currentUser else {
+                goToOnboarding()
+                return
+            }
+            
             let userRef = ref.child(FirebaseTableName.locations.name).child(DefaultManager.User.PHONE)
             let timestamp = Date().getCurrentUTCTimestampInfo().timestampSeconds
             
@@ -434,6 +507,12 @@ class FirebaseManager {
     
     // MARK: - User Profile Update
     func updateUserProfilePicture() {
+        // ✅ Step 1: Check Authentication
+        guard let _ = Auth.auth().currentUser else {
+            goToOnboarding()
+            return
+        }
+        
         let userRef = ref.child(FirebaseTableName.users.name).child(DefaultManager.User.PHONE)
         
         let param: [String: Any] = [
@@ -451,6 +530,14 @@ class FirebaseManager {
     }
     
     func uploadProfileImage(_ image: UIImage, completion: @escaping (Result<URL, Error>) -> Void) {
+        // ✅ Step 1: Check Authentication
+        guard let _ = Auth.auth().currentUser else {
+            goToOnboarding()
+            let error = NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "User is not authenticated."])
+            completion(.failure(error))
+            return
+        }
+        
         guard let compressedData = image.jpegData(compressionQuality: 0.5),
               let userId = Auth.auth().currentUser?.uid else {
             return
@@ -476,6 +563,13 @@ class FirebaseManager {
     
     // MARK: - Delete User Account and Related Data
     func deleteUserAccountAndData(completion: @escaping (Bool) -> Void) {
+        // ✅ Step 1: Check Authentication
+        guard let _ = Auth.auth().currentUser else {
+            goToOnboarding()
+            completion(false)
+            return
+        }
+        
         let userRef = ref.child(FirebaseTableName.users.name).child(DefaultManager.User.PHONE)
         let circleRef = ref.child(FirebaseTableName.circle.name)
         let locationRef = ref.child(FirebaseTableName.locations.name).child(DefaultManager.User.PHONE)
@@ -581,6 +675,7 @@ class FirebaseManager {
      deleteUserAccountAndData { success in
          if success {
              // Account deleted successfully
+                try? Auth.auth().signOut()
          } else {
              // Show error
          }
@@ -590,6 +685,12 @@ class FirebaseManager {
     // MARK: - Fetch Today's Locations for User
 
     func fetchTodayUserLocations(for userNumber: String, completion: @escaping ([UserLocationModel]) -> Void) {
+        // ✅ Step 1: Check Authentication
+        guard let _ = Auth.auth().currentUser else {
+            goToOnboarding()
+            completion([])
+            return
+        }
         
         // Step 1: Define today's local start and end time
         let calendar = Calendar.current
