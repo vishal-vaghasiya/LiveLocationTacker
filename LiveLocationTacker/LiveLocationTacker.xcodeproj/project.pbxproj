@@ -30,6 +30,7 @@
 		0F9BD0702E15347300B0D189 /* PopupInviteChildMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9BD06F2E15347300B0D189 /* PopupInviteChildMode.swift */; };
 		0F9BD0782E153BF500B0D189 /* ChildModeCircleTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9BD0762E153BF500B0D189 /* ChildModeCircleTVCell.swift */; };
 		0F9BD0792E153BF500B0D189 /* ChildModeCircleTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F9BD0772E153BF500B0D189 /* ChildModeCircleTVCell.xib */; };
+		0FA143B22E1F96A200491DD5 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA143B12E1F96A100491DD5 /* UserInfo.swift */; };
 		0FA5FFEF2E17E75100B1CCDF /* ChildCircelTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FA5FFEE2E17E75100B1CCDF /* ChildCircelTVCell.xib */; };
 		0FA5FFF02E17E75100B1CCDF /* ChildCircelTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA5FFED2E17E75100B1CCDF /* ChildCircelTVCell.swift */; };
 		0FD7531F2E1D41E800ACF0BD /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 0FD7531E2E1D41E800ACF0BD /* SDWebImage */; };
@@ -112,6 +113,7 @@
 		0F9BD06F2E15347300B0D189 /* PopupInviteChildMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupInviteChildMode.swift; sourceTree = "<group>"; };
 		0F9BD0762E153BF500B0D189 /* ChildModeCircleTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildModeCircleTVCell.swift; sourceTree = "<group>"; };
 		0F9BD0772E153BF500B0D189 /* ChildModeCircleTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChildModeCircleTVCell.xib; sourceTree = "<group>"; };
+		0FA143B12E1F96A100491DD5 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		0FA5FFED2E17E75100B1CCDF /* ChildCircelTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildCircelTVCell.swift; sourceTree = "<group>"; };
 		0FA5FFEE2E17E75100B1CCDF /* ChildCircelTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChildCircelTVCell.xib; sourceTree = "<group>"; };
 		0FE65B0D2E1285AF00B713DD /* SettingTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTVCell.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 		0F17779F2E126B82000BC3D8 /* Circle */ = {
 			isa = PBXGroup;
 			children = (
+				0FA143B02E1F969B00491DD5 /* Modal */,
 				0FE65B132E12A86D00B713DD /* Circle.storyboard */,
 				BD75DDB82CE89EC300A028BD /* CircleVC.swift */,
 				BDBC8B6C2CEB527A00D913F0 /* UserDeatilsVC.swift */,
@@ -322,6 +325,14 @@
 				0FA5FFEE2E17E75100B1CCDF /* ChildCircelTVCell.xib */,
 			);
 			path = XIB;
+			sourceTree = "<group>";
+		};
+		0FA143B02E1F969B00491DD5 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				0FA143B12E1F96A100491DD5 /* UserInfo.swift */,
+			);
+			path = Modal;
 			sourceTree = "<group>";
 		};
 		0FE65B0C2E12855300B713DD /* XIB */ = {
@@ -694,6 +705,7 @@
 				BDC25BB32CE87BE6002E865D /* LoginMobilenumberVC.swift in Sources */,
 				0FE65B192E12B3A500B713DD /* PopupProfileUpdateSuccess.swift in Sources */,
 				BD1A20962CD0B3510033A8BA /* FSPagerViewLayoutAttributes.swift in Sources */,
+				0FA143B22E1F96A200491DD5 /* UserInfo.swift in Sources */,
 				0F18328D2E13ABB400D03B9B /* ActiveSubscriptionListVC.swift in Sources */,
 				BD7FE3332CEC4E27006C32D2 /* AremaCalculatoreVC.swift in Sources */,
 				BD9DB1532CE85A5D003615FE /* PermissionVC.swift in Sources */,

@@ -60,20 +60,20 @@ class SetProfileVC: UIViewController {
     
     @IBAction func btnUpdateAction(_ sender: UIButton) {
         showLoader(text: "Updating...")
-        firebaseManager.updateUserNameInFirebase(userPhonenumber: DefaultManager.User.PHONE,entername: txt_name.text ?? "") { updated, errorMessage in
-            self.hideLoader()
-            if updated {
-                DefaultManager.IS_INITIAL_SETUP = true
-                DefaultManager.User.NAME = self.txt_name.text ?? ""
-                DefaultManager.User.GENDER = self.btnMale.layer.borderWidth == 2 ? "Male" : "Female"
-                self.navigateToHome()
-            }
-            else{
-                self.showAlert(title: "", message: errorMessage ?? "")
-            }
-        }
+        //        firebaseManager.updateUserNameInFirebase(userPhonenumber: DefaultManager.User.PHONE,entername: txt_name.text ?? "") { updated, errorMessage in
+        //            self.hideLoader()
+        //            if updated {
+        //                DefaultManager.IS_INITIAL_SETUP = true
+        //                DefaultManager.User.NAME = self.txt_name.text ?? ""
+        //                DefaultManager.User.GENDER = self.btnMale.layer.borderWidth == 2 ? "Male" : "Female"
+        //                self.navigateToHome()
+        //            }
+        //            else{
+        //                self.showAlert(title: "", message: errorMessage ?? "")
+        //            }
+        //        }
         
-        /*let updatedData: [String: Any] = [
+        let updatedData: [String: Any] = [
             FirebaseKeys.name: txt_name.text ?? "",
             FirebaseKeys.gender: self.btnMale.layer.borderWidth == 2 ? "Male" : "Female",
             FirebaseKeys.profilePicture: profileURL
@@ -91,7 +91,7 @@ class SetProfileVC: UIViewController {
             } else {
                 self.showToastMessage(message)
             }
-        }*/
+        }
 
     }
     
@@ -108,20 +108,21 @@ extension SetProfileVC: UIImagePickerControllerDelegate, UINavigationControllerD
         picker.dismiss(animated: true, completion: nil) // Dismiss the picker
         var selectedImage = UIImage()
         if let editedImage = info[.editedImage] as? UIImage {
-            print("Selected edited image: \(selectedImage)")
             selectedImage = editedImage
             profile_img.image = selectedImage
         }
         else if let originalImage = info[.originalImage] as? UIImage {
-            print("Selected original image: \(originalImage)")
             selectedImage = originalImage
             profile_img.image = originalImage
         }
         DefaultManager.User.PROFILE_DATA = profile_img.image?.pngData() ?? Data()
         
+        showLoader(text: "Uploading profile...")
         firebaseManager.uploadProfileImage(selectedImage) { result in
+            self.hideLoader()
             switch result {
             case .success(let url):
+                print(url)
                 self.profileURL = url.absoluteString
                 break
             case .failure(let error):

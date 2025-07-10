@@ -10,23 +10,22 @@ import AEOTPTextField
 
 
 class JoinCircleVC: UIViewController {
-
+    
     @IBOutlet weak var profile_img: UIImageView!
     @IBOutlet weak var lbl_name: UILabel!
     @IBOutlet weak var lbl_number: UILabel!
     @IBOutlet weak var lbl_code: UILabel!
     @IBOutlet weak var btnJoincircle: UIEnableDisable!
     @IBOutlet weak var otpTextField: AEOTPTextField!
-    var friendEnterCode = String()
+    var joinCircleCode = String()
     let firebaseManager = FirebaseManager.shared
-    var groupCode = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         lbl_name.text = DefaultManager.User.NAME
         lbl_number.text = DefaultManager.User.PHONE
-        lbl_code.text = groupCode
+        lbl_code.text = DefaultManager.Cirlce.CURRENT_CODE
         btnJoincircle.isEnabled = false
         //profile_img.image = UIImage(data: DefaultManager.User.PROFILE_DATA ?? Data())
         
@@ -56,36 +55,36 @@ class JoinCircleVC: UIViewController {
     
     @IBAction func btnJoinCircleAction(_ sender: UIButton) {
         showLoader(text: "Joing...")
-        UIDevice.current.isBatteryMonitoringEnabled = true
-        let batteryLevel = Int(UIDevice.current.batteryLevel * 100)
-        firebaseManager.joinCircle(withCode: friendEnterCode,
-                                circleId: groupCode,
-                                batteryLevel: batteryLevel) { success in
-            self.hideLoader()
-            if success {
-                print("Friend successfully joined the circle!")
-                self.navigateToHome()
-            } else {
-                self.showAlert(title: "Enter code Incorrect !!", message: "Failed to join the circle.")
-            }
-        }
+        //        UIDevice.current.isBatteryMonitoringEnabled = true
+        //        let batteryLevel = Int(UIDevice.current.batteryLevel * 100)
+        //        firebaseManager.joinCircle(withCode: friendEnterCode,
+        //                                circleId: groupCode,
+        //                                batteryLevel: batteryLevel) { success in
+        //            self.hideLoader()
+        //            if success {
+        //                print("Friend successfully joined the circle!")
+        //                self.navigateToHome()
+        //            } else {
+        //                self.showAlert(title: "Enter code Incorrect !!", message: "Failed to join the circle.")
+        //            }
+        //        }
         
-        /*firebaseManager.joinCircle(inviteCode: friendEnterCode) { success, message in
+        firebaseManager.joinCircle(inviteCode: joinCircleCode) { success, message in
+            self.hideLoader()
             if success {
                 print("Friend successfully joined the circle!")
                 self.navigateToHome()
             } else {
                 self.showToastMessage(message)
             }
-        }*/
+        }
         
     }
 }
 
-
 extension JoinCircleVC: AEOTPTextFieldDelegate {
     func didUserFinishEnter(the code: String) {
-        friendEnterCode = code
+        joinCircleCode = code
         self.btnJoincircle.isEnabled = code.count == 6
     }
     

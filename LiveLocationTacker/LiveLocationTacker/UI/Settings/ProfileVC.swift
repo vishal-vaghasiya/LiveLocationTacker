@@ -97,37 +97,36 @@ class ProfileVC: UIViewController {
     
     @IBAction func btnUpdateAction(_ sender: UIButton) {
         showLoader(text: "Updating...")
-        firebaseManager.updateUserNameInFirebase(userPhonenumber: lbl_number.text ?? "", entername: txt_name.text ?? "") { updated, errorMessage in
-            self.hideLoader()
-            self.txt_name.isUserInteractionEnabled = false
-            if updated {
-                DefaultManager.User.NAME = self.txt_name.text ?? ""
-                DefaultManager.User.GENDER = self.btnMale.layer.borderWidth == 2 ? "Male" : "Female"
-                
-                let vc = StoryboardScene.Settings.popupProfileUpdateSuccess.instantiate()
-                vc.closePopup = {
-                    self.navigationController?.popViewController(animated: true)
-                }
-                vc.modalPresentationStyle = .overCurrentContext
-                self.present(vc, animated: false)
-            } else {
-                self.showAlert(title: "", message: errorMessage ?? "")
-            }
-        }
+//        firebaseManager.updateUserNameInFirebase(userPhonenumber: lbl_number.text ?? "", entername: txt_name.text ?? "") { updated, errorMessage in
+//            self.hideLoader()
+//            self.txt_name.isUserInteractionEnabled = false
+//            if updated {
+//                DefaultManager.User.NAME = self.txt_name.text ?? ""
+//                DefaultManager.User.GENDER = self.btnMale.layer.borderWidth == 2 ? "Male" : "Female"
+//                
+//                let vc = StoryboardScene.Settings.popupProfileUpdateSuccess.instantiate()
+//                vc.closePopup = {
+//                    self.navigationController?.popViewController(animated: true)
+//                }
+//                vc.modalPresentationStyle = .overCurrentContext
+//                self.present(vc, animated: false)
+//            } else {
+//                self.showAlert(title: "", message: errorMessage ?? "")
+//            }
+//        }
         
-        /*
         let updatedData: [String: Any] = [
-            "name": txt_name.text ?? "",
-            "profile_pic": profileURL,
-            "date": Date().getCurrentUTCTimestampInfo().timestampSeconds
+            FirebaseKeys.name: txt_name.text ?? "",
+            FirebaseKeys.gender: self.btnMale.layer.borderWidth == 2 ? "Male" : "Female",
+            FirebaseKeys.profilePicture: profileURL
         ]
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-            FirebaseManager().updateUserData(phoneNumber: "9725992972", updatedValues: updatedData) { success, message in
-                print(message)
+            self.firebaseManager.updateUserData(updatedValues: updatedData) { success, message in
+                self.showToastMessage(message)
+                self.hideLoader()
             }
         })
-         */
     }
 }
 

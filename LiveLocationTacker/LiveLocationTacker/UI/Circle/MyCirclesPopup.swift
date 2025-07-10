@@ -50,29 +50,29 @@ class MyCirclesPopup: UIViewController {
     func creatingNewCircle(name:String){
         showLoader(text: "Loading...")
         
-        UIDevice.current.isBatteryMonitoringEnabled = true
-        let batteryLevel = Int(UIDevice.current.batteryLevel * 100)
-        
-        firebaseManager.createCircle(name: name,
-                                     userName: DefaultManager.User.NAME,
-                                     countryCode: DefaultManager.User.COUNTRY_CODE,
-                                  userPhone: DefaultManager.User.PHONE,
-                                  batteryLevel: batteryLevel) { [self] generatedCode in
-            print("Share this code with your friend: \(generatedCode ?? "")")
-            self.hideLoader()
-            fetchAllCircle()
-        }
-        
-//        firebaseManager.createCircle(name: name) { success, message, data in
+//        UIDevice.current.isBatteryMonitoringEnabled = true
+//        let batteryLevel = Int(UIDevice.current.batteryLevel * 100)
+//        
+//        firebaseManager.createCircle(name: name,
+//                                     userName: DefaultManager.User.NAME,
+//                                     countryCode: DefaultManager.User.COUNTRY_CODE,
+//                                  userPhone: DefaultManager.User.PHONE,
+//                                  batteryLevel: batteryLevel) { [self] generatedCode in
+//            print("Share this code with your friend: \(generatedCode ?? "")")
 //            self.hideLoader()
-//            if success {
-//                if let _ = data {
-//                    self.fetchAllCircle()
-//                }
-//            } else {
-//                self.showToastMessage(message)
-//            }
+//            fetchAllCircle()
 //        }
+        
+        firebaseManager.createCircle(name: name) { success, message, data in
+            self.hideLoader()
+            if success {
+                if let _ = data {
+                    self.fetchAllCircle()
+                }
+            } else {
+                self.showToastMessage(message)
+            }
+        }
     }
     
     func createNewGroupTapped() {
@@ -99,23 +99,23 @@ class MyCirclesPopup: UIViewController {
     
     // MARK: - API CALLING
     func fetchAllCircle() {
-        firebaseManager.saveFcmTokenFirebase()
-        firebaseManager.fetchAllCircles(phoneNumber: DefaultManager.User.PHONE) { ListSnapSort in
-            DispatchQueue.main.async {
-                self.groupSnapSortList = ListSnapSort
-                selectedGroupsnapSort = ListSnapSort.first
-                
-                self.groupTableview.reloadData()
-            }
-        }
-        
-//        firebaseManager.getMyCircle(completion: { success,message,snapshot  in
+//        firebaseManager.saveFcmTokenFirebase()
+//        firebaseManager.fetchAllCircles(phoneNumber: DefaultManager.User.PHONE) { ListSnapSort in
 //            DispatchQueue.main.async {
-//                self.groupSnapSortList = snapshot
-//                selectedGroupsnapSort = snapshot.first
+//                self.groupSnapSortList = ListSnapSort
+//                selectedGroupsnapSort = ListSnapSort.first
+//                
 //                self.groupTableview.reloadData()
 //            }
-//        })
+//        }
+        
+        firebaseManager.getMyCircle(completion: { success,message,snapshot  in
+            DispatchQueue.main.async {
+                self.groupSnapSortList = snapshot
+                selectedGroupsnapSort = snapshot.first
+                self.groupTableview.reloadData()
+            }
+        })
     }
     
     // MARK: - DELEGATE
@@ -129,8 +129,8 @@ extension MyCirclesPopup: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let groupCell = tableView.dequeueReusableCell(withType: CircleListTBVCell.self)
         let groupDicValue = groupSnapSortList[indexPath.row]
-        groupCell.lbl_name.text = groupDicValue.childSnapshot(forPath: "name").value as? String ?? ""
-        groupCell.lbl_membercount.text = "\((groupDicValue.childSnapshot(forPath: "members").value as? [String:Any] ?? [:]).count) Members"
+        groupCell.lbl_name.text = groupDicValue.childSnapshot(forPath: FirebaseKeys.name).value as? String ?? ""
+        groupCell.lbl_membercount.text = "\((groupDicValue.childSnapshot(forPath: FirebaseKeys.members).value as? [String:Any] ?? [:]).count) Members"
         return groupCell
     }
     

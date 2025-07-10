@@ -190,7 +190,7 @@ class FirebaseManager {
     }*/
     
     // MARK: - Fetch User Data
-    func fetchUserData(completion: @escaping (Result<[String: Any], Error>, String) -> Void) {
+    func fetchUserData(completion: @escaping (Result<UserInfo, Error>, String) -> Void) {
         // ✅ Step 1: Check Authentication
         guard let _ = Auth.auth().currentUser else {
             goToOnboarding()
@@ -204,7 +204,7 @@ class FirebaseManager {
         userRef.observeSingleEvent(of: .value) { snapshot in
             if snapshot.exists(), let userData = snapshot.value as? [String: Any] {
                 print("✅ User data fetched successfully.")
-                completion(.success(userData), "User data fetched successfully.")
+                completion(.success(UserInfo(dictionary: userData)), "User data fetched successfully.")
             } else {
                 let error = NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "User data not found."])
                 print("⚠️ User data not found.")
@@ -284,6 +284,63 @@ class FirebaseManager {
              print("Fetched Users: \(users)")
          case .failure(let error):
              print("Error: \(error.localizedDescription)")
+         }
+     }
+     */
+    
+    // MARK: - Fetch FCM Tokens by Phone Numbers
+    func fetchUsersFCMTokens(phoneNumbers: [String], completion: @escaping (Result<[String], Error>) -> Void) {
+        // ✅ Step 1: Check Authentication
+        guard let _ = Auth.auth().currentUser else {
+            goToOnboarding()
+            let error = NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "User is not authenticated."])
+            completion(.failure(error))
+            return
+        }
+        
+        let usersRef = ref.child(FirebaseTableName.users.name)
+        var fcmTokens: [String] = []
+        var errors: [Error] = []
+        let dispatchGroup = DispatchGroup()
+        
+        for phone in phoneNumbers {
+            dispatchGroup.enter()
+            usersRef.child(phone).observeSingleEvent(of: .value) { snapshot in
+                if snapshot.exists(), let userData = snapshot.value as? [String: Any], let fcmToken = userData["fcmtoken"] as? String {
+                    fcmTokens.append(fcmToken)
+                } else {
+                    let error = NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "User or FCM Token not found for phone: \(phone)"])
+                    errors.append(error)
+                }
+                dispatchGroup.leave()
+            } withCancel: { error in
+                errors.append(error)
+                dispatchGroup.leave()
+            }
+        }
+        
+        dispatchGroup.notify(queue: .main) {
+            if !fcmTokens.isEmpty {
+                print("✅ Successfully fetched \(fcmTokens.count) FCM tokens.")
+                completion(.success(fcmTokens))
+            } else if let firstError = errors.first {
+                print("❌ Failed to fetch any FCM tokens.")
+                completion(.failure(firstError))
+            } else {
+                let error = NSError(domain: "", code: -2, userInfo: [NSLocalizedDescriptionKey: "Unknown error occurred."])
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    //MARK: Example
+    /*
+     fetchUsersFCMTokens(phoneNumbers: phoneNumbers) { result in
+         switch result {
+         case .success(let fcmTokens):
+             print("Fetched FCM Tokens: \(fcmTokens)")
+         case .failure(let error):
+             print("Error fetching FCM Tokens: \(error.localizedDescription)")
          }
      }
      */

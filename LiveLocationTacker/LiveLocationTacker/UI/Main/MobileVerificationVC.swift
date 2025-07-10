@@ -151,60 +151,60 @@ class MobileOTPVerificationVC: UIViewController , UIGestureRecognizerDelegate {
         UIDevice.current.isBatteryMonitoringEnabled = true
         let batteryLevel = Int(UIDevice.current.batteryLevel * 100)
         
-        firebaseManager.isExistingUser(phoneNumber.digitsOnly) { isExisting, data in
-            if isExisting {
-                self.hideLoader()
-                let existingNumber = data?["admin"] as? String ?? ""
-                let existingName = data?["name"] as? String ?? ""
-                let existingCode = data?["code"] as? String ?? ""
-                let existingCountryCode = "91"
-                
-                DefaultManager.User.COUNTRY_CODE = existingCountryCode//Need to update
-                DefaultManager.User.PHONE = existingNumber
-                DefaultManager.User.NAME = existingName
-                DefaultManager.User.PROFILE_DATA = UIImage(named: "engineer")?.pngData() ?? Data()
-                
-                DefaultManager.Permission.LOCATION = true
-                DefaultManager.Permission.BATTERY = true
-                DefaultManager.Permission.NOTIFICATION = true
-                DefaultManager.Permission.CAMERA = true
-                DefaultManager.Permission.MOTION = true
-                
-                DefaultManager.Cirlce.CURRENT_CODE = existingCode
-                
-                let vc = StoryboardScene.Main.setProfileVC.instantiate()
-                vc.hidesBottomBarWhenPushed = true
-                self.navigationController?.pushViewController(vc, animated: true)
-                
-            } else {
-                self.firebaseManager.createCircle(name: "My Circles",
-                                                  userName: self.name,
-                                                  countryCode: self.phoneCode,
-                                                  userPhone: self.phoneNumber.digitsOnly,
-                                                  batteryLevel: batteryLevel) { [self] generatedCode in
-                    self.hideLoader()
-
-                    DefaultManager.User.COUNTRY_CODE = phoneCode
-                    DefaultManager.User.PHONE = mobileNumber.digitsOnly
-                    DefaultManager.User.NAME = name
-                    DefaultManager.User.PROFILE_DATA = UIImage(named: "engineer")?.pngData() ?? Data()
-                    
-                    DefaultManager.Permission.LOCATION = true
-                    DefaultManager.Permission.BATTERY = true
-                    DefaultManager.Permission.NOTIFICATION = true
-                    DefaultManager.Permission.CAMERA = true
-                    DefaultManager.Permission.MOTION = true
-                    
-                    DefaultManager.Cirlce.CURRENT_CODE = generatedCode ?? ""
-                    
-                    let vc = StoryboardScene.Main.setProfileVC.instantiate()
-                    vc.hidesBottomBarWhenPushed = true
-                    self.navigationController?.pushViewController(vc, animated: true)
-                }
-            }
-        }
+//        firebaseManager.isExistingUser(phoneNumber.digitsOnly) { isExisting, data in
+//            if isExisting {
+//                self.hideLoader()
+//                let existingNumber = data?["admin"] as? String ?? ""
+//                let existingName = data?["name"] as? String ?? ""
+//                let existingCode = data?["code"] as? String ?? ""
+//                let existingCountryCode = "91"
+//                
+//                DefaultManager.User.COUNTRY_CODE = existingCountryCode//Need to update
+//                DefaultManager.User.PHONE = existingNumber
+//                DefaultManager.User.NAME = existingName
+//                DefaultManager.User.PROFILE_DATA = UIImage(named: "engineer")?.pngData() ?? Data()
+//                
+//                DefaultManager.Permission.LOCATION = true
+//                DefaultManager.Permission.BATTERY = true
+//                DefaultManager.Permission.NOTIFICATION = true
+//                DefaultManager.Permission.CAMERA = true
+//                DefaultManager.Permission.MOTION = true
+//                
+//                DefaultManager.Cirlce.CURRENT_CODE = existingCode
+//                
+//                let vc = StoryboardScene.Main.setProfileVC.instantiate()
+//                vc.hidesBottomBarWhenPushed = true
+//                self.navigationController?.pushViewController(vc, animated: true)
+//                
+//            } else {
+//                self.firebaseManager.createCircle(name: "My Circles",
+//                                                  userName: self.name,
+//                                                  countryCode: self.phoneCode,
+//                                                  userPhone: self.phoneNumber.digitsOnly,
+//                                                  batteryLevel: batteryLevel) { [self] generatedCode in
+//                    self.hideLoader()
+//
+//                    DefaultManager.User.COUNTRY_CODE = phoneCode
+//                    DefaultManager.User.PHONE = mobileNumber.digitsOnly
+//                    DefaultManager.User.NAME = name
+//                    DefaultManager.User.PROFILE_DATA = UIImage(named: "engineer")?.pngData() ?? Data()
+//                    
+//                    DefaultManager.Permission.LOCATION = true
+//                    DefaultManager.Permission.BATTERY = true
+//                    DefaultManager.Permission.NOTIFICATION = true
+//                    DefaultManager.Permission.CAMERA = true
+//                    DefaultManager.Permission.MOTION = true
+//                    
+//                    DefaultManager.Cirlce.CURRENT_CODE = generatedCode ?? ""
+//                    
+//                    let vc = StoryboardScene.Main.setProfileVC.instantiate()
+//                    vc.hidesBottomBarWhenPushed = true
+//                    self.navigationController?.pushViewController(vc, animated: true)
+//                }
+//            }
+//        }
         
-        /*LocationManager.shared.getCurrentLocation { location in
+        LocationManager.shared.getCurrentLocation { location in
             LocationManager.shared.getGoogleAddress(lat: location.coordinate.latitude, long: location.coordinate.longitude) { address in
                 
                 let param: [String: Any] = [
@@ -256,7 +256,7 @@ class MobileOTPVerificationVC: UIViewController , UIGestureRecognizerDelegate {
                 }
                 
             }
-        }*/
+        }
         
     }
 }
