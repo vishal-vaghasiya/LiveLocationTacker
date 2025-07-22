@@ -15,7 +15,7 @@ class PhotoPickerPopup: UIViewController {
     
     // MARK: - PROPERTY
     var selectedSourceType:((UIImagePickerController.SourceType)->Void)?
-    
+    var cancelClick: (()->Void)?
     // MARK: - LIFE CYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +38,9 @@ class PhotoPickerPopup: UIViewController {
     }
     
     @IBAction func cancelClick(_ sender: UIButton) {
-        self.dismiss(animated: false)
+        self.dismiss(animated: false) {
+            self.cancelClick?()
+        }
     }
     
     // MARK: - OTHER

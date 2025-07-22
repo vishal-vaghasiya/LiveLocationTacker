@@ -28,10 +28,11 @@ target 'LiveLocationTacker' do
   pod 'FirebaseAnalytics', '~> 11.15'
   pod 'FirebaseDatabase', '~> 11.15'
   pod 'FirebaseStorage', '~> 11.15'
+  pod 'FirebaseRemoteConfig', '~> 11.15'
   
   pod 'SwiftJWT'
   pod 'RevenueCat'
-  
+  pod 'Google-Mobile-Ads-SDK', '~> 12.7'
   
   post_install do |installer|
       installer.generated_projects.each do |project|

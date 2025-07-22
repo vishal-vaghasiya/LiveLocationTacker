@@ -12,10 +12,15 @@ class SettingVC: UIViewController {
     
     @IBOutlet weak var main_view: UIView!
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var contBannerHeight: NSLayoutConstraint!
+    @IBOutlet weak var bannerView: UIView!
+    
     var settingDeatils:[AppCommonModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        FirebaseManager.shared.logAnalyticsEvent(name: .home_click_setting)
         settingDeatils = [
             AppCommonModel(id: .CHILD_MODE, image: UIImage(named: "icon_permission_childmode"), title: "Child Mode"),
             //AppCommonModel(id: .DARK_MODE, image: UIImage(named: "icon_dark_mode"), title: "Dark Mode"),
@@ -31,6 +36,21 @@ class SettingVC: UIViewController {
         self.tableView.estimatedRowHeight = 75
         self.tableView.registerHeaderFooterView(of: SettingHeaderView.self)
         self.tableView.register(UINib(nibName: "SettingTVCell", bundle: nil), forCellReuseIdentifier: "SettingTVCell")
+        self.setBannerAds()
+    }
+    
+    // MARK: - Setup Ads
+    func setBannerAds() {
+        AdManager.shared.loadBannerAd(in: self.bannerView, rootViewController: self) { isShow in
+            if isShow {
+                UIView.animate(withDuration: 0.5) {
+                    self.contBannerHeight.constant = 50
+                    self.view.layoutIfNeeded()
+                }
+            } else {
+                self.contBannerHeight.constant = 0
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -62,19 +82,39 @@ extension SettingVC : UITableViewDelegate, UITableViewDataSource {
         let options = settingDeatils[indexPath.row]
         switch options.id {
         case.CHILD_MODE:
+            FirebaseManager.shared.logAnalyticsEvent(name: DefaultManager.User.IS_CHILD_MODE_ENABLE ? .childmode_setting_click_childmode : .setting_click_childmode)
+            if DefaultManager.User.IS_CHILD_MODE_ENABLE {
+                let vc = StoryboardScene.ChildMode.popupEnableChildmode.instantiate()
+                self.present(vc, animated: true)
+            } else {
+                let vc = StoryboardScene.ChildMode.popupInviteChildMode.instantiate()
+                self.present(vc, animated: true)
+            }
             break
         case .RATE_NOW:
+            FirebaseManager.shared.logAnalyticsEvent(name: DefaultManager.User.IS_CHILD_MODE_ENABLE ? .childmode_setting_click_rateus : .setting_click_ratenow)
             openAppStoreForRating()
         case .SHARE:
+            FirebaseManager.shared.logAnalyticsEvent(name: DefaultManager.User.IS_CHILD_MODE_ENABLE ? .childmode_setting_click_share : .setting_click_share)
             self.share(message: "", link: APP_URL)
         case .FEEDBACK:
+            FirebaseManager.shared.logAnalyticsEvent(name: DefaultManager.User.IS_CHILD_MODE_ENABLE ? .childmode_setting_click_feedback : .setting_click_feedback)
             presentFeedbackMailComposer()
         case .PRIVACY_POLICY:
+            FirebaseManager.shared.logAnalyticsEvent(name: DefaultManager.User.IS_CHILD_MODE_ENABLE ? .childmode_setting_click_privacy : .setting_click_privecy_policy)
             openPrivacyPolicy()
         case .TERMS_CONDITION:
+            FirebaseManager.shared.logAnalyticsEvent(name: DefaultManager.User.IS_CHILD_MODE_ENABLE ? .childmode_setting_click_terms : .setting_click_terms)
             openTermCondition()
         case .SUBSCRIPTION:
-            restorePurchase()
+            FirebaseManager.shared.logAnalyticsEvent(name: .setting_click_subscription)
+            if DefaultManager.IS_SUBSCRIPTION {
+                let vc = StoryboardScene.Settings.activeSubscriptionListVC.instantiate()
+                vc.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(vc, animated: true)
+            } else {
+                restorePurchase()
+            }
         default:
             break
         }
@@ -87,23 +127,38 @@ extension SettingVC : UITableViewDelegate, UITableViewDataSource {
         //headerView.profile_img.image = UIImage(data: DefaultManager.User.PROFILE_DATA ?? Data())
         headerView.profile_img.setImage(urlString: DefaultManager.User.PROFILE_PIC, name: DefaultManager.User.NAME, placeholderImage: Asset.iconDefaultProfile.image, width: headerView.profile_img.frame.width * 2, height: headerView.profile_img.frame.height * 2)
         
+        headerView.premiumView.isHidden = DefaultManager.User.IS_CHILD_MODE_ENABLE
+        headerView.permissionView.isHidden = DefaultManager.User.IS_CHILD_MODE_ENABLE
+        
         headerView.onTapProfileAction = {
-            let vc = StoryboardScene.Settings.profileVC.instantiate()
-            vc.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(vc, animated: true)
+            FirebaseManager.shared.logAnalyticsEvent(name: DefaultManager.User.IS_CHILD_MODE_ENABLE ? .childmode_setting_click_profile : .setting_click_profile)
+            AdManager.shared.showInterstitialAd(from: self) {
+                let vc = StoryboardScene.Settings.profileVC.instantiate()
+                vc.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
         }
         headerView.onTapSubscribeAction = {
-            DispatchQueue.main.async {
-                let vc = StoryboardScene.Settings.subscribeVC.instantiate()
-                vc.modalPresentationStyle = .overFullScreen
-                self.present(vc, animated: true)
-            }
+            FirebaseManager.shared.logAnalyticsEvent(name: .setting_click_premium)
+//            if DefaultManager.IS_SUBSCRIPTION {
+                DispatchQueue.main.async {
+                    let vc = StoryboardScene.Settings.activeSubscriptionListVC.instantiate()
+                    vc.hidesBottomBarWhenPushed = true
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+//            } else {
+//                DispatchQueue.main.async {
+//                    let vc = StoryboardScene.Settings.choosePlanVC.instantiate()
+//                    vc.modalPresentationStyle = .overFullScreen
+//                    self.present(vc, animated: true)
+//                }
+//            }
         }
         return headerView
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 570
+        return DefaultManager.User.IS_CHILD_MODE_ENABLE ? 105 : 570
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -174,16 +229,9 @@ extension SettingVC : UITableViewDelegate, UITableViewDataSource {
     // MARK: - Subscription Restore
     func restorePurchase(){
         showLoader(text: "loading")
-        
-        Purchases.shared.restorePurchases { (purchaserInfo, error) in
-            self.hideLoader()
-            self.refreshUserDetails()
-        }
-    }
-    
-    func refreshUserDetails() {
-        Purchases.shared.getCustomerInfo { (purchaserInfo, error) in
-            if purchaserInfo?.entitlements[Constants.entitlementID]?.isActive == true {
+        RevenueCatManager.shared.restorePurchases { isActive in
+            hideLoader()
+            if isActive {
                 DefaultManager.IS_SUBSCRIPTION = true
                 
                 let alertController = UIAlertController(title: "Restore Complete", message: "Your subscription has been restored.", preferredStyle: .alert)
@@ -193,8 +241,7 @@ extension SettingVC : UITableViewDelegate, UITableViewDataSource {
                 }
                 alertController.addAction(okAction)
                 self.present(alertController, animated: true, completion: nil)
-            }
-            else {
+            } else {
                 self.showAlert(title: "No Subscription Available", message: "Please subscribe first.")
                 DefaultManager.IS_SUBSCRIPTION = false
             }

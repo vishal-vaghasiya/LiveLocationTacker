@@ -18,6 +18,9 @@ class CompassVC: UIViewController {
     @IBOutlet weak var lbl_address: UILabel!
     @IBOutlet weak var altitudeLabel: UILabel!
     
+    @IBOutlet weak var contBannerHeight: NSLayoutConstraint!
+    @IBOutlet weak var bannerView: UIView!
+    
     // MARK: - PROPERTY
     var lastAngle: Int = 0 // To store the last angle for comparison
     var generator: UIImpactFeedbackGenerator? = UIImpactFeedbackGenerator(style: .medium)
@@ -37,6 +40,8 @@ class CompassVC: UIViewController {
         
         compass_view.addSubview(dScaView)
         createLocationManager()
+        self.setBannerAds()
+        FirebaseManager.shared.logAnalyticsEvent(name: .home_click_compass)
     }
     
     override func viewWillAppear(_ animated:Bool) {
@@ -62,6 +67,20 @@ class CompassVC: UIViewController {
         locationManager.allowsBackgroundLocationUpdates = true
         locationManager.startUpdatingLocation()
         locationManager.startUpdatingHeading()
+    }
+    
+    // MARK: - Setup Ads
+    func setBannerAds() {
+        AdManager.shared.loadBannerAd(in: self.bannerView, rootViewController: self) { isShow in
+            if isShow {
+                UIView.animate(withDuration: 0.5) {
+                    self.contBannerHeight.constant = 50
+                    self.view.layoutIfNeeded()
+                }
+            } else {
+                self.contBannerHeight.constant = 0
+            }
+        }
     }
     
     //MARK: - SOCKET EVENT
@@ -165,7 +184,7 @@ extension CompassVC: CLLocationManagerDelegate {
             lastLocation = currLocation
             lastAddressUpdateTime = Date()
             
-            LocationManager.shared.getAddressFromLatLon(latitude: currLocation.coordinate.latitude,
+            LocationManager.shared.getAddressFrom(latitude: currLocation.coordinate.latitude,
                                                         longitude: currLocation.coordinate.longitude) { address in
                 self.lbl_address.text = address
             }

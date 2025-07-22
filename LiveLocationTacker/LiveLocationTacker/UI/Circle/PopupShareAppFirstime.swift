@@ -24,7 +24,13 @@ class PopupShareAppFirstime: UIViewController {
     //MARK: - SOCKET EVENT
     
     // MARK: - BUTTON CLICK
+    @IBAction func clickShare(_ sender: UIButton) {
+        self.share(message: "", link: APP_URL)
+    }
     
+    @IBAction func clickGotIt(_ sender: UIButton) {
+        self.dismiss(animated: false)
+    }
     // MARK: - OTHER
     
     // MARK: - API CALLING

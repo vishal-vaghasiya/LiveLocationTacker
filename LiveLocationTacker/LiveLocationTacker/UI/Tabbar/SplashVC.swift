@@ -7,11 +7,11 @@
 import UIKit
 import ProgressHUD
 import NVActivityIndicatorView
+import GoogleMobileAds
 class SplashVC: UIViewController {
     
     @IBOutlet weak var vwActivity: NVActivityIndicatorView!
-    
-    var isFirstAdsFailed = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
         showLoader()
@@ -21,7 +21,23 @@ class SplashVC: UIViewController {
             return
         }
         
-        self.navigateToHome()
+        VariableInfo.appDelegate.setupRemoteConfig {
+            switch AdsConfig.startAdsPreference {
+            case .yes:
+                //Load Open Ads
+                OpenAdsManager.shared.loadAndShow {
+                    self.navigateToHome()
+                }
+            case .no:
+                //Load Interstitial Ads
+                InterstitialAdsManager.shared.loadAndShow {
+                    self.navigateToHome()
+                }
+            case .none:
+                // No Ads
+                self.navigateToHome()
+            }
+        }
     }
     
     func showLoader() {

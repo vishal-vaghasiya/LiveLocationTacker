@@ -12,6 +12,10 @@ class ChildModeCircleTVCell: UITableViewCell {
     @IBOutlet weak var ivArrow: UIImageView!
     @IBOutlet weak var btnDisable: UIButton!
     @IBOutlet weak var buttonView: UIView!
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblCircleName: UILabel!
+    @IBOutlet weak var lineView: UIView!
+    @IBOutlet weak var ivProfile: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,4 +28,11 @@ class ChildModeCircleTVCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    var data: ChildModeCircleInfo! {
+        didSet {
+            lblCircleName.text = data.circleName
+            lblName.text = data.childName
+            ivProfile.setImage(urlString: data.childProfile, name: data.childName, placeholderImage: Asset.iconDefaultProfile.image, width: ivProfile.frame.width * 2, height: ivProfile.frame.height * 2)
+        }
+    }
 }

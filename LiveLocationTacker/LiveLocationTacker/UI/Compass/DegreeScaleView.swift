@@ -39,7 +39,7 @@ class DegreeScaleView: UIView {
     
     /// Compass triangle view
     private lazy var compassTriangleView: UIView = {
-        let triangle = UIView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenWidth))
+        let triangle = UIView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_WIDTH))
         triangle.backgroundColor = .clear
         return triangle
     }()

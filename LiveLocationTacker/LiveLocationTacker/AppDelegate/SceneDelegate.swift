@@ -14,6 +14,7 @@ import AdSupport
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
+    private var didEnterBackground = false
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -22,9 +23,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         
         window?.overrideUserInterfaceStyle = .light
-        refreshUserDetails()
+        
+        RevenueCatManager.shared.isUserSubscribed { isSubscribed in
+            DefaultManager.IS_SUBSCRIPTION = isSubscribed
+        }
+        
         if DefaultManager.IS_INITIAL_SETUP {
-            setupHome()
+            goToHome()
         }
     }
     
@@ -38,13 +43,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidBecomeActive(_ scene: UIScene) {
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
-        checkforceUpdate()
-        
-        //        if !Constants.userSubscribeAvailable && Constants.ads_visibility == "1" && Constants.Appopen_adsShow == "Yes" {
-        //            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0 , execute: {
-        //                AppOpenAdManager.shared.tryToPresentAd(viewController: (self.window?.rootViewController)!)
-        //            })
-        //        }
+        if didEnterBackground {
+            AdManager.shared.tryToPresentAd()
+            didEnterBackground = false
+        }
     }
     
     func sceneWillResignActive(_ scene: UIScene) {
@@ -61,92 +63,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+        didEnterBackground = true
     }
 }
-
-
-//MARK: - Continue with Root -
-
-extension SceneDelegate {
-    func setupHome() {
-        let vc = StoryboardScene.TabBar.splashVC.instantiate()
-        let nv = UINavigationController(rootViewController: vc)
-        nv.isNavigationBarHidden = true
-        window?.rootViewController = nv
-    }
-    
-    func checkforceUpdate(){
-        DispatchQueue.main.async { [self] in
-            let numberFormatter = NumberFormatter()
-            let Force_update_version_number = numberFormatter.number(from: Constants.ios_version)
-            let Force_update_versionFloatValue = Force_update_version_number?.floatValue
-            let realseVersion = getAppInfo()
-            if realseVersion < Force_update_versionFloatValue ?? 0 || Constants.force_update == "1" {
-                DispatchQueue.main.async { [self] in
-                    let vc = UpdateViewController()
-                    window?.rootViewController = vc
-                    window?.makeKeyAndVisible()
-                }
-            }
-        }
-    }
-}
-
-extension SceneDelegate {
-    
-    func refreshUserDetails() {
-        Purchases.shared.getCustomerInfo { (purchaserInfo, error) in
-            if purchaserInfo?.entitlements[Constants.entitlementID]?.isActive == true {
-                DefaultManager.IS_SUBSCRIPTION = true
-            } else {
-                DefaultManager.IS_SUBSCRIPTION = false
-            }
-        }
-    }
-}
-
 
 extension UIViewController {
-    //    func callSplashApi(completion:@escaping()->()) {
-    //        ApiManager.shared.fetch(url: URL(string: Constants.SPLASH_API)!) { (result: Result<AdsDataModel, Error>) in
-    //            switch result {
-    //            case .success(let adsData):
-    //                print("Data fetched successfully: \(adsData)")
-    //
-    //                Constants.NATIVE = adsData.nativeIDAds ?? ""
-    //                Constants.NATIVE2 = adsData.nativeIDOneAds ?? ""
-    //
-    //                Constants.INTERTIALS = adsData.interstitialIDAds ?? ""
-    //                Constants.INTERTIALS2 = adsData.interstitialIDOneAds ?? ""
-    //
-    //                Constants.BANNER = adsData.bannerIDAds ?? ""
-    //                Constants.BANNER2 =  adsData.bannerIDOneAds ?? ""
-    //
-    //                Constants.OPEN = adsData.appOpenIDAds ?? ""
-    //                Constants.OPEN2 = adsData.appOpenIDOneAds ?? ""
-    //
-    //                Constants.Splash_adsShow = adsData.splashAds ?? ""
-    //                Constants.Banner_adsShow = adsData.bannerAds ?? ""
-    //                Constants.Interstitial_adsShow = adsData.interstitialAds ?? ""
-    //                Constants.Appopen_adsShow = adsData.appOpenAds ?? ""
-    //                Constants.Native_adsShow = adsData.nativeAds ?? ""
-    //
-    //                Constants.NATIVE_BUTTON_COLOR = adsData.nativeButtonAds ?? ""
-    //                Constants.ads_visibility = "1"
-    //
-    //                Constants.Intro_Purchase_Ads = adsData.introPurchaseAds ?? ""
-    //
-    //                Constants.firsttime_counter = adsData.interstitialCountAds ?? 1
-    //                Constants.ads_counter = adsData.interstitialCountShowAds ?? 3
-    //
-    //                completion()
-    //            case .failure(let error):
-    //                print("Failed to fetch data: \(error.localizedDescription)")
-    //                completion()
-    //            }
-    //        }
-    //    }
-    
     func requestTrackingPermission(completion:@escaping()->()) {
         ATTrackingManager.requestTrackingAuthorization { status in
             completion()

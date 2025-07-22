@@ -11,6 +11,9 @@ import AVFoundation
 
 class PermissionVC: UIViewController {
 
+    @IBOutlet weak var contBannerHeight: NSLayoutConstraint!
+    @IBOutlet weak var bannerView: UIView!
+    
     @IBOutlet weak var btnLetsStart: UIEnableDisable!
     @IBOutlet var shadow_view: [UIView]!
 
@@ -27,6 +30,7 @@ class PermissionVC: UIViewController {
         btnLetsStart.isEnabled = true
         checkPermission()
         locationManager.delegate = self
+        self.setBannerAds()
     }
     
     func checkPermission(){
@@ -34,6 +38,19 @@ class PermissionVC: UIViewController {
         notification_switch.isOn = PermissionManager.isNotificationPermissionGranted
         motion_switch.isOn = PermissionManager.isMotionPermissionGranted
         camera_switch.isOn = PermissionManager.isCameraPermissionGranted
+    }
+    
+    func setBannerAds() {
+        AdManager.shared.loadBannerAd(in: self.bannerView, rootViewController: self) { isShow in
+            if isShow {
+                UIView.animate(withDuration: 0.5) {
+                    self.contBannerHeight.constant = 50
+                    self.view.layoutIfNeeded()
+                }
+            } else {
+                self.contBannerHeight.constant = 0
+            }
+        }
     }
 
     @IBAction func switchValueChangeAction(_ sender: UISwitch) {
@@ -47,6 +64,7 @@ class PermissionVC: UIViewController {
                 else{
                     sender.isOn = true
                 }
+                FirebaseManager.shared.logAnalyticsEvent(name: sender.isOn ? .permission_locationsharing_enable : .permission_locationsharing_disable)
             }
         case 1:
             PermissionManager.requestCameraPermission { isGranted in
@@ -54,6 +72,7 @@ class PermissionVC: UIViewController {
                 if !isGranted {
                     self.showAlertPermission(title: "", message: "Please go to Settings and enable Camera permission.")
                 }
+                FirebaseManager.shared.logAnalyticsEvent(name: sender.isOn ? .permission_acesscamera_enable : .permission_acesscamera_disable)
             }
         case 2:
             PermissionManager.requestNotificationPermission { isGranted in
@@ -61,6 +80,7 @@ class PermissionVC: UIViewController {
                 if !isGranted {
                     self.showAlertPermission(title: "", message: "Please go to setting and enable Notification permission.")
                 }
+                FirebaseManager.shared.logAnalyticsEvent(name: sender.isOn ? .permission_notification_enable : .permission_notification_disable)
             }
         case 3:
             PermissionManager.requestMotionPermission { isGranted in
@@ -71,6 +91,7 @@ class PermissionVC: UIViewController {
                 else{
                     sender.isOn = true
                 }
+                FirebaseManager.shared.logAnalyticsEvent(name: sender.isOn ? .permission_motion_enable : .permission_motion_disable)
             }
         default:
             break
@@ -79,9 +100,12 @@ class PermissionVC: UIViewController {
     
     @IBAction func btnLetsStartAction(_ sender: UIButton) {
         if location_switch.isOn && camera_switch.isOn && notification_switch.isOn && motion_switch.isOn {
-            let vc = StoryboardScene.Main.loginMobilenumberVC.instantiate()
-            vc.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(vc, animated: true)
+            FirebaseManager.shared.logAnalyticsEvent(name: .permission_click_continue)
+            AdManager.shared.showInterstitialAd(from: self) {
+                let vc = StoryboardScene.Main.loginMobilenumberVC.instantiate()
+                vc.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
         }
         else{
             showAlert(title: "", message: "Please grant all premission")

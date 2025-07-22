@@ -13,7 +13,7 @@ class PopupDeleteAccountConfirmation: UIViewController {
     
     // MARK: - PROPERTY
     var conformDeleteAction: (() -> Void)?
-    
+    var noClickAction: (() -> Void)?
     // MARK: - LIFE CYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +32,9 @@ class PopupDeleteAccountConfirmation: UIViewController {
     }
     
     @IBAction func noButtonClick(_ sender: UIButton) {
-        self.dismiss(animated: false)
+        self.dismiss(animated: false) {
+            self.noClickAction?()
+        }
     }
     
     // MARK: - OTHER

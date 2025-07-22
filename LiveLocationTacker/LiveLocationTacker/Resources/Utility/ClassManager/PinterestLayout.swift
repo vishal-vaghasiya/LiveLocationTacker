@@ -64,10 +64,10 @@ class PinterestLayout:UICollectionViewFlowLayout {
             var photoHeight: CGFloat = 0
             if item % 4 == 0 || item % 4 == 3 {
                 // Rows 0, 3, 4, 7, ... have a size of 200
-                photoHeight = isIpad() ? 300 : 200
+                photoHeight = IS_IPAD ? 300 : 200
             } else {
                 // Rows 1, 2, 5, 6, ... have a size of 150
-                photoHeight = isIpad() ? 220 : 150
+                photoHeight = IS_IPAD ? 220 : 150
             }
             
             let height = cellPadding * 2 + photoHeight

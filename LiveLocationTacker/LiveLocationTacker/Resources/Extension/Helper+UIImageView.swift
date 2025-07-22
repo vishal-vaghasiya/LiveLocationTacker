@@ -20,8 +20,8 @@ extension UIImageView {
         textColor: UIColor = .black,
         backgroundColor: UIColor = .white
     ) {
-        var encodedURLString = urlString
-        encodedURLString = encodedURLString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        let encodedURLString = urlString
+        //encodedURLString = encodedURLString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
         
         guard let imageURL = URL(string: encodedURLString) else {
             if let name = name, let width = width, let height = height {
@@ -38,7 +38,11 @@ extension UIImageView {
             return
         }
         
-        self.sd_setImage(with: imageURL, placeholderImage: placeholderImage, options: [.avoidAutoSetImage, .highPriority]) { (img, error, cacheType, url) in
+        self.sd_setImage(
+                        with: imageURL,
+                        placeholderImage: placeholderImage,
+                        options: [.progressiveLoad]
+                    ) { (img, error, cacheType, url) in
             if let img = img {
                 self.image = img
             } else {

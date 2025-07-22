@@ -9,20 +9,25 @@ import UIKit
 import FirebaseDatabase
 
 class MyCirclesPopup: UIViewController {
-
+    
     // MARK: - OUTLET
     @IBOutlet weak var groupTableview: UITableView!
+    @IBOutlet weak var createJoinBtnView: UIStackView!
     
     // MARK: - PROPERTY
-    var groupSnapSortList = [DataSnapshot]()
+    var arrOfCircle = [CircleInfo]()
     let firebaseManager = FirebaseManager.shared
-    var selectedGroup:(([DataSnapshot])->Void)?
-    var updateCircle:(([DataSnapshot])->Void)?
+    var selectedGroup:(([CircleInfo])->Void)?
+    var updateCircle:(([CircleInfo])->Void)?
     var joinCircle:(()->Void)?
     // MARK: - LIFE CYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if DefaultManager.IS_SUBSCRIPTION {
+            self.createJoinBtnView.isHidden = false
+        } else {
+            self.createJoinBtnView.isHidden = DefaultManager.User.IS_CHILD_MODE_ENABLE || self.arrOfCircle.count >= 2
+        }
     }
     
     // MARK: - UI SETUP
@@ -31,10 +36,12 @@ class MyCirclesPopup: UIViewController {
     
     // MARK: - BUTTON CLICK
     @IBAction func createCircleClick(_ sender: UIButton) {
+        FirebaseManager.shared.logAnalyticsEvent(name: .circle_click_create)
         createNewGroupTapped()
     }
     
     @IBAction func joinCircleClick(_ sender: UIButton) {
+        FirebaseManager.shared.logAnalyticsEvent(name: .circle_click_join)
         self.dismiss(animated: false) {
             self.joinCircle?()
         }
@@ -42,35 +49,21 @@ class MyCirclesPopup: UIViewController {
     
     @IBAction func outerViewAction(_ sender: UIControl) {
         self.dismiss(animated: false) {
-            self.updateCircle?(self.groupSnapSortList)
+            self.updateCircle?(self.arrOfCircle)
         }
     }
     
     // MARK: - OTHER
     func creatingNewCircle(name:String){
         showLoader(text: "Loading...")
-        
-//        UIDevice.current.isBatteryMonitoringEnabled = true
-//        let batteryLevel = Int(UIDevice.current.batteryLevel * 100)
-//        
-//        firebaseManager.createCircle(name: name,
-//                                     userName: DefaultManager.User.NAME,
-//                                     countryCode: DefaultManager.User.COUNTRY_CODE,
-//                                  userPhone: DefaultManager.User.PHONE,
-//                                  batteryLevel: batteryLevel) { [self] generatedCode in
-//            print("Share this code with your friend: \(generatedCode ?? "")")
-//            self.hideLoader()
-//            fetchAllCircle()
-//        }
-        
         firebaseManager.createCircle(name: name) { success, message, data in
-            self.hideLoader()
+            hideLoader()
             if success {
                 if let _ = data {
                     self.fetchAllCircle()
                 }
             } else {
-                self.showToastMessage(message)
+                showToastMessage(message)
             }
         }
     }
@@ -99,20 +92,10 @@ class MyCirclesPopup: UIViewController {
     
     // MARK: - API CALLING
     func fetchAllCircle() {
-//        firebaseManager.saveFcmTokenFirebase()
-//        firebaseManager.fetchAllCircles(phoneNumber: DefaultManager.User.PHONE) { ListSnapSort in
-//            DispatchQueue.main.async {
-//                self.groupSnapSortList = ListSnapSort
-//                selectedGroupsnapSort = ListSnapSort.first
-//                
-//                self.groupTableview.reloadData()
-//            }
-//        }
-        
-        firebaseManager.getMyCircle(completion: { success,message,snapshot  in
+        firebaseManager.getMyCircle(completion: { success, message, data  in
             DispatchQueue.main.async {
-                self.groupSnapSortList = snapshot
-                selectedGroupsnapSort = snapshot.first
+                self.arrOfCircle = data
+                selectedCircleInfo = data.first
                 self.groupTableview.reloadData()
             }
         })
@@ -123,23 +106,23 @@ class MyCirclesPopup: UIViewController {
 extension MyCirclesPopup: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return groupSnapSortList.count
+        return arrOfCircle.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let groupCell = tableView.dequeueReusableCell(withType: CircleListTBVCell.self)
-        let groupDicValue = groupSnapSortList[indexPath.row]
-        groupCell.lbl_name.text = groupDicValue.childSnapshot(forPath: FirebaseKeys.name).value as? String ?? ""
-        groupCell.lbl_membercount.text = "\((groupDicValue.childSnapshot(forPath: FirebaseKeys.members).value as? [String:Any] ?? [:]).count) Members"
+        let data = arrOfCircle[indexPath.row]
+        groupCell.lbl_name.text = data.name
+        groupCell.lbl_membercount.text = "\(data.members.count) Members"
         return groupCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let groupDicValue = groupSnapSortList[indexPath.row]
-        selectedGroupsnapSort = groupDicValue
-        DefaultManager.Cirlce.CURRENT_CODE = selectedGroupsnapSort?.childSnapshot(forPath: "code").value as? String ?? ""
+        let groupDicValue = arrOfCircle[indexPath.row]
+        selectedCircleInfo = groupDicValue
+        DefaultManager.Cirlce.CURRENT_CODE = selectedCircleInfo?.code ?? ""
         self.dismiss(animated: false) {
-            self.selectedGroup?(self.groupSnapSortList)
+            self.selectedGroup?(self.arrOfCircle)
         }
     }
 }

@@ -26,9 +26,6 @@
                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qt5-V6-Elh">
                         <rect key="frame" x="65" y="0.0" width="250" height="70"/>
                         <color key="backgroundColor" name="Color-00BDFF-20"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="250" id="5bl-nd-DXa"/>
-                        </constraints>
                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="18"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                         <state key="normal" title="Change Plan"/>
@@ -42,9 +39,10 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="Qt5-V6-Elh" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="23O-6X-ma6"/>
+                <constraint firstAttribute="trailing" secondItem="Qt5-V6-Elh" secondAttribute="trailing" constant="65" id="JgQ-6G-xOZ"/>
                 <constraint firstAttribute="bottom" secondItem="Qt5-V6-Elh" secondAttribute="bottom" id="NHR-df-NjL"/>
                 <constraint firstItem="Qt5-V6-Elh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="QSG-s8-w0k"/>
+                <constraint firstItem="Qt5-V6-Elh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="65" id="sxi-hm-Yh9"/>
             </constraints>
             <connections>
                 <outlet property="btnChangePlan" destination="Qt5-V6-Elh" id="IZh-n2-Xdg"/>

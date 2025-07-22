@@ -45,7 +45,7 @@ extension UITextField {
         // Code goes here
         let datePicker = UIDatePicker(frame: CGRect(x: 0,
                                                     y: 0,
-                                                    width: screenWidth,
+                                                    width: SCREEN_WIDTH,
                                                     height: 216))
         datePicker.datePickerMode = datePickerMode
         datePicker.preferredDatePickerStyle = .wheels

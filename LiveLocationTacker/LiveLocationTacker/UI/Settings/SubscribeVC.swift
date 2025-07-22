@@ -238,7 +238,7 @@ extension SubscribeVC {
     
     func refreshUserDetails() {
         Purchases.shared.getCustomerInfo { (purchaserInfo, error) in
-            if purchaserInfo?.entitlements[Constants.entitlementID]?.isActive == true {
+            if purchaserInfo?.entitlements["entitlementID"]?.isActive == true {
                 DefaultManager.IS_SUBSCRIPTION = true
                 
                 let alertController = UIAlertController(title: "Restore Complete", message: "Your subscription has been successfully restored.", preferredStyle: .alert)

@@ -15,6 +15,10 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var btnUpdate: UIEnableDisable!
     @IBOutlet weak var lbl_number: UILabel!
     @IBOutlet weak var txt_name: UITextField!
+    
+    @IBOutlet weak var contBannerHeight: NSLayoutConstraint!
+    @IBOutlet weak var bannerView: UIView!
+    
     let firebaseManager = FirebaseManager.shared
     var profileURL = String()
     // MARK: - Lifecycle Methods
@@ -35,6 +39,24 @@ class ProfileVC: UIViewController {
             btnFemale.layer.borderWidth = 2
             btnMale.layer.borderWidth = 0
         }
+        
+        txt_name.addTarget(self, action: #selector(textFieldTouchUpInside), for: .touchUpInside)
+        
+        self.setBannerAds()
+    }
+    
+    // MARK: - Setup Ads
+    func setBannerAds() {
+        AdManager.shared.loadBannerAd(in: self.bannerView, rootViewController: self) { isShow in
+            if isShow {
+                UIView.animate(withDuration: 0.5) {
+                    self.contBannerHeight.constant = 50
+                    self.view.layoutIfNeeded()
+                }
+            } else {
+                self.contBannerHeight.constant = 0
+            }
+        }
     }
     
     // MARK: - Button Actions
@@ -44,8 +66,10 @@ class ProfileVC: UIViewController {
     }
     
     @IBAction func btnEditimgAction(_ sender: UIButton) {
+        FirebaseManager.shared.logAnalyticsEvent(name: .profile_click_uploadphoto)
         let vc = StoryboardScene.Main.photoPickerPopup.instantiate()
         vc.selectedSourceType = { (type) in
+            FirebaseManager.shared.logAnalyticsEvent(name: type == .camera ? .profile_uploadphoto_click_takephoto : .profile_uploadphoto_click_choose_from_gallery)
             let imagePickerController = UIImagePickerController()
             imagePickerController.delegate = self
             imagePickerController.sourceType = type
@@ -53,6 +77,9 @@ class ProfileVC: UIViewController {
             DispatchQueue.main.async {
                 self.present(imagePickerController, animated: true)
             }
+        }
+        vc.cancelClick = {
+            FirebaseManager.shared.logAnalyticsEvent(name: .profile_uploadphoto_click_cancel)
         }
         vc.modalPresentationStyle = .overCurrentContext
         self.present(vc, animated: false)
@@ -64,6 +91,7 @@ class ProfileVC: UIViewController {
     }
     
     @IBAction func btnUpdateProfileAction(_ sender: UIButton) {
+        FirebaseManager.shared.logAnalyticsEvent(name: sender.tag == 0 ? .profile_click_male : .profile_clik_female)
         if sender.tag == 0 {
             btnMale.layer.borderColor = UIColor.btncolor.cgColor
             btnMale.layer.borderWidth = 2
@@ -76,29 +104,33 @@ class ProfileVC: UIViewController {
     }
     
     @IBAction func btnDeleteAccount(_ sender: UIButton) {
+        FirebaseManager.shared.logAnalyticsEvent(name: .profile_click_delete)
         let vc = StoryboardScene.Settings.popupDeleteAccountConfirmation.instantiate()
         vc.conformDeleteAction = {
-            self.showLoader(text: "Deleting...")
-            
-            DefaultManager.removeAll()
-            
-            self.firebaseManager.deleteUserAccount(userPhoneNumber: self.lbl_number.text ?? "") { success in
-                self.hideLoader()
+            FirebaseManager.shared.logAnalyticsEvent(name: .profile_delete_click_yes)
+            showLoader(text: "Deleting...")
+            self.firebaseManager.deleteUserAccountAndData { success in
+                hideLoader()
                 if success {
+                    DefaultManager.removeAll()
                     self.navigateToOnboarding()
                 } else {
                     self.showAlert(title: "Error", message: "Something went wrong. Please try again later.")
                 }
             }
         }
+        vc.noClickAction = {
+            FirebaseManager.shared.logAnalyticsEvent(name: .profile_delete_click_no)
+        }
         vc.modalPresentationStyle = .overCurrentContext
         self.present(vc, animated: false)
     }
     
     @IBAction func btnUpdateAction(_ sender: UIButton) {
+        FirebaseManager.shared.logAnalyticsEvent(name: .profile_click_update)
         showLoader(text: "Updating...")
 //        firebaseManager.updateUserNameInFirebase(userPhonenumber: lbl_number.text ?? "", entername: txt_name.text ?? "") { updated, errorMessage in
-//            self.hideLoader()
+//            hideLoader()
 //            self.txt_name.isUserInteractionEnabled = false
 //            if updated {
 //                DefaultManager.User.NAME = self.txt_name.text ?? ""
@@ -115,18 +147,35 @@ class ProfileVC: UIViewController {
 //            }
 //        }
         
-        let updatedData: [String: Any] = [
+        var updatedData: [String: Any] = [
             FirebaseKeys.name: txt_name.text ?? "",
             FirebaseKeys.gender: self.btnMale.layer.borderWidth == 2 ? "Male" : "Female",
-            FirebaseKeys.profilePicture: profileURL
         ]
+        
+        if !profileURL.isEmpty {
+            updatedData[FirebaseKeys.profilePicture] = profileURL
+        }
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
             self.firebaseManager.updateUserData(updatedValues: updatedData) { success, message in
-                self.showToastMessage(message)
-                self.hideLoader()
+                if success {
+                    DefaultManager.User.NAME = self.txt_name.text ?? ""
+                    DefaultManager.User.GENDER = self.btnMale.layer.borderWidth == 2 ? "Male" : "Female"
+                    if !self.profileURL.isEmpty {
+                        DefaultManager.User.PROFILE_PIC = self.profileURL
+                    }
+                }
+                let vc = StoryboardScene.Settings.popupProfileUpdateSuccess.instantiate()
+                vc.modalPresentationStyle = .overCurrentContext
+                self.present(vc, animated: false)
+//                showToastMessage(message)
+                hideLoader()
             }
         })
+    }
+    
+    @objc func textFieldTouchUpInside() {
+        FirebaseManager.shared.logAnalyticsEvent(name: .profile_click_entername)
     }
 }
 
@@ -147,17 +196,12 @@ extension ProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDele
             profile_img.image = originalImage
         }
         DefaultManager.User.PROFILE_DATA = profile_img.image?.pngData() ?? Data()
+        showLoader(text: "Uploading profile...")
         firebaseManager.uploadProfileImage(selectedImage) { result in
+            hideLoader()
             switch result {
             case .success(let url):
                 self.profileURL = url.absoluteString
-                //                updateUserProfile(with: url) { error in
-                //                    if let error = error {
-                //                        print("Profile update failed: \(error)")
-                //                    } else {
-                //                        print("Profile updated successfully!")
-                //                    }
-                //                }
                 break
             case .failure(let error):
                 print("Upload failed: \(error)")

@@ -27,7 +27,7 @@ class AddMemberVC: UIViewController {
         otpTextField.otpBackgroundColor = .white.withAlphaComponent(0.15)
         otpTextField.otpFilledBorderWidth = 0
         otpTextField.otpFilledBorderColor = .clear
-        otpTextField.otpFont = AppFont.semiBold(size: 28) ?? UIFont()
+        otpTextField.otpFont = FontFamily.Poppins.semiBold.font(size: 28)
         otpTextField.otpTextColor = .btncolor
         otpTextField.otpFilledBackgroundColor = .white.withAlphaComponent(0.15)
         otpTextField.configure(with: 6)
@@ -35,7 +35,7 @@ class AddMemberVC: UIViewController {
         
         // ✅ Programmatically insert OTP
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            self.otpTextField.insertText("ABCDEF")
+            self.otpTextField.insertText(DefaultManager.Cirlce.CURRENT_CODE)
         }
     }
     

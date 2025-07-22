@@ -155,4 +155,8 @@ extension String {
         return "\(degree)°\(minutes)′\(second)″"
     }
     
+    func getBoolValue() -> Bool {
+        return self.lowercased().contains("yes")
+    }
+    
 }

@@ -8,6 +8,8 @@
 import UIKit
 class OnBoardingVC: UIViewController {
     
+    @IBOutlet weak var contBannerHeight: NSLayoutConstraint!
+    @IBOutlet weak var bannerView: UIView!
     @IBOutlet weak var bottom_view: UIView!
     @IBOutlet weak var btnNext: UIEnableDisable!
     @IBOutlet weak var pageControl: FSPageControl!
@@ -45,16 +47,36 @@ class OnBoardingVC: UIViewController {
         pageControl.setImage(UIImage.init(named: "pagecontrol_select"), for: .selected)
         
         self.btnNext.isEnabled = true
+        self.setBannerAds()
      }
     
+    func setBannerAds() {
+        AdManager.shared.loadBannerAd(in: self.bannerView, rootViewController: self) { isShow in
+            if isShow {
+                UIView.animate(withDuration: 0.5) {
+                    self.contBannerHeight.constant = 50
+                    self.view.layoutIfNeeded()
+                }
+            } else {
+                self.contBannerHeight.constant = 0
+            }
+        }
+    }
+    
     @IBAction func btnNextAction(_ sender: UIButton) {
+        
         if pagerView.currentIndex == self.introTitle.count - 1 {
-            let vc = StoryboardScene.Main.permissionVC.instantiate()
-            vc.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(vc, animated: true)
+            AdManager.shared.showInterstitialAd(from: self) {
+                FirebaseManager.shared.logAnalyticsEvent(name: .start3_click_next)
+                let vc = StoryboardScene.Main.permissionVC.instantiate()
+                vc.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
         }
         else{
+            FirebaseManager.shared.logAnalyticsEvent(name: pagerView.currentIndex == 0 ? .strat1_click_next : .start2_click_next)
             let nextIndex = pagerView.currentIndex + 1 < numberOfItems(in:self.pagerView) ? pagerView.currentIndex + 1 : 0
+            
             self.pagerView.scrollToItem(at: nextIndex, animated: true)
         }
     }

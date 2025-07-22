@@ -98,11 +98,21 @@
                                             <constraint firstItem="2fn-BO-uZJ" firstAttribute="leading" secondItem="pBF-0Q-KpI" secondAttribute="leading" id="zvt-wa-G0F"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bzb-k5-zrW">
+                                        <rect key="frame" x="0.0" y="573" width="393" height="0.0"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" id="fM6-Pw-bVp"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="pBF-0Q-KpI" firstAttribute="leading" secondItem="4BX-zD-wbV" secondAttribute="leading" id="B6P-7e-IpX"/>
-                                    <constraint firstAttribute="bottom" secondItem="pBF-0Q-KpI" secondAttribute="bottom" id="gsA-jZ-Jrm"/>
+                                    <constraint firstItem="Bzb-k5-zrW" firstAttribute="top" secondItem="pBF-0Q-KpI" secondAttribute="bottom" id="GTd-RZ-t8o"/>
+                                    <constraint firstAttribute="trailing" secondItem="Bzb-k5-zrW" secondAttribute="trailing" id="jj9-Ma-dcl"/>
+                                    <constraint firstItem="Bzb-k5-zrW" firstAttribute="leading" secondItem="4BX-zD-wbV" secondAttribute="leading" id="xwJ-qt-6OZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="Bzb-k5-zrW" secondAttribute="bottom" id="yrG-rP-ljV"/>
                                     <constraint firstAttribute="trailing" secondItem="pBF-0Q-KpI" secondAttribute="trailing" id="z25-Gh-efG"/>
                                     <constraint firstItem="pBF-0Q-KpI" firstAttribute="top" secondItem="4BX-zD-wbV" secondAttribute="top" id="zvb-pM-0Yj"/>
                                 </constraints>
@@ -123,6 +133,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="Gdu-xu-kDm"/>
                     <connections>
+                        <outlet property="bannerView" destination="Bzb-k5-zrW" id="zCe-Og-ZZJ"/>
+                        <outlet property="contBannerHeight" destination="fM6-Pw-bVp" id="Wm2-a7-8KG"/>
                         <outlet property="main_view" destination="pBF-0Q-KpI" id="gNs-zx-wo6"/>
                         <outlet property="tableView" destination="2fn-BO-uZJ" id="RIP-oL-SUq"/>
                     </connections>
@@ -179,7 +191,7 @@
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nDe-zE-AGa">
                                                 <rect key="frame" x="136.66666666666666" y="20" width="119.99999999999997" height="120"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="engineer" translatesAutoresizingMaskIntoConstraints="NO" id="56D-JY-5lF">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_default_profile" translatesAutoresizingMaskIntoConstraints="NO" id="56D-JY-5lF">
                                                         <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
@@ -434,12 +446,22 @@
                                     <constraint firstAttribute="trailing" secondItem="avj-QH-ggH" secondAttribute="trailing" id="hu2-Kg-htT"/>
                                 </constraints>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GSQ-U5-PGP">
+                                <rect key="frame" x="0.0" y="784" width="393" height="0.0"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="Mfq-Eu-shu"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2at-1Y-lx6"/>
                         <color key="backgroundColor" name="bgcolor"/>
                         <constraints>
                             <constraint firstItem="0gu-yN-LKD" firstAttribute="centerX" secondItem="erY-Oi-zsb" secondAttribute="centerX" id="626-f6-LSm"/>
+                            <constraint firstAttribute="trailing" secondItem="GSQ-U5-PGP" secondAttribute="trailing" id="I7b-GQ-NFO"/>
                             <constraint firstAttribute="trailing" secondItem="0gu-yN-LKD" secondAttribute="trailing" id="My9-yZ-nWU"/>
+                            <constraint firstItem="GSQ-U5-PGP" firstAttribute="leading" secondItem="erY-Oi-zsb" secondAttribute="leading" id="SHl-wX-eDQ"/>
+                            <constraint firstItem="GSQ-U5-PGP" firstAttribute="top" secondItem="0gu-yN-LKD" secondAttribute="bottom" id="cD1-9O-NEr"/>
                             <constraint firstItem="0gu-yN-LKD" firstAttribute="leading" secondItem="erY-Oi-zsb" secondAttribute="leading" id="foq-y7-6ky"/>
                             <constraint firstItem="0gu-yN-LKD" firstAttribute="top" secondItem="K1K-Jf-42f" secondAttribute="bottom" id="hgo-k7-J8D"/>
                             <constraint firstItem="K1K-Jf-42f" firstAttribute="leading" secondItem="2at-1Y-lx6" secondAttribute="leading" id="jgi-4k-vml"/>
@@ -447,13 +469,15 @@
                             <constraint firstItem="K1K-Jf-42f" firstAttribute="trailing" secondItem="2at-1Y-lx6" secondAttribute="trailing" id="nxZ-EV-5bh"/>
                             <constraint firstItem="avj-QH-ggH" firstAttribute="width" secondItem="2at-1Y-lx6" secondAttribute="width" id="odX-gr-gYi"/>
                             <constraint firstItem="K1K-Jf-42f" firstAttribute="top" secondItem="2at-1Y-lx6" secondAttribute="top" id="vBE-L9-mOw"/>
-                            <constraint firstItem="2at-1Y-lx6" firstAttribute="bottom" secondItem="0gu-yN-LKD" secondAttribute="bottom" id="y23-TV-K81"/>
+                            <constraint firstItem="2at-1Y-lx6" firstAttribute="bottom" secondItem="GSQ-U5-PGP" secondAttribute="bottom" id="yIb-d7-Jvd"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bannerView" destination="GSQ-U5-PGP" id="rIv-qt-iXp"/>
                         <outlet property="btnFemale" destination="lik-7s-Au7" id="BOE-nN-cHM"/>
                         <outlet property="btnMale" destination="ajZ-V9-1pf" id="DyW-VE-fNy"/>
                         <outlet property="btnUpdate" destination="7gm-i7-FaP" id="sSJ-8r-ypF"/>
+                        <outlet property="contBannerHeight" destination="Mfq-Eu-shu" id="0kh-Qe-u4e"/>
                         <outlet property="lbl_number" destination="6hK-nv-71Q" id="Dwb-kz-7Fu"/>
                         <outlet property="profile_img" destination="56D-JY-5lF" id="fwO-AX-O3P"/>
                         <outlet property="txt_name" destination="YN0-re-SAN" id="p6P-wf-rWu"/>
@@ -566,7 +590,7 @@
                                                                     <attributedString key="attributedTitle">
                                                                         <fragment content="Continue">
                                                                             <attributes>
-                                                                                <font key="NSFont" size="18" name="Poppins-Medium"/>
+                                                                                <font key="NSFont" metaFont="system" size="18"/>
                                                                             </attributes>
                                                                         </fragment>
                                                                     </attributedString>
@@ -754,7 +778,7 @@
                                                     <fragment content="Profile Updated Successfully!">
                                                         <attributes>
                                                             <color key="NSColor" name="fontcolor"/>
-                                                            <font key="NSFont" size="20" name="Poppins-Medium"/>
+                                                            <font key="NSFont" metaFont="system" size="20"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
@@ -1080,7 +1104,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="18"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Manage Subscription" backgroundImage="icon_enable_button">
+                                        <state key="normal" title="Subscribe Plan" backgroundImage="icon_enable_button">
                                             <color key="titleColor" name="Color-000000"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -1089,7 +1113,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="manageSubscriptionClick:" destination="5yJ-zu-zwd" eventType="touchUpInside" id="mIt-oW-ccC"/>
+                                            <action selector="subscripPlanClick:" destination="5yJ-zu-zwd" eventType="touchUpInside" id="j7K-FX-rha"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1114,6 +1138,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnManageScbscription" destination="xtP-qa-3a3" id="rRZ-Uj-3wE"/>
+                        <outlet property="noDataStackView" destination="GxC-0F-wzR" id="1cW-6f-5kw"/>
                         <outlet property="subscriptionCV" destination="guq-T6-uov" id="6js-dr-gG9"/>
                     </connections>
                 </viewController>
@@ -1492,12 +1518,12 @@
     <resources>
         <image name="Union" width="12" height="12"/>
         <image name="button_bg_3" width="158" height="50"/>
-        <image name="engineer" width="50" height="50"/>
         <image name="female" width="167" height="169"/>
         <image name="ic_select" width="54.333332061767578" height="54.333332061767578"/>
         <image name="ic_unselect" width="16.333333969116211" height="16.333333969116211"/>
         <image name="icon_arrow_back" width="9" height="16"/>
         <image name="icon_arrow_next" width="12" height="21"/>
+        <image name="icon_default_profile" width="190" height="190"/>
         <image name="icon_edit_pencil" width="16" height="16"/>
         <image name="icon_enable_button" width="308" height="70"/>
         <image name="male" width="167" height="169"/>
@@ -1539,7 +1565,7 @@
             <color red="0.0" green="0.74117647058823533" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -20,6 +20,8 @@ struct FirebaseKeys {
     static let longitude = "longitude"
     static let address = "address"
     static let fcmtoken = "fcmtoken"
+    static let childMode = "child_mode"
+    static let enabled = "enabled"
     static let date = "date"
     static let timestamp = "timestamp"
     
@@ -28,4 +30,7 @@ struct FirebaseKeys {
     static let members = "members"
     static let ownerName = "owner_name"
     static let ownerPhone = "owner_phone"
+    
+    //Child Information
+    static let childNumber = "child_number"
 }

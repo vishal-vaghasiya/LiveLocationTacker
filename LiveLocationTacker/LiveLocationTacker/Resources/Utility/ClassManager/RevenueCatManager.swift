@@ -13,9 +13,12 @@
 
 struct PlanStatus {
     let productId: String
+    let planDuration: String
+    let productPrice: String
     let expirationDate: Date?
     let isTrial: Bool
     let daysRemaining: Int
+    let billType: String
 }
 
 import Foundation
@@ -25,9 +28,10 @@ final class RevenueCatManager {
     
     // MARK: - Singleton
     static let shared = RevenueCatManager()
-    private let entitlementID = "premium"
+    private let entitlementID = "phone_tracker_entitlements_id"
+    private let apiKey = "appl_yDCTmIqlDjmxWQYRiWnGjADqvrs"
     private init() {}
-    
+    var arrOfPackage: [Package] = []
     // MARK: - Configure RevenueCat
     func configureRevenueCat(userId: String? = nil) {
 #if DEBUG
@@ -36,17 +40,20 @@ Purchases.logLevel = .debug
 Purchases.logLevel = .error
 #endif
 
-        Purchases.configure(withAPIKey: "your_public_api_key", appUserID: userId)
+        Purchases.configure(withAPIKey: apiKey, appUserID: userId)
     }
     
     // MARK: - Fetch Offerings
-    func fetchOfferings(completion: @escaping (Offering?) -> Void) {
+    func fetchOfferings() {
         Purchases.shared.getOfferings { (offerings, error) in
             if let offering = offerings?.current {
-                completion(offering)
+                if offering.availablePackages.count == 0 {
+                    print("❌ No packages found.")
+                    return
+                }
+                self.arrOfPackage = offering.availablePackages
             } else {
-                print("Error fetching offerings: \(error?.localizedDescription ?? "Unknown error")")
-                completion(nil)
+                showToastMessage("Error fetching offerings: \(error?.localizedDescription ?? "Unknown error")")
             }
         }
     }
@@ -91,13 +98,12 @@ Purchases.logLevel = .error
     func purchase(package: Package, completion: @escaping (Bool) -> Void) {
         Purchases.shared.purchase(package: package) { (transaction, customerInfo, error, userCancelled) in
             if let error = error {
-                print("Purchase failed: \(error.localizedDescription)")
+                showToastMessage("Purchase failed: \(error.localizedDescription)")
                 completion(false)
                 return
             }
             
             if customerInfo?.entitlements.all[self.entitlementID]?.isActive == true {
-                print("User has premium access.")
                 completion(true)
             } else {
                 completion(false)
@@ -148,9 +154,7 @@ Purchases.logLevel = .error
     func restorePurchases(completion: @escaping (Bool) -> Void) {
         Purchases.shared.restorePurchases { customerInfo, error in
             if let error = error {
-                #if DEBUG
-                print("Restore failed: \(error.localizedDescription)")
-                #endif
+                showToastMessage("Restore failed: \(error.localizedDescription)")
             }
             if let isActive = customerInfo?.entitlements.all[self.entitlementID]?.isActive {
                 completion(isActive)
@@ -172,38 +176,74 @@ Purchases.logLevel = .error
     }*/
     
     // MARK: - Active Subscription Details
-    func getCurrentPlanStatus(completion: @escaping (_ info: PlanStatus?) -> Void) {
+    func getCurrentPlanStatus(completion: @escaping (_ info: [PlanStatus]) -> Void) {
         Purchases.shared.getCustomerInfo { customerInfo, error in
             guard let customerInfo = customerInfo else {
                 print("❌ Failed to get customer info")
-                completion(nil)
+                completion([])
                 return
             }
-            
-            // Replace "premium" with your actual entitlement identifier
-            guard let entitlement = customerInfo.entitlements[self.entitlementID], entitlement.isActive else {
-                print("🚫 No active plan")
-                completion(nil)
+
+            let activeEntitlements = customerInfo.entitlements.active
+            guard !activeEntitlements.isEmpty else {
+                print("🚫 No active entitlements")
+                completion([])
                 return
             }
-            
-            let productId = entitlement.productIdentifier
-            let expirationDate = entitlement.expirationDate
-            let isTrial = entitlement.willRenew && entitlement.periodType == .intro
-            
-            var daysRemaining = 0
-            if let expiry = expirationDate {
-                let components = Calendar.current.dateComponents([.day], from: Date(), to: expiry)
-                daysRemaining = components.day ?? 0
+
+            var planStatuses: [PlanStatus] = []
+
+            for (_, entitlement) in activeEntitlements {
+                let productId = entitlement.productIdentifier
+                let expirationDate = entitlement.expirationDate
+                let isTrial = entitlement.willRenew && entitlement.periodType == .intro
+                
+                let matchedProduct = self.arrOfPackage.first { $0.storeProduct.productIdentifier == productId }
+                let localizedPrice = matchedProduct?.storeProduct.localizedPriceString ?? ""
+                let product = matchedProduct?.storeProduct
+                let subscriptionPeriod = product?.subscriptionPeriod?.unit
+                let duration: String
+                switch subscriptionPeriod {
+                case .day: duration = "Daily"
+                case .week: duration = "Weekly"
+                case .month: duration = "Monthly"
+                case .year: duration = "Yearly"
+                default: duration = "One-time"
+                }
+                
+                let billingDescription: String
+                switch subscriptionPeriod {
+                case .day:
+                    billingDescription = "Billed Daily"
+                case .week:
+                    billingDescription = "Billed Weekly"
+                case .month:
+                    billingDescription = "Billed Monthly"
+                case .year:
+                    billingDescription = "Billed Annually"
+                default:
+                    billingDescription = "One-time Payment"
+                }
+                
+                var daysRemaining = 0
+                if let expiry = expirationDate {
+                    let components = Calendar.current.dateComponents([.day], from: Date(), to: expiry)
+                    daysRemaining = components.day ?? 0
+                }
+                
+                let status = PlanStatus(
+                    productId: productId,
+                    planDuration: duration,
+                    productPrice: localizedPrice,
+                    expirationDate: expirationDate,
+                    isTrial: isTrial,
+                    daysRemaining: daysRemaining,
+                    billType: billingDescription
+                )
+                planStatuses.append(status)
             }
-            
-            let status = PlanStatus(
-                productId: productId,
-                expirationDate: expirationDate,
-                isTrial: isTrial,
-                daysRemaining: daysRemaining
-            )
-            completion(status)
+
+            completion(planStatuses)
         }
     }
     

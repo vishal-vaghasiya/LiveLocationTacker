@@ -78,8 +78,6 @@ class ApiManager {
                 return
             }
             
-            print(base64String)
-            
             // Decode Base64 string
             if let decodedData = Data(base64Encoded: base64String) {
                 do {

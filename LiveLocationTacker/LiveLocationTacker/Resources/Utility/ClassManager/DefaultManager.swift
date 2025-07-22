@@ -47,6 +47,18 @@ class DefaultManager {
     }
     
     struct User {
+        static func setupUserInfo(info: UserInfo) {
+            DefaultManager.User.COUNTRY_CODE = "\(info.countryCode)"
+            DefaultManager.User.PHONE = info.phone
+            DefaultManager.User.NAME = info.name
+            DefaultManager.User.GENDER = info.gender
+            DefaultManager.User.PROFILE_PIC = info.profilePic
+            DefaultManager.User.PROFILE_DATA = nil
+            DefaultManager.User.IS_CHILD_MODE_ENABLE = info.childMode.enabled == 1
+            DefaultManager.User.CHILD_MODE_CODE = info.childMode.code
+            DefaultManager.User.CHILD_MODE_OWNER_PHONE = info.childMode.ownerPhone
+        }
+        
         static var COUNTRY_CODE: String {
             get {
                 return (UserDefaults.standard.string(forKey: #function) ?? "91")
@@ -108,6 +120,36 @@ class DefaultManager {
         }
         
         static var FCM_TOKEN: String {
+            get {
+                return (UserDefaults.standard.string(forKey: #function) ?? "")
+            }
+            set {
+                UserDefaults.standard.set(newValue, forKey: #function)
+                UserDefaults.standard.synchronize()
+            }
+        }
+        
+        static var IS_CHILD_MODE_ENABLE: Bool {
+            get {
+                return (UserDefaults.standard.bool(forKey: #function))
+            }
+            set {
+                UserDefaults.standard.set(newValue, forKey: #function)
+                UserDefaults.standard.synchronize()
+            }
+        }
+        
+        static var CHILD_MODE_CODE: String {
+            get {
+                return (UserDefaults.standard.string(forKey: #function) ?? "")
+            }
+            set {
+                UserDefaults.standard.set(newValue, forKey: #function)
+                UserDefaults.standard.synchronize()
+            }
+        }
+        
+        static var CHILD_MODE_OWNER_PHONE: String {
             get {
                 return (UserDefaults.standard.string(forKey: #function) ?? "")
             }
@@ -182,4 +224,17 @@ class DefaultManager {
  
     }
     
+    //MARK: PUSH NOTIFICATION
+    struct NotificationSettings {
+        static var notificationType: Int {
+            get {
+                return (UserDefaults.standard.integer(forKey: #function))
+            }
+            set {
+                UserDefaults.standard.set(newValue, forKey: #function)
+                UserDefaults.standard.synchronize()
+            }
+        }
+    }
+
 }

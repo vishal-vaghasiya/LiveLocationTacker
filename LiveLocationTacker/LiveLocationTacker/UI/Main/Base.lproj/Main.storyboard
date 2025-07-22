@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oFu-kb-LyR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oFu-kb-LyR">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -111,10 +111,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_intro" translatesAutoresizingMaskIntoConstraints="NO" id="fen-A5-xhl">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="347.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="389"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="3bX-Vs-2LZ">
-                                        <rect key="frame" x="15" y="272.66666666666669" width="360" height="75"/>
+                                        <rect key="frame" x="15" y="314" width="360" height="75"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Welcome to " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5P-e2-SkX">
                                                 <rect key="frame" x="0.0" y="0.0" width="360" height="42"/>
@@ -131,10 +131,10 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gxP-io-lDx">
-                                        <rect key="frame" x="0.0" y="367.66666666666669" width="390" height="233.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="409" width="390" height="226"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="e4N-6h-dOp">
-                                                <rect key="frame" x="120" y="41.666666666666629" width="150" height="150"/>
+                                                <rect key="frame" x="120" y="38" width="150" height="150"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="e4N-6h-dOp" secondAttribute="height" multiplier="1:1" id="a4i-fa-nHV"/>
                                                     <constraint firstAttribute="height" constant="150" id="w8y-QD-t5o"/>
@@ -149,7 +149,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pz-5n-iek" customClass="UIEnableDisable" customModule="LiveLocationTacker" customModuleProvider="target">
-                                        <rect key="frame" x="60" y="621" width="270" height="60"/>
+                                        <rect key="frame" x="60" y="655" width="270" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="lfs-dO-c2Y"/>
                                         </constraints>
@@ -162,7 +162,7 @@
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="reU-dv-qmq">
-                                        <rect key="frame" x="15" y="701" width="360" height="60"/>
+                                        <rect key="frame" x="15" y="735" width="360" height="60"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="NZT-pz-8QJ"/>
@@ -171,7 +171,7 @@
                                             <fragment content="by">
                                                 <attributes>
                                                     <color key="NSColor" name="fontGraycolor"/>
-                                                    <font key="NSFont" size="11" name="Poppins-Regular"/>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
                                                     <font key="NSOriginalFont" size="14" name="Damascus"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
@@ -179,14 +179,14 @@
                                             <fragment content=" ">
                                                 <attributes>
                                                     <color key="NSColor" name="fontGraycolor"/>
-                                                    <font key="NSFont" size="11" name="Poppins-Regular"/>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="continuing,">
                                                 <attributes>
                                                     <color key="NSColor" name="fontGraycolor"/>
-                                                    <font key="NSFont" size="11" name="Poppins-Regular"/>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
                                                     <font key="NSOriginalFont" size="14" name="Damascus"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
@@ -194,14 +194,14 @@
                                             <fragment content=" ">
                                                 <attributes>
                                                     <color key="NSColor" name="fontGraycolor"/>
-                                                    <font key="NSFont" size="11" name="Poppins-Regular"/>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="you">
                                                 <attributes>
                                                     <color key="NSColor" name="fontGraycolor"/>
-                                                    <font key="NSFont" size="11" name="Poppins-Regular"/>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
                                                     <font key="NSOriginalFont" size="14" name="Damascus"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
@@ -209,14 +209,14 @@
                                             <fragment content=" ">
                                                 <attributes>
                                                     <color key="NSColor" name="fontGraycolor"/>
-                                                    <font key="NSFont" size="11" name="Poppins-Regular"/>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="confirm">
                                                 <attributes>
                                                     <color key="NSColor" name="fontGraycolor"/>
-                                                    <font key="NSFont" size="11" name="Poppins-Regular"/>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
                                                     <font key="NSOriginalFont" size="14" name="Damascus"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
@@ -224,14 +224,14 @@
                                             <fragment content=" ">
                                                 <attributes>
                                                     <color key="NSColor" name="fontGraycolor"/>
-                                                    <font key="NSFont" size="11" name="Poppins-Regular"/>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="that">
                                                 <attributes>
                                                     <color key="NSColor" name="fontGraycolor"/>
-                                                    <font key="NSFont" size="11" name="Poppins-Regular"/>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
                                                     <font key="NSOriginalFont" size="14" name="Damascus"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
@@ -239,14 +239,14 @@
                                             <fragment content=" ">
                                                 <attributes>
                                                     <color key="NSColor" name="fontGraycolor"/>
-                                                    <font key="NSFont" size="11" name="Poppins-Regular"/>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="you">
                                                 <attributes>
                                                     <color key="NSColor" name="fontGraycolor"/>
-                                                    <font key="NSFont" size="11" name="Poppins-Regular"/>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
                                                     <font key="NSOriginalFont" size="14" name="Damascus"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
@@ -254,14 +254,14 @@
                                             <fragment content=" ">
                                                 <attributes>
                                                     <color key="NSColor" name="fontGraycolor"/>
-                                                    <font key="NSFont" size="11" name="Poppins-Regular"/>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="acknowledge">
                                                 <attributes>
                                                     <color key="NSColor" name="fontGraycolor"/>
-                                                    <font key="NSFont" size="11" name="Poppins-Regular"/>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
                                                     <font key="NSOriginalFont" size="14" name="Damascus"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
@@ -269,14 +269,14 @@
                                             <fragment content=" ">
                                                 <attributes>
                                                     <color key="NSColor" name="fontGraycolor"/>
-                                                    <font key="NSFont" size="11" name="Poppins-Regular"/>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="and">
                                                 <attributes>
                                                     <color key="NSColor" name="fontGraycolor"/>
-                                                    <font key="NSFont" size="11" name="Poppins-Regular"/>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
                                                     <font key="NSOriginalFont" size="14" name="Damascus"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
@@ -284,14 +284,14 @@
                                             <fragment content=" ">
                                                 <attributes>
                                                     <color key="NSColor" name="fontGraycolor"/>
-                                                    <font key="NSFont" size="11" name="Poppins-Regular"/>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="accept">
                                                 <attributes>
                                                     <color key="NSColor" name="fontGraycolor"/>
-                                                    <font key="NSFont" size="11" name="Poppins-Regular"/>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
                                                     <font key="NSOriginalFont" size="14" name="Damascus"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
@@ -299,14 +299,14 @@
                                             <fragment content=" ">
                                                 <attributes>
                                                     <color key="NSColor" name="fontGraycolor"/>
-                                                    <font key="NSFont" size="11" name="Poppins-Regular"/>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="our">
                                                 <attributes>
                                                     <color key="NSColor" name="fontGraycolor"/>
-                                                    <font key="NSFont" size="11" name="Poppins-Regular"/>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
                                                     <font key="NSOriginalFont" size="14" name="Damascus"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
@@ -314,14 +314,14 @@
                                             <fragment content=" ">
                                                 <attributes>
                                                     <color key="NSColor" name="fontGraycolor"/>
-                                                    <font key="NSFont" size="11" name="Poppins-Regular"/>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="privacy">
                                                 <attributes>
                                                     <color key="NSColor" name="fontGraycolor"/>
-                                                    <font key="NSFont" size="11" name="Poppins-Regular"/>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
                                                     <font key="NSOriginalFont" size="14" name="Damascus"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
@@ -329,14 +329,14 @@
                                             <fragment content=" ">
                                                 <attributes>
                                                     <color key="NSColor" name="fontGraycolor"/>
-                                                    <font key="NSFont" size="11" name="Poppins-Regular"/>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="policy">
                                                 <attributes>
                                                     <color key="NSColor" name="fontGraycolor"/>
-                                                    <font key="NSFont" size="11" name="Poppins-Regular"/>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
                                                     <font key="NSOriginalFont" size="14" name="Damascus"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
@@ -344,14 +344,14 @@
                                             <fragment content=" ">
                                                 <attributes>
                                                     <color key="NSColor" name="fontGraycolor"/>
-                                                    <font key="NSFont" size="11" name="Poppins-Regular"/>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="and">
                                                 <attributes>
                                                     <color key="NSColor" name="fontGraycolor"/>
-                                                    <font key="NSFont" size="11" name="Poppins-Regular"/>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
                                                     <font key="NSOriginalFont" size="14" name="Damascus"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
@@ -359,14 +359,14 @@
                                             <fragment content=" ">
                                                 <attributes>
                                                     <color key="NSColor" name="fontGraycolor"/>
-                                                    <font key="NSFont" size="11" name="Poppins-Regular"/>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="term">
                                                 <attributes>
                                                     <color key="NSColor" name="fontGraycolor"/>
-                                                    <font key="NSFont" size="11" name="Poppins-Regular"/>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
                                                     <font key="NSOriginalFont" size="14" name="Damascus"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
@@ -374,14 +374,14 @@
                                             <fragment content=" ">
                                                 <attributes>
                                                     <color key="NSColor" name="fontGraycolor"/>
-                                                    <font key="NSFont" size="11" name="Poppins-Regular"/>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="of">
                                                 <attributes>
                                                     <color key="NSColor" name="fontGraycolor"/>
-                                                    <font key="NSFont" size="11" name="Poppins-Regular"/>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
                                                     <font key="NSOriginalFont" size="14" name="Damascus"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
@@ -389,14 +389,14 @@
                                             <fragment content=" ">
                                                 <attributes>
                                                     <color key="NSColor" name="fontGraycolor"/>
-                                                    <font key="NSFont" size="11" name="Poppins-Regular"/>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="use">
                                                 <attributes>
                                                     <color key="NSColor" name="fontGraycolor"/>
-                                                    <font key="NSFont" size="11" name="Poppins-Regular"/>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
                                                     <font key="NSOriginalFont" size="14" name="Damascus"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
@@ -404,13 +404,20 @@
                                             <fragment content=".">
                                                 <attributes>
                                                     <color key="NSColor" name="fontGraycolor"/>
-                                                    <font key="NSFont" size="11" name="Poppins-Regular"/>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3w0-5T-p5r">
+                                        <rect key="frame" x="0.0" y="810" width="390" height="0.0"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" id="dh8-zz-hES"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" name="bgcolor"/>
                                 <constraints>
@@ -421,6 +428,8 @@
                                     <constraint firstItem="reU-dv-qmq" firstAttribute="top" secondItem="5pz-5n-iek" secondAttribute="bottom" constant="20" id="A0U-VC-Sdg"/>
                                     <constraint firstAttribute="trailing" secondItem="gxP-io-lDx" secondAttribute="trailing" id="BIR-rY-WXR"/>
                                     <constraint firstItem="3bX-Vs-2LZ" firstAttribute="bottom" secondItem="fen-A5-xhl" secondAttribute="bottom" id="LN6-TS-rUB"/>
+                                    <constraint firstItem="3w0-5T-p5r" firstAttribute="leading" secondItem="Vmf-RF-fVa" secondAttribute="leading" id="P6D-U3-me8"/>
+                                    <constraint firstItem="3w0-5T-p5r" firstAttribute="top" secondItem="reU-dv-qmq" secondAttribute="bottom" constant="15" id="QLM-ow-u0S"/>
                                     <constraint firstAttribute="trailing" secondItem="3bX-Vs-2LZ" secondAttribute="trailing" constant="15" id="Sm6-zg-8Wb"/>
                                     <constraint firstItem="fen-A5-xhl" firstAttribute="top" secondItem="Vmf-RF-fVa" secondAttribute="top" id="c10-U0-vp0"/>
                                     <constraint firstItem="3bX-Vs-2LZ" firstAttribute="leading" secondItem="Vmf-RF-fVa" secondAttribute="leading" constant="15" id="fv2-8J-IeH"/>
@@ -431,6 +440,7 @@
                                     <constraint firstItem="reU-dv-qmq" firstAttribute="leading" secondItem="Vmf-RF-fVa" secondAttribute="leading" constant="15" id="zDK-Uf-Fd4"/>
                                     <constraint firstItem="gxP-io-lDx" firstAttribute="leading" secondItem="Vmf-RF-fVa" secondAttribute="leading" id="zId-Ty-UdQ"/>
                                     <constraint firstItem="5pz-5n-iek" firstAttribute="top" secondItem="gxP-io-lDx" secondAttribute="bottom" constant="20" id="zIl-ED-IrX"/>
+                                    <constraint firstAttribute="trailing" secondItem="3w0-5T-p5r" secondAttribute="trailing" id="zwT-YN-bej"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -439,21 +449,23 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Vmf-RF-fVa" secondAttribute="bottom" id="0d5-vL-i8y"/>
                             <constraint firstItem="fen-A5-xhl" firstAttribute="height" secondItem="IKh-n8-gab" secondAttribute="height" multiplier="0.51" id="19n-4D-6Hq"/>
+                            <constraint firstItem="IKh-n8-gab" firstAttribute="bottom" secondItem="3w0-5T-p5r" secondAttribute="bottom" id="2OK-Rt-66C"/>
                             <constraint firstItem="Vmf-RF-fVa" firstAttribute="top" secondItem="GQf-gN-ppm" secondAttribute="top" id="UaO-Ir-meY"/>
                             <constraint firstItem="Vmf-RF-fVa" firstAttribute="leading" secondItem="IKh-n8-gab" secondAttribute="leading" id="Ylz-nx-gQF"/>
                             <constraint firstItem="IKh-n8-gab" firstAttribute="trailing" secondItem="Vmf-RF-fVa" secondAttribute="trailing" id="dcF-8L-6mF"/>
-                            <constraint firstItem="IKh-n8-gab" firstAttribute="bottom" secondItem="reU-dv-qmq" secondAttribute="bottom" constant="15" id="wds-gY-FRm"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bannerView" destination="3w0-5T-p5r" id="XBU-3n-ICl"/>
                         <outlet property="btnContinue" destination="5pz-5n-iek" id="l06-Es-Ofj"/>
+                        <outlet property="contBannerHeight" destination="dh8-zz-hES" id="1SY-ZS-2Pg"/>
                         <outlet property="lbl_appname" destination="5Cs-fW-06M" id="pMd-gU-mke"/>
                         <outlet property="termsTextView" destination="reU-dv-qmq" id="hTv-cx-t3b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tZ5-AY-Zo3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1151" y="-97"/>
+            <point key="canvasLocation" x="1150.7692307692307" y="-97.393364928909946"/>
         </scene>
         <!--On BoardingVC-->
         <scene sceneID="IJY-vB-xhU">
@@ -464,14 +476,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rGm-Ih-Tdk">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="776"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="810"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pjr-x4-kQr" customClass="FSPagerView" customModule="LiveLocationTacker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="671"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="705"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JLJ-We-AIT">
-                                        <rect key="frame" x="0.0" y="671" width="390" height="105"/>
+                                        <rect key="frame" x="0.0" y="705" width="390" height="105"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g2b-1a-OPT" customClass="FSPageControl" customModule="LiveLocationTacker" customModuleProvider="target">
                                                 <rect key="frame" x="145" y="0.0" width="100" height="15"/>
@@ -506,6 +518,13 @@
                                             <constraint firstAttribute="trailing" secondItem="TJX-GO-KAz" secondAttribute="trailing" constant="85" id="mWt-Bg-CP4"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mpz-ju-LTD">
+                                        <rect key="frame" x="0.0" y="810" width="390" height="0.0"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" id="dJM-qI-IVj"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" name="bgcolor"/>
                                 <constraints>
@@ -513,9 +532,12 @@
                                     <constraint firstItem="JLJ-We-AIT" firstAttribute="top" secondItem="pjr-x4-kQr" secondAttribute="bottom" id="33t-XJ-TBo"/>
                                     <constraint firstItem="pjr-x4-kQr" firstAttribute="leading" secondItem="rGm-Ih-Tdk" secondAttribute="leading" id="7dV-qA-fP9"/>
                                     <constraint firstAttribute="trailing" secondItem="JLJ-We-AIT" secondAttribute="trailing" id="8lJ-gL-VGL"/>
+                                    <constraint firstItem="mpz-ju-LTD" firstAttribute="leading" secondItem="rGm-Ih-Tdk" secondAttribute="leading" id="BXt-zE-fBP"/>
+                                    <constraint firstAttribute="trailing" secondItem="mpz-ju-LTD" secondAttribute="trailing" id="GzJ-or-9xc"/>
                                     <constraint firstItem="JLJ-We-AIT" firstAttribute="leading" secondItem="rGm-Ih-Tdk" secondAttribute="leading" id="JKz-O1-Ze3"/>
-                                    <constraint firstAttribute="bottom" secondItem="JLJ-We-AIT" secondAttribute="bottom" id="exG-DV-2Fo"/>
+                                    <constraint firstAttribute="bottom" secondItem="mpz-ju-LTD" secondAttribute="bottom" id="OaY-BP-Xpf"/>
                                     <constraint firstItem="pjr-x4-kQr" firstAttribute="top" secondItem="rGm-Ih-Tdk" secondAttribute="top" id="lUp-m3-SjN"/>
+                                    <constraint firstItem="mpz-ju-LTD" firstAttribute="top" secondItem="JLJ-We-AIT" secondAttribute="bottom" id="nuv-lK-L5U"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -530,8 +552,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="0jY-Ef-kQh"/>
                     <connections>
+                        <outlet property="bannerView" destination="mpz-ju-LTD" id="hQU-0z-i8g"/>
                         <outlet property="bottom_view" destination="JLJ-We-AIT" id="ou7-bE-Wph"/>
                         <outlet property="btnNext" destination="TJX-GO-KAz" id="b2W-ej-swH"/>
+                        <outlet property="contBannerHeight" destination="dJM-qI-IVj" id="vpg-8e-Ljh"/>
                         <outlet property="pageControl" destination="g2b-1a-OPT" id="Tsl-3s-FSD"/>
                         <outlet property="pagerView" destination="pjr-x4-kQr" id="t8f-Qt-e2J"/>
                     </connections>
@@ -552,10 +576,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="IcB-L2-aKI">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="810"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hON-An-cSb">
-                                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="390" height="810"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Permissions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iw1-dA-WXJ">
                                                         <rect key="frame" x="15" y="100" width="360" height="39.333333333333343"/>
@@ -739,7 +763,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qlU-o8-q3B" customClass="UIEnableDisable" customModule="LiveLocationTacker" customModuleProvider="target">
-                                                        <rect key="frame" x="60" y="734" width="270" height="60"/>
+                                                        <rect key="frame" x="60" y="735" width="270" height="60"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="60" id="OjD-E0-cLm"/>
                                                         </constraints>
@@ -760,7 +784,7 @@
                                                     <constraint firstItem="DFB-Qe-cAd" firstAttribute="leading" secondItem="hON-An-cSb" secondAttribute="leading" constant="15" id="PX1-Tz-rt5"/>
                                                     <constraint firstAttribute="trailing" secondItem="DFB-Qe-cAd" secondAttribute="trailing" constant="15" id="Vyj-HN-gCW"/>
                                                     <constraint firstAttribute="trailing" secondItem="WNc-9j-I9Z" secondAttribute="trailing" constant="15" id="Zop-L6-IB0"/>
-                                                    <constraint firstAttribute="bottom" secondItem="qlU-o8-q3B" secondAttribute="bottom" constant="50" id="aXG-In-hdB"/>
+                                                    <constraint firstAttribute="bottom" secondItem="qlU-o8-q3B" secondAttribute="bottom" constant="15" id="aXG-In-hdB"/>
                                                     <constraint firstItem="WNc-9j-I9Z" firstAttribute="top" secondItem="DFB-Qe-cAd" secondAttribute="bottom" constant="25" id="oRE-g8-bYW"/>
                                                     <constraint firstItem="iw1-dA-WXJ" firstAttribute="leading" secondItem="hON-An-cSb" secondAttribute="leading" constant="15" id="qqs-xH-qcv"/>
                                                     <constraint firstItem="qlU-o8-q3B" firstAttribute="top" relation="greaterThanOrEqual" secondItem="WNc-9j-I9Z" secondAttribute="bottom" constant="30" id="r1G-ip-a04"/>
@@ -779,13 +803,22 @@
                                             <constraint firstItem="hON-An-cSb" firstAttribute="leading" secondItem="IcB-L2-aKI" secondAttribute="leading" id="tEt-oO-obo"/>
                                         </constraints>
                                     </scrollView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Wh-Cc-XcR">
+                                        <rect key="frame" x="0.0" y="810" width="390" height="0.0"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" id="v7c-1Z-KVd"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" name="bgcolor"/>
                                 <constraints>
                                     <constraint firstItem="IcB-L2-aKI" firstAttribute="leading" secondItem="6KU-U0-iQX" secondAttribute="leading" id="61a-l9-i9e"/>
+                                    <constraint firstItem="0Wh-Cc-XcR" firstAttribute="top" secondItem="IcB-L2-aKI" secondAttribute="bottom" id="H52-Qb-Xhf"/>
                                     <constraint firstAttribute="trailing" secondItem="IcB-L2-aKI" secondAttribute="trailing" id="NeM-tn-NBw"/>
+                                    <constraint firstAttribute="trailing" secondItem="0Wh-Cc-XcR" secondAttribute="trailing" id="Tdz-Va-LOM"/>
                                     <constraint firstItem="IcB-L2-aKI" firstAttribute="top" secondItem="6KU-U0-iQX" secondAttribute="top" id="aU6-tn-eyz"/>
-                                    <constraint firstAttribute="bottom" secondItem="IcB-L2-aKI" secondAttribute="bottom" id="sb0-I9-gEG"/>
+                                    <constraint firstItem="0Wh-Cc-XcR" firstAttribute="leading" secondItem="6KU-U0-iQX" secondAttribute="leading" id="pAs-92-JcC"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -793,14 +826,17 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="6KU-U0-iQX" secondAttribute="trailing" id="4Pk-KN-GMN"/>
+                            <constraint firstItem="F9X-yF-rMh" firstAttribute="bottom" secondItem="0Wh-Cc-XcR" secondAttribute="bottom" id="5fN-Sj-kyM"/>
                             <constraint firstItem="6KU-U0-iQX" firstAttribute="leading" secondItem="F9X-yF-rMh" secondAttribute="leading" id="CTz-3q-qHF"/>
                             <constraint firstItem="6KU-U0-iQX" firstAttribute="top" secondItem="hzX-vU-J5w" secondAttribute="top" id="kvX-Nl-UMk"/>
                             <constraint firstAttribute="bottom" secondItem="6KU-U0-iQX" secondAttribute="bottom" id="ref-ea-uc9"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bannerView" destination="0Wh-Cc-XcR" id="bb3-pW-g0F"/>
                         <outlet property="btnLetsStart" destination="qlU-o8-q3B" id="rFb-GG-Laf"/>
                         <outlet property="camera_switch" destination="QcL-K3-rz0" id="a4h-pQ-KYE"/>
+                        <outlet property="contBannerHeight" destination="v7c-1Z-KVd" id="z1g-P5-BMJ"/>
                         <outlet property="location_switch" destination="yqj-nI-FxB" id="5MJ-eh-cU8"/>
                         <outlet property="motion_switch" destination="lUI-1m-Er3" id="IyK-ln-m4Q"/>
                         <outlet property="notification_switch" destination="IsF-c7-88B" id="9Pk-Lg-L8e"/>
@@ -825,7 +861,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIU-7F-A87">
-                                        <rect key="frame" x="15" y="84" width="56" height="34"/>
+                                        <rect key="frame" x="15" y="37" width="56" height="34"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Cancel">
                                             <color key="titleColor" name="btncolor"/>
@@ -835,10 +871,10 @@
                                         </connections>
                                     </button>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="Eba-8b-4oG">
-                                        <rect key="frame" x="0.0" y="128" width="390" height="648"/>
+                                        <rect key="frame" x="0.0" y="81" width="390" height="729"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5uM-AX-kVK">
-                                                <rect key="frame" x="0.0" y="0.0" width="390" height="648"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="390" height="729"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Your Phone number or select from contact" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUy-Hz-dcB">
                                                         <rect key="frame" x="15" y="50" width="360" height="53.333333333333343"/>
@@ -938,6 +974,7 @@
                                                                                     <userDefinedRuntimeAttribute type="string" keyPath="maskString" value="NNNNN NNNNN"/>
                                                                                 </userDefinedRuntimeAttributes>
                                                                                 <connections>
+                                                                                    <action selector="ClickaddNumber:" destination="r8O-u2-lH8" eventType="touchUpInside" id="pGY-M2-5hu"/>
                                                                                     <action selector="txtNumberEdtingChanged:" destination="r8O-u2-lH8" eventType="editingChanged" id="748-LL-55J"/>
                                                                                 </connections>
                                                                             </textField>
@@ -1028,7 +1065,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCn-4i-9wL" customClass="UIEnableDisable" customModule="LiveLocationTacker" customModuleProvider="target">
-                                                        <rect key="frame" x="60" y="578" width="270" height="60"/>
+                                                        <rect key="frame" x="60" y="659" width="270" height="60"/>
                                                         <color key="backgroundColor" name="bgcolor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="60" id="ctK-wP-zSm"/>
@@ -1056,6 +1093,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="kUa-5E-MSF" secondAttribute="trailing" constant="15" id="KGr-2h-dwp"/>
                                                     <constraint firstItem="V6K-0z-6Nk" firstAttribute="leading" secondItem="5uM-AX-kVK" secondAttribute="leading" constant="30" id="VUP-fn-n8y"/>
                                                     <constraint firstItem="YeL-Ez-ilH" firstAttribute="leading" secondItem="5uM-AX-kVK" secondAttribute="leading" constant="15" id="gqY-OM-t2Q"/>
+                                                    <constraint firstAttribute="bottom" secondItem="cCn-4i-9wL" secondAttribute="bottom" constant="10" id="hhi-jM-gxX"/>
                                                     <constraint firstItem="YeL-Ez-ilH" firstAttribute="top" secondItem="oUy-Hz-dcB" secondAttribute="bottom" constant="10" id="jVI-hZ-NWP"/>
                                                     <constraint firstItem="kUa-5E-MSF" firstAttribute="leading" secondItem="5uM-AX-kVK" secondAttribute="leading" constant="15" id="nnf-hN-IZv"/>
                                                     <constraint firstItem="oUy-Hz-dcB" firstAttribute="leading" secondItem="5uM-AX-kVK" secondAttribute="leading" constant="15" id="qP2-nA-pzz"/>
@@ -1074,12 +1112,22 @@
                                             <constraint firstItem="5uM-AX-kVK" firstAttribute="width" secondItem="Eba-8b-4oG" secondAttribute="width" id="uCv-nA-8Zh"/>
                                         </constraints>
                                     </scrollView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DJB-Ev-tiP">
+                                        <rect key="frame" x="0.0" y="810" width="390" height="0.0"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" id="Cmo-rt-eNE"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" name="bgcolor"/>
                                 <constraints>
                                     <constraint firstItem="bIU-7F-A87" firstAttribute="leading" secondItem="Mna-hG-mz5" secondAttribute="leading" constant="15" id="CNe-QR-8Xd"/>
+                                    <constraint firstAttribute="trailing" secondItem="DJB-Ev-tiP" secondAttribute="trailing" id="Zdf-ba-0bN"/>
                                     <constraint firstItem="Eba-8b-4oG" firstAttribute="top" secondItem="bIU-7F-A87" secondAttribute="bottom" constant="10" id="bub-Dx-CEq"/>
+                                    <constraint firstItem="DJB-Ev-tiP" firstAttribute="leading" secondItem="Mna-hG-mz5" secondAttribute="leading" id="bvl-ah-2dy"/>
                                     <constraint firstItem="Eba-8b-4oG" firstAttribute="leading" secondItem="Mna-hG-mz5" secondAttribute="leading" id="cNe-Xu-pGZ"/>
+                                    <constraint firstItem="DJB-Ev-tiP" firstAttribute="top" secondItem="Eba-8b-4oG" secondAttribute="bottom" id="lAj-3g-F7b"/>
                                     <constraint firstAttribute="trailing" secondItem="Eba-8b-4oG" secondAttribute="trailing" id="m0k-eU-KSZ"/>
                                 </constraints>
                             </view>
@@ -1089,15 +1137,16 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Mna-hG-mz5" secondAttribute="bottom" id="4wr-pP-sfq"/>
                             <constraint firstItem="Mna-hG-mz5" firstAttribute="leading" secondItem="AcT-Fr-J8V" secondAttribute="leading" id="5Lw-WV-rYW"/>
-                            <constraint firstItem="Eba-8b-4oG" firstAttribute="bottom" secondItem="AcT-Fr-J8V" secondAttribute="bottom" id="7Hi-TV-pJF"/>
+                            <constraint firstItem="AcT-Fr-J8V" firstAttribute="bottom" secondItem="DJB-Ev-tiP" secondAttribute="bottom" id="cVK-t2-SfG"/>
                             <constraint firstItem="AcT-Fr-J8V" firstAttribute="top" secondItem="bIU-7F-A87" secondAttribute="top" constant="10" id="hbz-yW-bN0"/>
-                            <constraint firstItem="AcT-Fr-J8V" firstAttribute="bottom" secondItem="cCn-4i-9wL" secondAttribute="bottom" constant="10" id="lr1-ba-6jr"/>
                             <constraint firstItem="Mna-hG-mz5" firstAttribute="top" secondItem="xAw-DM-w96" secondAttribute="top" id="tiR-V9-DhQ"/>
                             <constraint firstAttribute="trailing" secondItem="Mna-hG-mz5" secondAttribute="trailing" id="zks-CA-IIc"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bannerView" destination="DJB-Ev-tiP" id="Qo0-e2-axK"/>
                         <outlet property="btnContinue" destination="cCn-4i-9wL" id="qWf-QN-An2"/>
+                        <outlet property="contBannerHeight" destination="Cmo-rt-eNE" id="5yK-Tl-WFY"/>
                         <outlet property="img_flag" destination="lnP-SE-5c6" id="PKH-7g-kNc"/>
                         <outlet property="invalid_view" destination="SK4-fZ-DtM" id="CuL-Gf-H8u"/>
                         <outlet property="lbl_countrycode" destination="0gY-eX-8Z2" id="wjp-uN-9o5"/>
@@ -1108,7 +1157,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BaB-dN-bsu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3444" y="-96.059113300492612"/>
+            <point key="canvasLocation" x="3443.0769230769229" y="-96.682464454976298"/>
         </scene>
         <!--MobileOTP VerificationVC-->
         <scene sceneID="u5B-gh-BEQ">
@@ -1123,7 +1172,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6vM-Ur-jUq">
-                                <rect key="frame" x="0.0" y="94" width="390" height="750"/>
+                                <rect key="frame" x="0.0" y="47" width="390" height="797"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1c-n7-Biz">
                                         <rect key="frame" x="15" y="10" width="56" height="34"/>
@@ -1136,7 +1185,7 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ffL-xG-X9Z">
-                                        <rect key="frame" x="0.0" y="44" width="390" height="638"/>
+                                        <rect key="frame" x="0.0" y="44" width="390" height="719"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Gm6-7Y-rDa">
                                                 <rect key="frame" x="59.666666666666657" y="65" width="270.66666666666674" height="53.666666666666657"/>
@@ -1156,7 +1205,7 @@
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c0N-zK-iva">
-                                                <rect key="frame" x="35" y="143.66666666666669" width="320" height="55"/>
+                                                <rect key="frame" x="35" y="143.66666666666666" width="320" height="55"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ftr-bh-X7Y">
                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
@@ -1165,7 +1214,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="45" height="55"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZET-h4-OlW">
-                                                                        <rect key="frame" x="22.666666666666664" y="27.666666666666629" width="0.0" height="0.0"/>
+                                                                        <rect key="frame" x="22.666666666666664" y="27.666666666666657" width="0.0" height="0.0"/>
                                                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="20"/>
                                                                         <color key="textColor" name="fontcolor"/>
                                                                         <nil key="highlightedColor"/>
@@ -1194,7 +1243,7 @@
                                                                 <rect key="frame" x="55" y="0.0" width="45" height="55"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0na-bd-ihy">
-                                                                        <rect key="frame" x="22.666666666666671" y="27.666666666666629" width="0.0" height="0.0"/>
+                                                                        <rect key="frame" x="22.666666666666671" y="27.666666666666657" width="0.0" height="0.0"/>
                                                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="20"/>
                                                                         <color key="textColor" name="fontcolor"/>
                                                                         <nil key="highlightedColor"/>
@@ -1221,7 +1270,7 @@
                                                                 <rect key="frame" x="110" y="0.0" width="45" height="55"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4g-Mr-5cQ">
-                                                                        <rect key="frame" x="22.666666666666657" y="27.666666666666629" width="0.0" height="0.0"/>
+                                                                        <rect key="frame" x="22.666666666666657" y="27.666666666666657" width="0.0" height="0.0"/>
                                                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="20"/>
                                                                         <color key="textColor" name="fontcolor"/>
                                                                         <nil key="highlightedColor"/>
@@ -1248,7 +1297,7 @@
                                                                 <rect key="frame" x="165" y="0.0" width="45" height="55"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5L-Rm-P5P">
-                                                                        <rect key="frame" x="22.666666666666657" y="27.666666666666629" width="0.0" height="0.0"/>
+                                                                        <rect key="frame" x="22.666666666666657" y="27.666666666666657" width="0.0" height="0.0"/>
                                                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="20"/>
                                                                         <color key="textColor" name="fontcolor"/>
                                                                         <nil key="highlightedColor"/>
@@ -1275,7 +1324,7 @@
                                                                 <rect key="frame" x="220" y="0.0" width="45" height="55"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cok-4j-iAf">
-                                                                        <rect key="frame" x="22.666666666666686" y="27.666666666666629" width="0.0" height="0.0"/>
+                                                                        <rect key="frame" x="22.666666666666686" y="27.666666666666657" width="0.0" height="0.0"/>
                                                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="20"/>
                                                                         <color key="textColor" name="fontcolor"/>
                                                                         <nil key="highlightedColor"/>
@@ -1302,7 +1351,7 @@
                                                                 <rect key="frame" x="275" y="0.0" width="45" height="55"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q22-Vy-uNL">
-                                                                        <rect key="frame" x="22.666666666666686" y="27.666666666666629" width="0.0" height="0.0"/>
+                                                                        <rect key="frame" x="22.666666666666686" y="27.666666666666657" width="0.0" height="0.0"/>
                                                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="20"/>
                                                                         <color key="textColor" name="fontcolor"/>
                                                                         <nil key="highlightedColor"/>
@@ -1394,7 +1443,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQX-8C-dcf" customClass="UIEnableDisable" customModule="LiveLocationTacker" customModuleProvider="target">
-                                                <rect key="frame" x="60" y="568" width="270" height="60"/>
+                                                <rect key="frame" x="60" y="649" width="270" height="60"/>
                                                 <color key="backgroundColor" name="bgcolor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="KaJ-do-Ntb"/>
@@ -1422,33 +1471,45 @@
                                             <constraint firstItem="ZNu-1G-aIt" firstAttribute="centerX" secondItem="ffL-xG-X9Z" secondAttribute="centerX" id="voK-2D-OBd"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="paN-rB-zEg">
+                                        <rect key="frame" x="0.0" y="763" width="390" height="0.0"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" id="K6a-xn-ob7"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" name="bgcolor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="ffL-xG-X9Z" secondAttribute="trailing" id="9t7-Tg-Cbh"/>
+                                    <constraint firstAttribute="trailing" secondItem="paN-rB-zEg" secondAttribute="trailing" id="AKQ-AD-KIa"/>
                                     <constraint firstItem="ffL-xG-X9Z" firstAttribute="leading" secondItem="6vM-Ur-jUq" secondAttribute="leading" id="BOW-2r-Tiz"/>
                                     <constraint firstItem="ffL-xG-X9Z" firstAttribute="top" secondItem="m1c-n7-Biz" secondAttribute="bottom" id="JI0-WN-Rd7"/>
                                     <constraint firstItem="m1c-n7-Biz" firstAttribute="top" secondItem="6vM-Ur-jUq" secondAttribute="top" constant="10" id="KRg-RX-Aaf"/>
+                                    <constraint firstItem="paN-rB-zEg" firstAttribute="leading" secondItem="6vM-Ur-jUq" secondAttribute="leading" id="Mrr-Tk-935"/>
                                     <constraint firstItem="m1c-n7-Biz" firstAttribute="leading" secondItem="6vM-Ur-jUq" secondAttribute="leading" constant="15" id="Puc-5H-cvr"/>
+                                    <constraint firstItem="paN-rB-zEg" firstAttribute="top" secondItem="ffL-xG-X9Z" secondAttribute="bottom" id="gPw-6C-zXR"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="D1z-Pr-dS3"/>
                         <color key="backgroundColor" name="bgcolor"/>
                         <constraints>
-                            <constraint firstItem="ffL-xG-X9Z" firstAttribute="bottom" secondItem="D1z-Pr-dS3" secondAttribute="bottom" id="AAj-dG-2Wt"/>
                             <constraint firstAttribute="bottom" secondItem="6vM-Ur-jUq" secondAttribute="bottom" id="XJO-Jm-bXa"/>
                             <constraint firstAttribute="trailing" secondItem="6vM-Ur-jUq" secondAttribute="trailing" id="cmJ-LS-qQM"/>
                             <constraint firstAttribute="bottom" secondItem="6vM-Ur-jUq" secondAttribute="bottom" id="fJD-df-gRB"/>
                             <constraint firstItem="6vM-Ur-jUq" firstAttribute="leading" secondItem="fXy-Bj-gZd" secondAttribute="leading" id="lsH-U4-Pux"/>
                             <constraint firstAttribute="trailing" secondItem="6vM-Ur-jUq" secondAttribute="trailing" id="nzc-1M-6ze"/>
                             <constraint firstItem="6vM-Ur-jUq" firstAttribute="leading" secondItem="fXy-Bj-gZd" secondAttribute="leading" id="o65-wr-Tcc"/>
+                            <constraint firstItem="D1z-Pr-dS3" firstAttribute="bottom" secondItem="paN-rB-zEg" secondAttribute="bottom" id="qbZ-eJ-MlM"/>
                             <constraint firstItem="6vM-Ur-jUq" firstAttribute="top" secondItem="AVZ-TQ-TkJ" secondAttribute="bottom" id="vgs-XW-xAH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ZVL-wR-cpP"/>
                     <connections>
+                        <outlet property="bannerView" destination="paN-rB-zEg" id="pBz-We-LR0"/>
                         <outlet property="btnVerify" destination="vQX-8C-dcf" id="NRe-PK-1n9"/>
+                        <outlet property="contBannerHeight" destination="K6a-xn-ob7" id="yAM-bC-FAW"/>
                         <outlet property="label1" destination="ZET-h4-OlW" id="qQq-2c-g5e"/>
                         <outlet property="label2" destination="0na-bd-ihy" id="10D-ZT-VnJ"/>
                         <outlet property="label3" destination="l4g-Mr-5cQ" id="de0-vA-BzM"/>
@@ -1480,7 +1541,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rqv-hR-SA4">
-                                <rect key="frame" x="0.0" y="138" width="390" height="638"/>
+                                <rect key="frame" x="0.0" y="91" width="390" height="719"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOi-XF-zxq">
                                         <rect key="frame" x="15" y="10" width="56" height="34"/>
@@ -1494,7 +1555,7 @@
                                         </connections>
                                     </button>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5k-U1-xte">
-                                        <rect key="frame" x="0.0" y="54" width="390" height="584"/>
+                                        <rect key="frame" x="0.0" y="54" width="390" height="665"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hZ1-aP-z9W">
                                                 <rect key="frame" x="0.0" y="0.0" width="390" height="658"/>
@@ -1615,6 +1676,9 @@
                                                                                 <color key="value" name="Color-7C7C80"/>
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="clickName:" destination="wgt-Eq-BXg" eventType="touchUpInside" id="hKE-4h-Zfm"/>
+                                                                        </connections>
                                                                     </textField>
                                                                 </subviews>
                                                                 <color key="backgroundColor" name="cell_bg"/>
@@ -1640,7 +1704,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Gender" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVJ-Ay-e4W">
-                                                        <rect key="frame" x="25" y="366.33333333333337" width="113" height="22.666666666666686"/>
+                                                        <rect key="frame" x="25" y="366.33333333333331" width="113" height="22.666666666666686"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="22.670000000000002" id="c5d-eT-BJP"/>
                                                         </constraints>
@@ -1766,16 +1830,25 @@
                                             <constraint firstAttribute="trailing" secondItem="hZ1-aP-z9W" secondAttribute="trailing" id="h9m-er-Nbz"/>
                                         </constraints>
                                     </scrollView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cuh-fS-egk">
+                                        <rect key="frame" x="0.0" y="719" width="390" height="0.0"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" id="GRt-KH-pde"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="c5k-U1-xte" secondAttribute="trailing" id="A3L-6z-86T"/>
                                     <constraint firstItem="c5k-U1-xte" firstAttribute="leading" secondItem="Rqv-hR-SA4" secondAttribute="leading" id="F9K-7x-oQ9"/>
                                     <constraint firstItem="c5k-U1-xte" firstAttribute="top" secondItem="hOi-XF-zxq" secondAttribute="bottom" constant="10" id="JzA-Uk-jwU"/>
+                                    <constraint firstAttribute="trailing" secondItem="Cuh-fS-egk" secondAttribute="trailing" id="P1A-n1-HDX"/>
                                     <constraint firstItem="hOi-XF-zxq" firstAttribute="leading" secondItem="Rqv-hR-SA4" secondAttribute="leading" constant="15" id="PGz-Sg-BpY"/>
-                                    <constraint firstAttribute="bottom" secondItem="c5k-U1-xte" secondAttribute="bottom" id="ghi-ZT-ZRT"/>
+                                    <constraint firstItem="Cuh-fS-egk" firstAttribute="leading" secondItem="Rqv-hR-SA4" secondAttribute="leading" id="bwc-qr-Ggs"/>
                                     <constraint firstItem="c5k-U1-xte" firstAttribute="centerX" secondItem="Rqv-hR-SA4" secondAttribute="centerX" id="kAp-b2-vAf"/>
                                     <constraint firstItem="hOi-XF-zxq" firstAttribute="top" secondItem="Rqv-hR-SA4" secondAttribute="top" constant="10" id="ka7-jS-LfR"/>
+                                    <constraint firstItem="Cuh-fS-egk" firstAttribute="top" secondItem="c5k-U1-xte" secondAttribute="bottom" id="qbL-ts-I6O"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1784,16 +1857,19 @@
                         <constraints>
                             <constraint firstItem="Rqv-hR-SA4" firstAttribute="leading" secondItem="94a-mN-gv9" secondAttribute="leading" id="0jr-AZ-wpB"/>
                             <constraint firstItem="94a-mN-gv9" firstAttribute="trailing" secondItem="Rqv-hR-SA4" secondAttribute="trailing" id="0jr-BF-9sG"/>
+                            <constraint firstItem="94a-mN-gv9" firstAttribute="bottom" secondItem="Cuh-fS-egk" secondAttribute="bottom" id="HAQ-rM-rgM"/>
                             <constraint firstItem="94a-mN-gv9" firstAttribute="bottom" secondItem="Rqv-hR-SA4" secondAttribute="bottom" id="ZeT-Vb-0JE"/>
                             <constraint firstItem="Rqv-hR-SA4" firstAttribute="top" secondItem="94a-mN-gv9" secondAttribute="top" id="mDm-Pz-KPh"/>
                         </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="bannerView" destination="Cuh-fS-egk" id="kzH-xu-6ps"/>
                         <outlet property="btnDelete" destination="f4M-if-jwT" id="oW3-bN-M2o"/>
                         <outlet property="btnFemale" destination="W6e-Z9-eMj" id="TZo-sE-nio"/>
                         <outlet property="btnMale" destination="eJ5-Gu-tVN" id="KaV-0j-KNq"/>
                         <outlet property="btnUpdate" destination="kwO-8a-TuB" id="SST-xg-XlR"/>
+                        <outlet property="contBannerHeight" destination="GRt-KH-pde" id="BJI-yj-2VC"/>
                         <outlet property="pencil_view" destination="HoU-Ha-HeM" id="o97-wS-DwC"/>
                         <outlet property="profile_img" destination="WEv-TV-zNM" id="ACZ-YA-5Ui"/>
                         <outlet property="round_imgview" destination="kib-V1-SHM" id="ZNa-us-07j"/>
@@ -1825,7 +1901,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RwR-b1-wdZ">
-                                <rect key="frame" x="20" y="516" width="350" height="240"/>
+                                <rect key="frame" x="20" y="550" width="350" height="240"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="7ZK-yJ-wmw">
                                         <rect key="frame" x="15" y="15" width="320" height="210"/>
@@ -1995,7 +2071,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

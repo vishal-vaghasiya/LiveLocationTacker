@@ -73,9 +73,12 @@ class SosVC: UIViewController {
                         print("Fetched FCM Tokens: \(fcmTokens)")
                         for i in 0..<fcmTokens.count {
                             let token = fcmTokens[i]
-                            let phoneNumer = phoneNumbers[i]
+                            //let phoneNumer = phoneNumbers[i]
                             if token != "" {
-                                self.firebaseManager.sendPushNotification(fcmToken: token, body: sosMSG)
+                                FCMNotificationManager.shared.sendPushNotification(type: .sos, fcmToken: token, body: sosMSG) { success, message in
+                                    print(message)
+                                }
+                                //self.firebaseManager.sendPushNotification(type: .sos, fcmToken: token, body: sosMSG)
                             } /*else {
                                if let phoneURL = URL(string: "tel://\(phoneNumer)"), UIApplication.shared.canOpenURL(phoneURL) {
                                UIApplication.shared.open(phoneURL)
@@ -98,6 +101,7 @@ class SosVC: UIViewController {
     
     // MARK: - BUTTON CLICK
     @IBAction func btnStopAction(_ sender: UIButton) {
+        FirebaseManager.shared.logAnalyticsEvent(name: .sos_click_stop)
         timer?.invalidate()
         timer = nil
         self.dismiss(animated: true)

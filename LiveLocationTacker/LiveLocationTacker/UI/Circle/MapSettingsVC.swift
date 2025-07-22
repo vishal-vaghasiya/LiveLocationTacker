@@ -12,6 +12,7 @@ struct MapTypeOption {
     let mapType: MKMapType
     let imageName: String
     let displayName: String
+    let eventName : AnalyticsEventName
 }
 
 class MapSettingsVC: UIViewController {
@@ -22,9 +23,9 @@ class MapSettingsVC: UIViewController {
     // MARK: - PROPERTY
     var selectedMapType: MKMapType = .standard
     var arrOfMaptypes: [MapTypeOption] = [
-        MapTypeOption(mapType: .standard, imageName: "standard_map", displayName: "Standard"),
-        MapTypeOption(mapType: .satellite, imageName: "satellite_map", displayName: "Satellite"),
-        MapTypeOption(mapType: .hybrid, imageName: "hybrid_map", displayName: "Hybrid"),
+        MapTypeOption(mapType: .standard, imageName: "standard_map", displayName: "Standard", eventName: AnalyticsEventName.map_click_standard),
+        MapTypeOption(mapType: .satellite, imageName: "satellite_map", displayName: "Satellite", eventName: AnalyticsEventName.map_click_satellite),
+        MapTypeOption(mapType: .hybrid, imageName: "hybrid_map", displayName: "Hybrid", eventName: AnalyticsEventName.map_click_hybrid),
     ]
     var updateMap:((MKMapType)->Void)?
     // MARK: - LIFE CYCLE
@@ -73,6 +74,7 @@ extension MapSettingsVC: UICollectionViewDelegate, UICollectionViewDataSource, U
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let data = arrOfMaptypes[indexPath.row]
+        FirebaseManager.shared.logAnalyticsEvent(name: data.eventName)
         if selectedMapType != data.mapType {
             selectedMapType = data.mapType
             self.mapTypeCV.reloadData()

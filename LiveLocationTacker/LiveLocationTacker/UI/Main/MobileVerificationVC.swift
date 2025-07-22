@@ -26,6 +26,10 @@ class MobileOTPVerificationVC: UIViewController , UIGestureRecognizerDelegate {
     
     
     @IBOutlet weak var btnVerify: UIEnableDisable!
+    
+    @IBOutlet weak var contBannerHeight: NSLayoutConstraint!
+    @IBOutlet weak var bannerView: UIView!
+    
     // MARK: - PROPERTY
     var count = 30  // 60sec if you want
     var resendTimer = Timer()
@@ -43,6 +47,7 @@ class MobileOTPVerificationVC: UIViewController , UIGestureRecognizerDelegate {
         self.hideKeyboardWhenTappedAround()
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         setupData()
+        self.setBannerAds()
     }
     
     func startTimer(){
@@ -61,6 +66,20 @@ class MobileOTPVerificationVC: UIViewController , UIGestureRecognizerDelegate {
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         return false
     }
+    
+    func setBannerAds() {
+        AdManager.shared.loadBannerAd(in: self.bannerView, rootViewController: self) { isShow in
+            if isShow {
+                UIView.animate(withDuration: 0.5) {
+                    self.contBannerHeight.constant = 50
+                    self.view.layoutIfNeeded()
+                }
+            } else {
+                self.contBannerHeight.constant = 0
+            }
+        }
+    }
+    
     
     @objc func update() {
         if(count > 0) {
@@ -91,11 +110,11 @@ class MobileOTPVerificationVC: UIViewController , UIGestureRecognizerDelegate {
     
     @IBAction func resendOTPClick(_ sender: UIButton) {
         self.resetTxtOtp()
-        self.showLoader(text: "Loading...")
-        
+        showLoader(text: "Loading...")
+        FirebaseManager.shared.logAnalyticsEvent(name: .otp_click_resend)
         firebaseManager.resendOTP(phoneNumber: mobileNumber) { success, error in
-            self.hideLoader()
-            self.showToastMessage(error ?? "")
+            hideLoader()
+            showToastMessage(error ?? "")
             if success {
                 self.count = 30
                 self.startTimer()
@@ -104,10 +123,11 @@ class MobileOTPVerificationVC: UIViewController , UIGestureRecognizerDelegate {
     }
     
     @IBAction func verifyClick(_ sender: UIEnableDisable) {
-        self.showLoader(text: "Loading...")
+        showLoader(text: "Loading...")
+        FirebaseManager.shared.logAnalyticsEvent(name: .otp_click_verify)
         self.firebaseManager.verifyOTP(otpCode: txtOTP.text ?? "") { success, error in
-            self.hideLoader()
-            self.showToastMessage(error ?? "")
+            hideLoader()
+            showToastMessage(error ?? "")
             if success {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
                     self.creatingStaticCircle()
@@ -153,7 +173,7 @@ class MobileOTPVerificationVC: UIViewController , UIGestureRecognizerDelegate {
         
 //        firebaseManager.isExistingUser(phoneNumber.digitsOnly) { isExisting, data in
 //            if isExisting {
-//                self.hideLoader()
+//                hideLoader()
 //                let existingNumber = data?["admin"] as? String ?? ""
 //                let existingName = data?["name"] as? String ?? ""
 //                let existingCode = data?["code"] as? String ?? ""
@@ -182,7 +202,7 @@ class MobileOTPVerificationVC: UIViewController , UIGestureRecognizerDelegate {
 //                                                  countryCode: self.phoneCode,
 //                                                  userPhone: self.phoneNumber.digitsOnly,
 //                                                  batteryLevel: batteryLevel) { [self] generatedCode in
-//                    self.hideLoader()
+//                    hideLoader()
 //
 //                    DefaultManager.User.COUNTRY_CODE = phoneCode
 //                    DefaultManager.User.PHONE = mobileNumber.digitsOnly
@@ -204,8 +224,8 @@ class MobileOTPVerificationVC: UIViewController , UIGestureRecognizerDelegate {
 //            }
 //        }
         
-        LocationManager.shared.getCurrentLocation { location in
-            LocationManager.shared.getGoogleAddress(lat: location.coordinate.latitude, long: location.coordinate.longitude) { address in
+        LocationManager.shared.fetchCurrentLocation { location in
+            LocationManager.shared.getAddressFrom(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude) { address in
                 
                 let param: [String: Any] = [
                     FirebaseKeys.name: self.name,
@@ -218,15 +238,21 @@ class MobileOTPVerificationVC: UIViewController , UIGestureRecognizerDelegate {
                     FirebaseKeys.latitude: location.coordinate.latitude,
                     FirebaseKeys.longitude: location.coordinate.longitude,
                     FirebaseKeys.address: address ?? "N/A",
-                    FirebaseKeys.timestamp: Date().getCurrentUTCTimestampInfo().timestampSeconds
+                    FirebaseKeys.timestamp: Date().getCurrentUTCTimestampInfo().timestampSeconds,
+                    
+                    FirebaseKeys.childMode: [
+                        FirebaseKeys.code : "",
+                        FirebaseKeys.enabled : 0,
+                        FirebaseKeys.ownerPhone : "",
+                    ]
                 ]
                 
                 self.firebaseManager.checkAndSaveUser(phoneNumber: self.phoneNumber.digitsOnly, param: param) { success, message, userData  in
-                    self.hideLoader()
-                    print(message)
+                    hideLoader()
+                    //print(message)
                     if success {
                         if let user = userData {
-                            print("User Data: \(user)")
+                            //print("User Data: \(user)")
                             
                             let name = user[FirebaseKeys.name] as? String ?? ""
                             let gender = user[FirebaseKeys.gender] as? String ?? ""
@@ -246,12 +272,14 @@ class MobileOTPVerificationVC: UIViewController , UIGestureRecognizerDelegate {
                             DefaultManager.Permission.CAMERA = true
                             DefaultManager.Permission.MOTION = true
                             
-                            let vc = StoryboardScene.Main.setProfileVC.instantiate()
-                            vc.hidesBottomBarWhenPushed = true
-                            self.navigationController?.pushViewController(vc, animated: true)
+                            AdManager.shared.showInterstitialAd(from: self) {
+                                let vc = StoryboardScene.Main.setProfileVC.instantiate()
+                                vc.hidesBottomBarWhenPushed = true
+                                self.navigationController?.pushViewController(vc, animated: true)
+                            }
                         }
                     } else {
-                        self.showToastMessage(message)
+                        showToastMessage(message)
                     }
                 }
                 

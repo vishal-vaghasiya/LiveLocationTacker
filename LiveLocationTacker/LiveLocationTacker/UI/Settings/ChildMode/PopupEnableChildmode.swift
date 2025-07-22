@@ -10,16 +10,32 @@ import UIKit
 class PopupEnableChildmode: UIViewController {
 
     // MARK: - OUTLET
+    @IBOutlet weak var contBannerHeight: NSLayoutConstraint!
+    @IBOutlet weak var bannerView: UIView!
     
     // MARK: - PROPERTY
     
     // MARK: - LIFE CYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.setBannerAds()
     }
     
     // MARK: - UI SETUP
+    
+    // MARK: - Setup Ads
+    func setBannerAds() {
+        AdManager.shared.loadBannerAd(in: self.bannerView, rootViewController: self) { isShow in
+            if isShow {
+                UIView.animate(withDuration: 0.5) {
+                    self.contBannerHeight.constant = 50
+                    self.view.layoutIfNeeded()
+                }
+            } else {
+                self.contBannerHeight.constant = 0
+            }
+        }
+    }
     
     //MARK: - SOCKET EVENT
     
@@ -29,6 +45,7 @@ class PopupEnableChildmode: UIViewController {
     }
     
     @IBAction func disableClick(_ sender: UIButton) {
+        FirebaseManager.shared.logAnalyticsEvent(name: .setting_childmode_click_diable)
         let vc = StoryboardScene.ChildMode.popupRequestToDisable.instantiate()
         vc.modalPresentationStyle = .overFullScreen
         self.present(vc, animated: false)

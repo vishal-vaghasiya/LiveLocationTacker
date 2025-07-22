@@ -22,6 +22,8 @@ internal enum StoryboardScene {
 
     internal static let popupInviteChildMode = SceneType<LiveLocationTacker.PopupInviteChildMode>(storyboard: ChildMode.self, identifier: "PopupInviteChildMode")
 
+    internal static let popupOwnerChildMode = SceneType<LiveLocationTacker.PopupOwnerChildMode>(storyboard: ChildMode.self, identifier: "PopupOwnerChildMode")
+
     internal static let popupRequestToDisable = SceneType<LiveLocationTacker.PopupRequestToDisable>(storyboard: ChildMode.self, identifier: "PopupRequestToDisable")
   }
   internal enum Circle: StoryboardType {

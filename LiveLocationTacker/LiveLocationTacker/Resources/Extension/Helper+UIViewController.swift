@@ -81,36 +81,6 @@ extension UIViewController {
         }
     }
     
-    func showLoader(text: String){
-        DispatchQueue.main.async {
-            ProgressHUD.animate(text, interaction: false)
-            ProgressHUD.animationType = .circleStrokeSpin
-            ProgressHUD.colorAnimation = .maincolor
-        }
-    }
-    
-    func hideLoader(){
-        DispatchQueue.main.async {
-            ProgressHUD.dismiss()
-        }
-    }
-    
-    func showToastMessage(_ message: String) {
-        DispatchQueue.main.async {
-            var style = ToastStyle()
-            style.backgroundColor = .maincolor
-            style.messageColor = .white
-            ToastManager.shared.style = style
-            getTopMostViewController()?.view.makeToast(message,duration: 2.0, position: .top, style: style)
-        }
-    }
-    
-    func copyTextToClipboard(_ text: String) {
-        let pasteboard = UIPasteboard.general
-        pasteboard.string = text
-        ROOTVIEW?.showToastMessage("Copy clipboard")
-    }
-    
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
@@ -119,5 +89,17 @@ extension UIViewController {
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+    
+    func openNotification(){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+            if DefaultManager.NotificationSettings.notificationType == 2 {
+                let vc = StoryboardScene.ChildMode.popupInviteChildMode.instantiate()
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true) {
+                    DefaultManager.NotificationSettings.notificationType = 0
+                }
+            }
+        })
     }
 }

@@ -119,6 +119,8 @@ internal enum Asset {
   internal static let group3994 = ImageAsset(name: "Group 3994")
   internal static let vector2 = ImageAsset(name: "Vector 2")
   internal static let vector3 = ImageAsset(name: "Vector 3")
+  internal static let batteryLow = ImageAsset(name: "battery-low")
+  internal static let batteryMid = ImageAsset(name: "battery-mid")
   internal static let battery = ImageAsset(name: "battery")
   internal static let engineer = ImageAsset(name: "engineer")
   internal static let gps = ImageAsset(name: "gps")

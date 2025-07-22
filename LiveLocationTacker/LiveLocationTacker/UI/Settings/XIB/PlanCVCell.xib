@@ -9,6 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Poppins-Bold.ttf">
+            <string>Poppins-Bold</string>
+        </array>
         <array key="Poppins-Medium.ttf">
             <string>Poppins-Medium</string>
         </array>
@@ -26,15 +29,28 @@
                 <rect key="frame" x="0.0" y="0.0" width="220" height="295"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="free_trial_bg" translatesAutoresizingMaskIntoConstraints="NO" id="ffR-U8-a0s">
-                        <rect key="frame" x="50.999999999999993" y="0.0" width="118.33333333333331" height="26"/>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 Day Free Trial" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yYA-ha-uRb">
-                        <rect key="frame" x="72.333333333333314" y="6" width="75.666666666666686" height="14"/>
-                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="10"/>
-                        <color key="textColor" name="Color-00131A"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rHK-Mb-b8d">
+                        <rect key="frame" x="0.0" y="0.0" width="220" height="26"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="free_trial_bg" translatesAutoresizingMaskIntoConstraints="NO" id="ffR-U8-a0s">
+                                <rect key="frame" x="50.999999999999993" y="0.0" width="118.33333333333331" height="26"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 Day Free Trial" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yYA-ha-uRb">
+                                <rect key="frame" x="72.333333333333314" y="6" width="75.666666666666686" height="14"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="10"/>
+                                <color key="textColor" name="Color-00131A"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ffR-U8-a0s" secondAttribute="bottom" id="7YY-I7-fPz"/>
+                            <constraint firstItem="yYA-ha-uRb" firstAttribute="centerX" secondItem="ffR-U8-a0s" secondAttribute="centerX" id="9vB-47-O4N"/>
+                            <constraint firstItem="ffR-U8-a0s" firstAttribute="centerX" secondItem="rHK-Mb-b8d" secondAttribute="centerX" id="XRw-mZ-REQ"/>
+                            <constraint firstItem="yYA-ha-uRb" firstAttribute="centerY" secondItem="ffR-U8-a0s" secondAttribute="centerY" id="fWm-4u-74x"/>
+                            <constraint firstItem="ffR-U8-a0s" firstAttribute="top" secondItem="rHK-Mb-b8d" secondAttribute="top" id="yyw-MH-Md8"/>
+                        </constraints>
+                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oJk-5L-PCB">
                         <rect key="frame" x="0.0" y="26" width="220" height="269"/>
                         <subviews>
@@ -191,23 +207,26 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
+                <constraint firstItem="rHK-Mb-b8d" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="8mJ-cb-HEc"/>
                 <constraint firstItem="oJk-5L-PCB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="CQN-Tj-KWT"/>
-                <constraint firstItem="yYA-ha-uRb" firstAttribute="centerX" secondItem="ffR-U8-a0s" secondAttribute="centerX" id="Dr5-tM-df9"/>
-                <constraint firstItem="yYA-ha-uRb" firstAttribute="centerY" secondItem="ffR-U8-a0s" secondAttribute="centerY" id="PAI-2I-4rr"/>
-                <constraint firstItem="ffR-U8-a0s" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="TEX-KD-9ye"/>
+                <constraint firstItem="oJk-5L-PCB" firstAttribute="top" secondItem="rHK-Mb-b8d" secondAttribute="bottom" id="KNj-w9-mco"/>
                 <constraint firstAttribute="trailing" secondItem="oJk-5L-PCB" secondAttribute="trailing" id="W4c-rK-RMa"/>
-                <constraint firstItem="oJk-5L-PCB" firstAttribute="top" secondItem="ffR-U8-a0s" secondAttribute="bottom" id="djg-NV-uuf"/>
-                <constraint firstItem="ffR-U8-a0s" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="qdx-KZ-SKz"/>
+                <constraint firstItem="rHK-Mb-b8d" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="hFH-CY-sD5"/>
+                <constraint firstAttribute="trailing" secondItem="rHK-Mb-b8d" secondAttribute="trailing" id="piu-Gy-lS5"/>
                 <constraint firstAttribute="bottom" secondItem="oJk-5L-PCB" secondAttribute="bottom" id="x1T-eO-DPf"/>
             </constraints>
             <connections>
+                <outlet property="freeTrialView" destination="rHK-Mb-b8d" id="nvC-UE-J9J"/>
                 <outlet property="ivBattery" destination="dTn-QL-UHt" id="mp4-8T-hQB"/>
                 <outlet property="ivLocation" destination="F2V-kQ-QdS" id="Oog-uK-b2X"/>
                 <outlet property="ivNoAds" destination="Tdc-93-aVv" id="hZe-fF-W93"/>
                 <outlet property="ivNotification" destination="rev-Yt-EYd" id="5mW-Nn-0WM"/>
                 <outlet property="ivSelection" destination="eU3-Uv-04h" id="DF7-U9-fM3"/>
+                <outlet property="lblPlanDuration" destination="FtH-As-rG5" id="NE8-Qt-kln"/>
                 <outlet property="lblPrice" destination="4Tt-zf-i5l" id="tsz-lI-bfC"/>
                 <outlet property="lblPricePerMonth" destination="R7k-pD-khk" id="Deb-aI-aRC"/>
+                <outlet property="lblTrialDuration" destination="yYA-ha-uRb" id="gAE-QL-gn4"/>
+                <outlet property="mainView" destination="oJk-5L-PCB" id="XGk-dO-y7k"/>
             </connections>
             <point key="canvasLocation" x="-143.5114503816794" y="-11.619718309859156"/>
         </collectionViewCell>
@@ -226,10 +245,10 @@
             <color red="0.0" green="0.74117647058823533" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Color-020202-30">
-            <color red="0.0078431372549019607" green="0.0078431372549019607" blue="0.0078431372549019607" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0078431372549019607" green="0.0078431372549019607" blue="0.0078431372549019607" alpha="0.30000001192092896" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Color-FFFFFF-20">
-            <color red="0.99607843137254903" green="1" blue="1" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.99607843137254903" green="1" blue="1" alpha="0.20000000298023224" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="fontcolor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

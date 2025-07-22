@@ -9,10 +9,11 @@ import UIKit
 import MapKit
 import FirebaseDatabase
 import Lottie
+import SDWebImage
 
-var selectedGroupsnapSort:DataSnapshot?
+var selectedCircleInfo: CircleInfo?
 
-class CircleVC: UIViewController {
+class CircleVC: BaseViewController {
     
     // MARK: - Outlets
     @IBOutlet weak var lbl_circleName: UILabel!
@@ -21,13 +22,19 @@ class CircleVC: UIViewController {
     @IBOutlet weak var map_view: MKMapView!
     @IBOutlet weak var bottom_view: UIView!
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var premiumButtonView: UIView!
     @IBOutlet weak var plus_lottieview: UIView!
+    @IBOutlet weak var btnPlusMember: UIButton!
+    
+    @IBOutlet weak var contBannerHeight: NSLayoutConstraint!
+    @IBOutlet weak var bannerView: UIView!
     
     // MARK: - Properties
     let firebaseManager = FirebaseManager.shared
     let locationManager = CLLocationManager()
     var arrOfMember: [UserInfo] = []
-    var groupSnapSortList = [DataSnapshot]()
+    var arrOfCircle = [CircleInfo]()
     var currentMapType: MKMapType = .standard
     
     var locationPoints: [UserLocationModel] = []
@@ -35,15 +42,38 @@ class CircleVC: UIViewController {
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchAllCircle()
         
         map_view.delegate = self
         map_view.showsUserLocation = false
         locationManager.startUpdatingLocation()
-        
-        UIDevice.current.isBatteryMonitoringEnabled = true
-        NotificationCenter.default.addObserver(self, selector: #selector(batteryLevelDidChange), name: UIDevice.batteryLevelDidChangeNotification, object: nil)
-        
+        FirebaseManager.shared.logAnalyticsEvent(name: .home_click_circle)
+        self.setBannerAds()
+        if isComeFromLogin {
+            after(2) {
+                isComeFromLogin = false
+                let vc = StoryboardScene.Circle.popupShareAppFirstime.instantiate()
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: false)
+            }
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.premiumButtonView.isHidden = DefaultManager.User.IS_CHILD_MODE_ENABLE || DefaultManager.IS_SUBSCRIPTION
+        self.btnPlusMember.isHidden = DefaultManager.User.IS_CHILD_MODE_ENABLE
+        self.plus_lottieview.isHidden = DefaultManager.User.IS_CHILD_MODE_ENABLE
+        self.fetchAllCircle(isShowLoader: selectedCircleInfo == nil)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.setupPlusButtonAnimation()
+        self.requestTrackingPermission { }
+    }
+    
+    // MARK: - Setup Ads
+    func setupPlusButtonAnimation() {
         let animationView = LottieAnimationView(name: "Plus")
         animationView.contentMode = .scaleAspectFill
         animationView.loopMode = .loop
@@ -52,132 +82,146 @@ class CircleVC: UIViewController {
         animationView.play()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.navigationBar.isHidden = true
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.navigationBar.isHidden = false
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        self.requestTrackingPermission { }
+    func setBannerAds() {
+        AdManager.shared.loadBannerAd(in: self.bannerView, rootViewController: self) { isShow in
+            if isShow {
+                UIView.animate(withDuration: 0.5) {
+                    self.contBannerHeight.constant = 50
+                    self.view.layoutIfNeeded()
+                }
+            } else {
+                self.contBannerHeight.constant = 0
+            }
+        }
     }
     
     // MARK: - Firebase & API Methods
-    func fetchAllCircle() {
-//        firebaseManager.saveFcmTokenFirebase()
-//        firebaseManager.fetchAllCircles(phoneNumber: DefaultManager.User.PHONE) { ListSnapSort in
-//            DispatchQueue.main.async {
-//                self.groupSnapSortList = ListSnapSort
-//                selectedGroupsnapSort = ListSnapSort.first
-//                self.lbl_circleName.text = selectedGroupsnapSort?.childSnapshot(forPath: "name").value as? String ?? ""
-//                DefaultManager.Cirlce.CURRENT_CODE = selectedGroupsnapSort?.childSnapshot(forPath: "code").value as? String ?? ""
-//                self.getMemberList()
-//            }
-//        }
-        
-        self.showLoader(text: "Loading...")
-         firebaseManager.getMyCircle(completion: { success,message,snapshot  in
-            self.hideLoader()
-            if success {
-                DispatchQueue.main.async {
-                    self.groupSnapSortList = snapshot
-                    selectedGroupsnapSort = snapshot.first
-                    self.lbl_circleName.text = selectedGroupsnapSort?.childSnapshot(forPath: FirebaseKeys.name).value as? String ?? ""
-                    self.getMemberList()
-                }
+    func fetchAllCircle(isShowLoader: Bool = true) {
+        if isShowLoader {
+            showLoader(text: "Loading...")
+        }
+        firebaseManager.fetchUserData() { result, message in
+            switch result {
+            case .success(let userData):
+                let childCode = userData.childMode
+                self.firebaseManager.getMyCircle(completion: { success,message,data  in
+                    hideLoader()
+                    if success {
+                        DispatchQueue.main.async {
+                            self.arrOfCircle = data
+                            if childCode.code == "" {
+                                if selectedCircleInfo == nil {
+                                    selectedCircleInfo = data.first
+                                } else {
+                                    let filteredList = self.arrOfCircle.filter { $0.code == selectedCircleInfo?.code }
+                                    if filteredList.count > 0 {
+                                        selectedCircleInfo = filteredList[0]
+                                    }
+                                }
+                            } else {
+                                let filteredList = self.arrOfCircle.filter { $0.code == childCode.code }
+                                if filteredList.count > 0 {
+                                    selectedCircleInfo = filteredList[0]
+                                } else {
+                                    if selectedCircleInfo == nil {
+                                        selectedCircleInfo = data.first
+                                    } else {
+                                        let filteredList = self.arrOfCircle.filter { $0.code == selectedCircleInfo?.code }
+                                        if filteredList.count > 0 {
+                                            selectedCircleInfo = filteredList[0]
+                                        }
+                                    }
+                                }
+                            }
+                            self.lbl_circleName.text = selectedCircleInfo?.name ?? ""
+                            self.getMemberList(isHidLoader: selectedCircleInfo?.name != "")
+                        }
+                    }
+                })
+            case .failure(let error):
+                print("Error: \(error.localizedDescription)")
             }
-        })
+        }
     }
     
     func getMemberList(isHidLoader: Bool = false) {
         if !isHidLoader {
-            self.showLoader(text: "Loading...")
+            showLoader(text: "Loading...")
         }
-        DefaultManager.Cirlce.CURRENT_CODE = selectedGroupsnapSort?.childSnapshot(forPath: FirebaseKeys.code).value as? String ?? ""
-        let membersPhone = selectedGroupsnapSort?.childSnapshot(forPath: FirebaseKeys.members).value as? [String:Any] ?? [:]
-        if let phoneNumbers = Array(membersPhone.keys.sorted()) as? [String] {
+        DefaultManager.Cirlce.CURRENT_CODE = selectedCircleInfo?.code ?? ""
+        if let phoneNumbers = selectedCircleInfo?.members as? [String] {
             firebaseManager.fetchUsersData(phoneNumbers: phoneNumbers) { result in
-                self.hideLoader()
+                hideLoader()
                 switch result {
                 case .success(let users):
-                    print("Fetched Users: \(users)")
                     self.arrOfMember = parseUsers(from: users)
                     self.tableView.reloadData()
                     self.addMemberPinsToMap()
-                case .failure(let error):
-                    print("Error: \(error.localizedDescription)")
+                case .failure(_):
                     self.arrOfMember.removeAll()
                     self.tableView.reloadData()
                     self.addMemberPinsToMap()
                 }
             }
         } else {
-            self.hideLoader()
+            hideLoader()
             self.arrOfMember.removeAll()
             self.tableView.reloadData()
             self.addMemberPinsToMap()
         }
     }
     
-//    func fetchMemberListFromCircle(){
-//        let membersPhone = selectedGroupsnapSort?.childSnapshot(forPath: FirebaseKeys.members).value as? [String:Any] ?? [:]
-//        if let phoneNumbers = Array(membersPhone.keys.sorted()) as? [String] {
-//            print(phoneNumbers)
-//            firebaseManager.fetchUsersData(phoneNumbers: phoneNumbers) { result in
-//                switch result {
-//                case .success(let users):
-//                    print("Fetched Users: \(users)")
-//                case .failure(let error):
-//                    print("Error: \(error.localizedDescription)")
-//                }
-//            }
-//        }
-//        self.tableView.reloadData()
-//        self.addMemberPinsToMap()
-//    }
-    
-    @objc func batteryLevelDidChange() {
-        let currentBatteryLevel = Int(UIDevice.current.batteryLevel * 100) // Convert to percentage
-        firebaseManager.updateBatteryLevel(userPhone:  DefaultManager.User.PHONE , batteryLevel: currentBatteryLevel)
-    }
-    
     // MARK: - Button Actions
     @IBAction func btnPlusMemberAction(_ sender: UIButton) {
-        let vc = StoryboardScene.Circle.joinCircleVC.instantiate()
-        vc.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(vc, animated: true)
+        FirebaseManager.shared.logAnalyticsEvent(name: .home_click_addmember)
+        if DefaultManager.IS_SUBSCRIPTION {
+            let vc = StoryboardScene.Circle.joinCircleVC.instantiate()
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else {
+            if self.arrOfMember.count >= 2 {
+                let vc = StoryboardScene.Settings.choosePlanVC.instantiate()
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true)
+            } else {
+                AdManager.shared.showInterstitialAd(from: self) {
+                    let vc = StoryboardScene.Circle.joinCircleVC.instantiate()
+                    vc.hidesBottomBarWhenPushed = true
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+            }
+        }
     }
     
     @IBAction func btnSubscribeAction(_ sender: UIButton) {
         DispatchQueue.main.async {
-            let vc = StoryboardScene.Settings.subscribeVC.instantiate()
-            vc.modalPresentationStyle = .overFullScreen
-            self.present(vc, animated: true)
+            FirebaseManager.shared.logAnalyticsEvent(name: .home_click_premium)
+            let vc = StoryboardScene.Settings.choosePlanVC.instantiate()
+            let nv = UINavigationController(rootViewController: vc)
+            nv.navigationBar.isHidden = true
+            nv.modalPresentationStyle = .overFullScreen
+            self.present(nv, animated: true)
         }
     }
     
     @IBAction func btnSelectGroupAction(_ sender: UIButton) {
         let vc = StoryboardScene.Circle.myCirclesPopup.instantiate()
-        vc.groupSnapSortList = self.groupSnapSortList
+        vc.arrOfCircle = self.arrOfCircle
         vc.joinCircle = {
-            let vc = StoryboardScene.Circle.joinCircleVC.instantiate()
-            vc.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(vc, animated: true)
+            AdManager.shared.showInterstitialAd(from: self) {
+                let vc = StoryboardScene.Circle.joinCircleVC.instantiate()
+                vc.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
         }
         vc.selectedGroup = { (data) in
-            self.groupSnapSortList = data
-            self.lbl_circleName.text = selectedGroupsnapSort?.childSnapshot(forPath: FirebaseKeys.name).value as? String ?? ""
+            self.arrOfCircle = data
+            self.lbl_circleName.text = selectedCircleInfo?.name ?? ""
             self.getMemberList()
         }
         vc.updateCircle = { (data) in
-            self.groupSnapSortList = data
-            self.lbl_circleName.text = selectedGroupsnapSort?.childSnapshot(forPath: FirebaseKeys.name).value as? String ?? ""
+            self.arrOfCircle = data
+            self.lbl_circleName.text = selectedCircleInfo?.name ?? ""
             self.getMemberList(isHidLoader: true)
         }
         
@@ -198,26 +242,17 @@ class CircleVC: UIViewController {
     
     @IBAction func btnGpsAction(_ sender: UIButton) {
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-        LocationManager.shared.getCurrentLocation { location in
+        LocationManager.shared.fetchCurrentLocation { location in
             let region = MKCoordinateRegion(center: location.coordinate,
                                             latitudinalMeters: 500,
                                             longitudinalMeters: 500)
             self.map_view.setRegion(region, animated: true)
         }
-        /*
-         guard let userLocation = map_view.userLocation.location else {
-         print("User location not available.")
-         return
-         }
-         let region = MKCoordinateRegion(center: userLocation.coordinate,
-         latitudinalMeters: 500,
-         longitudinalMeters: 500)
-         map_view.setRegion(region, animated: true)
-         */
     }
     
     @IBAction func btnSosAction(_ sender: UIButton) {
-        if selectedGroupsnapSort != nil {
+        FirebaseManager.shared.logAnalyticsEvent(name: .home_click_sos)
+        if selectedCircleInfo != nil {
             let vc = StoryboardScene.Circle.sosVC.instantiate()
             vc.arrOfMember = self.arrOfMember
             vc.modalPresentationStyle = .overFullScreen
@@ -227,10 +262,8 @@ class CircleVC: UIViewController {
     
     // MARK: - Map Methods
     func plotRoute() {
-        // Only remove overlays (keep member pins/annotations as-is)
         map_view.removeOverlays(map_view.overlays)
         
-        // Guard: need at least 2 points to draw a route.
         guard locationPoints.count >= 2 else {
             print("No route to draw — not enough coordinates.")
             return
@@ -263,7 +296,6 @@ class CircleVC: UIViewController {
                 }
                 guard let route = response?.routes.first else { return }
                 self?.map_view.addOverlay(route.polyline)
-                // Don't reset region for every segment; let caller decide if/when to zoom.
             }
         }
     }
@@ -271,13 +303,59 @@ class CircleVC: UIViewController {
     func addMemberPinsToMap() {
         map_view.removeAnnotations(map_view.annotations)
         for member in self.arrOfMember {
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = CLLocationCoordinate2D(latitude: member.latitude, longitude: member.longitude)
-            annotation.title = member.name
-            annotation.subtitle = member.phone // Use phone number as the subtitle
-            map_view.addAnnotation(annotation)
+            if DefaultManager.User.IS_CHILD_MODE_ENABLE && member.phone != DefaultManager.User.PHONE { continue }
+            downloadImage(from: member.profilePic) { image in
+                guard let image = image else { return }
+                
+                let resized = self.makeCircularImage(image: image,
+                                                     size: CGSize(width: 50, height: 50),
+                                                     borderWidth: 4,
+                                                     borderColor: Asset.color00BDFF.color)
+                
+                let coordinate = CLLocationCoordinate2D(latitude: member.latitude, longitude: member.longitude)
+                let annotation = ImageAnnotation(coordinate: coordinate, title: member.name, subTitle: member.phone, image: resized)
+                
+                self.map_view.addAnnotation(annotation)
+            }
         }
     }
+    
+    func downloadImage(from urlString: String, completion: @escaping (UIImage?) -> Void) {
+        guard let url = URL(string: urlString) else {
+            print("Invalid URL")
+            completion(nil)
+            return
+        }
+        
+        SDWebImageManager.shared.loadImage(
+            with: url,
+            options: .highPriority,
+            progress: nil
+        ) { image, data, error, cacheType, finished, imageURL in
+            if let error = error {
+                print("Image download failed: \(error)")
+                completion(nil)
+            } else {
+                completion(image)
+            }
+        }
+    }
+    
+    func makeCircularImage(image: UIImage, size: CGSize, borderWidth: CGFloat = 2, borderColor: UIColor = .white) -> UIImage {
+        let rect = CGRect(origin: .zero, size: size)
+        let renderer = UIGraphicsImageRenderer(size: size)
+        
+        return renderer.image { _ in
+            let path = UIBezierPath(ovalIn: rect)
+            path.addClip()
+            image.draw(in: rect)
+            
+            borderColor.setStroke()
+            path.lineWidth = borderWidth
+            path.stroke()
+        }
+    }
+    
 }
 
 // MARK: - UITableView Delegate & DataSource
@@ -290,12 +368,12 @@ extension CircleVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withType: MemberTBVCell.self)
         let data = self.arrOfMember[indexPath.row]
-       
-        cell.member_battery.text = "\(data.batteryLevel)%"
+        
+        cell.setUpBattery(batteryLevel: data.batteryLevel)
         cell.member_name.text = data.name
         cell.mrmber_image.setImage(urlString: data.profilePic, name: data.name, placeholderImage: Asset.iconDefaultProfile.image, width: cell.mrmber_image.frame.width * 2, height: cell.mrmber_image.frame.height * 2)
         
-        LocationManager.shared.getGoogleAddress(lat: data.latitude, long: data.longitude) { address in
+        LocationManager.shared.getAddressFrom(latitude: data.latitude, longitude: data.longitude) { address in
             DispatchQueue.main.async {
                 cell.member_address.text = address
             }
@@ -305,6 +383,7 @@ extension CircleVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let data = self.arrOfMember[indexPath.row]
+        if DefaultManager.User.IS_CHILD_MODE_ENABLE && data.phone != DefaultManager.User.PHONE { return }
         let coordinates = CLLocationCoordinate2D(latitude: data.latitude, longitude: data.longitude)
         map_view.setRegion(MKCoordinateRegion(center: coordinates, latitudinalMeters: 500,longitudinalMeters: 500),animated: true)
     }
@@ -315,21 +394,29 @@ extension CircleVC: UITableViewDelegate, UITableViewDataSource {
 
 extension CircleVC : MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        let identifier = "CustomPin"
-        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
-        if annotationView == nil {
-            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-            annotationView?.canShowCallout = true
-            annotationView?.image = UIImage(named: "pin-map") // Replace with your custom pin image name
-            annotationView?.bounds.size = CGSize(width: 50, height: 50)
-            
-            // Add accessory button if needed
-            let detailButton = UIButton(type: .detailDisclosure)
-            annotationView?.rightCalloutAccessoryView = detailButton
-        } else {
-            annotationView?.annotation = annotation
+        if annotation is MKUserLocation {
+            return nil
         }
-        return annotationView
+        
+        let identifier = "CustomPin"
+        var view = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        
+        if view == nil {
+            view = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            view?.canShowCallout = true
+            
+            //         Add accessory button if needed
+            let detailButton = UIButton(type: .detailDisclosure)
+            view?.rightCalloutAccessoryView = detailButton
+        } else {
+            view?.annotation = annotation
+        }
+        
+        if let imageAnnotation = annotation as? ImageAnnotation {
+            view?.image = imageAnnotation.image
+        }
+        
+        return view
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
@@ -337,11 +424,9 @@ extension CircleVC : MKMapViewDelegate {
             print("User location not available")
             return
         }
-        
         let number = (annotation.subtitle ?? "") ?? ""
         if number.isEmpty { return }
-        
-        FirebaseManager.shared.fetchTodayLocations(for: number) { locations in
+        FirebaseManager.shared.fetchTodayUserLocations(for: number) { locations in
             self.locationPoints = locations.sorted { $0.timestamp < $1.timestamp }
             self.plotRoute()
             
@@ -356,12 +441,15 @@ extension CircleVC : MKMapViewDelegate {
         guard let annotation = view.annotation else { return }
         let vc = StoryboardScene.Circle.userDeatilsVC.instantiate()
         vc.modalPresentationStyle = .overFullScreen
-        LocationManager.shared.getAddressFromLatLon(latitude: annotation.coordinate.latitude,
-                                                    longitude: annotation.coordinate.longitude) { address in
-            vc.address = address ?? ""
-            vc.username = (annotation.title ?? "") ?? ""
-            vc.usernumber = (annotation.subtitle ?? "") ?? ""
-            self.present(vc, animated: false)
+        LocationManager.shared.getAddressFrom(latitude: annotation.coordinate.latitude,
+                                              longitude: annotation.coordinate.longitude) { address in
+            let phone = (annotation.subtitle ?? "") ?? ""
+            let arrOfUserInfo = self.arrOfMember.filter { $0.phone == phone }
+            if arrOfUserInfo.count != 0 {
+                arrOfUserInfo[0].address = address ?? ""
+                vc.userInfo = arrOfUserInfo[0]
+                self.present(vc, animated: false)
+            }
         }
     }
     
@@ -374,5 +462,19 @@ extension CircleVC : MKMapViewDelegate {
             return renderer
         }
         return MKOverlayRenderer()
+    }
+}
+
+class ImageAnnotation: NSObject, MKAnnotation {
+    var coordinate: CLLocationCoordinate2D
+    var title: String?
+    var subtitle: String?
+    var image: UIImage
+    
+    init(coordinate: CLLocationCoordinate2D, title: String?, subTitle: String?, image: UIImage) {
+        self.coordinate = coordinate
+        self.title = title
+        self.subtitle = subTitle
+        self.image = image
     }
 }

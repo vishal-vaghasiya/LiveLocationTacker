@@ -17,6 +17,10 @@ class JoinCircleVC: UIViewController {
     @IBOutlet weak var lbl_code: UILabel!
     @IBOutlet weak var btnJoincircle: UIEnableDisable!
     @IBOutlet weak var otpTextField: AEOTPTextField!
+    
+    @IBOutlet weak var contBannerHeight: NSLayoutConstraint!
+    @IBOutlet weak var bannerView: UIView!
+    
     var joinCircleCode = String()
     let firebaseManager = FirebaseManager.shared
     
@@ -37,12 +41,31 @@ class JoinCircleVC: UIViewController {
         otpTextField.otpBackgroundColor = .white.withAlphaComponent(0.15)
         otpTextField.otpFilledBorderWidth = 2
         otpTextField.otpFilledBorderColor = .btncolor
-        otpTextField.otpFont = AppFont.semiBold(size: 18) ?? UIFont()
+        otpTextField.otpFont = FontFamily.Poppins.semiBold.font(size: 18)
         otpTextField.otpTextColor = .btncolor
         otpTextField.otpFilledBackgroundColor = .white.withAlphaComponent(0.15)
         otpTextField.configure(with: 6)
         
         otpTextField.addTarget(self, action: #selector(otpDidChange(_:)), for: .editingChanged)
+        self.setBannerAds()
+    }
+    
+    // MARK: - Setup Ads
+    func setBannerAds() {
+        AdManager.shared.loadBannerAd(in: self.bannerView, rootViewController: self) { isShow in
+            if isShow {
+                UIView.animate(withDuration: 0.5) {
+                    self.contBannerHeight.constant = 50
+                    self.view.layoutIfNeeded()
+                }
+            } else {
+                self.contBannerHeight.constant = 0
+            }
+        }
+    }
+    
+    @IBAction func clickEnterOtp(_ sender: UITextField) {
+        FirebaseManager.shared.logAnalyticsEvent(name: .addmember_click_addinvitecode)
     }
     
     @IBAction func backClick(_ sender: UIButton) {
@@ -55,12 +78,13 @@ class JoinCircleVC: UIViewController {
     
     @IBAction func btnJoinCircleAction(_ sender: UIButton) {
         showLoader(text: "Joing...")
+        FirebaseManager.shared.logAnalyticsEvent(name: .addmember_click_joincircle)
         //        UIDevice.current.isBatteryMonitoringEnabled = true
         //        let batteryLevel = Int(UIDevice.current.batteryLevel * 100)
         //        firebaseManager.joinCircle(withCode: friendEnterCode,
         //                                circleId: groupCode,
         //                                batteryLevel: batteryLevel) { success in
-        //            self.hideLoader()
+        //            hideLoader()
         //            if success {
         //                print("Friend successfully joined the circle!")
         //                self.navigateToHome()
@@ -70,12 +94,12 @@ class JoinCircleVC: UIViewController {
         //        }
         
         firebaseManager.joinCircle(inviteCode: joinCircleCode) { success, message in
-            self.hideLoader()
+            hideLoader()
             if success {
                 print("Friend successfully joined the circle!")
                 self.navigateToHome()
             } else {
-                self.showToastMessage(message)
+                showToastMessage(message)
             }
         }
         

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uy5-fX-kN8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uy5-fX-kN8">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -51,13 +51,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="37U-Xs-GCF">
-                                <rect key="frame" x="0.0" y="118" width="393" height="617"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="x5b-3u-85j">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="617"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="710"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MrB-TF-F5M">
-                                                <rect key="frame" x="0.0" y="0.0" width="393" height="617"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="710"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Bc-3Y-CQ8">
                                                         <rect key="frame" x="0.0" y="0.0" width="393" height="400"/>
@@ -170,13 +170,23 @@
                                             <constraint firstItem="MrB-TF-F5M" firstAttribute="top" secondItem="x5b-3u-85j" secondAttribute="top" id="trV-w4-dwo"/>
                                         </constraints>
                                     </scrollView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b4z-rM-6W6">
+                                        <rect key="frame" x="0.0" y="710" width="393" height="0.0"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" id="gPj-na-cNN"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="x5b-3u-85j" secondAttribute="bottom" id="8TF-Vp-p6f"/>
                                     <constraint firstItem="x5b-3u-85j" firstAttribute="leading" secondItem="37U-Xs-GCF" secondAttribute="leading" id="9RW-5O-YJj"/>
+                                    <constraint firstAttribute="trailing" secondItem="b4z-rM-6W6" secondAttribute="trailing" id="BvC-1F-S8Q"/>
+                                    <constraint firstItem="b4z-rM-6W6" firstAttribute="top" secondItem="x5b-3u-85j" secondAttribute="bottom" id="Fo6-CU-cjO"/>
                                     <constraint firstItem="x5b-3u-85j" firstAttribute="top" secondItem="37U-Xs-GCF" secondAttribute="top" id="VxV-Ot-Cgx"/>
                                     <constraint firstAttribute="trailing" secondItem="x5b-3u-85j" secondAttribute="trailing" id="tLB-Ke-KzC"/>
+                                    <constraint firstItem="b4z-rM-6W6" firstAttribute="leading" secondItem="37U-Xs-GCF" secondAttribute="leading" id="tMu-Fi-8VH"/>
+                                    <constraint firstAttribute="bottom" secondItem="b4z-rM-6W6" secondAttribute="bottom" id="uJb-4S-3tp"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -193,7 +203,9 @@
                     <connections>
                         <outlet property="altitudeLabel" destination="xOW-TE-bDh" id="hvK-iv-cHF"/>
                         <outlet property="angleLabel" destination="3CJ-7R-KTC" id="jLh-P0-iVY"/>
+                        <outlet property="bannerView" destination="b4z-rM-6W6" id="kVj-sf-bjG"/>
                         <outlet property="compass_view" destination="9Bc-3Y-CQ8" id="Vaq-ap-k8J"/>
+                        <outlet property="contBannerHeight" destination="gPj-na-cNN" id="bna-kn-zcD"/>
                         <outlet property="directionLabel" destination="ZGG-CN-9ZZ" id="lgs-KD-fGw"/>
                         <outlet property="latitudeAndLongitudeLabel" destination="ezM-GJ-Z6n" id="skP-Mn-rNS"/>
                         <outlet property="lbl_address" destination="BZf-jh-YiR" id="HSb-1S-qZV"/>

@@ -13,14 +13,17 @@ import SwiftJWT
 final class FCMNotificationManager {
     
     static let shared = FCMNotificationManager()
-    
     private init() {}
+    
+    private let projectID = "ios---phone-tracker" // Replace with your Firebase Project ID
     
     // MARK: - Send Push Notification
     func sendPushNotification(
+        type: NotificationType,
         fcmToken: String,
         title: String = APP_NAME,
         body: String,
+        code: String? = nil,
         completion: @escaping (Bool, String) -> Void
     ) {
         generateAccessToken { accessToken in
@@ -29,21 +32,42 @@ final class FCMNotificationManager {
                 return
             }
             
-            let url = URL(string: "https://fcm.googleapis.com/v1/projects/ios---phone-tracker/messages:send")!
+            let url = URL(string: "https://fcm.googleapis.com/v1/projects/\(self.projectID)/messages:send")!
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
             
-            let message: [String: Any] = [
-                "message": [
-                    "token": fcmToken,
-                    "notification": [
-                        "title": title,
-                        "body": body
+            var message: [String: Any] = [:]
+            if type == .sos {
+                message = [
+                    "message": [
+                        "token": fcmToken,
+                        "notification": [
+                            "title": title,
+                            "body": body
+                        ],
+                        "data": [
+                            "type": "\(type.rawValue)"
+                        ]
                     ]
                 ]
-            ]
+            } else if type == .disableChildMode {
+                message = [
+                    "message": [
+                        "token": fcmToken,
+                        "notification": [
+                            "title": title,
+                            "body": body
+                        ],
+                        "data": [
+                            FirebaseKeys.code: code ?? "N/A",
+                            FirebaseKeys.childNumber: DefaultManager.User.PHONE,
+                            "type": "\(type.rawValue)"
+                        ]
+                    ]
+                ]
+            }
             
             guard let jsonData = try? JSONSerialization.data(withJSONObject: message, options: []) else {
                 completion(false, "Failed to encode notification payload.")

@@ -89,34 +89,12 @@ extension String {
 
 //MARK: - When Language update ChnageUI ATTime -
 extension UIViewController{
-    
     func changeUIRuntime() {
         let currentNavigation = self.navigationController
         let newNavigation =  UINavigationController()
         newNavigation.viewControllers = currentNavigation?.viewControllers ?? []
         newNavigation.setNavigationBarHidden(true, animated: false)
         self.view.window?.rootViewController = newNavigation
-        
-        //        let navCtrl = self.storyboard?.instantiateViewController(withIdentifier: "rootnav")
-        //        let keyWindow = UIApplication.shared.connectedScenes
-        //            .filter({$0.activationState == .foregroundActive})
-        //                .compactMap({$0 as? UIWindowScene})
-        //                .first?.windows
-        //                .filter({$0.isKeyWindow}).first
-        //        guard
-        //            let window = keyWindow,
-        //            let rootViewController = window.rootViewController
-        //
-        //        else {
-        //            return
-        //        }
-        //        navCtrl?.view.frame = rootViewController.view.frame
-        //        navCtrl?.view.layoutIfNeeded()
-        //
-        //        UIView.transition(with: window, duration: 0.2, options: .transitionFlipFromRight, animations: {
-        //            window.rootViewController = navCtrl
-        //            window.makeKeyAndVisible()
-        ////        })
     }
 }
 

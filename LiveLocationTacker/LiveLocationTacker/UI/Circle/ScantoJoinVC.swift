@@ -60,21 +60,21 @@ extension ScantoJoinVC : QRScannerCodeDelegate {
         UIDevice.current.isBatteryMonitoringEnabled = true
         let batteryLevel = Int(UIDevice.current.batteryLevel * 100)
         
-        firebaseManager.joinCircle(withCode: friendEnterCode,
-                                circleId: groupCode,
-                                batteryLevel: batteryLevel) { success in
-            self.hideLoader()
-            
-            if success {
-                print("Friend successfully joined the circle!")
-                let myname = DefaultManager.User.NAME + " " + NSLocalizedString("FriendQRPushMSG", comment: "")
-                self.firebaseManager.sendPushNotification(fcmToken: friendfcmtoken, body: myname)
-                self.navigateToHome()
-            }
-            else {
-                self.showAlert(title: "Scan barcode incorrect !", message: "Please scan valid barcode")
-            }
-        }
+//        firebaseManager.joinCircle(withCode: friendEnterCode,
+//                                circleId: groupCode,
+//                                batteryLevel: batteryLevel) { success in
+//            hideLoader()
+//            
+//            if success {
+//                print("Friend successfully joined the circle!")
+//                let myname = DefaultManager.User.NAME + " " + NSLocalizedString("FriendQRPushMSG", comment: "")
+//                self.firebaseManager.sendPushNotification(type: .sos, fcmToken: friendfcmtoken, body: myname)
+//                self.navigateToHome()
+//            }
+//            else {
+//                self.showAlert(title: "Scan barcode incorrect !", message: "Please scan valid barcode")
+//            }
+//        }
     }
     
     func qrScanner(_ controller: UIViewController, didFailWithError error: SwiftQRCodeScanner.QRCodeError) {

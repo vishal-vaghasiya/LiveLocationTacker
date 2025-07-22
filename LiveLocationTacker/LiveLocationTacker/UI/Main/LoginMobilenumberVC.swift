@@ -14,6 +14,9 @@ import FirebaseAuth
 
 
 class LoginMobilenumberVC: UIViewController {
+    
+    @IBOutlet weak var contBannerHeight: NSLayoutConstraint!
+    @IBOutlet weak var bannerView: UIView!
 
     @IBOutlet var shadow_view: [UIView]!
     @IBOutlet weak var img_flag: UIImageView!
@@ -32,6 +35,24 @@ class LoginMobilenumberVC: UIViewController {
         img_flag.image = CountryManager.shared.currentCountry?.flag
         invalid_view.isHidden =  true
         txtEnterNumber.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        self.setBannerAds()
+    }
+    
+    func setBannerAds() {
+        AdManager.shared.loadBannerAd(in: self.bannerView, rootViewController: self) { isShow in
+            if isShow {
+                UIView.animate(withDuration: 0.5) {
+                    self.contBannerHeight.constant = 50
+                    self.view.layoutIfNeeded()
+                }
+            } else {
+                self.contBannerHeight.constant = 0
+            }
+        }
+    }
+    
+    @IBAction func ClickaddNumber(_ sender: UITextField) {
+        FirebaseManager.shared.logAnalyticsEvent(name: .enter_click_addnumber)
     }
     
     @IBAction func btnCancelAction(_ sender: UIButton) {
@@ -45,20 +66,24 @@ class LoginMobilenumberVC: UIViewController {
     
     func sendOTP(phoneNumber: String) {
         showLoader(text: "Loading...")
+        FirebaseManager.shared.logAnalyticsEvent(name: .enter_click_continue)
         firebaseManager.sendMobileOTP(phoneNumber: phoneNumber.removingSpaces) { success, error in
-            self.hideLoader()
-            self.showToastMessage(error ?? "")
+            hideLoader()
+            showToastMessage(error ?? "")
             if success {
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: "MobileOTPVerificationVC") as! MobileOTPVerificationVC
-                vc.phoneCode = "\(CountryManager.shared.currentCountry?.dialingCode ?? "")".digitsOnly
-                vc.phoneNumber = "\(self.txtEnterNumber.text ?? "")"
-                self.navigationController?.pushViewController(vc, animated: true)
+                AdManager.shared.showInterstitialAd(from: self) {
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let vc = storyboard.instantiateViewController(withIdentifier: "MobileOTPVerificationVC") as! MobileOTPVerificationVC
+                    vc.phoneCode = "\(CountryManager.shared.currentCountry?.dialingCode ?? "")".digitsOnly
+                    vc.phoneNumber = "\(self.txtEnterNumber.text ?? "")"
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
             }
         }
     }
     
     @IBAction func btnChooseFromContactAction(_ sender: UIButton) {
+        FirebaseManager.shared.logAnalyticsEvent(name: .enter_click_choose_from_contact)
         showContactPicker()
     }
     

@@ -9,6 +9,8 @@ import UIKit
 
 class IntroVC: UIViewController {
 
+    @IBOutlet weak var contBannerHeight: NSLayoutConstraint!
+    @IBOutlet weak var bannerView: UIView!
     @IBOutlet weak var lbl_appname: UILabel!
     @IBOutlet weak var btnContinue: UIEnableDisable!
     @IBOutlet weak var termsTextView: UITextView!
@@ -19,12 +21,29 @@ class IntroVC: UIViewController {
         lbl_appname.text = APP_NAME
     
         setupTermsTextView()
+        self.setBannerAds()
+    }
+    
+    func setBannerAds() {
+        AdManager.shared.loadBannerAd(in: self.bannerView, rootViewController: self) { isShow in
+            if isShow {
+                UIView.animate(withDuration: 0.5) {
+                    self.contBannerHeight.constant = 50
+                    self.view.layoutIfNeeded()
+                }
+            } else {
+                self.contBannerHeight.constant = 0
+            }
+        }
     }
 
     @IBAction func btnContinueAction(_ sender: UIButton) {
-        let vc = StoryboardScene.Main.onBoardingVC.instantiate()
-        vc.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(vc, animated: true)
+        FirebaseManager.shared.logAnalyticsEvent(name: .welcome_click_start)
+        AdManager.shared.showInterstitialAd(from: self) {
+            let vc = StoryboardScene.Main.onBoardingVC.instantiate()
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     func setupTermsTextView() {

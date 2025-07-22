@@ -29,12 +29,17 @@
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Qbp-gQ-htp">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="engineer" translatesAutoresizingMaskIntoConstraints="NO" id="pKW-zr-s6X">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="engineer" translatesAutoresizingMaskIntoConstraints="NO" id="pKW-zr-s6X">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Hlp-ZW-6UK"/>
                                             <constraint firstAttribute="width" constant="40" id="LkW-YD-udH"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OFF-jP-l63">
                                         <rect key="frame" x="49.999999999999986" y="0.0" width="247.66666666666663" height="40"/>
@@ -122,6 +127,10 @@
                 <outlet property="btnDisable" destination="Qke-Im-8xq" id="TfZ-Le-bOE"/>
                 <outlet property="buttonView" destination="HFe-kw-10a" id="O0k-81-q7g"/>
                 <outlet property="ivArrow" destination="ytN-iv-iJ7" id="RbN-Hi-fLR"/>
+                <outlet property="ivProfile" destination="pKW-zr-s6X" id="MG1-S6-g7z"/>
+                <outlet property="lblCircleName" destination="2li-vy-deV" id="FZr-LY-cW5"/>
+                <outlet property="lblName" destination="BNB-l1-wgX" id="MZD-vy-Yxq"/>
+                <outlet property="lineView" destination="ma3-4h-7TJ" id="H9S-D2-eDE"/>
             </connections>
             <point key="canvasLocation" x="129.7709923664122" y="-11.267605633802818"/>
         </tableViewCell>
