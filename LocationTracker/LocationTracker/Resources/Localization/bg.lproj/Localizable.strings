@@ -1,0 +1,200 @@
+"Welcome" = "Добре дошли";
+"Stay connected with loved ones by tracking their live location with ease" = "Останете свързани с близките си, като лесно проследявате тяхното местоположение в реално време";
+"Get started" = "Започнете";
+
+"Select Language" = "Изберете език";
+"Change Language" = "Смяна на езика";
+
+"Stay Close to Your Loved Ones" = "Бъдете близо до вашите близки";
+"Keep your family connected no matter where life takes them." = "Поддържайте семейството си свързано, където и да ги отведе животът.";
+
+"Real-Time Location at Your Fingertips" = "Местоположение в реално време на върха на пръстите ви";
+"See live updates instantly and never miss a moment." = "Виждайте актуализации на живо веднага и никога не изпускайте момент.";
+
+"A Smarter Way to Locate Family" = "По-умен начин за намиране на семейството";
+"Quick access to real-time family locations made simple." = "Бърз достъп до местоположенията на семейството в реално време, направен лесен.";
+
+"Next" = "Следващ";
+
+"Permissions" = "Разрешения";
+"Enable notification and allow access to your location and motion activity for the app to run properly." = "Разрешете известия и достъп до вашето местоположение и движение, за да работи приложението правилно.";
+"Notification" = "Известие";
+
+"Continue" = "Продължи";
+
+"Enter Your Phone Number" = "Въведете вашия телефонен номер";
+"Your information stays private and is never shared with third parties." = "Вашата информация остава поверителна и никога не се споделя с трети страни.";
+
+"OTP Verification" = "Потвърждение на OTP";
+"Enter the OTP Sent to" = "Въведете OTP изпратен на";
+"Don’t Receive the OTP ?" = "Не получихте OTP?";
+"RESEND OTP" = "Изпратете OTP отново";
+
+"Please enter valid OTP code" = "Моля, въведете валиден OTP код";
+"Verified" = "Потвърдено";
+
+"Set Profile" = "Настройване на профил";
+"Complete your profile details." = "Попълнете детайлите на профила си.";
+"Upload Photo" = "Качване на снимка";
+"Change Photo" = "Смяна на снимка";
+"Update" = "Актуализиране";
+
+"Enter first name" = "Въведете собствено име";
+"First name" = "Собствено име";
+"Enter Name" = "Въведете име";
+"Enter circle name" = "Въведете име на кръга";
+"Enter last name" = "Въведете фамилно име";
+"Last name" = "Фамилно име";
+"Select gender" = "Изберете пол";
+"Male" = "Мъжки";
+"Female" = "Женски";
+"Set Profile Pic" = "Настройте профилна снимка";
+
+"Cancel" = "Отказ";
+"Done" = "Готово";
+"Yes" = "Да";
+"Ok" = "Ок";
+"Save" = "Запази";
+"Delete" = "Изтрий";
+
+"Members" = "Членове";
+"Add" = "Добави";
+
+"Choose Map" = "Изберете карта";
+"Standard" = "Стандартна";
+"Satellite" = "Сателитна";
+"Transit" = "Транспорт";
+
+"Create Circle" = "Създайте кръг";
+"Join Circle" = "Присъединете се към кръг";
+"Edit Circle" = "Редактиране на кръг";
+
+"Circle Name" = "Име на кръга";
+"Invitation Code" = "Код за покана";
+"Create" = "Създай";
+
+"Remove Member ?" = "Премахване на член?";
+"Are you sure want to remove this member from circle?" = "Сигурни ли сте, че искате да премахнете този член от кръга?";
+
+"Enter Invitation Code" = "Въведете код за покана";
+"Get an invitation code from the person who made the circle." = "Вземете код за покана от човека, който е създал кръга.";
+"Join" = "Присъедини се";
+"Please enter valid code" = "Моля, въведете валиден код";
+
+"Add Member" = "Добавяне на член";
+"Add someone you know into circle to start getting notified about location" = "Добавете някого, когото познавате, в кръга, за да започнете да получавате известия за местоположението";
+
+"Choose From Contact" = "Изберете от контакт";
+
+"Member Detail" = "Детайли за член";
+"Address" = "Адрес";
+"Last Update" = "Последна актуализация";
+
+"SOS Calling" = "SOS повикване";
+"Once the countdown ends, your location will be shared with your circle." = "След като обратното броене приключи, вашето местоположение ще бъде споделено с вашия кръг.";
+"Stop" = "Спри";
+"SOS Not Sent" = "SOS не е изпратено";
+"No members in your circle. Please add members to share SOS alerts." = "Няма членове във вашия кръг. Моля, добавете членове, за да споделяте SOS предупреждения.";
+"SOS Sent Successfully" = "SOS изпратено успешно";
+"Your alert has been shared with all circle members." = "Вашето предупреждение е споделено с всички членове на кръга.";
+
+"Proximity Alert" = "Предупреждение за близост";
+"Add a Proximity Alert to get started." = "Добавете предупреждение за близост, за да започнете.";
+"ID" = "ID";
+"Name" = "Име";
+"Enter Proximity name" = "Въведете име на близостта";
+"Location" = "Местоположение";
+"Select location" = "Изберете местоположение";
+"Search location" = "Търсене на местоположение";
+"Select Date" = "Изберете дата";
+"Select Time" = "Изберете час";
+"Open Map" = "Отвори карта";
+"Type" = "Тип";
+"Home" = "Дом";
+"Gym" = "Фитнес";
+"Office" = "Офис";
+"Shop" = "Магазин";
+"Education" = "Образование";
+"Hospital" = "Болница";
+"Other" = "Други";
+"Alert Date and Time" = "Дата и час на предупреждението";
+"Radius" = "Радиус";
+"Push Notification" = "Известие";
+"Note" = "Бележка";
+"Enter note about this alert" = "Въведете бележка за това предупреждение";
+"Add Alert" = "Добави предупреждение";
+"Select & Continue" = "Изберете и продължете";
+"Leave without alert?" = "Напуснете без предупреждение?";
+"No alert added. Go back?" = "Не е добавено предупреждение. Върнете се?";
+"Alert Saved" = "Предупреждението е запазено";
+"Your alert has been saved successfully." = "Вашето предупреждение беше успешно запазено.";
+"Proximity info" = "Информация за близост";
+"Coordinates" = "Координати";
+"Status" = "Статус";
+"Inactive" = "Неактивно";
+"Active" = "Активно";
+"Alert On" = "Предупреждение включено";
+"Delete Alert?" = "Изтриване на предупреждение?";
+"Are you sure you want to delete this alert?" = "Сигурни ли сте, че искате да изтриете това предупреждение?";
+"Save Alert" = "Запази предупреждението";
+
+"Settings" = "Настройки";
+"Battery Level Sharing" = "Споделяне на нивото на батерията";
+"Proximity Notifications" = "Известия за близост";
+"Motion Activity" = "Движение";
+"Location Sharing" = "Споделяне на местоположение";
+"Rate Now" = "Оценете сега";
+"Share" = "Сподели";
+"Feedback" = "Обратна връзка";
+"Privacy Policy" = "Политика за поверителност";
+"Term & Condition" = "Общи условия";
+
+"Network Error" = "Грешка в мрежата";
+"Make sure you’re connected to the internet." = "Уверете се, че сте свързани с интернет.";
+"Retry" = "Опитай отново";
+
+"Enable notification and allow access to your location Sharing for the app to run properly." = "Разрешете известия и достъп до споделяне на местоположение, за да работи приложението правилно.";
+"Enable notification and allow access to your motion activity for the app to run properly." = "Разрешете известия и достъп до вашата активност на движение, за да работи приложението правилно.";
+"Member" = "Член";
+"Map" = "Карта";
+"Proximity" = "Близост";
+"Child mode is enabled" = "Режим за деца е активиран";
+"you can’t turn off location and battery level sharing or log out." = "не можете да изключите споделянето на местоположение и нивото на батерията или да излезете.";
+"LogOut" = "Изход";
+"Log Out" = "Изход";
+"Disable" = "Деактивирай";
+"Learn more about child mode" = "Научете повече за режим за деца";
+"Circle Owner" = "Собственик на кръга";
+"Send request to disable child mode?" = "Изпратете заявка за деактивиране на режим за деца?";
+"The circle owner will get a notification to turn it off for you." = "Собственикът на кръга ще получи известие да го изключи за вас.";
+"Send" = "Изпрати";
+"Child Mode" = "Режим за деца";
+"Child Mode remove features children don’t need and prevent them from logging out and turning off location and battery level sharing." = "Режимът за деца премахва функции, от които децата не се нуждаят, и предотвратява излизането и изключването на споделянето на местоположение и батерия.";
+"Setup child mode" = "Настройте режим за деца";
+"Add child to a circle and enable child mode in the app settings on their device." = "Добавете дете в кръг и активирайте режим за деца в настройките на приложението на тяхното устройство.";
+"Your Children Won’t be able to Creating Circles, browsing travel history, turn off location and battery level sharing or log out." = "Вашите деца няма да могат да създават кръгове, да преглеждат история на пътувания, да изключват споделянето на местоположение и батерия или да излизат.";
+"Child mode is enabled for" = "Режим за деца е активиран за";
+"About Child Mode" = "Относно режим за деца";
+"What happens when Child Mode is ON?" = "Какво се случва, когато режимът за деца е включен?";
+"Location sharing stays always active (cannot be turned off)." = "Споделянето на местоположение винаги остава активно (не може да бъде изключено).";
+"Battery percentage is visible to the circle owner." = "Процентът на батерията е видим за собственика на кръга.";
+"Logout option is disabled to prevent tracking interruptions." = "Опцията за изход е деактивирана, за да се предотвратят прекъсвания на проследяването.";
+"Designed to ensure the member stays safe and connected." = "Създадено, за да осигури безопасност и свързаност на члена.";
+"How to turn OFF Child Mode?" = "Как да изключите режим за деца?";
+"The Circle Owner can disable Child Mode anytime." = "Собственикът на кръга може да деактивира режим за деца по всяко време.";
+"The member can send a disable request → owner must approve it." = "Членът може да изпрати заявка за деактивиране → собственикът трябва да я одобри.";
+"Only after approval, Child Mode will be turned off." = "Само след одобрение режимът за деца ще бъде изключен.";
+"Why use Child Mode?" = "Защо да използвате режим за деца?";
+"Ensures continuous safety tracking." = "Осигурява непрекъснато проследяване за безопасност.";
+"Prevents location hiding or accidental logout." = "Предотвратява скриването на местоположение или случайно излизане.";
+"Gives parents/guardians more control & peace of mind." = "Дава на родителите/настойниците повече контрол и спокойствие.";
+"No members" = "Няма членове";
+"Disable Child Mode?" = "Деактивиране на режим за деца?";
+"Are you sure you want to disable child mode for ‘%@’?" = "Сигурни ли сте, че искате да деактивирате режим за деца за ‘%@’?";
+"No" = "Не";
+"Exit" = "Изход";
+"Reject" = "Отхвърли";
+"Child Mode Disable Request!" = "Заявка за деактивиране на режим за деца!";
+"has requested to disable Child Mode. Do you want to approve this request?" = "е поискал да деактивира режим за деца. Искате ли да одобрите тази заявка?";
+"Child Mode Disabled!" = "Режим за деца е деактивиран!";
+"Child Mode is Disable for '%@' successfully." = "Режим за деца е успешно деактивиран за '%@'.";

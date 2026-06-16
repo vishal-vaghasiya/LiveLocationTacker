@@ -1,0 +1,200 @@
+"Welcome" = "Laipni lūdzam";
+"Stay connected with loved ones by tracking their live location with ease" = "Palieciet savienoti ar mīļajiem, viegli izsekojot viņu tiešo atrašanās vietu";
+"Get started" = "Sākt";
+
+"Select Language" = "Izvēlēties valodu";
+"Change Language" = "Mainīt valodu";
+
+"Stay Close to Your Loved Ones" = "Palieciet tuvu saviem mīļajiem";
+"Keep your family connected no matter where life takes them." = "Saglabājiet ģimeni savienotu, lai kur dzīve viņus aizvestu.";
+
+"Real-Time Location at Your Fingertips" = "Reāllaika atrašanās vieta jūsu rokās";
+"See live updates instantly and never miss a moment." = "Redziet tiešraides atjauninājumus uzreiz un nekad nepalaidiet garām nevienu mirkli.";
+
+"A Smarter Way to Locate Family" = "Gudrāks veids, kā atrast ģimeni";
+"Quick access to real-time family locations made simple." = "Ātra piekļuve ģimenes reāllaika atrašanās vietām vienkāršā veidā.";
+
+"Next" = "Tālāk";
+
+"Permissions" = "Atļaujas";
+"Enable notification and allow access to your location and motion activity for the app to run properly." = "Iespējojiet paziņojumus un atļaujiet piekļuvi jūsu atrašanās vietai un kustības aktivitātēm, lai lietotne darbotos pareizi.";
+"Notification" = "Paziņojums";
+
+"Continue" = "Turpināt";
+
+"Enter Your Phone Number" = "Ievadiet savu tālruņa numuru";
+"Your information stays private and is never shared with third parties." = "Jūsu informācija paliek privāta un nekad netiek kopīgota ar trešajām pusēm.";
+
+"OTP Verification" = "OTP verifikācija";
+"Enter the OTP Sent to" = "Ievadiet nosūtīto OTP uz";
+"Don’t Receive the OTP ?" = "Neesat saņēmis OTP ?";
+"RESEND OTP" = "Nosūtīt OTP atkārtoti";
+
+"Please enter valid OTP code" = "Lūdzu, ievadiet derīgu OTP kodu";
+"Verified" = "Pārbaudīts";
+
+"Set Profile" = "Iestatīt profilu";
+"Complete your profile details." = "Aizpildiet sava profila informāciju.";
+"Upload Photo" = "Augšupielādēt foto";
+"Change Photo" = "Mainīt foto";
+"Update" = "Atjaunināt";
+
+"Enter first name" = "Ievadiet vārdu";
+"First name" = "Vārds";
+"Enter Name" = "Ievadiet vārdu";
+"Enter circle name" = "Ievadiet grupas nosaukumu";
+"Enter last name" = "Ievadiet uzvārdu";
+"Last name" = "Uzvārds";
+"Select gender" = "Izvēlieties dzimumu";
+"Male" = "Vīrietis";
+"Female" = "Sieviete";
+"Set Profile Pic" = "Iestatīt profila attēlu";
+
+"Cancel" = "Atcelt";
+"Done" = "Gatavs";
+"Yes" = "Jā";
+"Ok" = "Labi";
+"Save" = "Saglabāt";
+"Delete" = "Dzēst";
+
+"Members" = "Dalībnieki";
+"Add" = "Pievienot";
+
+"Choose Map" = "Izvēlēties karti";
+"Standard" = "Standarta";
+"Satellite" = "Satelīts";
+"Transit" = "Sabiedriskais transports";
+
+"Create Circle" = "Izveidot grupu";
+"Join Circle" = "Pievienoties grupai";
+"Edit Circle" = "Rediģēt grupu";
+
+"Circle Name" = "Grupas nosaukums";
+"Invitation Code" = "Ielūguma kods";
+"Create" = "Izveidot";
+
+"Remove Member ?" = "Noņemt dalībnieku ?";
+"Are you sure want to remove this member from circle?" = "Vai tiešām vēlaties noņemt šo dalībnieku no grupas?";
+
+"Enter Invitation Code" = "Ievadiet ielūguma kodu";
+"Get an invitation code from the person who made the circle." = "Saņemiet ielūguma kodu no personas, kas izveidoja grupu.";
+"Join" = "Pievienoties";
+"Please enter valid code" = "Lūdzu, ievadiet derīgu kodu";
+
+"Add Member" = "Pievienot dalībnieku";
+"Add someone you know into circle to start getting notified about location" = "Pievienojiet kādu, ko pazīstat, grupai, lai sāktu saņemt paziņojumus par atrašanās vietu";
+
+"Choose From Contact" = "Izvēlēties no kontaktiem";
+
+"Member Detail" = "Dalībnieka informācija";
+"Address" = "Adrese";
+"Last Update" = "Pēdējais atjauninājums";
+
+"SOS Calling" = "SOS zvans";
+"Once the countdown ends, your location will be shared with your circle." = "Kad taimeris beigsies, jūsu atrašanās vieta tiks kopīgota ar jūsu grupu.";
+"Stop" = "Apturēt";
+"SOS Not Sent" = "SOS nav nosūtīts";
+"No members in your circle. Please add members to share SOS alerts." = "Jūsu grupā nav dalībnieku. Lūdzu, pievienojiet dalībniekus, lai kopīgotu SOS brīdinājumus.";
+"SOS Sent Successfully" = "SOS veiksmīgi nosūtīts";
+"Your alert has been shared with all circle members." = "Jūsu brīdinājums ir kopīgots ar visiem grupas dalībniekiem.";
+
+"Proximity Alert" = "Tuvas atrašanās vietas brīdinājums";
+"Add a Proximity Alert to get started." = "Lai sāktu, pievienojiet tuvas atrašanās vietas brīdinājumu.";
+"ID" = "ID";
+"Name" = "Nosaukums";
+"Enter Proximity name" = "Ievadiet tuvas atrašanās vietas nosaukumu";
+"Location" = "Atrašanās vieta";
+"Select location" = "Izvēlēties atrašanās vietu";
+"Search location" = "Meklēt atrašanās vietu";
+"Select Date" = "Izvēlēties datumu";
+"Select Time" = "Izvēlēties laiku";
+"Open Map" = "Atvērt karti";
+"Type" = "Tips";
+"Home" = "Mājas";
+"Gym" = "Trenažieru zāle";
+"Office" = "Birojs";
+"Shop" = "Veikals";
+"Education" = "Izglītība";
+"Hospital" = "Slimnīca";
+"Other" = "Cits";
+"Alert Date and Time" = "Brīdinājuma datums un laiks";
+"Radius" = "Rādiuss";
+"Push Notification" = "Push paziņojums";
+"Note" = "Piezīme";
+"Enter note about this alert" = "Ievadiet piezīmi par šo brīdinājumu";
+"Add Alert" = "Pievienot brīdinājumu";
+"Select & Continue" = "Izvēlēties un turpināt";
+"Leave without alert?" = "Atstāt bez brīdinājuma?";
+"No alert added. Go back?" = "Brīdinājums netika pievienots. Atgriezties?";
+"Alert Saved" = "Brīdinājums saglabāts";
+"Your alert has been saved successfully." = "Jūsu brīdinājums veiksmīgi saglabāts.";
+"Proximity info" = "Tuvas atrašanās vietas informācija";
+"Coordinates" = "Koordinātas";
+"Status" = "Statuss";
+"Inactive" = "Neaktīvs";
+"Active" = "Aktīvs";
+"Alert On" = "Brīdinājums ieslēgts";
+"Delete Alert?" = "Dzēst brīdinājumu?";
+"Are you sure you want to delete this alert?" = "Vai tiešām vēlaties dzēst šo brīdinājumu?";
+"Save Alert" = "Saglabāt brīdinājumu";
+
+"Settings" = "Iestatījumi";
+"Battery Level Sharing" = "Akumulatora līmeņa koplietošana";
+"Proximity Notifications" = "Tuvas atrašanās vietas paziņojumi";
+"Motion Activity" = "Kustības aktivitāte";
+"Location Sharing" = "Atrašanās vietas koplietošana";
+"Rate Now" = "Novērtēt tagad";
+"Share" = "Kopīgot";
+"Feedback" = "Atsauksmes";
+"Privacy Policy" = "Privātuma politika";
+"Term & Condition" = "Noteikumi un nosacījumi";
+
+"Network Error" = "Tīkla kļūda";
+"Make sure you’re connected to the internet." = "Pārliecinieties, ka esat savienots ar internetu.";
+"Retry" = "Mēģināt vēlreiz";
+
+"Enable notification and allow access to your location Sharing for the app to run properly." = "Iespējojiet paziņojumus un atļaujiet piekļuvi atrašanās vietas koplietošanai, lai lietotne darbotos pareizi.";
+"Enable notification and allow access to your motion activity for the app to run properly." = "Iespējojiet paziņojumus un atļaujiet piekļuvi jūsu kustības aktivitātēm, lai lietotne darbotos pareizi.";
+"Member" = "Dalībnieks";
+"Map" = "Karte";
+"Proximity" = "Tuvas atrašanās vietas";
+"Child mode is enabled" = "Bērnu režīms ir ieslēgts";
+"you can’t turn off location and battery level sharing or log out." = "jūs nevarat izslēgt atrašanās vietas un akumulatora līmeņa koplietošanu vai iziet no sistēmas.";
+"LogOut" = "Iziet";
+"Log Out" = "Iziet";
+"Disable" = "Atspējot";
+"Learn more about child mode" = "Uzziniet vairāk par bērnu režīmu";
+"Circle Owner" = "Grupas īpašnieks";
+"Send request to disable child mode?" = "Nosūtīt pieprasījumu atspējot bērnu režīmu?";
+"The circle owner will get a notification to turn it off for you." = "Grupas īpašnieks saņems paziņojumu, lai to izslēgtu jūsu vietā.";
+"Send" = "Nosūtīt";
+"Child Mode" = "Bērnu režīms";
+"Child Mode remove features children don’t need and prevent them from logging out and turning off location and battery level sharing." = "Bērnu režīms noņem funkcijas, kas bērniem nav nepieciešamas, un neļauj tiem iziet no sistēmas vai izslēgt atrašanās vietas un akumulatora līmeņa koplietošanu.";
+"Setup child mode" = "Iestatīt bērnu režīmu";
+"Add child to a circle and enable child mode in the app settings on their device." = "Pievienojiet bērnu grupai un ieslēdziet bērnu režīmu lietotnes iestatījumos viņu ierīcē.";
+"Your Children Won’t be able to Creating Circles, browsing travel history, turn off location and battery level sharing or log out." = "Jūsu bērni nevarēs izveidot grupas, pārlūkot ceļojumu vēsturi, izslēgt atrašanās vietas un akumulatora līmeņa koplietošanu vai iziet no sistēmas.";
+"Child mode is enabled for" = "Bērnu režīms ir ieslēgts priekš";
+"About Child Mode" = "Par bērnu režīmu";
+"What happens when Child Mode is ON?" = "Kas notiek, kad bērnu režīms ir ieslēgts?";
+"Location sharing stays always active (cannot be turned off)." = "Atrašanās vietas koplietošana vienmēr ir aktīva (to nevar izslēgt).";
+"Battery percentage is visible to the circle owner." = "Akumulatora procentuālais daudzums ir redzams grupas īpašniekam.";
+"Logout option is disabled to prevent tracking interruptions." = "Iziešanas opcija ir atspējota, lai novērstu izsekošanas pārtraukumus.";
+"Designed to ensure the member stays safe and connected." = "Izstrādāts, lai nodrošinātu dalībnieka drošību un savienojumu.";
+"How to turn OFF Child Mode?" = "Kā izslēgt bērnu režīmu?";
+"The Circle Owner can disable Child Mode anytime." = "Grupas īpašnieks var jebkurā laikā izslēgt bērnu režīmu.";
+"The member can send a disable request → owner must approve it." = "Dalībnieks var nosūtīt izslēgšanas pieprasījumu → īpašniekam tas jāapstiprina.";
+"Only after approval, Child Mode will be turned off." = "Tikai pēc apstiprināšanas bērnu režīms tiks izslēgts.";
+"Why use Child Mode?" = "Kāpēc izmantot bērnu režīmu?";
+"Ensures continuous safety tracking." = "Nodrošina nepārtrauktu drošības izsekošanu.";
+"Prevents location hiding or accidental logout." = "Novērš atrašanās vietas slēpšanu vai nejaušu iziešanu no sistēmas.";
+"Gives parents/guardians more control & peace of mind." = "Dod vecākiem/aizbildņiem lielāku kontroli un mieru.";
+"No members" = "Nav dalībnieku";
+"Disable Child Mode?" = "Atspējot bērnu režīmu?";
+"Are you sure you want to disable child mode for ‘%@’?" = "Vai tiešām vēlaties atspējot bērnu režīmu lietotājam ‘%@’?";
+"No" = "Nē";
+"Exit" = "Iziet";
+"Reject" = "Noraidīt";
+"Child Mode Disable Request!" = "Pieprasījums atspējot bērnu režīmu!";
+"has requested to disable Child Mode. Do you want to approve this request?" = "ir pieprasījis atspējot bērnu režīmu. Vai vēlaties apstiprināt šo pieprasījumu?";
+"Child Mode Disabled!" = "Bērnu režīms atspējots!";
+"Child Mode is Disable for '%@' successfully." = "Bērnu režīms veiksmīgi atspējots lietotājam '%@'.";

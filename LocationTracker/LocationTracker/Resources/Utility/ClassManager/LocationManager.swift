@@ -1,0 +1,296 @@
+//
+//  LocationManager.swift
+//  LocationTracker
+//
+//  Created by Vishal Vaghasiya on 08/08/25.
+//
+
+import CoreLocation
+import UIKit
+
+class LocationManager: NSObject {
+    
+    static let shared = LocationManager()
+#if DEBUG
+    let apiKey = ""
+#else
+    let apiKey = ""
+#endif
+    
+    let locationManager = CLLocationManager()
+    var authorizationStatusHandler: ((CLAuthorizationStatus) -> Void)?
+    var locationUpdateHandler: ((CLLocation) -> Void)?
+    var lastRecordedLocation: CLLocation?
+    
+    private var notifiedAlertIDs: Set<UUID> = []
+    
+    override private init() {
+        super.init()
+        self.locationManager.delegate = self
+        self.locationManager.allowsBackgroundLocationUpdates = true
+        self.locationManager.pausesLocationUpdatesAutomatically = false
+    }
+    
+    // MARK: - Location Authorization
+    
+    public func requestLocationAuthorization(completion: @escaping (Bool) -> Void) {
+        let status = locationManager.authorizationStatus
+        switch status {
+        case .notDetermined:
+            if #available(iOS 13.4, *) {
+                locationManager.requestWhenInUseAuthorization()
+            } else {
+                locationManager.requestAlwaysAuthorization()
+            }
+        case .authorizedWhenInUse:
+            locationManager.requestAlwaysAuthorization()
+            completion(true)
+        case .authorizedAlways:
+            completion(true)
+        case .denied, .restricted:
+            completion(false)
+        @unknown default:
+            completion(false)
+        }
+    }
+    
+    func startMonitoringLocationChanges() {
+        let status = locationManager.authorizationStatus
+        switch status {
+        case .notDetermined:
+            if #available(iOS 13.4, *) {
+                locationManager.requestWhenInUseAuthorization()
+            } else {
+                locationManager.requestAlwaysAuthorization()
+            }
+        case .authorizedWhenInUse:
+            locationManager.requestAlwaysAuthorization()
+        case .authorizedAlways:
+            break
+        case .denied, .restricted:
+            showSettingsAlert()
+            break
+        @unknown default:
+            break
+        }
+        locationManager.startMonitoringSignificantLocationChanges()
+    }
+    
+    private func showSettingsAlert() {
+        let alert = UIAlertController(title: "Permission Required",
+                                      message: "Please enable permissions in Settings",
+                                      preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Open Settings", style: .default, handler: { _ in
+            if let settingsURL = URL(string: UIApplication.openSettingsURLString),
+               UIApplication.shared.canOpenURL(settingsURL) {
+                UIApplication.shared.open(settingsURL)
+            }
+        }))
+        
+        // Present the alert from top ViewController
+        if let topController = UIApplication.shared.windows.first?.rootViewController {
+            topController.present(alert, animated: true)
+        }
+    }
+    
+    private func startLocationUpdates() {
+        startMonitazation()
+        startUpdatingLocation()
+    }
+    
+    func startUpdatingLocation() {
+        locationManager.startUpdatingLocation()
+    }
+    
+    func startMonitazation() {
+        locationManager.startMonitoringSignificantLocationChanges()
+    }
+    
+    func stopMonitazation() {
+        locationManager.stopMonitoringSignificantLocationChanges()
+    }
+    
+    func fetchCurrentLocation(completion: @escaping (CLLocation) -> Void) {
+        locationUpdateHandler = completion
+        locationManager.requestLocation() // This triggers didUpdateLocations
+    }
+    
+    private func uploadLocationToServer(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
+        FirebaseManager.shared.saveUserLocationHistory(latitude: latitude, longitude: longitude)
+    }
+    
+    private func checkProximityAlerts(for currentLocation: CLLocation) {
+        let alerts = CoreDataManager.shared.fetchProximityAlerts()
+        
+        for alert in alerts {
+            if !alert.radiusTrigger {
+                let alertLocation = CLLocation(latitude: alert.latitude, longitude: alert.longitude)
+                let distance = currentLocation.distance(from: alertLocation)
+                
+                if distance <= alert.radius {
+                    if let id = alert.id, !notifiedAlertIDs.contains(id) {
+                        notifiedAlertIDs.insert(id)
+                        sendNotification(title: "Proximity Alert",
+                                         body: "You are within \(Int(distance)) meters of \(alert.name ?? "a saved location").")
+                        CoreDataManager.shared.markAlertAsRadiusTriggered(by: alert.id ?? UUID(), radiusTrigger: true)
+                    }
+                } else {
+                    if let id = alert.id {
+                        notifiedAlertIDs.remove(id)
+                    }
+                }
+            }
+        }
+    }
+    
+    // MARK: - Local Notification
+    private func sendNotification(title: String, body: String) {
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = body
+        content.sound = .default
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request) { error in
+            if let error = error {
+                print("❌ Failed to schedule notification:", error.localizedDescription)
+            } else {
+                print("📢 Notification scheduled: \(title)")
+            }
+        }
+    }
+    
+}
+
+// MARK: - CLLocationManagerDelegate
+
+extension LocationManager: CLLocationManagerDelegate {
+    // MARK: - CLLocationManagerDelegate
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        authorizationStatusHandler?(status)
+        switch status {
+        case .authorizedAlways, .authorizedWhenInUse:
+            locationManager.requestAlwaysAuthorization()
+            startLocationUpdates()
+        case .denied, .restricted:
+            print("Location access denied or restricted.")
+        default:
+            break
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let currentLocation = locations.last else { return }
+        guard let lastLocation = lastRecordedLocation else {
+            lastRecordedLocation = currentLocation
+            return
+        }
+        
+        // Calculate distance in meters
+        let distance = currentLocation.distance(from: lastLocation)
+        
+        if distance >= 20 {
+            print("📍 User moved \(distance) meters — updating location to database.")
+            uploadLocationToServer(latitude: currentLocation.coordinate.latitude,
+                                   longitude: currentLocation.coordinate.longitude)
+            
+            checkProximityAlerts(for: currentLocation)
+            
+            // Update last recorded location
+            lastRecordedLocation = currentLocation
+        } else {
+            //print("🔁 Moved only \(distance) meters — not updating.")
+        }
+        
+        locationUpdateHandler?(currentLocation)
+        locationUpdateHandler = nil // Reset callback after use
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Failed to find user's location: \(error.localizedDescription)")
+    }
+}
+
+extension LocationManager {
+    //MARK: FROM GOOGLE
+    /*func getAddressFrom(latitude: Double, longitude: Double, completion: @escaping (String?) -> Void) {
+     let urlStr = "https://maps.googleapis.com/maps/api/geocode/json?latlng=\(latitude),\(longitude)&key=\(apiKey)"
+     
+     guard let url = URL(string: urlStr) else {
+     completion(nil)
+     return
+     }
+     
+     URLSession.shared.dataTask(with: url) { data, response, error in
+     if let error = error {
+     print("❌ API Error: \(error.localizedDescription)")
+     completion(nil)
+     return
+     }
+     
+     guard let data = data else {
+     print("❗️No data")
+     completion(nil)
+     return
+     }
+     
+     do {
+     if let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
+     let results = json["results"] as? [[String: Any]],
+     let firstResult = results.first,
+     let formattedAddress = firstResult["formatted_address"] as? String {
+     completion(formattedAddress)
+     } else {
+     completion(nil)
+     }
+     } catch {
+     print("❌ JSON parse error: \(error)")
+     completion(nil)
+     }
+     }.resume()
+     }*/
+    
+    //MARK: FROM APPLE
+    func getAddressFrom(latitude: Double, longitude: Double, completion: @escaping (String?) -> Void) {
+        let location = CLLocation(latitude: latitude, longitude: longitude)
+        let geocoder = CLGeocoder()
+        
+        geocoder.reverseGeocodeLocation(location) { placemarks, error in
+            if let error = error {
+                completion(nil) // Return nil in case of an error
+                return
+            }
+            
+            guard let placemark = placemarks?.first else {
+                completion(nil) // Return nil if no placemarks are available
+                return
+            }
+            
+            // Build the address string
+            var addressString = ""
+            if let subLocality = placemark.subLocality {
+                addressString += "\(subLocality), "
+            }
+            if let thoroughfare = placemark.thoroughfare {
+                addressString += "\(thoroughfare), "
+            }
+            if let locality = placemark.locality {
+                addressString += "\(locality), "
+            }
+            if let country = placemark.country {
+                addressString += "\(country), "
+            }
+            if let postalCode = placemark.postalCode {
+                addressString += "\(postalCode)"
+            }
+            
+            // Trim trailing commas and whitespace
+            addressString = addressString.trimmingCharacters(in: .whitespacesAndNewlines)
+            completion(addressString)
+        }
+    }
+}

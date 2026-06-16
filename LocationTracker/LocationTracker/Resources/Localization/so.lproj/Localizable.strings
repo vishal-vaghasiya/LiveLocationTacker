@@ -1,0 +1,200 @@
+"Welcome" = "Soo Dhawoow";
+"Stay connected with loved ones by tracking their live location with ease" = "La xiriir dadka aad jeceshahay adigoo si fudud u raacaya goobtooda tooska ah";
+"Get started" = "Bilow";
+
+"Select Language" = "Dooro Luqadda";
+"Change Language" = "Beddel Luqadda";
+
+"Stay Close to Your Loved Ones" = "Ku Dhawow Qoyskaaga";
+"Keep your family connected no matter where life takes them." = "Qoyskaaga ku xidhnow meel kasta oo noloshu ku qaado.";
+
+"Real-Time Location at Your Fingertips" = "Goobta Waqtiga Dhabta ah ee Fartaada";
+"See live updates instantly and never miss a moment." = "Si degdeg ah u arag wararkii ugu dambeeyay oo ha seegin daqiiqadna.";
+
+"A Smarter Way to Locate Family" = "Hab Caqli Badan oo Lagu Helo Qoyska";
+"Quick access to real-time family locations made simple." = "Helitaanka degdega ah ee goobaha qoyska waqtiga-dhabta ah si sahlan.";
+
+"Next" = "Xiga";
+
+"Permissions" = "Oggolaansho";
+"Enable notification and allow access to your location and motion activity for the app to run properly." = "Fur ogeysiiska oo oggolow marin u helidda goobtaada iyo dhaqdhaqaaqa si app-ku si sax ah u shaqeeyo.";
+"Notification" = "Ogeysiis";
+
+"Continue" = "Sii wad";
+
+"Enter Your Phone Number" = "Gali Lambarkaaga Taleefanka";
+"Your information stays private and is never shared with third parties." = "Macluumaadkaaga waa gaar oo lama wadaago dhinacyo saddexaad.";
+
+"OTP Verification" = "Xaqiijinta OTP";
+"Enter the OTP Sent to" = "Gali OTP-ga loo diray";
+"Don’t Receive the OTP ?" = "Ma helin OTP-ga?";
+"RESEND OTP" = "Dib u dir OTP";
+
+"Please enter valid OTP code" = "Fadlan geli koodh OTP sax ah";
+"Verified" = "La xaqiijiyey";
+
+"Set Profile" = "Deji Macluumaadka";
+"Complete your profile details." = "Buuxi faahfaahinta macluumaadkaaga.";
+"Upload Photo" = "Soo geli Sawirka";
+"Change Photo" = "Beddel Sawirka";
+"Update" = "Cusbooneysii";
+
+"Enter first name" = "Gali magac hore";
+"First name" = "Magac hore";
+"Enter Name" = "Gali Magaca";
+"Enter circle name" = "Gali magaca kooxa";
+"Enter last name" = "Gali magac dambe";
+"Last name" = "Magac dambe";
+"Select gender" = "Dooro jinsiga";
+"Male" = "Lab";
+"Female" = "Dhedig";
+"Set Profile Pic" = "Deji Sawirka Macluumaadka";
+
+"Cancel" = "Jooji";
+"Done" = "Dhameystiran";
+"Yes" = "Haa";
+"Ok" = "Hagaag";
+"Save" = "Kaydi";
+"Delete" = "Tirtir";
+
+"Members" = "Xubnaha";
+"Add" = "Ku dar";
+
+"Choose Map" = "Dooro Khariidada";
+"Standard" = "Caadi";
+"Satellite" = "Dayax-gacmeed";
+"Transit" = "Gaadiid";
+
+"Create Circle" = "Abuur Koox";
+"Join Circle" = "Ku biir Koox";
+"Edit Circle" = "Tafatir Koox";
+
+"Circle Name" = "Magaca Kooxda";
+"Invitation Code" = "Koodhka Casuumaadda";
+"Create" = "Abuur";
+
+"Remove Member ?" = "Ka saar Xubin?";
+"Are you sure want to remove this member from circle?" = "Ma hubtaa inaad ka saarto xubintan kooxda?";
+
+"Enter Invitation Code" = "Gali Koodhka Casuumaadda";
+"Get an invitation code from the person who made the circle." = "Ka hel koodh casuumaad qofka abuuray kooxda.";
+"Join" = "Ku biir";
+"Please enter valid code" = "Fadlan geli koodh sax ah";
+
+"Add Member" = "Ku dar Xubin";
+"Add someone you know into circle to start getting notified about location" = "Ku dar qof aad taqaan kooxda si aad u bilowdo helitaanka ogeysiisyada goobta";
+
+"Choose From Contact" = "Ka Door Xiriirka";
+
+"Member Detail" = "Faahfaahinta Xubinta";
+"Address" = "Cinwaanka";
+"Last Update" = "Cusbooneysiintii Ugu Dambeysay";
+
+"SOS Calling" = "Wicitaanka SOS";
+"Once the countdown ends, your location will be shared with your circle." = "Marka tirinta hoos u dhacdo, goobtaada ayaa lala wadaagi doonaa kooxdaada.";
+"Stop" = "Jooji";
+"SOS Not Sent" = "SOS Lama Dirin";
+"No members in your circle. Please add members to share SOS alerts." = "Kooxdaada ma jiraan xubno. Fadlan ku dar xubno si aad u wadaagto digniinaha SOS.";
+"SOS Sent Successfully" = "SOS Si Guul leh Loogu Diray";
+"Your alert has been shared with all circle members." = "Digniintaada waxaa lala wadaagay dhammaan xubnaha kooxda.";
+
+"Proximity Alert" = "Digniinta Meesha U Dhaw";
+"Add a Proximity Alert to get started." = "Ku dar digniin meesha u dhow si aad u bilowdo.";
+"ID" = "Aqoonsi";
+"Name" = "Magac";
+"Enter Proximity name" = "Gali magaca meesha u dhow";
+"Location" = "Goobta";
+"Select location" = "Dooro goobta";
+"Search location" = "Raadi goobta";
+"Select Date" = "Dooro Taariikhda";
+"Select Time" = "Dooro Waqtiga";
+"Open Map" = "Fur Khariidada";
+"Type" = "Nooca";
+"Home" = "Guri";
+"Gym" = "Jimicsi";
+"Office" = "Xafiis";
+"Shop" = "Dukaan";
+"Education" = "Waxbarasho";
+"Hospital" = "Isbitaal";
+"Other" = "Kale";
+"Alert Date and Time" = "Taariikhda iyo Waqtiga Digniinta";
+"Radius" = "Masaafada";
+"Push Notification" = "Ogeysiiska Riixitaanka";
+"Note" = "Ogow";
+"Enter note about this alert" = "Gali qoraal ku saabsan digniintan";
+"Add Alert" = "Ku dar Digniin";
+"Select & Continue" = "Dooro & Sii wad";
+"Leave without alert?" = "Ka tag adigoon digniin dirin?";
+"No alert added. Go back?" = "Digniin lama darin. Ma ku laabaneysaa?";
+"Alert Saved" = "Digniin La Keydiyay";
+"Your alert has been saved successfully." = "Digniintaada si guul leh ayaa loo keydiyay.";
+"Proximity info" = "Macluumaadka Meesha U Dhaw";
+"Coordinates" = "Isuduwaha";
+"Status" = "Xaaladda";
+"Inactive" = "Aan Firfircoonayn";
+"Active" = "Firfircoon";
+"Alert On" = "Digniinta On";
+"Delete Alert?" = "Ma tirtirtaa digniinta?";
+"Are you sure you want to delete this alert?" = "Ma hubtaa inaad tirtirayso digniintan?";
+"Save Alert" = "Kaydi Digniinta";
+
+"Settings" = "Dejinta";
+"Battery Level Sharing" = "Wadaag Heerka Batariga";
+"Proximity Notifications" = "Ogeysiisyada Meesha U Dhaw";
+"Motion Activity" = "Hawlaha Dhaqdhaqaaqa";
+"Location Sharing" = "Wadaag Goobta";
+"Rate Now" = "Qiimee Hadda";
+"Share" = "Wadaag";
+"Feedback" = "Ra'yi celin";
+"Privacy Policy" = "Qaanuunka Asturnaanta";
+"Term & Condition" = "Shuruudaha & Xaaladaha";
+
+"Network Error" = "Khalad Shabakad";
+"Make sure you’re connected to the internet." = "Hubi inaad ku xiran tahay internet-ka.";
+"Retry" = "Dib u tijaabi";
+
+"Enable notification and allow access to your location Sharing for the app to run properly." = "Fur ogeysiiska oo oggolow marin u helidda wadaagista goobta si app-ku si sax ah u shaqeeyo.";
+"Enable notification and allow access to your motion activity for the app to run properly." = "Fur ogeysiiska oo oggolow marin u helidda dhaqdhaqaaqaaga si app-ku si sax ah u shaqeeyo.";
+"Member" = "Xubin";
+"Map" = "Khariidad";
+"Proximity" = "Meesha U Dhaw";
+"Child mode is enabled" = "Habka caruurta waa la hawlgaliyay";
+"you can’t turn off location and battery level sharing or log out." = "ma damin kartid wadaagista goobta iyo heerka batariga ama ma baxsan kartid.";
+"LogOut" = "Bax";
+"Log Out" = "Bax";
+"Disable" = "Dami";
+"Learn more about child mode" = "Wax badan ka baro habka caruurta";
+"Circle Owner" = "Milkiilaha Kooxda";
+"Send request to disable child mode?" = "Ma dirtaa codsi si loo damiyo habka caruurta?";
+"The circle owner will get a notification to turn it off for you." = "Milkiilaha kooxdu wuxuu heli doonaa ogeysiis si uu kuu damiyo.";
+"Send" = "Dir";
+"Child Mode" = "Habka Caruurta";
+"Child Mode remove features children don’t need and prevent them from logging out and turning off location and battery level sharing." = "Habka Caruurta wuxuu ka saaraa astaamaha aan carruurtu u baahnayn wuxuuna ka hortagaa inay baxaan ama damiyaan wadaagista goobta iyo heerka batariga.";
+"Setup child mode" = "Deji habka caruurta";
+"Add child to a circle and enable child mode in the app settings on their device." = "Ku dar ilmaha kooxda oo hawlgeli habka caruurta dejimaha app-ka ee qalabkooda.";
+"Your Children Won’t be able to Creating Circles, browsing travel history, turn off location and battery level sharing or log out." = "Carruurtaadu ma abuuri karaan kooxo, ma baari karaan taariikhda safarka, ma damin karaan wadaagista goobta iyo heerka batariga ama ma baxsan karaan.";
+"Child mode is enabled for" = "Habka caruurta waa la hawlgaliyay";
+"About Child Mode" = "Ku saabsan Habka Caruurta";
+"What happens when Child Mode is ON?" = "Maxaa dhaca marka Habka Caruurta uu ON yahay?";
+"Location sharing stays always active (cannot be turned off)." = "Wadaagista goobta waa mar walba firfircoon tahay (lama damin karo).";
+"Battery percentage is visible to the circle owner." = "Boqolkiiba batariga ayaa u muuqda milkiilaha kooxda.";
+"Logout option is disabled to prevent tracking interruptions." = "Ikhtiyaarka baxsiga waa la naafoobay si looga hortago carqaladaha raadraaca.";
+"Designed to ensure the member stays safe and connected." = "Waxaa loo qorsheeyay in la hubiyo in xubin ay ahaato mid ammaan ah oo xiriir leh.";
+"How to turn OFF Child Mode?" = "Sidee loo damiyaa Habka Caruurta?";
+"The Circle Owner can disable Child Mode anytime." = "Milkiilaha Kooxda wuu damin karaa Habka Caruurta wakhti kasta.";
+"The member can send a disable request → owner must approve it." = "Xubintu waxay diri kartaa codsi damin → milkiiluhu waa inuu ansixiyaa.";
+"Only after approval, Child Mode will be turned off." = "Kaliya ansixinta kadib, Habka Caruurta waa la dami doonaa.";
+"Why use Child Mode?" = "Maxaa loo isticmaalaa Habka Caruurta?";
+"Ensures continuous safety tracking." = "Waxay hubisaa raadraac amni oo joogto ah.";
+"Prevents location hiding or accidental logout." = "Waa ka hortagtaa qarin goobta ama baxsi shil ah.";
+"Gives parents/guardians more control & peace of mind." = "Waxay siisaa waalidiinta/ilaalada xakameyn dheeraad ah iyo deganaansho maskaxeed.";
+"No members" = "Xubin ma jirto";
+"Disable Child Mode?" = "Dami Habka Caruurta?";
+"Are you sure you want to disable child mode for ‘%@’?" = "Ma hubtaa inaad daminayso habka caruurta ee ‘%@’?";
+"No" = "Maya";
+"Exit" = "Bax";
+"Reject" = "Diid";
+"Child Mode Disable Request!" = "Codsi Dami Habka Caruurta!";
+"has requested to disable Child Mode. Do you want to approve this request?" = "ayaa codsaday in la damiyo Habka Caruurta. Ma ansixinaysaa codsigan?";
+"Child Mode Disabled!" = "Habka Caruurta waa la damiyay!";
+"Child Mode is Disable for '%@' successfully." = "Habka Caruurta si guul leh ayaa loogu damiyay '%@'.";

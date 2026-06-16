@@ -1,0 +1,61 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'LocationTracker' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for LocationTracker
+  pod 'SwiftGen', '~> 6.6'
+  pod 'ReachabilitySwift', '~> 5.2'
+  pod 'ProgressHUD', '~> 14.1'
+  pod 'IQKeyboardManagerSwift', '~> 8.0'
+  pod 'IQKeyboardToolbarManager'
+  pod 'SKCountryPicker', '~> 4.0'
+  pod 'AEOTPTextField', '~> 1.2'
+  pod 'SDWebImage', '~> 5.21'
+  pod 'PhoneNumberKit', '~> 4.1'
+  pod 'Toast-Swift', '~> 5.1'
+  
+  pod 'Firebase', '~> 12.0.0'
+  pod 'FirebaseAuth', '~> 12.0.0'
+  pod 'FirebaseMessaging', '~> 12.0.0'
+  pod 'FirebaseCrashlytics', '~> 12.0.0'
+  pod 'FirebaseAnalytics', '~> 12.0.0'
+  pod 'FirebaseDatabase', '~> 12.0.0'
+  pod 'FirebaseStorage', '~> 12.0.0'
+  pod 'FirebaseRemoteConfig', '~> 12.0.0'
+  
+  pod 'SwiftJWT', '~> 3.6'
+  
+  pod 'RevenueCat', '~> 5.34'
+  
+  pod 'Google-Mobile-Ads-SDK', '~> 12.8'
+  
+  pod 'FlagPhoneNumber'
+  
+end
+post_install do |installer|
+  # Get Xcode version and check if it's >= 15
+  xcode_base_version = `xcodebuild -version | grep 'Xcode' | awk '{print $2}' | cut -d . -f 1`.strip
+
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      # Disable Bitcode for all targets
+      config.build_settings['ENABLE_BITCODE'] = 'NO'
+
+      # Set the minimum iOS deployment target to 15.0
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.0'
+
+      # If Xcode version is 15 or higher, modify xcconfig file
+      if Integer(xcode_base_version) >= 15
+        xcconfig_path = config.base_configuration_reference.real_path
+        if File.exist?(xcconfig_path)
+          xcconfig = File.read(xcconfig_path)
+          xcconfig_mod = xcconfig.gsub(/DT_TOOLCHAIN_DIR/, "TOOLCHAIN_DIR")
+          File.open(xcconfig_path, "w") { |file| file << xcconfig_mod }
+        end
+      end
+    end
+  end
+end

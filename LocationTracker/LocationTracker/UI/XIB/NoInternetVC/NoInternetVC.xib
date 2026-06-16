@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NoInternetVC" customModule="LocationTracker" customModuleProvider="target">
+            <connections>
+                <outlet property="btnRetry" destination="Bhf-tE-0a5" id="G2i-qw-NqI"/>
+                <outlet property="lblSubTitle" destination="bcq-Ri-guG" id="lBX-ff-ox2"/>
+                <outlet property="lblTitle" destination="XsD-cc-auO" id="FQY-c1-nK0"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vLb-8g-fNR">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imu-kv-uHb">
+                            <rect key="frame" x="353" y="10" width="30" height="30"/>
+                            <color key="backgroundColor" name="AppLightGrey"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="LIy-11-Lkm"/>
+                                <constraint firstAttribute="width" secondItem="imu-kv-uHb" secondAttribute="height" id="ddM-Z7-W96"/>
+                            </constraints>
+                            <color key="tintColor" name="AppBlack"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="icon_close"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="15"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="clickClose:" destination="-1" eventType="touchUpInside" id="brE-fd-3H9"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="avc-Jk-OlO">
+                            <rect key="frame" x="39.333333333333343" y="162" width="314.33333333333326" height="435"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_no_internet" translatesAutoresizingMaskIntoConstraints="NO" id="N8D-k8-hrr">
+                                    <rect key="frame" x="0.0" y="0.0" width="314.33333333333331" height="274.33333333333331"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="N8D-k8-hrr" secondAttribute="height" multiplier="157:137" id="YSI-JQ-oya"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Network Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XsD-cc-auO">
+                                    <rect key="frame" x="5" y="289.33333333333331" width="304.33333333333331" height="22"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="22" id="cKj-wN-VrJ"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" name="AppBlack"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="fontSemiBold">
+                                            <real key="value" value="20"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make sure you’re connected to the internet." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcq-Ri-guG">
+                                    <rect key="frame" x="5" y="316.33333333333337" width="304.33333333333331" height="40.666666666666686"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" name="AppBlack"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="fontRegular">
+                                            <real key="value" value="16"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bhf-tE-0a5">
+                                    <rect key="frame" x="5" y="382" width="304.33333333333331" height="48"/>
+                                    <color key="backgroundColor" name="AppRed"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="48" id="2mB-nk-Cwg"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="Retry">
+                                        <color key="titleColor" name="AppWhite"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="fontMedium">
+                                            <real key="value" value="16"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                            <real key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                            <real key="value" value="0.20000000000000001"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                            <size key="value" width="0.0" height="0.0"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                            <color key="value" name="AppBlack"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="clickRetry:" destination="-1" eventType="touchUpInside" id="XD5-TR-fAq"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="N8D-k8-hrr" firstAttribute="top" secondItem="avc-Jk-OlO" secondAttribute="top" id="60m-tn-lbl"/>
+                                <constraint firstItem="bcq-Ri-guG" firstAttribute="top" secondItem="XsD-cc-auO" secondAttribute="bottom" constant="5" id="B0m-7s-L04"/>
+                                <constraint firstAttribute="trailing" secondItem="bcq-Ri-guG" secondAttribute="trailing" constant="5" id="E6b-6t-Lgd"/>
+                                <constraint firstItem="Bhf-tE-0a5" firstAttribute="leading" secondItem="avc-Jk-OlO" secondAttribute="leading" constant="5" id="P0P-7C-AGe"/>
+                                <constraint firstItem="N8D-k8-hrr" firstAttribute="leading" secondItem="avc-Jk-OlO" secondAttribute="leading" id="Syb-MY-kvs"/>
+                                <constraint firstAttribute="trailing" secondItem="Bhf-tE-0a5" secondAttribute="trailing" constant="5" id="XpB-ei-EQM"/>
+                                <constraint firstItem="XsD-cc-auO" firstAttribute="leading" secondItem="avc-Jk-OlO" secondAttribute="leading" constant="5" id="Zgr-f8-xWp"/>
+                                <constraint firstAttribute="trailing" secondItem="N8D-k8-hrr" secondAttribute="trailing" id="gba-Ig-0yw"/>
+                                <constraint firstItem="Bhf-tE-0a5" firstAttribute="top" secondItem="bcq-Ri-guG" secondAttribute="bottom" constant="25" id="hue-C6-Sjl"/>
+                                <constraint firstItem="bcq-Ri-guG" firstAttribute="leading" secondItem="avc-Jk-OlO" secondAttribute="leading" constant="5" id="jR9-6n-ge2"/>
+                                <constraint firstAttribute="trailing" secondItem="XsD-cc-auO" secondAttribute="trailing" constant="5" id="qEX-6k-unK"/>
+                                <constraint firstAttribute="bottom" secondItem="Bhf-tE-0a5" secondAttribute="bottom" constant="5" id="y40-2w-rwe"/>
+                                <constraint firstItem="XsD-cc-auO" firstAttribute="top" secondItem="N8D-k8-hrr" secondAttribute="bottom" constant="15" id="zAa-RY-qYc"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="avc-Jk-OlO" firstAttribute="centerY" secondItem="vLb-8g-fNR" secondAttribute="centerY" id="4pj-RG-Tny"/>
+                        <constraint firstItem="avc-Jk-OlO" firstAttribute="width" secondItem="vLb-8g-fNR" secondAttribute="width" multiplier="0.8" id="ZKV-ts-6EF"/>
+                        <constraint firstAttribute="trailing" secondItem="imu-kv-uHb" secondAttribute="trailing" constant="10" id="ngv-s2-e7q"/>
+                        <constraint firstItem="avc-Jk-OlO" firstAttribute="centerX" secondItem="vLb-8g-fNR" secondAttribute="centerX" id="sDn-CL-c2B"/>
+                        <constraint firstItem="imu-kv-uHb" firstAttribute="top" secondItem="vLb-8g-fNR" secondAttribute="top" constant="10" id="zm2-Jt-ne3"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="AppWhite"/>
+            <constraints>
+                <constraint firstItem="vLb-8g-fNR" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="3VR-Yi-2w0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vLb-8g-fNR" secondAttribute="trailing" id="IRY-gl-Yft"/>
+                <constraint firstItem="vLb-8g-fNR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="azD-eS-Lis"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="vLb-8g-fNR" secondAttribute="bottom" id="oSC-Ax-DQP"/>
+            </constraints>
+            <point key="canvasLocation" x="132" y="-32"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_close" width="20" height="20"/>
+        <image name="icon_no_internet" width="300" height="274.66665649414062"/>
+        <namedColor name="AppBlack">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="AppLightGrey">
+            <color red="0.91764705882352937" green="0.92156862745098034" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="AppRed">
+            <color red="1" green="0.41176470588235292" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="AppWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

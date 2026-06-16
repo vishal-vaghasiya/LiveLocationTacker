@@ -1,0 +1,200 @@
+"Welcome" = "Welcome";
+"Stay connected with loved ones by tracking their live location with ease" = "Stay connected with loved ones by tracking their live location with ease";
+"Get started" = "Get started";
+
+"Select Language" = "Select Language";
+"Change Language" = "Change Language";
+
+"Stay Close to Your Loved Ones" = "Stay Close to Your Loved Ones";
+"Keep your family connected no matter where life takes them." = "Keep your family connected no matter where life takes them.";
+
+"Real-Time Location at Your Fingertips" = "Real-Time Location at Your Fingertips";
+"See live updates instantly and never miss a moment." = "See live updates instantly and never miss a moment.";
+
+"A Smarter Way to Locate Family" = "A Smarter Way to Locate Family";
+"Quick access to real-time family locations made simple." = "Quick access to real-time family locations made simple.";
+
+"Next" = "Next";
+
+"Permissions" = "Permissions";
+"Enable notification and allow access to your location and motion activity for the app to run properly." = "Enable notification and allow access to your location and motion activity for the app to run properly.";
+"Notification" = "Notification";
+
+"Continue" = "Continue";
+
+"Enter Your Phone Number" = "Enter Your Phone Number";
+"Your information stays private and is never shared with third parties." = "Your information stays private and is never shared with third parties.";
+
+"OTP Verification" = "OTP Verification";
+"Enter the OTP Sent to" = "Enter the OTP Sent to";
+"Don’t Receive the OTP ?" = "Don’t Receive the OTP ?";
+"RESEND OTP" = "RESEND OTP";
+
+"Please enter valid OTP code" = "Please enter valid OTP code";
+"Verified" = "Verified";
+
+"Set Profile" = "Set Profile";
+"Complete your profile details." = "Complete your profile details.";
+"Upload Photo" = "Upload Photo";
+"Change Photo" = "Change Photo";
+"Update" = "Update";
+
+"Enter first name" = "Enter first name";
+"First name" = "First name";
+"Enter Name" = "Enter Name";
+"Enter circle name" = "Enter circle name";
+"Enter last name" = "Enter last name";
+"Last name" = "Last name";
+"Select gender" = "Select gender";
+"Male" = "Male";
+"Female" = "Female";
+"Set Profile Pic" = "Set Profile Pic";
+
+"Cancel" = "Cancel";
+"Done" = "Done";
+"Yes" = "Yes";
+"Ok" = "Ok";
+"Save" = "Save";
+"Delete" = "Delete";
+
+"Members" = "Members";
+"Add" = "Add";
+
+"Choose Map" = "Choose Map";
+"Standard" = "Standard";
+"Satellite" = "Satellite";
+"Transit" = "Transit";
+
+"Create Circle" = "Create Circle";
+"Join Circle" = "Join Circle";
+"Edit Circle" = "Edit Circle";
+
+"Circle Name" = "Circle Name";
+"Invitation Code" = "Invitation Code";
+"Create" = "Create";
+
+"Remove Member ?" = "Remove Member ?";
+"Are you sure want to remove this member from circle?" = "Are you sure want to remove this member from circle?";
+
+"Enter Invitation Code" = "Enter Invitation Code";
+"Get an invitation code from the person who made the circle." = "Get an invitation code from the person who made the circle.";
+"Join" = "Join";
+"Please enter valid code" = "Please enter valid code";
+
+"Add Member" = "Add Member";
+"Add someone you know into circle to start getting notified about location" = "Add someone you know into circle to start getting notified about location";
+
+"Choose From Contact" = "Choose From Contact";
+
+"Member Detail" = "Member Detail";
+"Address" = "Address";
+"Last Update" = "Last Update";
+
+"SOS Calling" = "SOS Calling";
+"Once the countdown ends, your location will be shared with your circle." = "Once the countdown ends, your location will be shared with your circle.";
+"Stop" = "Stop";
+"SOS Not Sent" = "SOS Not Sent";
+"No members in your circle. Please add members to share SOS alerts." = "No members in your circle. Please add members to share SOS alerts.";
+"SOS Sent Successfully" = "SOS Sent Successfully";
+"Your alert has been shared with all circle members." = "Your alert has been shared with all circle members.";
+
+"Proximity Alert" = "Proximity Alert";
+"Add a Proximity Alert to get started." = "Add a Proximity Alert to get started.";
+"ID" = "ID";
+"Name" = "Name";
+"Enter Proximity name" = "Enter Proximity name";
+"Location" = "Location";
+"Select location" = "Select location";
+"Search location" = "Search location";
+"Select Date" = "Select Date";
+"Select Time" = "Select Time";
+"Open Map" = "Open Map";
+"Type" = "Type";
+"Home" = "Home";
+"Gym" = "Gym";
+"Office" = "Office";
+"Shop" = "Shop";
+"Education" = "Education";
+"Hospital" = "Hospital";
+"Other" = "Other";
+"Alert Date and Time" = "Alert Date and Time";
+"Radius" = "Radius";
+"Push Notification" = "Push Notification";
+"Note" = "Note";
+"Enter note about this alert" = "Enter note about this alert";
+"Add Alert" = "Add Alert";
+"Select & Continue" = "Select & Continue";
+"Leave without alert?" = "Leave without alert?";
+"No alert added. Go back?" = "No alert added. Go back?";
+"Alert Saved" = "Alert Saved";
+"Your alert has been saved successfully." = "Your alert has been saved successfully.";
+"Proximity info" = "Proximity info";
+"Coordinates" = "Coordinates";
+"Status" = "Status";
+"Inactive" = "Inactive";
+"Active" = "Active";
+"Alert On" = "Alert On";
+"Delete Alert?" = "Delete Alert?";
+"Are you sure you want to delete this alert?" = "Are you sure you want to delete this alert?";
+"Save Alert" = "Save Alert";
+
+"Settings" = "Settings";
+"Battery Level Sharing" = "Battery Level Sharing";
+"Proximity Notifications" = "Proximity Notifications";
+"Motion Activity" = "Motion Activity";
+"Location Sharing" = "Location Sharing";
+"Rate Now" = "Rate Now";
+"Share" = "Share";
+"Feedback" = "Feedback";
+"Privacy Policy" = "Privacy Policy";
+"Term & Condition" = "Term & Condition";
+
+"Network Error" = "Network Error";
+"Make sure you’re connected to the internet." = "Make sure you’re connected to the internet.";
+"Retry" = "Retry";
+
+"Enable notification and allow access to your location Sharing for the app to run properly." = "Enable notification and allow access to your location Sharing for the app to run properly.";
+"Enable notification and allow access to your motion activity for the app to run properly." = "Enable notification and allow access to your motion activity for the app to run properly.";
+"Member" = "Member";
+"Map" = "Map";
+"Proximity" = "Proximity";
+"Child mode is enabled" = "Child mode is enabled";
+"you can’t turn off location and battery level sharing or log out." = "you can’t turn off location and battery level sharing or log out.";
+"LogOut" = "LogOut";
+"Log Out" = "Log Out";
+"Disable" = "Disable";
+"Learn more about child mode" = "Learn more about child mode";
+"Circle Owner" = "Circle Owner";
+"Send request to disable child mode?" = "Send request to disable child mode?";
+"The circle owner will get a notification to turn it off for you." = "The circle owner will get a notification to turn it off for you.";
+"Send" = "Send";
+"Child Mode" = "Child Mode";
+"Child Mode remove features children don’t need and prevent them from logging out and turning off location and battery level sharing." = "Child Mode remove features children don’t need and prevent them from logging out and turning off location and battery level sharing.";
+"Setup child mode" = "Setup child mode";
+"Add child to a circle and enable child mode in the app settings on their device." = "Add child to a circle and enable child mode in the app settings on their device.";
+"Your Children Won’t be able to Creating Circles, browsing travel history, turn off location and battery level sharing or log out." = "Your Children Won’t be able to Creating Circles, browsing travel history, turn off location and battery level sharing or log out.";
+"Child mode is enabled for" = "Child mode is enabled for";
+"About Child Mode" = "About Child Mode";
+"What happens when Child Mode is ON?" = "What happens when Child Mode is ON?";
+"Location sharing stays always active (cannot be turned off)." = "Location sharing stays always active (cannot be turned off).";
+"Battery percentage is visible to the circle owner." = "Battery percentage is visible to the circle owner.";
+"Logout option is disabled to prevent tracking interruptions." = "Logout option is disabled to prevent tracking interruptions.";
+"Designed to ensure the member stays safe and connected." = "Designed to ensure the member stays safe and connected.";
+"How to turn OFF Child Mode?" = "How to turn OFF Child Mode?";
+"The Circle Owner can disable Child Mode anytime." = "The Circle Owner can disable Child Mode anytime.";
+"The member can send a disable request → owner must approve it." = "The member can send a disable request → owner must approve it.";
+"Only after approval, Child Mode will be turned off." = "Only after approval, Child Mode will be turned off.";
+"Why use Child Mode?" = "Why use Child Mode?";
+"Ensures continuous safety tracking." = "Ensures continuous safety tracking.";
+"Prevents location hiding or accidental logout." = "Prevents location hiding or accidental logout.";
+"Gives parents/guardians more control & peace of mind." = "Gives parents/guardians more control & peace of mind.";
+"No members" = "No members";
+"Disable Child Mode?" = "Disable Child Mode?";
+"Are you sure you want to disable child mode for ‘%@’?" = "Are you sure you want to disable child mode for ‘%@’?";
+"No" = "No";
+"Exit" = "Exit";
+"Reject" = "Reject";
+"Child Mode Disable Request!" = "Child Mode Disable Request!";
+"has requested to disable Child Mode. Do you want to approve this request?" = "has requested to disable Child Mode. Do you want to approve this request?";
+"Child Mode Disabled!" = "Child Mode Disabled!";
+"Child Mode is Disable for '%@' successfully." = "Child Mode is Disable for '%@' successfully.";

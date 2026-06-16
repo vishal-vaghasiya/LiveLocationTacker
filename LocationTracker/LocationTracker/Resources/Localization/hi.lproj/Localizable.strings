@@ -1,0 +1,200 @@
+"Welcome" = "स्वागत है";
+"Stay connected with loved ones by tracking their live location with ease" = "अपनों से जुड़े रहें और उनकी लाइव लोकेशन आसानी से ट्रैक करें";
+"Get started" = "शुरू करें";
+
+"Select Language" = "भाषा चुनें";
+"Change Language" = "भाषा बदलें";
+
+"Stay Close to Your Loved Ones" = "अपने प्रियजनों के करीब रहें";
+"Keep your family connected no matter where life takes them." = "चाहे जीवन उन्हें कहीं भी ले जाए, अपने परिवार को जुड़े रखें।";
+
+"Real-Time Location at Your Fingertips" = "रियल-टाइम लोकेशन आपकी उंगलियों पर";
+"See live updates instantly and never miss a moment." = "तुरंत लाइव अपडेट देखें और कोई पल न चूकें।";
+
+"A Smarter Way to Locate Family" = "परिवार को खोजने का एक स्मार्ट तरीका";
+"Quick access to real-time family locations made simple." = "रियल-टाइम परिवार की लोकेशन तक त्वरित और सरल पहुंच।";
+
+"Next" = "अगला";
+
+"Permissions" = "अनुमतियाँ";
+"Enable notification and allow access to your location and motion activity for the app to run properly." = "ऐप सही ढंग से चलाने के लिए नोटिफिकेशन सक्षम करें और अपनी लोकेशन तथा मूवमेंट गतिविधि की अनुमति दें।";
+"Notification" = "सूचना";
+
+"Continue" = "जारी रखें";
+
+"Enter Your Phone Number" = "अपना फोन नंबर दर्ज करें";
+"Your information stays private and is never shared with third parties." = "आपकी जानकारी निजी रहती है और कभी भी तीसरे पक्ष के साथ साझा नहीं की जाती।";
+
+"OTP Verification" = "ओटीपी सत्यापन";
+"Enter the OTP Sent to" = "भेजा गया ओटीपी दर्ज करें";
+"Don’t Receive the OTP ?" = "ओटीपी नहीं मिला?";
+"RESEND OTP" = "ओटीपी पुनः भेजें";
+
+"Please enter valid OTP code" = "कृपया मान्य ओटीपी कोड दर्ज करें";
+"Verified" = "सत्यापित";
+
+"Set Profile" = "प्रोफ़ाइल सेट करें";
+"Complete your profile details." = "अपनी प्रोफ़ाइल विवरण पूरा करें।";
+"Upload Photo" = "फोटो अपलोड करें";
+"Change Photo" = "फोटो बदलें";
+"Update" = "अपडेट करें";
+
+"Enter first name" = "पहला नाम दर्ज करें";
+"First name" = "पहला नाम";
+"Enter Name" = "नाम दर्ज करें";
+"Enter circle name" = "सर्कल का नाम दर्ज करें";
+"Enter last name" = "अंतिम नाम दर्ज करें";
+"Last name" = "अंतिम नाम";
+"Select gender" = "लिंग चुनें";
+"Male" = "पुरुष";
+"Female" = "महिला";
+"Set Profile Pic" = "प्रोफ़ाइल चित्र सेट करें";
+
+"Cancel" = "रद्द करें";
+"Done" = "समाप्त";
+"Yes" = "हाँ";
+"Ok" = "ठीक है";
+"Save" = "सहेजें";
+"Delete" = "हटाएं";
+
+"Members" = "सदस्य";
+"Add" = "जोड़ें";
+
+"Choose Map" = "मैप चुनें";
+"Standard" = "मानक";
+"Satellite" = "सैटेलाइट";
+"Transit" = "परिवहन";
+
+"Create Circle" = "सर्कल बनाएं";
+"Join Circle" = "सर्कल में शामिल हों";
+"Edit Circle" = "सर्कल संपादित करें";
+
+"Circle Name" = "सर्कल का नाम";
+"Invitation Code" = "आमंत्रण कोड";
+"Create" = "बनाएं";
+
+"Remove Member ?" = "सदस्य हटाएं?";
+"Are you sure want to remove this member from circle?" = "क्या आप निश्चित हैं कि आप इस सदस्य को सर्कल से हटाना चाहते हैं?";
+
+"Enter Invitation Code" = "आमंत्रण कोड दर्ज करें";
+"Get an invitation code from the person who made the circle." = "सर्कल बनाने वाले व्यक्ति से आमंत्रण कोड प्राप्त करें।";
+"Join" = "शामिल हों";
+"Please enter valid code" = "कृपया मान्य कोड दर्ज करें";
+
+"Add Member" = "सदस्य जोड़ें";
+"Add someone you know into circle to start getting notified about location" = "किसी परिचित को सर्कल में जोड़ें ताकि आप उनकी लोकेशन की सूचनाएं प्राप्त कर सकें";
+
+"Choose From Contact" = "संपर्क से चुनें";
+
+"Member Detail" = "सदस्य विवरण";
+"Address" = "पता";
+"Last Update" = "अंतिम अपडेट";
+
+"SOS Calling" = "एसओएस कॉलिंग";
+"Once the countdown ends, your location will be shared with your circle." = "काउंटडाउन समाप्त होने पर, आपकी लोकेशन आपके सर्कल के साथ साझा की जाएगी।";
+"Stop" = "रोकें";
+"SOS Not Sent" = "एसओएस नहीं भेजा गया";
+"No members in your circle. Please add members to share SOS alerts." = "आपके सर्कल में कोई सदस्य नहीं है। कृपया एसओएस अलर्ट साझा करने के लिए सदस्य जोड़ें।";
+"SOS Sent Successfully" = "एसओएस सफलतापूर्वक भेजा गया";
+"Your alert has been shared with all circle members." = "आपका अलर्ट सभी सर्कल सदस्यों के साथ साझा किया गया है।";
+
+"Proximity Alert" = "निकटता अलर्ट";
+"Add a Proximity Alert to get started." = "शुरू करने के लिए निकटता अलर्ट जोड़ें।";
+"ID" = "पहचान";
+"Name" = "नाम";
+"Enter Proximity name" = "निकटता का नाम दर्ज करें";
+"Location" = "स्थान";
+"Select location" = "स्थान चुनें";
+"Search location" = "स्थान खोजें";
+"Select Date" = "तारीख चुनें";
+"Select Time" = "समय चुनें";
+"Open Map" = "मैप खोलें";
+"Type" = "प्रकार";
+"Home" = "घर";
+"Gym" = "जिम";
+"Office" = "कार्यालय";
+"Shop" = "दुकान";
+"Education" = "शिक्षा";
+"Hospital" = "अस्पताल";
+"Other" = "अन्य";
+"Alert Date and Time" = "अलर्ट की तारीख और समय";
+"Radius" = "त्रिज्या";
+"Push Notification" = "पुश नोटिफिकेशन";
+"Note" = "टिप्पणी";
+"Enter note about this alert" = "इस अलर्ट के बारे में नोट दर्ज करें";
+"Add Alert" = "अलर्ट जोड़ें";
+"Select & Continue" = "चुनें और जारी रखें";
+"Leave without alert?" = "अलर्ट के बिना छोड़ें?";
+"No alert added. Go back?" = "कोई अलर्ट नहीं जोड़ा गया। वापस जाएं?";
+"Alert Saved" = "अलर्ट सहेजा गया";
+"Your alert has been saved successfully." = "आपका अलर्ट सफलतापूर्वक सहेजा गया है।";
+"Proximity info" = "निकटता जानकारी";
+"Coordinates" = "निर्देशांक";
+"Status" = "स्थिति";
+"Inactive" = "निष्क्रिय";
+"Active" = "सक्रिय";
+"Alert On" = "अलर्ट चालू";
+"Delete Alert?" = "अलर्ट हटाएं?";
+"Are you sure you want to delete this alert?" = "क्या आप निश्चित हैं कि आप इस अलर्ट को हटाना चाहते हैं?";
+"Save Alert" = "अलर्ट सहेजें";
+
+"Settings" = "सेटिंग्स";
+"Battery Level Sharing" = "बैटरी स्तर साझा करना";
+"Proximity Notifications" = "निकटता सूचनाएं";
+"Motion Activity" = "गतिविधि";
+"Location Sharing" = "स्थान साझा करना";
+"Rate Now" = "अभी रेट करें";
+"Share" = "साझा करें";
+"Feedback" = "प्रतिक्रिया";
+"Privacy Policy" = "गोपनीयता नीति";
+"Term & Condition" = "नियम और शर्तें";
+
+"Network Error" = "नेटवर्क त्रुटि";
+"Make sure you’re connected to the internet." = "सुनिश्चित करें कि आप इंटरनेट से जुड़े हैं।";
+"Retry" = "पुनः प्रयास करें";
+
+"Enable notification and allow access to your location Sharing for the app to run properly." = "ऐप सही ढंग से चलाने के लिए नोटिफिकेशन सक्षम करें और स्थान साझा करने की अनुमति दें।";
+"Enable notification and allow access to your motion activity for the app to run properly." = "ऐप सही ढंग से चलाने के लिए नोटिफिकेशन सक्षम करें और अपनी गतिविधि की अनुमति दें।";
+"Member" = "सदस्य";
+"Map" = "मानचित्र";
+"Proximity" = "निकटता";
+"Child mode is enabled" = "चाइल्ड मोड सक्षम है";
+"you can’t turn off location and battery level sharing or log out." = "आप लोकेशन और बैटरी स्तर साझा करना बंद नहीं कर सकते या लॉग आउट नहीं कर सकते।";
+"LogOut" = "लॉगआउट";
+"Log Out" = "लॉग आउट";
+"Disable" = "अक्षम करें";
+"Learn more about child mode" = "चाइल्ड मोड के बारे में अधिक जानें";
+"Circle Owner" = "सर्कल मालिक";
+"Send request to disable child mode?" = "चाइल्ड मोड अक्षम करने का अनुरोध भेजें?";
+"The circle owner will get a notification to turn it off for you." = "सर्कल मालिक को आपके लिए इसे बंद करने की सूचना मिलेगी।";
+"Send" = "भेजें";
+"Child Mode" = "चाइल्ड मोड";
+"Child Mode remove features children don’t need and prevent them from logging out and turning off location and battery level sharing." = "चाइल्ड मोड उन सुविधाओं को हटाता है जिनकी बच्चों को जरूरत नहीं होती और उन्हें लॉग आउट या लोकेशन तथा बैटरी स्तर साझा करना बंद करने से रोकता है।";
+"Setup child mode" = "चाइल्ड मोड सेटअप करें";
+"Add child to a circle and enable child mode in the app settings on their device." = "बच्चे को सर्कल में जोड़ें और उनके डिवाइस पर ऐप सेटिंग्स में चाइल्ड मोड सक्षम करें।";
+"Your Children Won’t be able to Creating Circles, browsing travel history, turn off location and battery level sharing or log out." = "आपके बच्चे सर्कल नहीं बना पाएंगे, यात्रा इतिहास ब्राउज़ नहीं कर पाएंगे, लोकेशन और बैटरी स्तर साझा करना बंद नहीं कर पाएंगे या लॉग आउट नहीं कर पाएंगे।";
+"Child mode is enabled for" = "चाइल्ड मोड सक्षम है";
+"About Child Mode" = "चाइल्ड मोड के बारे में";
+"What happens when Child Mode is ON?" = "जब चाइल्ड मोड चालू होता है तो क्या होता है?";
+"Location sharing stays always active (cannot be turned off)." = "स्थान साझा करना हमेशा सक्रिय रहता है (इसे बंद नहीं किया जा सकता)।";
+"Battery percentage is visible to the circle owner." = "बैटरी प्रतिशत सर्कल मालिक को दिखाई देता है।";
+"Logout option is disabled to prevent tracking interruptions." = "ट्रैकिंग में बाधा से बचाने के लिए लॉगआउट विकल्प अक्षम है।";
+"Designed to ensure the member stays safe and connected." = "यह सुनिश्चित करने के लिए डिज़ाइन किया गया है कि सदस्य सुरक्षित और जुड़े रहें।";
+"How to turn OFF Child Mode?" = "चाइल्ड मोड कैसे बंद करें?";
+"The Circle Owner can disable Child Mode anytime." = "सर्कल मालिक कभी भी चाइल्ड मोड अक्षम कर सकता है।";
+"The member can send a disable request → owner must approve it." = "सदस्य अक्षम करने का अनुरोध भेज सकता है → मालिक को इसे मंजूरी देनी होगी।";
+"Only after approval, Child Mode will be turned off." = "मंजूरी मिलने के बाद ही चाइल्ड मोड बंद होगा।";
+"Why use Child Mode?" = "चाइल्ड मोड क्यों उपयोग करें?";
+"Ensures continuous safety tracking." = "लगातार सुरक्षा ट्रैकिंग सुनिश्चित करता है।";
+"Prevents location hiding or accidental logout." = "स्थान छुपाने या आकस्मिक लॉगआउट को रोकता है।";
+"Gives parents/guardians more control & peace of mind." = "माता-पिता/अभिभावकों को अधिक नियंत्रण और मानसिक शांति देता है।";
+"No members" = "कोई सदस्य नहीं";
+"Disable Child Mode?" = "चाइल्ड मोड अक्षम करें?";
+"Are you sure you want to disable child mode for ‘%@’?" = "क्या आप निश्चित हैं कि आप ‘%@’ के लिए चाइल्ड मोड अक्षम करना चाहते हैं?";
+"No" = "नहीं";
+"Exit" = "बाहर निकलें";
+"Reject" = "अस्वीकार करें";
+"Child Mode Disable Request!" = "चाइल्ड मोड अक्षम करने का अनुरोध!";
+"has requested to disable Child Mode. Do you want to approve this request?" = "ने चाइल्ड मोड अक्षम करने का अनुरोध किया है। क्या आप इस अनुरोध को मंजूरी देना चाहते हैं?";
+"Child Mode Disabled!" = "चाइल्ड मोड अक्षम किया गया!";
+"Child Mode is Disable for '%@' successfully." = "‘%@’ के लिए चाइल्ड मोड सफलतापूर्वक अक्षम किया गया है।";

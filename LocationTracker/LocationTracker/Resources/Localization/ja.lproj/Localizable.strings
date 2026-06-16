@@ -1,0 +1,200 @@
+"Welcome" = "ようこそ";
+"Stay connected with loved ones by tracking their live location with ease" = "大切な人の現在地を簡単に追跡して、つながりを保ちましょう";
+"Get started" = "始める";
+
+"Select Language" = "言語を選択";
+"Change Language" = "言語を変更";
+
+"Stay Close to Your Loved Ones" = "大切な人と近くに";
+"Keep your family connected no matter where life takes them." = "家族がどこにいてもつながりを保ちましょう。";
+
+"Real-Time Location at Your Fingertips" = "リアルタイムの位置情報をすぐに確認";
+"See live updates instantly and never miss a moment." = "ライブ更新を瞬時に確認して、大切な瞬間を見逃しません。";
+
+"A Smarter Way to Locate Family" = "家族の位置を賢く把握";
+"Quick access to real-time family locations made simple." = "リアルタイムの家族の位置に素早く簡単にアクセス。";
+
+"Next" = "次へ";
+
+"Permissions" = "許可";
+"Enable notification and allow access to your location and motion activity for the app to run properly." = "アプリを正常に動作させるために通知と位置情報、動作情報へのアクセスを許可してください。";
+"Notification" = "通知";
+
+"Continue" = "続ける";
+
+"Enter Your Phone Number" = "電話番号を入力";
+"Your information stays private and is never shared with third parties." = "あなたの情報はプライベートに保たれ、第三者と共有されることはありません。";
+
+"OTP Verification" = "OTP認証";
+"Enter the OTP Sent to" = "送信されたOTPを入力";
+"Don’t Receive the OTP ?" = "OTPが届かない？";
+"RESEND OTP" = "OTPを再送信";
+
+"Please enter valid OTP code" = "有効なOTPコードを入力してください";
+"Verified" = "認証済み";
+
+"Set Profile" = "プロフィール設定";
+"Complete your profile details." = "プロフィールの詳細を入力してください。";
+"Upload Photo" = "写真をアップロード";
+"Change Photo" = "写真を変更";
+"Update" = "更新";
+
+"Enter first name" = "名前を入力";
+"First name" = "名前";
+"Enter Name" = "名前を入力";
+"Enter circle name" = "サークル名を入力";
+"Enter last name" = "姓を入力";
+"Last name" = "姓";
+"Select gender" = "性別を選択";
+"Male" = "男性";
+"Female" = "女性";
+"Set Profile Pic" = "プロフィール写真を設定";
+
+"Cancel" = "キャンセル";
+"Done" = "完了";
+"Yes" = "はい";
+"Ok" = "OK";
+"Save" = "保存";
+"Delete" = "削除";
+
+"Members" = "メンバー";
+"Add" = "追加";
+
+"Choose Map" = "地図を選択";
+"Standard" = "標準";
+"Satellite" = "衛星";
+"Transit" = "交通";
+
+"Create Circle" = "サークルを作成";
+"Join Circle" = "サークルに参加";
+"Edit Circle" = "サークルを編集";
+
+"Circle Name" = "サークル名";
+"Invitation Code" = "招待コード";
+"Create" = "作成";
+
+"Remove Member ?" = "メンバーを削除しますか？";
+"Are you sure want to remove this member from circle?" = "このメンバーをサークルから削除してもよろしいですか？";
+
+"Enter Invitation Code" = "招待コードを入力";
+"Get an invitation code from the person who made the circle." = "サークル作成者から招待コードを入手してください。";
+"Join" = "参加";
+"Please enter valid code" = "有効なコードを入力してください";
+
+"Add Member" = "メンバーを追加";
+"Add someone you know into circle to start getting notified about location" = "知っている人をサークルに追加して、位置情報の通知を受け取りましょう";
+
+"Choose From Contact" = "連絡先から選択";
+
+"Member Detail" = "メンバー詳細";
+"Address" = "住所";
+"Last Update" = "最終更新";
+
+"SOS Calling" = "SOS通話";
+"Once the countdown ends, your location will be shared with your circle." = "カウントダウン終了後、あなたの位置情報がサークルに共有されます。";
+"Stop" = "停止";
+"SOS Not Sent" = "SOS未送信";
+"No members in your circle. Please add members to share SOS alerts." = "サークルにメンバーがいません。SOSアラートを共有するためにメンバーを追加してください。";
+"SOS Sent Successfully" = "SOS送信成功";
+"Your alert has been shared with all circle members." = "アラートがすべてのサークルメンバーに共有されました。";
+
+"Proximity Alert" = "近接アラート";
+"Add a Proximity Alert to get started." = "近接アラートを追加して始めましょう。";
+"ID" = "ID";
+"Name" = "名前";
+"Enter Proximity name" = "近接名を入力";
+"Location" = "場所";
+"Select location" = "場所を選択";
+"Search location" = "場所を検索";
+"Select Date" = "日付を選択";
+"Select Time" = "時間を選択";
+"Open Map" = "地図を開く";
+"Type" = "タイプ";
+"Home" = "自宅";
+"Gym" = "ジム";
+"Office" = "オフィス";
+"Shop" = "店舗";
+"Education" = "教育";
+"Hospital" = "病院";
+"Other" = "その他";
+"Alert Date and Time" = "アラート日時";
+"Radius" = "半径";
+"Push Notification" = "プッシュ通知";
+"Note" = "メモ";
+"Enter note about this alert" = "このアラートについてのメモを入力";
+"Add Alert" = "アラートを追加";
+"Select & Continue" = "選択して続行";
+"Leave without alert?" = "アラートなしで終了しますか？";
+"No alert added. Go back?" = "アラートが追加されていません。戻りますか？";
+"Alert Saved" = "アラートが保存されました";
+"Your alert has been saved successfully." = "アラートが正常に保存されました。";
+"Proximity info" = "近接情報";
+"Coordinates" = "座標";
+"Status" = "状態";
+"Inactive" = "非アクティブ";
+"Active" = "アクティブ";
+"Alert On" = "アラートオン";
+"Delete Alert?" = "アラートを削除しますか？";
+"Are you sure you want to delete this alert?" = "このアラートを削除してもよろしいですか？";
+"Save Alert" = "アラートを保存";
+
+"Settings" = "設定";
+"Battery Level Sharing" = "バッテリー残量共有";
+"Proximity Notifications" = "近接通知";
+"Motion Activity" = "動作活動";
+"Location Sharing" = "位置情報共有";
+"Rate Now" = "今すぐ評価";
+"Share" = "共有";
+"Feedback" = "フィードバック";
+"Privacy Policy" = "プライバシーポリシー";
+"Term & Condition" = "利用規約";
+
+"Network Error" = "ネットワークエラー";
+"Make sure you’re connected to the internet." = "インターネットに接続されていることを確認してください。";
+"Retry" = "再試行";
+
+"Enable notification and allow access to your location Sharing for the app to run properly." = "アプリを正常に動作させるために通知と位置情報共有へのアクセスを許可してください。";
+"Enable notification and allow access to your motion activity for the app to run properly." = "アプリを正常に動作させるために通知と動作情報へのアクセスを許可してください。";
+"Member" = "メンバー";
+"Map" = "地図";
+"Proximity" = "近接";
+"Child mode is enabled" = "チャイルドモードが有効です";
+"you can’t turn off location and battery level sharing or log out." = "位置情報とバッテリー残量の共有をオフにしたり、ログアウトすることはできません。";
+"LogOut" = "ログアウト";
+"Log Out" = "ログアウト";
+"Disable" = "無効にする";
+"Learn more about child mode" = "チャイルドモードについて詳しく";
+"Circle Owner" = "サークルオーナー";
+"Send request to disable child mode?" = "チャイルドモードを無効にするリクエストを送信しますか？";
+"The circle owner will get a notification to turn it off for you." = "サークルオーナーに通知が届き、あなたのためにオフにします。";
+"Send" = "送信";
+"Child Mode" = "チャイルドモード";
+"Child Mode remove features children don’t need and prevent them from logging out and turning off location and battery level sharing." = "チャイルドモードは子どもに不要な機能を削除し、ログアウトや位置情報・バッテリー共有のオフを防ぎます。";
+"Setup child mode" = "チャイルドモードを設定";
+"Add child to a circle and enable child mode in the app settings on their device." = "子どもをサークルに追加し、その端末のアプリ設定でチャイルドモードを有効にします。";
+"Your Children Won’t be able to Creating Circles, browsing travel history, turn off location and battery level sharing or log out." = "お子様はサークル作成、移動履歴閲覧、位置情報・バッテリー共有のオフ、ログアウトができません。";
+"Child mode is enabled for" = "チャイルドモードが有効です：";
+"About Child Mode" = "チャイルドモードについて";
+"What happens when Child Mode is ON?" = "チャイルドモードがオンのときに起きること";
+"Location sharing stays always active (cannot be turned off)." = "位置情報共有は常に有効（オフにできません）。";
+"Battery percentage is visible to the circle owner." = "バッテリー残量はサークルオーナーに表示されます。";
+"Logout option is disabled to prevent tracking interruptions." = "追跡の中断を防ぐため、ログアウトオプションは無効です。";
+"Designed to ensure the member stays safe and connected." = "メンバーの安全とつながりを確保するために設計されています。";
+"How to turn OFF Child Mode?" = "チャイルドモードをオフにする方法";
+"The Circle Owner can disable Child Mode anytime." = "サークルオーナーはいつでもチャイルドモードを無効にできます。";
+"The member can send a disable request → owner must approve it." = "メンバーは無効化リクエストを送信可能 → オーナーの承認が必要です。";
+"Only after approval, Child Mode will be turned off." = "承認後にのみチャイルドモードがオフになります。";
+"Why use Child Mode?" = "なぜチャイルドモードを使うのか？";
+"Ensures continuous safety tracking." = "継続的な安全追跡を確保します。";
+"Prevents location hiding or accidental logout." = "位置情報の非表示や誤操作によるログアウトを防ぎます。";
+"Gives parents/guardians more control & peace of mind." = "保護者により多くの管理権と安心感を提供します。";
+"No members" = "メンバーなし";
+"Disable Child Mode?" = "チャイルドモードを無効にしますか？";
+"Are you sure you want to disable child mode for ‘%@’?" = "‘%@’のチャイルドモードを無効にしてもよろしいですか？";
+"No" = "いいえ";
+"Exit" = "終了";
+"Reject" = "拒否";
+"Child Mode Disable Request!" = "チャイルドモード無効化リクエスト！";
+"has requested to disable Child Mode. Do you want to approve this request?" = "がチャイルドモードの無効化をリクエストしました。このリクエストを承認しますか？";
+"Child Mode Disabled!" = "チャイルドモードが無効になりました！";
+"Child Mode is Disable for '%@' successfully." = "‘%@’のチャイルドモードが正常に無効化されました。";

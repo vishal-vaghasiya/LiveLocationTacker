@@ -1,0 +1,200 @@
+"Welcome" = "ยินดีต้อนรับ";
+"Stay connected with loved ones by tracking their live location with ease" = "เชื่อมต่อกับคนที่คุณรักโดยติดตามตำแหน่งแบบเรียลไทม์ได้อย่างง่ายดาย";
+"Get started" = "เริ่มต้น";
+
+"Select Language" = "เลือกภาษา";
+"Change Language" = "เปลี่ยนภาษา";
+
+"Stay Close to Your Loved Ones" = "อยู่ใกล้คนที่คุณรัก";
+"Keep your family connected no matter where life takes them." = "รักษาการเชื่อมต่อกับครอบครัวของคุณไม่ว่าจะอยู่ที่ไหนในชีวิต";
+
+"Real-Time Location at Your Fingertips" = "ตำแหน่งแบบเรียลไทม์ที่ปลายนิ้วของคุณ";
+"See live updates instantly and never miss a moment." = "ดูการอัปเดตสดทันทีและไม่พลาดทุกช่วงเวลา";
+
+"A Smarter Way to Locate Family" = "วิธีที่ชาญฉลาดกว่าในการค้นหาครอบครัว";
+"Quick access to real-time family locations made simple." = "เข้าถึงตำแหน่งครอบครัวแบบเรียลไทม์ได้อย่างรวดเร็วและง่ายดาย";
+
+"Next" = "ถัดไป";
+
+"Permissions" = "สิทธิ์";
+"Enable notification and allow access to your location and motion activity for the app to run properly." = "เปิดใช้งานการแจ้งเตือนและอนุญาตเข้าถึงตำแหน่งและกิจกรรมการเคลื่อนไหวของคุณเพื่อให้แอปทำงานได้อย่างถูกต้อง";
+"Notification" = "การแจ้งเตือน";
+
+"Continue" = "ดำเนินการต่อ";
+
+"Enter Your Phone Number" = "กรอกหมายเลขโทรศัพท์ของคุณ";
+"Your information stays private and is never shared with third parties." = "ข้อมูลของคุณจะเป็นส่วนตัวและจะไม่ถูกแชร์กับบุคคลที่สาม";
+
+"OTP Verification" = "การยืนยัน OTP";
+"Enter the OTP Sent to" = "กรอก OTP ที่ส่งไปยัง";
+"Don’t Receive the OTP ?" = "ไม่ได้รับ OTP ?";
+"RESEND OTP" = "ส่ง OTP ใหม่";
+
+"Please enter valid OTP code" = "กรุณากรอกรหัส OTP ที่ถูกต้อง";
+"Verified" = "ยืนยันแล้ว";
+
+"Set Profile" = "ตั้งค่าโปรไฟล์";
+"Complete your profile details." = "กรอกข้อมูลโปรไฟล์ของคุณให้ครบถ้วน";
+"Upload Photo" = "อัปโหลดรูปภาพ";
+"Change Photo" = "เปลี่ยนรูปภาพ";
+"Update" = "อัปเดต";
+
+"Enter first name" = "กรอกชื่อ";
+"First name" = "ชื่อ";
+"Enter Name" = "กรอกชื่อ";
+"Enter circle name" = "กรอกชื่อกลุ่ม";
+"Enter last name" = "กรอกนามสกุล";
+"Last name" = "นามสกุล";
+"Select gender" = "เลือกเพศ";
+"Male" = "ชาย";
+"Female" = "หญิง";
+"Set Profile Pic" = "ตั้งค่ารูปโปรไฟล์";
+
+"Cancel" = "ยกเลิก";
+"Done" = "เสร็จสิ้น";
+"Yes" = "ใช่";
+"Ok" = "ตกลง";
+"Save" = "บันทึก";
+"Delete" = "ลบ";
+
+"Members" = "สมาชิก";
+"Add" = "เพิ่ม";
+
+"Choose Map" = "เลือกแผนที่";
+"Standard" = "มาตรฐาน";
+"Satellite" = "ดาวเทียม";
+"Transit" = "ขนส่ง";
+
+"Create Circle" = "สร้างกลุ่ม";
+"Join Circle" = "เข้าร่วมกลุ่ม";
+"Edit Circle" = "แก้ไขกลุ่ม";
+
+"Circle Name" = "ชื่อกลุ่ม";
+"Invitation Code" = "รหัสเชิญ";
+"Create" = "สร้าง";
+
+"Remove Member ?" = "ลบสมาชิก ?";
+"Are you sure want to remove this member from circle?" = "คุณแน่ใจหรือไม่ว่าต้องการลบสมาชิกนี้ออกจากกลุ่ม?";
+
+"Enter Invitation Code" = "กรอกรหัสเชิญ";
+"Get an invitation code from the person who made the circle." = "รับรหัสเชิญจากผู้ที่สร้างกลุ่ม";
+"Join" = "เข้าร่วม";
+"Please enter valid code" = "กรุณากรอกรหัสที่ถูกต้อง";
+
+"Add Member" = "เพิ่มสมาชิก";
+"Add someone you know into circle to start getting notified about location" = "เพิ่มคนที่คุณรู้จักเข้าสู่กลุ่มเพื่อเริ่มรับการแจ้งเตือนเกี่ยวกับตำแหน่ง";
+
+"Choose From Contact" = "เลือกจากรายชื่อ";
+
+"Member Detail" = "รายละเอียดสมาชิก";
+"Address" = "ที่อยู่";
+"Last Update" = "อัปเดตล่าสุด";
+
+"SOS Calling" = "โทร SOS";
+"Once the countdown ends, your location will be shared with your circle." = "เมื่อเวลานับถอยหลังหมดลง ตำแหน่งของคุณจะถูกแชร์กับกลุ่มของคุณ";
+"Stop" = "หยุด";
+"SOS Not Sent" = "ไม่ส่ง SOS";
+"No members in your circle. Please add members to share SOS alerts." = "ไม่มีสมาชิกในกลุ่มของคุณ กรุณาเพิ่มสมาชิกเพื่อแชร์การแจ้งเตือน SOS";
+"SOS Sent Successfully" = "ส่ง SOS สำเร็จ";
+"Your alert has been shared with all circle members." = "การแจ้งเตือนของคุณถูกแชร์กับสมาชิกทุกคนในกลุ่มแล้ว";
+
+"Proximity Alert" = "การแจ้งเตือนระยะใกล้";
+"Add a Proximity Alert to get started." = "เพิ่มการแจ้งเตือนระยะใกล้เพื่อเริ่มต้น";
+"ID" = "รหัส";
+"Name" = "ชื่อ";
+"Enter Proximity name" = "กรอกชื่อการแจ้งเตือนระยะใกล้";
+"Location" = "ตำแหน่ง";
+"Select location" = "เลือกตำแหน่ง";
+"Search location" = "ค้นหาตำแหน่ง";
+"Select Date" = "เลือกวันที่";
+"Select Time" = "เลือกเวลา";
+"Open Map" = "เปิดแผนที่";
+"Type" = "ประเภท";
+"Home" = "บ้าน";
+"Gym" = "ยิม";
+"Office" = "สำนักงาน";
+"Shop" = "ร้านค้า";
+"Education" = "การศึกษา";
+"Hospital" = "โรงพยาบาล";
+"Other" = "อื่นๆ";
+"Alert Date and Time" = "วันที่และเวลาการแจ้งเตือน";
+"Radius" = "รัศมี";
+"Push Notification" = "การแจ้งเตือนแบบพุช";
+"Note" = "หมายเหตุ";
+"Enter note about this alert" = "กรอกหมายเหตุเกี่ยวกับการแจ้งเตือนนี้";
+"Add Alert" = "เพิ่มการแจ้งเตือน";
+"Select & Continue" = "เลือกและดำเนินการต่อ";
+"Leave without alert?" = "ออกโดยไม่เพิ่มการแจ้งเตือน?";
+"No alert added. Go back?" = "ยังไม่มีการเพิ่มการแจ้งเตือน กลับไปหรือไม่?";
+"Alert Saved" = "บันทึกการแจ้งเตือนแล้ว";
+"Your alert has been saved successfully." = "การแจ้งเตือนของคุณถูกบันทึกเรียบร้อยแล้ว";
+"Proximity info" = "ข้อมูลระยะใกล้";
+"Coordinates" = "พิกัด";
+"Status" = "สถานะ";
+"Inactive" = "ไม่ใช้งาน";
+"Active" = "ใช้งาน";
+"Alert On" = "เปิดการแจ้งเตือน";
+"Delete Alert?" = "ลบการแจ้งเตือน?";
+"Are you sure you want to delete this alert?" = "คุณแน่ใจหรือไม่ว่าต้องการลบการแจ้งเตือนนี้?";
+"Save Alert" = "บันทึกการแจ้งเตือน";
+
+"Settings" = "การตั้งค่า";
+"Battery Level Sharing" = "แชร์ระดับแบตเตอรี่";
+"Proximity Notifications" = "การแจ้งเตือนระยะใกล้";
+"Motion Activity" = "กิจกรรมการเคลื่อนไหว";
+"Location Sharing" = "แชร์ตำแหน่ง";
+"Rate Now" = "ให้คะแนนตอนนี้";
+"Share" = "แชร์";
+"Feedback" = "ข้อเสนอแนะ";
+"Privacy Policy" = "นโยบายความเป็นส่วนตัว";
+"Term & Condition" = "ข้อกำหนดและเงื่อนไข";
+
+"Network Error" = "ข้อผิดพลาดเครือข่าย";
+"Make sure you’re connected to the internet." = "ตรวจสอบให้แน่ใจว่าคุณเชื่อมต่ออินเทอร์เน็ตแล้ว";
+"Retry" = "ลองใหม่";
+
+"Enable notification and allow access to your location Sharing for the app to run properly." = "เปิดใช้งานการแจ้งเตือนและอนุญาตเข้าถึงการแชร์ตำแหน่งเพื่อให้แอปทำงานได้อย่างถูกต้อง";
+"Enable notification and allow access to your motion activity for the app to run properly." = "เปิดใช้งานการแจ้งเตือนและอนุญาตเข้าถึงกิจกรรมการเคลื่อนไหวเพื่อให้แอปทำงานได้อย่างถูกต้อง";
+"Member" = "สมาชิก";
+"Map" = "แผนที่";
+"Proximity" = "ระยะใกล้";
+"Child mode is enabled" = "เปิดใช้งานโหมดเด็กแล้ว";
+"you can’t turn off location and battery level sharing or log out." = "คุณไม่สามารถปิดการแชร์ตำแหน่งและระดับแบตเตอรี่หรือลงชื่อออกได้";
+"LogOut" = "ออกจากระบบ";
+"Log Out" = "ออกจากระบบ";
+"Disable" = "ปิดใช้งาน";
+"Learn more about child mode" = "เรียนรู้เพิ่มเติมเกี่ยวกับโหมดเด็ก";
+"Circle Owner" = "เจ้าของกลุ่ม";
+"Send request to disable child mode?" = "ส่งคำขอปิดโหมดเด็กหรือไม่?";
+"The circle owner will get a notification to turn it off for you." = "เจ้าของกลุ่มจะได้รับการแจ้งเตือนให้ปิดโหมดนี้ให้คุณ";
+"Send" = "ส่ง";
+"Child Mode" = "โหมดเด็ก";
+"Child Mode remove features children don’t need and prevent them from logging out and turning off location and battery level sharing." = "โหมดเด็กจะลบฟีเจอร์ที่เด็กไม่ต้องการและป้องกันไม่ให้พวกเขาลงชื่อออกหรือปิดการแชร์ตำแหน่งและระดับแบตเตอรี่";
+"Setup child mode" = "ตั้งค่าโหมดเด็ก";
+"Add child to a circle and enable child mode in the app settings on their device." = "เพิ่มเด็กเข้าสู่กลุ่มและเปิดโหมดเด็กในการตั้งค่าแอปบนอุปกรณ์ของพวกเขา";
+"Your Children Won’t be able to Creating Circles, browsing travel history, turn off location and battery level sharing or log out." = "เด็กของคุณจะไม่สามารถสร้างกลุ่ม ดูประวัติการเดินทาง ปิดการแชร์ตำแหน่งและระดับแบตเตอรี่ หรือลงชื่อออกได้";
+"Child mode is enabled for" = "เปิดใช้งานโหมดเด็กสำหรับ";
+"About Child Mode" = "เกี่ยวกับโหมดเด็ก";
+"What happens when Child Mode is ON?" = "จะเกิดอะไรขึ้นเมื่อเปิดโหมดเด็ก?";
+"Location sharing stays always active (cannot be turned off)." = "การแชร์ตำแหน่งจะเปิดใช้งานตลอดเวลา (ไม่สามารถปิดได้)";
+"Battery percentage is visible to the circle owner." = "เปอร์เซ็นต์แบตเตอรี่จะแสดงให้เจ้าของกลุ่มเห็น";
+"Logout option is disabled to prevent tracking interruptions." = "ตัวเลือกการออกจากระบบถูกปิดใช้งานเพื่อป้องกันการหยุดชะงักของการติดตาม";
+"Designed to ensure the member stays safe and connected." = "ออกแบบมาเพื่อให้สมาชิกปลอดภัยและเชื่อมต่ออยู่เสมอ";
+"How to turn OFF Child Mode?" = "วิธีปิดโหมดเด็ก?";
+"The Circle Owner can disable Child Mode anytime." = "เจ้าของกลุ่มสามารถปิดโหมดเด็กได้ตลอดเวลา";
+"The member can send a disable request → owner must approve it." = "สมาชิกสามารถส่งคำขอปิดโหมด → เจ้าของต้องอนุมัติ";
+"Only after approval, Child Mode will be turned off." = "โหมดเด็กจะปิดได้หลังจากได้รับการอนุมัติเท่านั้น";
+"Why use Child Mode?" = "ทำไมต้องใช้โหมดเด็ก?";
+"Ensures continuous safety tracking." = "รับประกันการติดตามความปลอดภัยอย่างต่อเนื่อง";
+"Prevents location hiding or accidental logout." = "ป้องกันการซ่อนตำแหน่งหรือการออกจากระบบโดยไม่ตั้งใจ";
+"Gives parents/guardians more control & peace of mind." = "ให้ผู้ปกครองควบคุมได้มากขึ้นและสบายใจ";
+"No members" = "ไม่มีสมาชิก";
+"Disable Child Mode?" = "ปิดโหมดเด็กหรือไม่?";
+"Are you sure you want to disable child mode for ‘%@’?" = "คุณแน่ใจหรือไม่ว่าต้องการปิดโหมดเด็กสำหรับ ‘%@’?";
+"No" = "ไม่";
+"Exit" = "ออก";
+"Reject" = "ปฏิเสธ";
+"Child Mode Disable Request!" = "คำขอปิดโหมดเด็ก!";
+"has requested to disable Child Mode. Do you want to approve this request?" = "ได้ส่งคำขอปิดโหมดเด็ก คุณต้องการอนุมัติคำขอนี้หรือไม่?";
+"Child Mode Disabled!" = "ปิดโหมดเด็กแล้ว!";
+"Child Mode is Disable for '%@' successfully." = "ปิดโหมดเด็กสำหรับ '%@' เรียบร้อยแล้ว";

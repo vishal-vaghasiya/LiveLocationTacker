@@ -1,0 +1,200 @@
+"Welcome" = "Hoşgeldiniz";
+"Stay connected with loved ones by tracking their live location with ease" = "Sevdiklerinizin canlı konumunu kolayca takip ederek bağlantıda kalın";
+"Get started" = "Başlayın";
+
+"Select Language" = "Dil Seçin";
+"Change Language" = "Dili Değiştir";
+
+"Stay Close to Your Loved Ones" = "Sevdiklerinize Yakın Kalın";
+"Keep your family connected no matter where life takes them." = "Aileniz nerede olursa olsun bağlı kalın.";
+
+"Real-Time Location at Your Fingertips" = "Gerçek Zamanlı Konum Parmağınızın Ucunda";
+"See live updates instantly and never miss a moment." = "Canlı güncellemeleri anında görün ve hiçbir anı kaçırmayın.";
+
+"A Smarter Way to Locate Family" = "Aileyi Bulmanın Daha Akıllı Yolu";
+"Quick access to real-time family locations made simple." = "Gerçek zamanlı aile konumlarına hızlı erişim artık daha basit.";
+
+"Next" = "İleri";
+
+"Permissions" = "İzinler";
+"Enable notification and allow access to your location and motion activity for the app to run properly." = "Uygulamanın düzgün çalışması için bildirimleri etkinleştirin ve konum ile hareket etkinliğine erişime izin verin.";
+"Notification" = "Bildirim";
+
+"Continue" = "Devam Et";
+
+"Enter Your Phone Number" = "Telefon Numaranızı Girin";
+"Your information stays private and is never shared with third parties." = "Bilgileriniz gizli kalır ve üçüncü taraflarla asla paylaşılmaz.";
+
+"OTP Verification" = "OTP Doğrulama";
+"Enter the OTP Sent to" = "Gönderilen OTP'yi Girin";
+"Don’t Receive the OTP ?" = "OTP Almadınız mı?";
+"RESEND OTP" = "OTP'Yİ TEKRAR GÖNDER";
+
+"Please enter valid OTP code" = "Lütfen geçerli OTP kodunu girin";
+"Verified" = "Doğrulandı";
+
+"Set Profile" = "Profili Ayarla";
+"Complete your profile details." = "Profil bilgilerinizi tamamlayın.";
+"Upload Photo" = "Fotoğraf Yükle";
+"Change Photo" = "Fotoğrafı Değiştir";
+"Update" = "Güncelle";
+
+"Enter first name" = "İsim Girin";
+"First name" = "İsim";
+"Enter Name" = "İsim Girin";
+"Enter circle name" = "Grup Adını Girin";
+"Enter last name" = "Soyisim Girin";
+"Last name" = "Soyisim";
+"Select gender" = "Cinsiyeti Seçin";
+"Male" = "Erkek";
+"Female" = "Kadın";
+"Set Profile Pic" = "Profil Fotoğrafı Ayarla";
+
+"Cancel" = "İptal";
+"Done" = "Tamamlandı";
+"Yes" = "Evet";
+"Ok" = "Tamam";
+"Save" = "Kaydet";
+"Delete" = "Sil";
+
+"Members" = "Üyeler";
+"Add" = "Ekle";
+
+"Choose Map" = "Harita Seçin";
+"Standard" = "Standart";
+"Satellite" = "Uydu";
+"Transit" = "Toplu Taşıma";
+
+"Create Circle" = "Grup Oluştur";
+"Join Circle" = "Gruba Katıl";
+"Edit Circle" = "Grubu Düzenle";
+
+"Circle Name" = "Grup Adı";
+"Invitation Code" = "Davet Kodu";
+"Create" = "Oluştur";
+
+"Remove Member ?" = "Üye Kaldırılsın mı?";
+"Are you sure want to remove this member from circle?" = "Bu üyeyi gruptan kaldırmak istediğinizden emin misiniz?";
+
+"Enter Invitation Code" = "Davet Kodunu Girin";
+"Get an invitation code from the person who made the circle." = "Grubu oluşturan kişiden davet kodu alın.";
+"Join" = "Katıl";
+"Please enter valid code" = "Lütfen geçerli kod girin";
+
+"Add Member" = "Üye Ekle";
+"Add someone you know into circle to start getting notified about location" = "Konum bildirimleri almak için tanıdığınız birini gruba ekleyin";
+
+"Choose From Contact" = "Kişilerden Seç";
+
+"Member Detail" = "Üye Detayı";
+"Address" = "Adres";
+"Last Update" = "Son Güncelleme";
+
+"SOS Calling" = "SOS Araması";
+"Once the countdown ends, your location will be shared with your circle." = "Geri sayım sona erdiğinde, konumunuz grubunuzla paylaşılacak.";
+"Stop" = "Durdur";
+"SOS Not Sent" = "SOS Gönderilmedi";
+"No members in your circle. Please add members to share SOS alerts." = "Grubunuzda üye yok. SOS uyarılarını paylaşmak için üye ekleyin.";
+"SOS Sent Successfully" = "SOS Başarıyla Gönderildi";
+"Your alert has been shared with all circle members." = "Uyarınız tüm grup üyeleriyle paylaşıldı.";
+
+"Proximity Alert" = "Yakınlık Uyarısı";
+"Add a Proximity Alert to get started." = "Başlamak için bir Yakınlık Uyarısı ekleyin.";
+"ID" = "ID";
+"Name" = "Ad";
+"Enter Proximity name" = "Yakınlık adını girin";
+"Location" = "Konum";
+"Select location" = "Konum seçin";
+"Search location" = "Konum ara";
+"Select Date" = "Tarih Seçin";
+"Select Time" = "Saat Seçin";
+"Open Map" = "Haritayı Aç";
+"Type" = "Tür";
+"Home" = "Ev";
+"Gym" = "Spor Salonu";
+"Office" = "Ofis";
+"Shop" = "Mağaza";
+"Education" = "Eğitim";
+"Hospital" = "Hastane";
+"Other" = "Diğer";
+"Alert Date and Time" = "Uyarı Tarih ve Saat";
+"Radius" = "Yarıçap";
+"Push Notification" = "Anlık Bildirim";
+"Note" = "Not";
+"Enter note about this alert" = "Bu uyarı hakkında not girin";
+"Add Alert" = "Uyarı Ekle";
+"Select & Continue" = "Seç ve Devam Et";
+"Leave without alert?" = "Uyarı olmadan ayrılmak istiyor musunuz?";
+"No alert added. Go back?" = "Uyarı eklenmedi. Geri dönülsün mü?";
+"Alert Saved" = "Uyarı Kaydedildi";
+"Your alert has been saved successfully." = "Uyarınız başarıyla kaydedildi.";
+"Proximity info" = "Yakınlık bilgisi";
+"Coordinates" = "Koordinatlar";
+"Status" = "Durum";
+"Inactive" = "Pasif";
+"Active" = "Aktif";
+"Alert On" = "Uyarı Açık";
+"Delete Alert?" = "Uyarı Silinsin mi?";
+"Are you sure you want to delete this alert?" = "Bu uyarıyı silmek istediğinizden emin misiniz?";
+"Save Alert" = "Uyarıyı Kaydet";
+
+"Settings" = "Ayarlar";
+"Battery Level Sharing" = "Pil Seviyesi Paylaşımı";
+"Proximity Notifications" = "Yakınlık Bildirimleri";
+"Motion Activity" = "Hareket Etkinliği";
+"Location Sharing" = "Konum Paylaşımı";
+"Rate Now" = "Şimdi Değerlendir";
+"Share" = "Paylaş";
+"Feedback" = "Geri Bildirim";
+"Privacy Policy" = "Gizlilik Politikası";
+"Term & Condition" = "Şartlar ve Koşullar";
+
+"Network Error" = "Ağ Hatası";
+"Make sure you’re connected to the internet." = "İnternete bağlı olduğunuzdan emin olun.";
+"Retry" = "Tekrar Dene";
+
+"Enable notification and allow access to your location Sharing for the app to run properly." = "Uygulamanın düzgün çalışması için bildirimleri etkinleştirin ve konum paylaşımına izin verin.";
+"Enable notification and allow access to your motion activity for the app to run properly." = "Uygulamanın düzgün çalışması için bildirimleri etkinleştirin ve hareket etkinliğine erişime izin verin.";
+"Member" = "Üye";
+"Map" = "Harita";
+"Proximity" = "Yakınlık";
+"Child mode is enabled" = "Çocuk modu etkinleştirildi";
+"you can’t turn off location and battery level sharing or log out." = "konum ve pil seviyesi paylaşımını kapatamaz veya çıkış yapamazsınız.";
+"LogOut" = "Çıkış Yap";
+"Log Out" = "Çıkış Yap";
+"Disable" = "Devre Dışı Bırak";
+"Learn more about child mode" = "Çocuk modu hakkında daha fazla bilgi edinin";
+"Circle Owner" = "Grup Sahibi";
+"Send request to disable child mode?" = "Çocuk modunu devre dışı bırakma isteği gönderilsin mi?";
+"The circle owner will get a notification to turn it off for you." = "Grup sahibi bunu kapatmanız için bildirim alacak.";
+"Send" = "Gönder";
+"Child Mode" = "Çocuk Modu";
+"Child Mode remove features children don’t need and prevent them from logging out and turning off location and battery level sharing." = "Çocuk Modu, çocukların ihtiyaç duymadığı özellikleri kaldırır ve çıkış yapmalarını veya konum ile pil seviyesi paylaşımını kapatmalarını engeller.";
+"Setup child mode" = "Çocuk modunu ayarla";
+"Add child to a circle and enable child mode in the app settings on their device." = "Çocuğu bir gruba ekleyin ve cihazlarında uygulama ayarlarından çocuk modunu etkinleştirin.";
+"Your Children Won’t be able to Creating Circles, browsing travel history, turn off location and battery level sharing or log out." = "Çocuklarınız grup oluşturamaz, seyahat geçmişini görüntüleyemez, konum ve pil seviyesi paylaşımını kapatamaz veya çıkış yapamaz.";
+"Child mode is enabled for" = "Çocuk modu etkinleştirildi:";
+"About Child Mode" = "Çocuk Modu Hakkında";
+"What happens when Child Mode is ON?" = "Çocuk Modu Açıkken Ne Olur?";
+"Location sharing stays always active (cannot be turned off)." = "Konum paylaşımı her zaman aktiftir (kapatılamaz).";
+"Battery percentage is visible to the circle owner." = "Pil yüzdesi grup sahibi tarafından görülebilir.";
+"Logout option is disabled to prevent tracking interruptions." = "Takip kesintilerini önlemek için çıkış seçeneği devre dışı bırakılmıştır.";
+"Designed to ensure the member stays safe and connected." = "Üyenin güvende ve bağlı kalmasını sağlamak için tasarlanmıştır.";
+"How to turn OFF Child Mode?" = "Çocuk Modu nasıl kapatılır?";
+"The Circle Owner can disable Child Mode anytime." = "Grup sahibi Çocuk Modunu istediği zaman devre dışı bırakabilir.";
+"The member can send a disable request → owner must approve it." = "Üye devre dışı bırakma isteği gönderebilir → sahibi onaylamalıdır.";
+"Only after approval, Child Mode will be turned off." = "Sadece onaylandıktan sonra Çocuk Modu kapatılır.";
+"Why use Child Mode?" = "Neden Çocuk Modu kullanılır?";
+"Ensures continuous safety tracking." = "Sürekli güvenlik takibini sağlar.";
+"Prevents location hiding or accidental logout." = "Konum gizlemeyi veya yanlışlıkla çıkışı engeller.";
+"Gives parents/guardians more control & peace of mind." = "Ebeveynlere/velilere daha fazla kontrol ve huzur verir.";
+"No members" = "Üye yok";
+"Disable Child Mode?" = "Çocuk Modu devre dışı bırakılsın mı?";
+"Are you sure you want to disable child mode for ‘%@’?" = "‘%@’ için çocuk modunu devre dışı bırakmak istediğinizden emin misiniz?";
+"No" = "Hayır";
+"Exit" = "Çıkış";
+"Reject" = "Reddet";
+"Child Mode Disable Request!" = "Çocuk Modu Devre Dışı Bırakma Talebi!";
+"has requested to disable Child Mode. Do you want to approve this request?" = "Çocuk Modunu devre dışı bırakmak istedi. Bu isteği onaylamak istiyor musunuz?";
+"Child Mode Disabled!" = "Çocuk Modu Devre Dışı Bırakıldı!";
+"Child Mode is Disable for '%@' successfully." = "'%@' için Çocuk Modu başarıyla devre dışı bırakıldı.";

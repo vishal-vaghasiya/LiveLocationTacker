@@ -1,0 +1,200 @@
+"Welcome" = "Chào mừng";
+"Stay connected with loved ones by tracking their live location with ease" = "Giữ kết nối với những người thân yêu bằng cách theo dõi vị trí trực tiếp của họ một cách dễ dàng";
+"Get started" = "Bắt đầu";
+
+"Select Language" = "Chọn Ngôn ngữ";
+"Change Language" = "Thay đổi Ngôn ngữ";
+
+"Stay Close to Your Loved Ones" = "Gần gũi với những người thân yêu";
+"Keep your family connected no matter where life takes them." = "Giữ gia đình bạn kết nối dù cuộc sống đưa họ đến đâu.";
+
+"Real-Time Location at Your Fingertips" = "Vị trí thời gian thực trong tầm tay bạn";
+"See live updates instantly and never miss a moment." = "Xem cập nhật trực tiếp ngay lập tức và không bỏ lỡ khoảnh khắc nào.";
+
+"A Smarter Way to Locate Family" = "Cách thông minh hơn để xác định vị trí gia đình";
+"Quick access to real-time family locations made simple." = "Truy cập nhanh vị trí gia đình thời gian thực một cách đơn giản.";
+
+"Next" = "Tiếp theo";
+
+"Permissions" = "Quyền truy cập";
+"Enable notification and allow access to your location and motion activity for the app to run properly." = "Bật thông báo và cho phép truy cập vị trí và hoạt động chuyển động để ứng dụng hoạt động đúng.";
+"Notification" = "Thông báo";
+
+"Continue" = "Tiếp tục";
+
+"Enter Your Phone Number" = "Nhập số điện thoại của bạn";
+"Your information stays private and is never shared with third parties." = "Thông tin của bạn được giữ riêng tư và không bao giờ chia sẻ với bên thứ ba.";
+
+"OTP Verification" = "Xác minh OTP";
+"Enter the OTP Sent to" = "Nhập mã OTP đã gửi đến";
+"Don’t Receive the OTP ?" = "Không nhận được OTP ?";
+"RESEND OTP" = "GỬI LẠI OTP";
+
+"Please enter valid OTP code" = "Vui lòng nhập mã OTP hợp lệ";
+"Verified" = "Đã xác minh";
+
+"Set Profile" = "Thiết lập hồ sơ";
+"Complete your profile details." = "Hoàn thành thông tin hồ sơ của bạn.";
+"Upload Photo" = "Tải ảnh lên";
+"Change Photo" = "Thay đổi ảnh";
+"Update" = "Cập nhật";
+
+"Enter first name" = "Nhập tên";
+"First name" = "Tên";
+"Enter Name" = "Nhập tên";
+"Enter circle name" = "Nhập tên nhóm";
+"Enter last name" = "Nhập họ";
+"Last name" = "Họ";
+"Select gender" = "Chọn giới tính";
+"Male" = "Nam";
+"Female" = "Nữ";
+"Set Profile Pic" = "Đặt ảnh hồ sơ";
+
+"Cancel" = "Hủy";
+"Done" = "Xong";
+"Yes" = "Có";
+"Ok" = "Đồng ý";
+"Save" = "Lưu";
+"Delete" = "Xóa";
+
+"Members" = "Thành viên";
+"Add" = "Thêm";
+
+"Choose Map" = "Chọn bản đồ";
+"Standard" = "Tiêu chuẩn";
+"Satellite" = "Vệ tinh";
+"Transit" = "Giao thông";
+
+"Create Circle" = "Tạo nhóm";
+"Join Circle" = "Tham gia nhóm";
+"Edit Circle" = "Chỉnh sửa nhóm";
+
+"Circle Name" = "Tên nhóm";
+"Invitation Code" = "Mã mời";
+"Create" = "Tạo";
+
+"Remove Member ?" = "Xóa thành viên ?";
+"Are you sure want to remove this member from circle?" = "Bạn có chắc muốn xóa thành viên này khỏi nhóm không?";
+
+"Enter Invitation Code" = "Nhập mã mời";
+"Get an invitation code from the person who made the circle." = "Lấy mã mời từ người tạo nhóm.";
+"Join" = "Tham gia";
+"Please enter valid code" = "Vui lòng nhập mã hợp lệ";
+
+"Add Member" = "Thêm thành viên";
+"Add someone you know into circle to start getting notified about location" = "Thêm người bạn biết vào nhóm để bắt đầu nhận thông báo về vị trí";
+
+"Choose From Contact" = "Chọn từ danh bạ";
+
+"Member Detail" = "Chi tiết thành viên";
+"Address" = "Địa chỉ";
+"Last Update" = "Cập nhật lần cuối";
+
+"SOS Calling" = "Gọi SOS";
+"Once the countdown ends, your location will be shared with your circle." = "Khi đếm ngược kết thúc, vị trí của bạn sẽ được chia sẻ với nhóm.";
+"Stop" = "Dừng";
+"SOS Not Sent" = "SOS chưa được gửi";
+"No members in your circle. Please add members to share SOS alerts." = "Không có thành viên trong nhóm của bạn. Vui lòng thêm thành viên để chia sẻ cảnh báo SOS.";
+"SOS Sent Successfully" = "Gửi SOS thành công";
+"Your alert has been shared with all circle members." = "Cảnh báo của bạn đã được chia sẻ với tất cả thành viên trong nhóm.";
+
+"Proximity Alert" = "Cảnh báo gần";
+"Add a Proximity Alert to get started." = "Thêm cảnh báo gần để bắt đầu.";
+"ID" = "ID";
+"Name" = "Tên";
+"Enter Proximity name" = "Nhập tên cảnh báo gần";
+"Location" = "Vị trí";
+"Select location" = "Chọn vị trí";
+"Search location" = "Tìm vị trí";
+"Select Date" = "Chọn ngày";
+"Select Time" = "Chọn giờ";
+"Open Map" = "Mở bản đồ";
+"Type" = "Loại";
+"Home" = "Nhà";
+"Gym" = "Phòng tập";
+"Office" = "Văn phòng";
+"Shop" = "Cửa hàng";
+"Education" = "Giáo dục";
+"Hospital" = "Bệnh viện";
+"Other" = "Khác";
+"Alert Date and Time" = "Ngày và giờ cảnh báo";
+"Radius" = "Bán kính";
+"Push Notification" = "Thông báo đẩy";
+"Note" = "Ghi chú";
+"Enter note about this alert" = "Nhập ghi chú về cảnh báo này";
+"Add Alert" = "Thêm cảnh báo";
+"Select & Continue" = "Chọn & Tiếp tục";
+"Leave without alert?" = "Rời đi mà không thêm cảnh báo?";
+"No alert added. Go back?" = "Chưa thêm cảnh báo. Quay lại?";
+"Alert Saved" = "Đã lưu cảnh báo";
+"Your alert has been saved successfully." = "Cảnh báo của bạn đã được lưu thành công.";
+"Proximity info" = "Thông tin cảnh báo gần";
+"Coordinates" = "Tọa độ";
+"Status" = "Trạng thái";
+"Inactive" = "Không hoạt động";
+"Active" = "Hoạt động";
+"Alert On" = "Bật cảnh báo";
+"Delete Alert?" = "Xóa cảnh báo?";
+"Are you sure you want to delete this alert?" = "Bạn có chắc muốn xóa cảnh báo này không?";
+"Save Alert" = "Lưu cảnh báo";
+
+"Settings" = "Cài đặt";
+"Battery Level Sharing" = "Chia sẻ mức pin";
+"Proximity Notifications" = "Thông báo cảnh báo gần";
+"Motion Activity" = "Hoạt động chuyển động";
+"Location Sharing" = "Chia sẻ vị trí";
+"Rate Now" = "Đánh giá ngay";
+"Share" = "Chia sẻ";
+"Feedback" = "Phản hồi";
+"Privacy Policy" = "Chính sách bảo mật";
+"Term & Condition" = "Điều khoản & Điều kiện";
+
+"Network Error" = "Lỗi mạng";
+"Make sure you’re connected to the internet." = "Đảm bảo bạn đã kết nối internet.";
+"Retry" = "Thử lại";
+
+"Enable notification and allow access to your location Sharing for the app to run properly." = "Bật thông báo và cho phép truy cập chia sẻ vị trí để ứng dụng hoạt động đúng.";
+"Enable notification and allow access to your motion activity for the app to run properly." = "Bật thông báo và cho phép truy cập hoạt động chuyển động để ứng dụng hoạt động đúng.";
+"Member" = "Thành viên";
+"Map" = "Bản đồ";
+"Proximity" = "Gần";
+"Child mode is enabled" = "Chế độ trẻ em đã được bật";
+"you can’t turn off location and battery level sharing or log out." = "bạn không thể tắt chia sẻ vị trí và mức pin hoặc đăng xuất.";
+"LogOut" = "Đăng xuất";
+"Log Out" = "Đăng xuất";
+"Disable" = "Vô hiệu hóa";
+"Learn more about child mode" = "Tìm hiểu thêm về chế độ trẻ em";
+"Circle Owner" = "Chủ nhóm";
+"Send request to disable child mode?" = "Gửi yêu cầu tắt chế độ trẻ em?";
+"The circle owner will get a notification to turn it off for you." = "Chủ nhóm sẽ nhận được thông báo để tắt cho bạn.";
+"Send" = "Gửi";
+"Child Mode" = "Chế độ trẻ em";
+"Child Mode remove features children don’t need and prevent them from logging out and turning off location and battery level sharing." = "Chế độ trẻ em loại bỏ các tính năng không cần thiết và ngăn trẻ đăng xuất hoặc tắt chia sẻ vị trí và mức pin.";
+"Setup child mode" = "Thiết lập chế độ trẻ em";
+"Add child to a circle and enable child mode in the app settings on their device." = "Thêm trẻ vào nhóm và bật chế độ trẻ em trong cài đặt ứng dụng trên thiết bị của họ.";
+"Your Children Won’t be able to Creating Circles, browsing travel history, turn off location and battery level sharing or log out." = "Trẻ của bạn sẽ không thể tạo nhóm, xem lịch sử di chuyển, tắt chia sẻ vị trí và mức pin hoặc đăng xuất.";
+"Child mode is enabled for" = "Chế độ trẻ em đã được bật cho";
+"About Child Mode" = "Về chế độ trẻ em";
+"What happens when Child Mode is ON?" = "Điều gì xảy ra khi chế độ trẻ em bật?";
+"Location sharing stays always active (cannot be turned off)." = "Chia sẻ vị trí luôn được bật (không thể tắt).";
+"Battery percentage is visible to the circle owner." = "Phần trăm pin hiển thị với chủ nhóm.";
+"Logout option is disabled to prevent tracking interruptions." = "Tùy chọn đăng xuất bị vô hiệu hóa để tránh gián đoạn theo dõi.";
+"Designed to ensure the member stays safe and connected." = "Được thiết kế để đảm bảo thành viên luôn an toàn và kết nối.";
+"How to turn OFF Child Mode?" = "Cách tắt chế độ trẻ em?";
+"The Circle Owner can disable Child Mode anytime." = "Chủ nhóm có thể tắt chế độ trẻ em bất cứ lúc nào.";
+"The member can send a disable request → owner must approve it." = "Thành viên có thể gửi yêu cầu tắt → chủ nhóm phải phê duyệt.";
+"Only after approval, Child Mode will be turned off." = "Chỉ sau khi được phê duyệt, chế độ trẻ em mới được tắt.";
+"Why use Child Mode?" = "Tại sao sử dụng chế độ trẻ em?";
+"Ensures continuous safety tracking." = "Đảm bảo theo dõi an toàn liên tục.";
+"Prevents location hiding or accidental logout." = "Ngăn chặn việc ẩn vị trí hoặc đăng xuất nhầm.";
+"Gives parents/guardians more control & peace of mind." = "Mang lại cho cha mẹ/người giám hộ nhiều kiểm soát và yên tâm hơn.";
+"No members" = "Không có thành viên";
+"Disable Child Mode?" = "Tắt chế độ trẻ em?";
+"Are you sure you want to disable child mode for ‘%@’?" = "Bạn có chắc muốn tắt chế độ trẻ em cho ‘%@’ không?";
+"No" = "Không";
+"Exit" = "Thoát";
+"Reject" = "Từ chối";
+"Child Mode Disable Request!" = "Yêu cầu tắt chế độ trẻ em!";
+"has requested to disable Child Mode. Do you want to approve this request?" = "đã yêu cầu tắt chế độ trẻ em. Bạn có muốn phê duyệt yêu cầu này không?";
+"Child Mode Disabled!" = "Chế độ trẻ em đã bị tắt!";
+"Child Mode is Disable for '%@' successfully." = "Chế độ trẻ em đã được tắt cho '%@' thành công.";

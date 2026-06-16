@@ -1,0 +1,200 @@
+"Welcome" = "Bine ați venit";
+"Stay connected with loved ones by tracking their live location with ease" = "Rămâi conectat cu cei dragi urmărindu-le locația în timp real cu ușurință";
+"Get started" = "Începe";
+
+"Select Language" = "Selectați limba";
+"Change Language" = "Schimbă limba";
+
+"Stay Close to Your Loved Ones" = "Rămâi aproape de cei dragi";
+"Keep your family connected no matter where life takes them." = "Menține-ți familia conectată indiferent unde îi duce viața.";
+
+"Real-Time Location at Your Fingertips" = "Locație în timp real la îndemână";
+"See live updates instantly and never miss a moment." = "Vezi actualizări live instant și nu rata niciun moment.";
+
+"A Smarter Way to Locate Family" = "O metodă mai inteligentă de a localiza familia";
+"Quick access to real-time family locations made simple." = "Acces rapid la locațiile familiei în timp real, simplificat.";
+
+"Next" = "Următorul";
+
+"Permissions" = "Permisiuni";
+"Enable notification and allow access to your location and motion activity for the app to run properly." = "Activează notificările și permite accesul la locația și activitatea ta de mișcare pentru ca aplicația să funcționeze corect.";
+"Notification" = "Notificare";
+
+"Continue" = "Continuă";
+
+"Enter Your Phone Number" = "Introdu numărul tău de telefon";
+"Your information stays private and is never shared with third parties." = "Informațiile tale rămân private și nu sunt niciodată partajate cu terțe părți.";
+
+"OTP Verification" = "Verificare OTP";
+"Enter the OTP Sent to" = "Introdu codul OTP trimis către";
+"Don’t Receive the OTP ?" = "Nu ai primit codul OTP?";
+"RESEND OTP" = "Retrimite OTP";
+
+"Please enter valid OTP code" = "Te rugăm să introduci un cod OTP valid";
+"Verified" = "Verificat";
+
+"Set Profile" = "Configurează profilul";
+"Complete your profile details." = "Completează detaliile profilului tău.";
+"Upload Photo" = "Încarcă fotografie";
+"Change Photo" = "Schimbă fotografia";
+"Update" = "Actualizează";
+
+"Enter first name" = "Introdu prenumele";
+"First name" = "Prenume";
+"Enter Name" = "Introdu numele";
+"Enter circle name" = "Introdu numele cercului";
+"Enter last name" = "Introdu numele de familie";
+"Last name" = "Nume de familie";
+"Select gender" = "Selectează genul";
+"Male" = "Bărbat";
+"Female" = "Femeie";
+"Set Profile Pic" = "Setează poza de profil";
+
+"Cancel" = "Anulează";
+"Done" = "Gata";
+"Yes" = "Da";
+"Ok" = "Ok";
+"Save" = "Salvează";
+"Delete" = "Șterge";
+
+"Members" = "Membri";
+"Add" = "Adaugă";
+
+"Choose Map" = "Alege hartă";
+"Standard" = "Standard";
+"Satellite" = "Satelit";
+"Transit" = "Tranzit";
+
+"Create Circle" = "Creează cerc";
+"Join Circle" = "Alătură-te cercului";
+"Edit Circle" = "Editează cercul";
+
+"Circle Name" = "Numele cercului";
+"Invitation Code" = "Cod de invitație";
+"Create" = "Creează";
+
+"Remove Member ?" = "Elimini membru?";
+"Are you sure want to remove this member from circle?" = "Ești sigur că vrei să elimini acest membru din cerc?";
+
+"Enter Invitation Code" = "Introdu codul de invitație";
+"Get an invitation code from the person who made the circle." = "Obține un cod de invitație de la persoana care a creat cercul.";
+"Join" = "Alătură-te";
+"Please enter valid code" = "Te rugăm să introduci un cod valid";
+
+"Add Member" = "Adaugă membru";
+"Add someone you know into circle to start getting notified about location" = "Adaugă pe cineva cunoscut în cerc pentru a începe să primești notificări despre locație";
+
+"Choose From Contact" = "Alege din contacte";
+
+"Member Detail" = "Detalii membru";
+"Address" = "Adresă";
+"Last Update" = "Ultima actualizare";
+
+"SOS Calling" = "Apel SOS";
+"Once the countdown ends, your location will be shared with your circle." = "Odată ce numărătoarea inversă se termină, locația ta va fi partajată cu cercul tău.";
+"Stop" = "Oprește";
+"SOS Not Sent" = "SOS nu a fost trimis";
+"No members in your circle. Please add members to share SOS alerts." = "Nu există membri în cercul tău. Te rugăm să adaugi membri pentru a partaja alertele SOS.";
+"SOS Sent Successfully" = "SOS trimis cu succes";
+"Your alert has been shared with all circle members." = "Alertă ta a fost partajată cu toți membrii cercului.";
+
+"Proximity Alert" = "Alertă de proximitate";
+"Add a Proximity Alert to get started." = "Adaugă o alertă de proximitate pentru a începe.";
+"ID" = "ID";
+"Name" = "Nume";
+"Enter Proximity name" = "Introdu numele alertei de proximitate";
+"Location" = "Locație";
+"Select location" = "Selectează locația";
+"Search location" = "Caută locația";
+"Select Date" = "Selectează data";
+"Select Time" = "Selectează ora";
+"Open Map" = "Deschide harta";
+"Type" = "Tip";
+"Home" = "Acasă";
+"Gym" = "Sală de sport";
+"Office" = "Birou";
+"Shop" = "Magazin";
+"Education" = "Educație";
+"Hospital" = "Spital";
+"Other" = "Altul";
+"Alert Date and Time" = "Data și ora alertei";
+"Radius" = "Rază";
+"Push Notification" = "Notificare push";
+"Note" = "Notă";
+"Enter note about this alert" = "Introdu o notă despre această alertă";
+"Add Alert" = "Adaugă alertă";
+"Select & Continue" = "Selectează și continuă";
+"Leave without alert?" = "Părăsești fără alertă?";
+"No alert added. Go back?" = "Nu a fost adăugată nicio alertă. Vrei să te întorci?";
+"Alert Saved" = "Alertă salvată";
+"Your alert has been saved successfully." = "Alertă ta a fost salvată cu succes.";
+"Proximity info" = "Informații despre proximitate";
+"Coordinates" = "Coordonate";
+"Status" = "Stare";
+"Inactive" = "Inactiv";
+"Active" = "Activ";
+"Alert On" = "Alertă activată";
+"Delete Alert?" = "Ștergi alerta?";
+"Are you sure you want to delete this alert?" = "Ești sigur că vrei să ștergi această alertă?";
+"Save Alert" = "Salvează alerta";
+
+"Settings" = "Setări";
+"Battery Level Sharing" = "Partajare nivel baterie";
+"Proximity Notifications" = "Notificări de proximitate";
+"Motion Activity" = "Activitate de mișcare";
+"Location Sharing" = "Partajare locație";
+"Rate Now" = "Evaluează acum";
+"Share" = "Partajează";
+"Feedback" = "Feedback";
+"Privacy Policy" = "Politica de confidențialitate";
+"Term & Condition" = "Termeni și condiții";
+
+"Network Error" = "Eroare de rețea";
+"Make sure you’re connected to the internet." = "Asigură-te că ești conectat la internet.";
+"Retry" = "Reîncearcă";
+
+"Enable notification and allow access to your location Sharing for the app to run properly." = "Activează notificările și permite accesul la partajarea locației pentru ca aplicația să funcționeze corect.";
+"Enable notification and allow access to your motion activity for the app to run properly." = "Activează notificările și permite accesul la activitatea ta de mișcare pentru ca aplicația să funcționeze corect.";
+"Member" = "Membru";
+"Map" = "Hartă";
+"Proximity" = "Proximitate";
+"Child mode is enabled" = "Modul copil este activat";
+"you can’t turn off location and battery level sharing or log out." = "nu poți dezactiva partajarea locației și nivelului bateriei sau să te deconectezi.";
+"LogOut" = "Deconectare";
+"Log Out" = "Deconectare";
+"Disable" = "Dezactivează";
+"Learn more about child mode" = "Află mai multe despre modul copil";
+"Circle Owner" = "Proprietar cerc";
+"Send request to disable child mode?" = "Trimite cerere pentru a dezactiva modul copil?";
+"The circle owner will get a notification to turn it off for you." = "Proprietarul cercului va primi o notificare pentru a-l dezactiva pentru tine.";
+"Send" = "Trimite";
+"Child Mode" = "Mod copil";
+"Child Mode remove features children don’t need and prevent them from logging out and turning off location and battery level sharing." = "Modul copil elimină funcțiile de care copiii nu au nevoie și îi împiedică să se deconecteze sau să dezactiveze partajarea locației și nivelului bateriei.";
+"Setup child mode" = "Configurează modul copil";
+"Add child to a circle and enable child mode in the app settings on their device." = "Adaugă copilul într-un cerc și activează modul copil în setările aplicației pe dispozitivul lor.";
+"Your Children Won’t be able to Creating Circles, browsing travel history, turn off location and battery level sharing or log out." = "Copiii tăi nu vor putea crea cercuri, naviga istoricul călătoriilor, dezactiva partajarea locației și a nivelului bateriei sau să se deconecteze.";
+"Child mode is enabled for" = "Modul copil este activat pentru";
+"About Child Mode" = "Despre modul copil";
+"What happens when Child Mode is ON?" = "Ce se întâmplă când modul copil este activat?";
+"Location sharing stays always active (cannot be turned off)." = "Partajarea locației rămâne întotdeauna activă (nu poate fi dezactivată).";
+"Battery percentage is visible to the circle owner." = "Procentajul bateriei este vizibil proprietarului cercului.";
+"Logout option is disabled to prevent tracking interruptions." = "Opțiunea de deconectare este dezactivată pentru a preveni întreruperile de urmărire.";
+"Designed to ensure the member stays safe and connected." = "Conceput pentru a asigura siguranța și conectivitatea membrului.";
+"How to turn OFF Child Mode?" = "Cum se dezactivează modul copil?";
+"The Circle Owner can disable Child Mode anytime." = "Proprietarul cercului poate dezactiva modul copil oricând.";
+"The member can send a disable request → owner must approve it." = "Membrul poate trimite o cerere de dezactivare → proprietarul trebuie să o aprobe.";
+"Only after approval, Child Mode will be turned off." = "Doar după aprobare, modul copil va fi dezactivat.";
+"Why use Child Mode?" = "De ce să folosești modul copil?";
+"Ensures continuous safety tracking." = "Asigură monitorizarea continuă a siguranței.";
+"Prevents location hiding or accidental logout." = "Previne ascunderea locației sau deconectarea accidentală.";
+"Gives parents/guardians more control & peace of mind." = "Oferă părinților/tutorilor mai mult control și liniște sufletească.";
+"No members" = "Fără membri";
+"Disable Child Mode?" = "Dezactivezi modul copil?";
+"Are you sure you want to disable child mode for ‘%@’?" = "Ești sigur că vrei să dezactivezi modul copil pentru ‘%@’?";
+"No" = "Nu";
+"Exit" = "Ieșire";
+"Reject" = "Respinge";
+"Child Mode Disable Request!" = "Cerere de dezactivare a modului copil!";
+"has requested to disable Child Mode. Do you want to approve this request?" = "a cerut dezactivarea modului copil. Vrei să aprobi această cerere?";
+"Child Mode Disabled!" = "Modul copil dezactivat!";
+"Child Mode is Disable for '%@' successfully." = "Modul copil a fost dezactivat cu succes pentru '%@'.";

@@ -1,0 +1,200 @@
+"Welcome" = "Barka da zuwa";
+"Stay connected with loved ones by tracking their live location with ease" = "Kasance tare da masoyanka ta hanyar bin diddigin wurin su kai tsaye cikin sauƙi";
+"Get started" = "Fara";
+
+"Select Language" = "Zaɓi Harshe";
+"Change Language" = "Canza Harshe";
+
+"Stay Close to Your Loved Ones" = "Kasance kusa da Masoyanka";
+"Keep your family connected no matter where life takes them." = "Ka ci gaba da haɗa iyalinka ko ina rayuwa ta kai su.";
+
+"Real-Time Location at Your Fingertips" = "Wurin Kai tsaye a Hannunka";
+"See live updates instantly and never miss a moment." = "Duba sabbin bayanai kai tsaye kuma kada ka rasa kowane lokaci.";
+
+"A Smarter Way to Locate Family" = "Hanya Mai Hikima don Neman Iyalinka";
+"Quick access to real-time family locations made simple." = "Samun sauƙin wuraren iyali kai tsaye cikin sauƙi.";
+
+"Next" = "Gaba";
+
+"Permissions" = "Izini";
+"Enable notification and allow access to your location and motion activity for the app to run properly." = "Bada izinin sanarwa da damar samun wurinka da motsinka don app ɗin ya yi aiki da kyau.";
+"Notification" = "Sanarwa";
+
+"Continue" = "Ci gaba";
+
+"Enter Your Phone Number" = "Shigar da Lambar Wayarka";
+"Your information stays private and is never shared with third parties." = "Bayanan ka suna zaman sirri kuma ba a raba su da wasu ba.";
+
+"OTP Verification" = "Tabbatar da OTP";
+"Enter the OTP Sent to" = "Shigar da OTP da aka aiko zuwa";
+"Don’t Receive the OTP ?" = "Ba ka karɓi OTP ba?";
+"RESEND OTP" = "Sake Aiko da OTP";
+
+"Please enter valid OTP code" = "Da fatan shigar da ingantaccen lambar OTP";
+"Verified" = "An Tabbatar";
+
+"Set Profile" = "Saita Bayanin Kai";
+"Complete your profile details." = "Cika cikakkun bayanan bayaninka.";
+"Upload Photo" = "Loda Hoto";
+"Change Photo" = "Canza Hoto";
+"Update" = "Sabunta";
+
+"Enter first name" = "Shigar da suna na farko";
+"First name" = "Suna na farko";
+"Enter Name" = "Shigar da Suna";
+"Enter circle name" = "Shigar da sunan ƙungiya";
+"Enter last name" = "Shigar da suna na ƙarshe";
+"Last name" = "Suna na ƙarshe";
+"Select gender" = "Zaɓi jinsi";
+"Male" = "Namiji";
+"Female" = "Mace";
+"Set Profile Pic" = "Saita Hoton Bayanin Kai";
+
+"Cancel" = "Soke";
+"Done" = "An gama";
+"Yes" = "I";
+"Ok" = "To";
+"Save" = "Ajiye";
+"Delete" = "Goge";
+
+"Members" = "Membobi";
+"Add" = "Ƙara";
+
+"Choose Map" = "Zaɓi Taswira";
+"Standard" = "Na al'ada";
+"Satellite" = "Na tauraron dan adam";
+"Transit" = "Sufuri";
+
+"Create Circle" = "Ƙirƙiri Ƙungiya";
+"Join Circle" = "Shiga Ƙungiya";
+"Edit Circle" = "Gyara Ƙungiya";
+
+"Circle Name" = "Sunan Ƙungiya";
+"Invitation Code" = "Lambar Gayyata";
+"Create" = "Ƙirƙiri";
+
+"Remove Member ?" = "Cire Memba?";
+"Are you sure want to remove this member from circle?" = "Kuna tabbatar da cire wannan memba daga ƙungiyar?";
+
+"Enter Invitation Code" = "Shigar da Lambar Gayyata";
+"Get an invitation code from the person who made the circle." = "Samu lambar gayyata daga wanda ya ƙirƙiri ƙungiyar.";
+"Join" = "Shiga";
+"Please enter valid code" = "Da fatan shigar da ingantaccen lamba";
+
+"Add Member" = "Ƙara Memba";
+"Add someone you know into circle to start getting notified about location" = "Ƙara wani da ka sani cikin ƙungiya don fara samun sanarwa game da wurin";
+
+"Choose From Contact" = "Zaɓi Daga Lambobin";
+
+"Member Detail" = "Bayanin Memba";
+"Address" = "Adireshi";
+"Last Update" = "Sabuntawa ta ƙarshe";
+
+"SOS Calling" = "Kiran SOS";
+"Once the countdown ends, your location will be shared with your circle." = "Da zarar ƙididdigar lokaci ta ƙare, wurinka zai kasance tare da ƙungiyarka.";
+"Stop" = "Tsaya";
+"SOS Not Sent" = "Ba a Aika SOS ba";
+"No members in your circle. Please add members to share SOS alerts." = "Babu membobi a ƙungiyarka. Da fatan ƙara membobi don raba faɗakarwar SOS.";
+"SOS Sent Successfully" = "An Aika SOS Cikin Nasara";
+"Your alert has been shared with all circle members." = "Faɗakarwarka ta raba wa duk membobin ƙungiyar.";
+
+"Proximity Alert" = "Faɗakarwar Kusanci";
+"Add a Proximity Alert to get started." = "Ƙara Faɗakarwar Kusanci don farawa.";
+"ID" = "ID";
+"Name" = "Suna";
+"Enter Proximity name" = "Shigar da sunan kusanci";
+"Location" = "Wuri";
+"Select location" = "Zaɓi wuri";
+"Search location" = "Nemo wuri";
+"Select Date" = "Zaɓi Ranar";
+"Select Time" = "Zaɓi Lokaci";
+"Open Map" = "Buɗe Taswira";
+"Type" = "Nau'i";
+"Home" = "Gida";
+"Gym" = "Dakin motsa jiki";
+"Office" = "Ofis";
+"Shop" = "Shago";
+"Education" = "Ilimi";
+"Hospital" = "Asibiti";
+"Other" = "Sauran";
+"Alert Date and Time" = "Rana da Lokacin Faɗakarwa";
+"Radius" = "Radius";
+"Push Notification" = "Sanarwar Turawa";
+"Note" = "Lura";
+"Enter note about this alert" = "Shigar da lura game da wannan faɗakarwa";
+"Add Alert" = "Ƙara Faɗakarwa";
+"Select & Continue" = "Zaɓi & Ci gaba";
+"Leave without alert?" = "Barin ba tare da faɗakarwa ba?";
+"No alert added. Go back?" = "Ba a ƙara faɗakarwa ba. Komawa baya?";
+"Alert Saved" = "An Ajiye Faɗakarwa";
+"Your alert has been saved successfully." = "An ajiye faɗakarwarka cikin nasara.";
+"Proximity info" = "Bayanan Kusanci";
+"Coordinates" = "Koodinatin";
+"Status" = "Matsayi";
+"Inactive" = "Ba a aiki";
+"Active" = "Aiki";
+"Alert On" = "Faɗakarwa A kunne";
+"Delete Alert?" = "Goge Faɗakarwa?";
+"Are you sure you want to delete this alert?" = "Kuna tabbatar kuna son gogewa wannan faɗakarwa?";
+"Save Alert" = "Ajiye Faɗakarwa";
+
+"Settings" = "Saituna";
+"Battery Level Sharing" = "Raba Matakin Batir";
+"Proximity Notifications" = "Sanarwar Kusanci";
+"Motion Activity" = "Ayyukan Motsi";
+"Location Sharing" = "Raba Wuri";
+"Rate Now" = "Yi Kimantawa Yanzu";
+"Share" = "Raba";
+"Feedback" = "Ra'ayi";
+"Privacy Policy" = "Ka'idar Sirri";
+"Term & Condition" = "Sharudda & Yanayi";
+
+"Network Error" = "Kuskuren Intanet";
+"Make sure you’re connected to the internet." = "Tabbatar kana haɗe da intanet.";
+"Retry" = "Sake Gwadawa";
+
+"Enable notification and allow access to your location Sharing for the app to run properly." = "Bada izinin sanarwa da damar samun wurinka don app ɗin ya yi aiki da kyau.";
+"Enable notification and allow access to your motion activity for the app to run properly." = "Bada izinin sanarwa da damar samun ayyukan motsinka don app ɗin ya yi aiki da kyau.";
+"Member" = "Memba";
+"Map" = "Taswira";
+"Proximity" = "Kusanci";
+"Child mode is enabled" = "Yanayin Yara yana kunne";
+"you can’t turn off location and battery level sharing or log out." = "ba za ka iya kashe rabon wuri da matakin batir ko fita ba.";
+"LogOut" = "Fita";
+"Log Out" = "Fita";
+"Disable" = "Kashe";
+"Learn more about child mode" = "Koyi ƙarin game da yanayin yara";
+"Circle Owner" = "Mai Ƙungiya";
+"Send request to disable child mode?" = "Aika buƙatar kashe yanayin yara?";
+"The circle owner will get a notification to turn it off for you." = "Mai ƙungiyar zai sami sanarwa don kashe shi a gare ka.";
+"Send" = "Aika";
+"Child Mode" = "Yanayin Yara";
+"Child Mode remove features children don’t need and prevent them from logging out and turning off location and battery level sharing." = "Yanayin Yara yana cire abubuwan da yara ba sa bukata kuma yana hana su fita da kashe rabon wuri da batir.";
+"Setup child mode" = "Saita yanayin yara";
+"Add child to a circle and enable child mode in the app settings on their device." = "Ƙara yaro cikin ƙungiya kuma kunna yanayin yara a saitunan app ɗin a na'urar su.";
+"Your Children Won’t be able to Creating Circles, browsing travel history, turn off location and battery level sharing or log out." = "Yaranka ba za su iya ƙirƙirar ƙungiyoyi, duba tarihin tafiya, kashe rabon wuri da batir ko fita ba.";
+"Child mode is enabled for" = "Yanayin yara yana kunne don";
+"About Child Mode" = "Game da Yanayin Yara";
+"What happens when Child Mode is ON?" = "Me ke faruwa idan Yanayin Yara yana kunne?";
+"Location sharing stays always active (cannot be turned off)." = "Rabon wuri yana ci gaba da aiki koyaushe (ba za a iya kashe shi ba).";
+"Battery percentage is visible to the circle owner." = "Kashi na batir yana bayyana ga mai ƙungiya.";
+"Logout option is disabled to prevent tracking interruptions." = "Zaɓin fita an kashe shi don hana tsangwama wajen bin diddigi.";
+"Designed to ensure the member stays safe and connected." = "An tsara shi don tabbatar da memba yana cikin aminci da haɗi.";
+"How to turn OFF Child Mode?" = "Yadda za a kashe Yanayin Yara?";
+"The Circle Owner can disable Child Mode anytime." = "Mai ƙungiya zai iya kashe Yanayin Yara a kowane lokaci.";
+"The member can send a disable request → owner must approve it." = "Memba zai iya aika buƙatar kashewa → mai ƙungiya dole ne ya amince.";
+"Only after approval, Child Mode will be turned off." = "Bayan amincewa kawai, za a kashe Yanayin Yara.";
+"Why use Child Mode?" = "Me yasa ake amfani da Yanayin Yara?";
+"Ensures continuous safety tracking." = "Yana tabbatar da bin diddigin aminci ba tare da tsayawa ba.";
+"Prevents location hiding or accidental logout." = "Yana hana ɓoye wuri ko fita ba da gangan ba.";
+"Gives parents/guardians more control & peace of mind." = "Yana ba iyaye/masu kula ƙarin iko da kwanciyar hankali.";
+"No members" = "Babu membobi";
+"Disable Child Mode?" = "Kashe Yanayin Yara?";
+"Are you sure you want to disable child mode for ‘%@’?" = "Kuna tabbatar kuna son kashe yanayin yara don ‘%@’?";
+"No" = "A'a";
+"Exit" = "Fita";
+"Reject" = "Ƙi";
+"Child Mode Disable Request!" = "Buƙatar Kashe Yanayin Yara!";
+"has requested to disable Child Mode. Do you want to approve this request?" = "ya nemi a kashe Yanayin Yara. Kuna son amincewa da wannan buƙata?";
+"Child Mode Disabled!" = "An Kashe Yanayin Yara!";
+"Child Mode is Disable for '%@' successfully." = "An kashe Yanayin Yara don '%@' cikin nasara.";

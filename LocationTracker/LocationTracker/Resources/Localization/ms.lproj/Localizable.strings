@@ -1,0 +1,200 @@
+"Welcome" = "Selamat datang";
+"Stay connected with loved ones by tracking their live location with ease" = "Terus berhubung dengan orang tersayang dengan menjejak lokasi mereka secara langsung dengan mudah";
+"Get started" = "Mula";
+
+"Select Language" = "Pilih Bahasa";
+"Change Language" = "Tukar Bahasa";
+
+"Stay Close to Your Loved Ones" = "Sentiasa Dekat Dengan Orang Tersayang Anda";
+"Keep your family connected no matter where life takes them." = "Pastikan keluarga anda sentiasa berhubung tidak kira ke mana kehidupan membawa mereka.";
+
+"Real-Time Location at Your Fingertips" = "Lokasi Masa Nyata Di Hujung Jari Anda";
+"See live updates instantly and never miss a moment." = "Lihat kemas kini secara langsung serta-merta dan jangan lepaskan sebarang saat.";
+
+"A Smarter Way to Locate Family" = "Cara Lebih Pintar Untuk Mencari Keluarga";
+"Quick access to real-time family locations made simple." = "Akses pantas ke lokasi keluarga masa nyata dengan mudah.";
+
+"Next" = "Seterusnya";
+
+"Permissions" = "Kebenaran";
+"Enable notification and allow access to your location and motion activity for the app to run properly." = "Dayakan pemberitahuan dan benarkan akses ke lokasi dan aktiviti pergerakan anda supaya aplikasi berfungsi dengan baik.";
+"Notification" = "Pemberitahuan";
+
+"Continue" = "Teruskan";
+
+"Enter Your Phone Number" = "Masukkan Nombor Telefon Anda";
+"Your information stays private and is never shared with third parties." = "Maklumat anda kekal peribadi dan tidak pernah dikongsi dengan pihak ketiga.";
+
+"OTP Verification" = "Pengesahan OTP";
+"Enter the OTP Sent to" = "Masukkan OTP yang Dihantar ke";
+"Don’t Receive the OTP ?" = "Tidak Terima OTP?";
+"RESEND OTP" = "HANTAR SEMULA OTP";
+
+"Please enter valid OTP code" = "Sila masukkan kod OTP yang sah";
+"Verified" = "Disahkan";
+
+"Set Profile" = "Tetapkan Profil";
+"Complete your profile details." = "Lengkapkan butiran profil anda.";
+"Upload Photo" = "Muat Naik Gambar";
+"Change Photo" = "Tukar Gambar";
+"Update" = "Kemas Kini";
+
+"Enter first name" = "Masukkan nama pertama";
+"First name" = "Nama pertama";
+"Enter Name" = "Masukkan Nama";
+"Enter circle name" = "Masukkan nama bulatan";
+"Enter last name" = "Masukkan nama akhir";
+"Last name" = "Nama akhir";
+"Select gender" = "Pilih jantina";
+"Male" = "Lelaki";
+"Female" = "Perempuan";
+"Set Profile Pic" = "Tetapkan Gambar Profil";
+
+"Cancel" = "Batal";
+"Done" = "Selesai";
+"Yes" = "Ya";
+"Ok" = "Ok";
+"Save" = "Simpan";
+"Delete" = "Padam";
+
+"Members" = "Ahli";
+"Add" = "Tambah";
+
+"Choose Map" = "Pilih Peta";
+"Standard" = "Standard";
+"Satellite" = "Satelit";
+"Transit" = "Transit";
+
+"Create Circle" = "Cipta Bulatan";
+"Join Circle" = "Sertai Bulatan";
+"Edit Circle" = "Sunting Bulatan";
+
+"Circle Name" = "Nama Bulatan";
+"Invitation Code" = "Kod Jemputan";
+"Create" = "Cipta";
+
+"Remove Member ?" = "Buang Ahli?";
+"Are you sure want to remove this member from circle?" = "Adakah anda pasti mahu membuang ahli ini dari bulatan?";
+
+"Enter Invitation Code" = "Masukkan Kod Jemputan";
+"Get an invitation code from the person who made the circle." = "Dapatkan kod jemputan dari orang yang mencipta bulatan.";
+"Join" = "Sertai";
+"Please enter valid code" = "Sila masukkan kod yang sah";
+
+"Add Member" = "Tambah Ahli";
+"Add someone you know into circle to start getting notified about location" = "Tambah seseorang yang anda kenal ke dalam bulatan untuk mula menerima pemberitahuan tentang lokasi";
+
+"Choose From Contact" = "Pilih Dari Kenalan";
+
+"Member Detail" = "Butiran Ahli";
+"Address" = "Alamat";
+"Last Update" = "Kemas Kini Terakhir";
+
+"SOS Calling" = "Panggilan SOS";
+"Once the countdown ends, your location will be shared with your circle." = "Setelah kiraan masa tamat, lokasi anda akan dikongsi dengan bulatan anda.";
+"Stop" = "Berhenti";
+"SOS Not Sent" = "SOS Tidak Dihantar";
+"No members in your circle. Please add members to share SOS alerts." = "Tiada ahli dalam bulatan anda. Sila tambah ahli untuk berkongsi amaran SOS.";
+"SOS Sent Successfully" = "SOS Berjaya Dihantar";
+"Your alert has been shared with all circle members." = "Amaran anda telah dikongsi dengan semua ahli bulatan.";
+
+"Proximity Alert" = "Amaran Kedekatan";
+"Add a Proximity Alert to get started." = "Tambah Amaran Kedekatan untuk bermula.";
+"ID" = "ID";
+"Name" = "Nama";
+"Enter Proximity name" = "Masukkan nama Kedekatan";
+"Location" = "Lokasi";
+"Select location" = "Pilih lokasi";
+"Search location" = "Cari lokasi";
+"Select Date" = "Pilih Tarikh";
+"Select Time" = "Pilih Masa";
+"Open Map" = "Buka Peta";
+"Type" = "Jenis";
+"Home" = "Rumah";
+"Gym" = "Gim";
+"Office" = "Pejabat";
+"Shop" = "Kedai";
+"Education" = "Pendidikan";
+"Hospital" = "Hospital";
+"Other" = "Lain-lain";
+"Alert Date and Time" = "Tarikh dan Masa Amaran";
+"Radius" = "Jejari";
+"Push Notification" = "Pemberitahuan Tolak";
+"Note" = "Nota";
+"Enter note about this alert" = "Masukkan nota tentang amaran ini";
+"Add Alert" = "Tambah Amaran";
+"Select & Continue" = "Pilih & Teruskan";
+"Leave without alert?" = "Tinggalkan tanpa amaran?";
+"No alert added. Go back?" = "Tiada amaran ditambah. Kembali?";
+"Alert Saved" = "Amaran Disimpan";
+"Your alert has been saved successfully." = "Amaran anda telah berjaya disimpan.";
+"Proximity info" = "Maklumat Kedekatan";
+"Coordinates" = "Koordinat";
+"Status" = "Status";
+"Inactive" = "Tidak Aktif";
+"Active" = "Aktif";
+"Alert On" = "Amaran Hidup";
+"Delete Alert?" = "Padam Amaran?";
+"Are you sure you want to delete this alert?" = "Adakah anda pasti mahu memadam amaran ini?";
+"Save Alert" = "Simpan Amaran";
+
+"Settings" = "Tetapan";
+"Battery Level Sharing" = "Perkongsian Tahap Bateri";
+"Proximity Notifications" = "Pemberitahuan Kedekatan";
+"Motion Activity" = "Aktiviti Pergerakan";
+"Location Sharing" = "Perkongsian Lokasi";
+"Rate Now" = "Nilai Sekarang";
+"Share" = "Kongsi";
+"Feedback" = "Maklum Balas";
+"Privacy Policy" = "Dasar Privasi";
+"Term & Condition" = "Terma & Syarat";
+
+"Network Error" = "Ralat Rangkaian";
+"Make sure you’re connected to the internet." = "Pastikan anda bersambung ke internet.";
+"Retry" = "Cuba Semula";
+
+"Enable notification and allow access to your location Sharing for the app to run properly." = "Dayakan pemberitahuan dan benarkan akses ke perkongsian lokasi anda supaya aplikasi berfungsi dengan baik.";
+"Enable notification and allow access to your motion activity for the app to run properly." = "Dayakan pemberitahuan dan benarkan akses ke aktiviti pergerakan anda supaya aplikasi berfungsi dengan baik.";
+"Member" = "Ahli";
+"Map" = "Peta";
+"Proximity" = "Kedekatan";
+"Child mode is enabled" = "Mod Kanak-kanak diaktifkan";
+"you can’t turn off location and battery level sharing or log out." = "anda tidak boleh mematikan perkongsian lokasi dan tahap bateri atau log keluar.";
+"LogOut" = "LogKeluar";
+"Log Out" = "Log Keluar";
+"Disable" = "Lumpuhkan";
+"Learn more about child mode" = "Ketahui lebih lanjut tentang mod kanak-kanak";
+"Circle Owner" = "Pemilik Bulatan";
+"Send request to disable child mode?" = "Hantar permintaan untuk melumpuhkan mod kanak-kanak?";
+"The circle owner will get a notification to turn it off for you." = "Pemilik bulatan akan menerima pemberitahuan untuk mematikannya bagi pihak anda.";
+"Send" = "Hantar";
+"Child Mode" = "Mod Kanak-kanak";
+"Child Mode remove features children don’t need and prevent them from logging out and turning off location and battery level sharing." = "Mod Kanak-kanak membuang ciri yang tidak diperlukan oleh kanak-kanak dan menghalang mereka dari log keluar serta mematikan perkongsian lokasi dan tahap bateri.";
+"Setup child mode" = "Tetapkan mod kanak-kanak";
+"Add child to a circle and enable child mode in the app settings on their device." = "Tambah kanak-kanak ke dalam bulatan dan aktifkan mod kanak-kanak dalam tetapan aplikasi pada peranti mereka.";
+"Your Children Won’t be able to Creating Circles, browsing travel history, turn off location and battery level sharing or log out." = "Anak anda tidak akan dapat mencipta bulatan, melayari sejarah perjalanan, mematikan perkongsian lokasi dan tahap bateri atau log keluar.";
+"Child mode is enabled for" = "Mod kanak-kanak diaktifkan untuk";
+"About Child Mode" = "Mengenai Mod Kanak-kanak";
+"What happens when Child Mode is ON?" = "Apa yang berlaku apabila Mod Kanak-kanak diHIDUPkan?";
+"Location sharing stays always active (cannot be turned off)." = "Perkongsian lokasi sentiasa aktif (tidak boleh dimatikan).";
+"Battery percentage is visible to the circle owner." = "Peratusan bateri boleh dilihat oleh pemilik bulatan.";
+"Logout option is disabled to prevent tracking interruptions." = "Pilihan log keluar dilumpuhkan untuk mengelakkan gangguan penjejakan.";
+"Designed to ensure the member stays safe and connected." = "Direka untuk memastikan ahli kekal selamat dan berhubung.";
+"How to turn OFF Child Mode?" = "Bagaimana untuk mematikan Mod Kanak-kanak?";
+"The Circle Owner can disable Child Mode anytime." = "Pemilik Bulatan boleh melumpuhkan Mod Kanak-kanak bila-bila masa.";
+"The member can send a disable request → owner must approve it." = "Ahli boleh menghantar permintaan lumpuh → pemilik mesti meluluskannya.";
+"Only after approval, Child Mode will be turned off." = "Hanya selepas kelulusan, Mod Kanak-kanak akan dimatikan.";
+"Why use Child Mode?" = "Mengapa menggunakan Mod Kanak-kanak?";
+"Ensures continuous safety tracking." = "Memastikan penjejakan keselamatan berterusan.";
+"Prevents location hiding or accidental logout." = "Menghalang penyembunyian lokasi atau log keluar tidak sengaja.";
+"Gives parents/guardians more control & peace of mind." = "Memberi ibu bapa/penjaga kawalan lebih dan ketenangan fikiran.";
+"No members" = "Tiada ahli";
+"Disable Child Mode?" = "Lumpuhkan Mod Kanak-kanak?";
+"Are you sure you want to disable child mode for ‘%@’?" = "Adakah anda pasti mahu melumpuhkan mod kanak-kanak untuk ‘%@’?";
+"No" = "Tidak";
+"Exit" = "Keluar";
+"Reject" = "Tolak";
+"Child Mode Disable Request!" = "Permintaan Lumpuh Mod Kanak-kanak!";
+"has requested to disable Child Mode. Do you want to approve this request?" = "telah meminta untuk melumpuhkan Mod Kanak-kanak. Adakah anda mahu meluluskan permintaan ini?";
+"Child Mode Disabled!" = "Mod Kanak-kanak Dilumpuhkan!";
+"Child Mode is Disable for '%@' successfully." = "Mod Kanak-kanak berjaya dilumpuhkan untuk '%@'.";

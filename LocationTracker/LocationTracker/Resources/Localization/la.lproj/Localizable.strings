@@ -1,0 +1,200 @@
+"Welcome" = "Salve";
+"Stay connected with loved ones by tracking their live location with ease" = "Manete coniuncti cum caris per facilitatem loci eorum viventis vestigationem";
+"Get started" = "Incipe";
+
+"Select Language" = "Linguam Selige";
+"Change Language" = "Linguam Muta";
+
+"Stay Close to Your Loved Ones" = "Prope Caros Tuos Mane";
+"Keep your family connected no matter where life takes them." = "Familia tua conectatur, ubicumque vita eos ducat.";
+
+"Real-Time Location at Your Fingertips" = "Locus Tempore Reali in Digitis Tuis";
+"See live updates instantly and never miss a moment." = "Vide renovationes vivas statim nec umquam momentum amittas.";
+
+"A Smarter Way to Locate Family" = "Via Prudentior ad Familiae Loca Reperienda";
+"Quick access to real-time family locations made simple." = "Accessus celer ad loca familiae tempore reali simpliciter factus.";
+
+"Next" = "Proximus";
+
+"Permissions" = "Permissiones";
+"Enable notification and allow access to your location and motion activity for the app to run properly." = "Permitte notificationem et accessum ad locum tuum et motus actionem ut app recte fungatur.";
+"Notification" = "Notificatio";
+
+"Continue" = "Perge";
+
+"Enter Your Phone Number" = "Numerum Telephonicum Tuum Intra";
+"Your information stays private and is never shared with third parties." = "Informationes tuae privatae manent nec unquam tertiis communicantur.";
+
+"OTP Verification" = "Verificatio OTP";
+"Enter the OTP Sent to" = "Intra OTP Missum ad";
+"Don’t Receive the OTP ?" = "Non Accepisti OTP?";
+"RESEND OTP" = "OTP Rerumissio";
+
+"Please enter valid OTP code" = "Quaeso intra codicem OTP validum";
+"Verified" = "Verificatum";
+
+"Set Profile" = "Profilum Constitue";
+"Complete your profile details." = "Comple profili tui singula.";
+"Upload Photo" = "Imaginem Upload";
+"Change Photo" = "Imaginem Muta";
+"Update" = "Renova";
+
+"Enter first name" = "Intra Praenomen";
+"First name" = "Praenomen";
+"Enter Name" = "Intra Nomen";
+"Enter circle name" = "Intra Nomen Circuli";
+"Enter last name" = "Intra Cognomen";
+"Last name" = "Cognomen";
+"Select gender" = "Sexum Selige";
+"Male" = "Masculus";
+"Female" = "Femina";
+"Set Profile Pic" = "Imaginem Profili Constitue";
+
+"Cancel" = "Cancellare";
+"Done" = "Factum";
+"Yes" = "Ita";
+"Ok" = "Bene";
+"Save" = "Serva";
+"Delete" = "Delere";
+
+"Members" = "Socii";
+"Add" = "Adde";
+
+"Choose Map" = "Tabulam Selige";
+"Standard" = "Normale";
+"Satellite" = "Satelles";
+"Transit" = "Transitus";
+
+"Create Circle" = "Circulum Crea";
+"Join Circle" = "Circulo Adiunge";
+"Edit Circle" = "Circulum Edita";
+
+"Circle Name" = "Nomen Circuli";
+"Invitation Code" = "Codex Invitationis";
+"Create" = "Crea";
+
+"Remove Member ?" = "Socium Remove?";
+"Are you sure want to remove this member from circle?" = "Certus es hunc socium e circulo removere?";
+
+"Enter Invitation Code" = "Intra Codicem Invitationis";
+"Get an invitation code from the person who made the circle." = "Accipe codicem invitationis ab eo qui circulum creavit.";
+"Join" = "Adiunge";
+"Please enter valid code" = "Quaeso intra codicem validum";
+
+"Add Member" = "Socium Adde";
+"Add someone you know into circle to start getting notified about location" = "Adde aliquem quem nosti in circulum ut notificari de loco incipias";
+
+"Choose From Contact" = "Ex Contactu Selige";
+
+"Member Detail" = "Singula Socii";
+"Address" = "Oratio";
+"Last Update" = "Ultima Renovatio";
+
+"SOS Calling" = "Vocatio SOS";
+"Once the countdown ends, your location will be shared with your circle." = "Cum numeratio desinet, locus tuus cum circulo communicabitur.";
+"Stop" = "Sta";
+"SOS Not Sent" = "SOS Non Missum";
+"No members in your circle. Please add members to share SOS alerts." = "Nulli socii in circulo tuo. Quaeso socios adde ut alertas SOS communicare possis.";
+"SOS Sent Successfully" = "SOS Feliciter Missum";
+"Your alert has been shared with all circle members." = "Alertam tuam omnibus sociis circuli communicatum est.";
+
+"Proximity Alert" = "Monitio Proximitatis";
+"Add a Proximity Alert to get started." = "Adde Monitionem Proximitatis ut incipias.";
+"ID" = "ID";
+"Name" = "Nomen";
+"Enter Proximity name" = "Intra Nomen Proximitatis";
+"Location" = "Locus";
+"Select location" = "Locum Selige";
+"Search location" = "Locum Quaere";
+"Select Date" = "Datam Selige";
+"Select Time" = "Tempus Selige";
+"Open Map" = "Tabulam Aperi";
+"Type" = "Typus";
+"Home" = "Domus";
+"Gym" = "Palaestra";
+"Office" = "Officium";
+"Shop" = "Taberna";
+"Education" = "Educatio";
+"Hospital" = "Nosocomium";
+"Other" = "Alius";
+"Alert Date and Time" = "Data et Tempus Monitionis";
+"Radius" = "Radius";
+"Push Notification" = "Notificatio Push";
+"Note" = "Nota";
+"Enter note about this alert" = "Intra notam de hac monitione";
+"Add Alert" = "Monitionem Adde";
+"Select & Continue" = "Selige et Perge";
+"Leave without alert?" = "Sine monitione discedere?";
+"No alert added. Go back?" = "Nulla monitio addita. Redire vis?";
+"Alert Saved" = "Monitio Servata";
+"Your alert has been saved successfully." = "Monitio tua feliciter servata est.";
+"Proximity info" = "Info Proximitatis";
+"Coordinates" = "Coordinatae";
+"Status" = "Status";
+"Inactive" = "Inactivus";
+"Active" = "Activus";
+"Alert On" = "Monitio Activata";
+"Delete Alert?" = "Monitionem Delere?";
+"Are you sure you want to delete this alert?" = "Certus es hanc monitionem delere?";
+"Save Alert" = "Monitionem Serva";
+
+"Settings" = "Optiones";
+"Battery Level Sharing" = "Communicatio Gradus Bateriae";
+"Proximity Notifications" = "Notificationes Proximitatis";
+"Motion Activity" = "Actio Motus";
+"Location Sharing" = "Communicatio Loci";
+"Rate Now" = "Nunc Aestima";
+"Share" = "Communica";
+"Feedback" = "Responsum";
+"Privacy Policy" = "Politica Privatae";
+"Term & Condition" = "Termini et Condiciones";
+
+"Network Error" = "Error Retis";
+"Make sure you’re connected to the internet." = "Fac ut conexus sis ad interrete.";
+"Retry" = "Iterum Conare";
+
+"Enable notification and allow access to your location Sharing for the app to run properly." = "Permitte notificationem et accessum ad communicationem loci tui ut app recte fungatur.";
+"Enable notification and allow access to your motion activity for the app to run properly." = "Permitte notificationem et accessum ad actionem motus tui ut app recte fungatur.";
+"Member" = "Socius";
+"Map" = "Tabula";
+"Proximity" = "Proximitas";
+"Child mode is enabled" = "Modus Puerilis Activatus Est";
+"you can’t turn off location and battery level sharing or log out." = "Non potes communicationem loci et gradus bateriae deponere aut exire.";
+"LogOut" = "Exire";
+"Log Out" = "Exire";
+"Disable" = "Inhabilita";
+"Learn more about child mode" = "Plura de modo puerili disce";
+"Circle Owner" = "Dominus Circuli";
+"Send request to disable child mode?" = "Rogationem mittere ut modum puerilem inhabilites?";
+"The circle owner will get a notification to turn it off for you." = "Dominus circuli notificationem accipiet ut id pro te inhabilitet.";
+"Send" = "Mitte";
+"Child Mode" = "Modus Puerilis";
+"Child Mode remove features children don’t need and prevent them from logging out and turning off location and battery level sharing." = "Modus Puerilis tollit functiones quas pueri non requirunt et impedit eos exire aut communicationem loci et gradus bateriae deponere.";
+"Setup child mode" = "Modum puerilem configura";
+"Add child to a circle and enable child mode in the app settings on their device." = "Puerum in circulum adde et modum puerilem in app configuratis in eorum instrumento activa.";
+"Your Children Won’t be able to Creating Circles, browsing travel history, turn off location and battery level sharing or log out." = "Pueri tui non poterunt circulos creare, historiam itineris perquirere, communicationem loci et gradus bateriae deponere aut exire.";
+"Child mode is enabled for" = "Modus puerilis activatus est pro";
+"About Child Mode" = "De Modo Puerili";
+"What happens when Child Mode is ON?" = "Quid accidit cum modus puerilis est ACTIVUS?";
+"Location sharing stays always active (cannot be turned off)." = "Communicatio loci semper activum manet (non potest deponi).";
+"Battery percentage is visible to the circle owner." = "Procentum bateriae domino circuli visibile est.";
+"Logout option is disabled to prevent tracking interruptions." = "Optio exire inhabilitata est ut interruptiones vestigationis prohibeantur.";
+"Designed to ensure the member stays safe and connected." = "Designatum ut membrum tutum et conectum maneat.";
+"How to turn OFF Child Mode?" = "Quomodo modum puerilem inhabilitare?";
+"The Circle Owner can disable Child Mode anytime." = "Dominus circuli modum puerilem quovis tempore inhabilitare potest.";
+"The member can send a disable request → owner must approve it." = "Socius rogationem inhabilitatis mittere potest → dominus eam approbare debet.";
+"Only after approval, Child Mode will be turned off." = "Post approbationem tantum modus puerilis inhabilitabit.";
+"Why use Child Mode?" = "Cur modum puerilem uti?";
+"Ensures continuous safety tracking." = "Continuam custodiendi securitatem praestat.";
+"Prevents location hiding or accidental logout." = "Impedire latitionem loci aut exitum casu.";
+"Gives parents/guardians more control & peace of mind." = "Parentibus/tutoriibus maiorem potestatem et tranquillitatem mentis dat.";
+"No members" = "Nulli Socii";
+"Disable Child Mode?" = "Modum Puerilem Inhabilitare?";
+"Are you sure you want to disable child mode for ‘%@’?" = "Certus es modum puerilem pro ‘%@’ inhabilitare?";
+"No" = "Minime";
+"Exit" = "Exi";
+"Reject" = "Reice";
+"Child Mode Disable Request!" = "Rogatio Inhabilitandi Modum Puerilem!";
+"has requested to disable Child Mode. Do you want to approve this request?" = "rogavit ut modum puerilem inhabilitet. Visne hanc rogationem approbare?";
+"Child Mode Disabled!" = "Modus Puerilis Inhabilitatus!";
+"Child Mode is Disable for '%@' successfully." = "Modus puerilis pro '%@' feliciter inhabilitatus est.";

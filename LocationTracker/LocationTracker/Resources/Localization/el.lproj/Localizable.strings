@@ -1,0 +1,200 @@
+"Welcome" = "Καλώς ήρθατε";
+"Stay connected with loved ones by tracking their live location with ease" = "Μείνετε συνδεδεμένοι με τα αγαπημένα σας πρόσωπα παρακολουθώντας την ζωντανή τοποθεσία τους με ευκολία";
+"Get started" = "Ξεκινήστε";
+
+"Select Language" = "Επιλέξτε γλώσσα";
+"Change Language" = "Αλλαγή γλώσσας";
+
+"Stay Close to Your Loved Ones" = "Μείνετε κοντά στα αγαπημένα σας πρόσωπα";
+"Keep your family connected no matter where life takes them." = "Κρατήστε την οικογένειά σας συνδεδεμένη όπου κι αν τους πάει η ζωή.";
+
+"Real-Time Location at Your Fingertips" = "Τοποθεσία σε πραγματικό χρόνο στα δάχτυλά σας";
+"See live updates instantly and never miss a moment." = "Δείτε ζωντανές ενημερώσεις αμέσως και μην χάσετε ποτέ μια στιγμή.";
+
+"A Smarter Way to Locate Family" = "Έξυπνος τρόπος να εντοπίσετε την οικογένεια";
+"Quick access to real-time family locations made simple." = "Γρήγορη πρόσβαση σε τοποθεσίες οικογένειας σε πραγματικό χρόνο με απλότητα.";
+
+"Next" = "Επόμενο";
+
+"Permissions" = "Άδειες";
+"Enable notification and allow access to your location and motion activity for the app to run properly." = "Ενεργοποιήστε τις ειδοποιήσεις και επιτρέψτε την πρόσβαση στην τοποθεσία και τη δραστηριότητα κίνησης για να λειτουργεί σωστά η εφαρμογή.";
+"Notification" = "Ειδοποίηση";
+
+"Continue" = "Συνέχεια";
+
+"Enter Your Phone Number" = "Εισάγετε τον αριθμό τηλεφώνου σας";
+"Your information stays private and is never shared with third parties." = "Οι πληροφορίες σας παραμένουν ιδιωτικές και δεν κοινοποιούνται ποτέ σε τρίτους.";
+
+"OTP Verification" = "Επαλήθευση OTP";
+"Enter the OTP Sent to" = "Εισάγετε τον κωδικό OTP που στάλθηκε στο";
+"Don’t Receive the OTP ?" = "Δεν λάβατε τον κωδικό OTP;";
+"RESEND OTP" = "ΕΠΑΝΑΠΡΟΣΔΙΟΡΙΣΜΟΣ OTP";
+
+"Please enter valid OTP code" = "Παρακαλώ εισάγετε έγκυρο κωδικό OTP";
+"Verified" = "Επιβεβαιώθηκε";
+
+"Set Profile" = "Ορισμός προφίλ";
+"Complete your profile details." = "Ολοκληρώστε τα στοιχεία του προφίλ σας.";
+"Upload Photo" = "Ανέβασμα φωτογραφίας";
+"Change Photo" = "Αλλαγή φωτογραφίας";
+"Update" = "Ενημέρωση";
+
+"Enter first name" = "Εισάγετε το όνομα";
+"First name" = "Όνομα";
+"Enter Name" = "Εισάγετε όνομα";
+"Enter circle name" = "Εισάγετε όνομα κύκλου";
+"Enter last name" = "Εισάγετε το επώνυμο";
+"Last name" = "Επώνυμο";
+"Select gender" = "Επιλέξτε φύλο";
+"Male" = "Άνδρας";
+"Female" = "Γυναίκα";
+"Set Profile Pic" = "Ορισμός φωτογραφίας προφίλ";
+
+"Cancel" = "Ακύρωση";
+"Done" = "Ολοκληρώθηκε";
+"Yes" = "Ναι";
+"Ok" = "Εντάξει";
+"Save" = "Αποθήκευση";
+"Delete" = "Διαγραφή";
+
+"Members" = "Μέλη";
+"Add" = "Προσθήκη";
+
+"Choose Map" = "Επιλογή χάρτη";
+"Standard" = "Τυπικός";
+"Satellite" = "Δορυφορικός";
+"Transit" = "Μεταφορές";
+
+"Create Circle" = "Δημιουργία κύκλου";
+"Join Circle" = "Εγγραφή σε κύκλο";
+"Edit Circle" = "Επεξεργασία κύκλου";
+
+"Circle Name" = "Όνομα κύκλου";
+"Invitation Code" = "Κωδικός πρόσκλησης";
+"Create" = "Δημιουργία";
+
+"Remove Member ?" = "Αφαίρεση μέλους;";
+"Are you sure want to remove this member from circle?" = "Είστε σίγουροι ότι θέλετε να αφαιρέσετε αυτό το μέλος από τον κύκλο;";
+
+"Enter Invitation Code" = "Εισάγετε κωδικό πρόσκλησης";
+"Get an invitation code from the person who made the circle." = "Λάβετε κωδικό πρόσκλησης από το άτομο που δημιούργησε τον κύκλο.";
+"Join" = "Εγγραφή";
+"Please enter valid code" = "Παρακαλώ εισάγετε έγκυρο κωδικό";
+
+"Add Member" = "Προσθήκη μέλους";
+"Add someone you know into circle to start getting notified about location" = "Προσθέστε κάποιον που γνωρίζετε στον κύκλο για να αρχίσετε να λαμβάνετε ειδοποιήσεις για την τοποθεσία";
+
+"Choose From Contact" = "Επιλογή από επαφή";
+
+"Member Detail" = "Λεπτομέρειες μέλους";
+"Address" = "Διεύθυνση";
+"Last Update" = "Τελευταία ενημέρωση";
+
+"SOS Calling" = "Κλήση SOS";
+"Once the countdown ends, your location will be shared with your circle." = "Μόλις τελειώσει η αντίστροφη μέτρηση, η τοποθεσία σας θα κοινοποιηθεί στον κύκλο σας.";
+"Stop" = "Διακοπή";
+"SOS Not Sent" = "Το SOS δεν στάλθηκε";
+"No members in your circle. Please add members to share SOS alerts." = "Δεν υπάρχουν μέλη στον κύκλο σας. Παρακαλώ προσθέστε μέλη για να μοιράζεστε ειδοποιήσεις SOS.";
+"SOS Sent Successfully" = "Το SOS στάλθηκε με επιτυχία";
+"Your alert has been shared with all circle members." = "Η ειδοποίησή σας έχει κοινοποιηθεί σε όλα τα μέλη του κύκλου.";
+
+"Proximity Alert" = "Ειδοποίηση εγγύτητας";
+"Add a Proximity Alert to get started." = "Προσθέστε μια ειδοποίηση εγγύτητας για να ξεκινήσετε.";
+"ID" = "Αναγνωριστικό";
+"Name" = "Όνομα";
+"Enter Proximity name" = "Εισάγετε όνομα εγγύτητας";
+"Location" = "Τοποθεσία";
+"Select location" = "Επιλέξτε τοποθεσία";
+"Search location" = "Αναζήτηση τοποθεσίας";
+"Select Date" = "Επιλέξτε ημερομηνία";
+"Select Time" = "Επιλέξτε ώρα";
+"Open Map" = "Άνοιγμα χάρτη";
+"Type" = "Τύπος";
+"Home" = "Σπίτι";
+"Gym" = "Γυμναστήριο";
+"Office" = "Γραφείο";
+"Shop" = "Κατάστημα";
+"Education" = "Εκπαίδευση";
+"Hospital" = "Νοσοκομείο";
+"Other" = "Άλλο";
+"Alert Date and Time" = "Ημερομηνία και ώρα ειδοποίησης";
+"Radius" = "Ακτίνα";
+"Push Notification" = "Ειδοποίηση push";
+"Note" = "Σημείωση";
+"Enter note about this alert" = "Εισάγετε σημείωση για αυτήν την ειδοποίηση";
+"Add Alert" = "Προσθήκη ειδοποίησης";
+"Select & Continue" = "Επιλέξτε και συνεχίστε";
+"Leave without alert?" = "Φεύγετε χωρίς ειδοποίηση;";
+"No alert added. Go back?" = "Δεν προστέθηκε ειδοποίηση. Επιστροφή;";
+"Alert Saved" = "Η ειδοποίηση αποθηκεύτηκε";
+"Your alert has been saved successfully." = "Η ειδοποίησή σας αποθηκεύτηκε με επιτυχία.";
+"Proximity info" = "Πληροφορίες εγγύτητας";
+"Coordinates" = "Συντεταγμένες";
+"Status" = "Κατάσταση";
+"Inactive" = "Ανενεργό";
+"Active" = "Ενεργό";
+"Alert On" = "Ειδοποίηση ενεργή";
+"Delete Alert?" = "Διαγραφή ειδοποίησης;";
+"Are you sure you want to delete this alert?" = "Είστε σίγουροι ότι θέλετε να διαγράψετε αυτήν την ειδοποίηση;";
+"Save Alert" = "Αποθήκευση ειδοποίησης";
+
+"Settings" = "Ρυθμίσεις";
+"Battery Level Sharing" = "Κοινή χρήση επιπέδου μπαταρίας";
+"Proximity Notifications" = "Ειδοποιήσεις εγγύτητας";
+"Motion Activity" = "Δραστηριότητα κίνησης";
+"Location Sharing" = "Κοινή χρήση τοποθεσίας";
+"Rate Now" = "Αξιολογήστε τώρα";
+"Share" = "Κοινοποίηση";
+"Feedback" = "Ανατροφοδότηση";
+"Privacy Policy" = "Πολιτική απορρήτου";
+"Term & Condition" = "Όροι και προϋποθέσεις";
+
+"Network Error" = "Σφάλμα δικτύου";
+"Make sure you’re connected to the internet." = "Βεβαιωθείτε ότι είστε συνδεδεμένοι στο διαδίκτυο.";
+"Retry" = "Επανάληψη";
+
+"Enable notification and allow access to your location Sharing for the app to run properly." = "Ενεργοποιήστε τις ειδοποιήσεις και επιτρέψτε την πρόσβαση στην κοινή χρήση τοποθεσίας για να λειτουργεί σωστά η εφαρμογή.";
+"Enable notification and allow access to your motion activity for the app to run properly." = "Ενεργοποιήστε τις ειδοποιήσεις και επιτρέψτε την πρόσβαση στη δραστηριότητα κίνησής σας για να λειτουργεί σωστά η εφαρμογή.";
+"Member" = "Μέλος";
+"Map" = "Χάρτης";
+"Proximity" = "Εγγύτητα";
+"Child mode is enabled" = "Η λειτουργία παιδιού είναι ενεργοποιημένη";
+"you can’t turn off location and battery level sharing or log out." = "Δεν μπορείτε να απενεργοποιήσετε την κοινή χρήση τοποθεσίας και επιπέδου μπαταρίας ή να αποσυνδεθείτε.";
+"LogOut" = "Αποσύνδεση";
+"Log Out" = "Αποσύνδεση";
+"Disable" = "Απενεργοποίηση";
+"Learn more about child mode" = "Μάθετε περισσότερα για τη λειτουργία παιδιού";
+"Circle Owner" = "Ιδιοκτήτης κύκλου";
+"Send request to disable child mode?" = "Αποστολή αιτήματος για απενεργοποίηση της λειτουργίας παιδιού;";
+"The circle owner will get a notification to turn it off for you." = "Ο ιδιοκτήτης του κύκλου θα λάβει ειδοποίηση για να την απενεργοποιήσει για εσάς.";
+"Send" = "Αποστολή";
+"Child Mode" = "Λειτουργία παιδιού";
+"Child Mode remove features children don’t need and prevent them from logging out and turning off location and battery level sharing." = "Η λειτουργία παιδιού αφαιρεί λειτουργίες που δεν χρειάζονται τα παιδιά και εμποδίζει την αποσύνδεση και την απενεργοποίηση της κοινής χρήσης τοποθεσίας και επιπέδου μπαταρίας.";
+"Setup child mode" = "Ρύθμιση λειτουργίας παιδιού";
+"Add child to a circle and enable child mode in the app settings on their device." = "Προσθέστε παιδί σε κύκλο και ενεργοποιήστε τη λειτουργία παιδιού στις ρυθμίσεις της εφαρμογής στη συσκευή τους.";
+"Your Children Won’t be able to Creating Circles, browsing travel history, turn off location and battery level sharing or log out." = "Τα παιδιά σας δεν θα μπορούν να δημιουργούν κύκλους, να περιηγούνται στο ιστορικό ταξιδιών, να απενεργοποιούν την κοινή χρήση τοποθεσίας και επιπέδου μπαταρίας ή να αποσυνδέονται.";
+"Child mode is enabled for" = "Η λειτουργία παιδιού είναι ενεργοποιημένη για";
+"About Child Mode" = "Σχετικά με τη λειτουργία παιδιού";
+"What happens when Child Mode is ON?" = "Τι συμβαίνει όταν η λειτουργία παιδιού είναι ενεργή;";
+"Location sharing stays always active (cannot be turned off)." = "Η κοινή χρήση τοποθεσίας παραμένει πάντα ενεργή (δεν μπορεί να απενεργοποιηθεί).";
+"Battery percentage is visible to the circle owner." = "Το ποσοστό μπαταρίας είναι ορατό στον ιδιοκτήτη του κύκλου.";
+"Logout option is disabled to prevent tracking interruptions." = "Η επιλογή αποσύνδεσης είναι απενεργοποιημένη για την αποφυγή διακοπών στην παρακολούθηση.";
+"Designed to ensure the member stays safe and connected." = "Σχεδιασμένο για να διασφαλίζει ότι το μέλος παραμένει ασφαλές και συνδεδεμένο.";
+"How to turn OFF Child Mode?" = "Πώς να απενεργοποιήσετε τη λειτουργία παιδιού;";
+"The Circle Owner can disable Child Mode anytime." = "Ο ιδιοκτήτης του κύκλου μπορεί να απενεργοποιήσει τη λειτουργία παιδιού οποιαδήποτε στιγμή.";
+"The member can send a disable request → owner must approve it." = "Το μέλος μπορεί να στείλει αίτημα απενεργοποίησης → ο ιδιοκτήτης πρέπει να το εγκρίνει.";
+"Only after approval, Child Mode will be turned off." = "Μόνο μετά την έγκριση, η λειτουργία παιδιού θα απενεργοποιηθεί.";
+"Why use Child Mode?" = "Γιατί να χρησιμοποιήσετε τη λειτουργία παιδιού;";
+"Ensures continuous safety tracking." = "Εξασφαλίζει συνεχή παρακολούθηση ασφαλείας.";
+"Prevents location hiding or accidental logout." = "Αποτρέπει την απόκρυψη τοποθεσίας ή την τυχαία αποσύνδεση.";
+"Gives parents/guardians more control & peace of mind." = "Δίνει στους γονείς/κηδεμόνες μεγαλύτερο έλεγχο και ηρεμία.";
+"No members" = "Κανένα μέλος";
+"Disable Child Mode?" = "Απενεργοποίηση λειτουργίας παιδιού;";
+"Are you sure you want to disable child mode for ‘%@’?" = "Είστε σίγουροι ότι θέλετε να απενεργοποιήσετε τη λειτουργία παιδιού για ‘%@’;"; 
+"No" = "Όχι";
+"Exit" = "Έξοδος";
+"Reject" = "Απόρριψη";
+"Child Mode Disable Request!" = "Αίτημα απενεργοποίησης λειτουργίας παιδιού!";
+"has requested to disable Child Mode. Do you want to approve this request?" = "έχει ζητήσει να απενεργοποιήσει τη λειτουργία παιδιού. Θέλετε να εγκρίνετε αυτό το αίτημα;";
+"Child Mode Disabled!" = "Η λειτουργία παιδιού απενεργοποιήθηκε!";
+"Child Mode is Disable for '%@' successfully." = "Η λειτουργία παιδιού απενεργοποιήθηκε με επιτυχία για τον '%@'.";

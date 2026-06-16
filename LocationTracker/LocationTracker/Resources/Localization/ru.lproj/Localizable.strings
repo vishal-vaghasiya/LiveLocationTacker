@@ -1,0 +1,200 @@
+"Welcome" = "Добро пожаловать";
+"Stay connected with loved ones by tracking their live location with ease" = "Оставайтесь на связи с близкими, легко отслеживая их местоположение в реальном времени";
+"Get started" = "Начать";
+
+"Select Language" = "Выберите язык";
+"Change Language" = "Изменить язык";
+
+"Stay Close to Your Loved Ones" = "Будьте ближе к своим близким";
+"Keep your family connected no matter where life takes them." = "Держите свою семью на связи, куда бы жизнь их ни привела.";
+
+"Real-Time Location at Your Fingertips" = "Местоположение в реальном времени под рукой";
+"See live updates instantly and never miss a moment." = "Получайте мгновенные обновления и не пропускайте ни одного момента.";
+
+"A Smarter Way to Locate Family" = "Умный способ найти семью";
+"Quick access to real-time family locations made simple." = "Быстрый и простой доступ к местоположению семьи в реальном времени.";
+
+"Next" = "Далее";
+
+"Permissions" = "Разрешения";
+"Enable notification and allow access to your location and motion activity for the app to run properly." = "Включите уведомления и разрешите доступ к вашему местоположению и активности для корректной работы приложения.";
+"Notification" = "Уведомление";
+
+"Continue" = "Продолжить";
+
+"Enter Your Phone Number" = "Введите ваш номер телефона";
+"Your information stays private and is never shared with third parties." = "Ваша информация остается конфиденциальной и никогда не передается третьим лицам.";
+
+"OTP Verification" = "Проверка OTP";
+"Enter the OTP Sent to" = "Введите отправленный OTP на";
+"Don’t Receive the OTP ?" = "Не получили OTP?";
+"RESEND OTP" = "Отправить OTP повторно";
+
+"Please enter valid OTP code" = "Пожалуйста, введите правильный код OTP";
+"Verified" = "Подтверждено";
+
+"Set Profile" = "Настроить профиль";
+"Complete your profile details." = "Заполните данные профиля.";
+"Upload Photo" = "Загрузить фото";
+"Change Photo" = "Изменить фото";
+"Update" = "Обновить";
+
+"Enter first name" = "Введите имя";
+"First name" = "Имя";
+"Enter Name" = "Введите имя";
+"Enter circle name" = "Введите название круга";
+"Enter last name" = "Введите фамилию";
+"Last name" = "Фамилия";
+"Select gender" = "Выберите пол";
+"Male" = "Мужской";
+"Female" = "Женский";
+"Set Profile Pic" = "Установить фото профиля";
+
+"Cancel" = "Отмена";
+"Done" = "Готово";
+"Yes" = "Да";
+"Ok" = "Ок";
+"Save" = "Сохранить";
+"Delete" = "Удалить";
+
+"Members" = "Участники";
+"Add" = "Добавить";
+
+"Choose Map" = "Выбрать карту";
+"Standard" = "Стандартная";
+"Satellite" = "Спутниковая";
+"Transit" = "Транспорт";
+
+"Create Circle" = "Создать круг";
+"Join Circle" = "Присоединиться к кругу";
+"Edit Circle" = "Редактировать круг";
+
+"Circle Name" = "Название круга";
+"Invitation Code" = "Код приглашения";
+"Create" = "Создать";
+
+"Remove Member ?" = "Удалить участника?";
+"Are you sure want to remove this member from circle?" = "Вы уверены, что хотите удалить этого участника из круга?";
+
+"Enter Invitation Code" = "Введите код приглашения";
+"Get an invitation code from the person who made the circle." = "Получите код приглашения у создателя круга.";
+"Join" = "Присоединиться";
+"Please enter valid code" = "Пожалуйста, введите правильный код";
+
+"Add Member" = "Добавить участника";
+"Add someone you know into circle to start getting notified about location" = "Добавьте знакомого в круг, чтобы получать уведомления о местоположении";
+
+"Choose From Contact" = "Выбрать из контактов";
+
+"Member Detail" = "Информация об участнике";
+"Address" = "Адрес";
+"Last Update" = "Последнее обновление";
+
+"SOS Calling" = "Вызов SOS";
+"Once the countdown ends, your location will be shared with your circle." = "После окончания обратного отсчёта ваше местоположение будет отправлено в круг.";
+"Stop" = "Стоп";
+"SOS Not Sent" = "SOS не отправлено";
+"No members in your circle. Please add members to share SOS alerts." = "В вашем круге нет участников. Пожалуйста, добавьте участников для отправки SOS-уведомлений.";
+"SOS Sent Successfully" = "SOS успешно отправлено";
+"Your alert has been shared with all circle members." = "Ваше уведомление было отправлено всем участникам круга.";
+
+"Proximity Alert" = "Оповещение о близости";
+"Add a Proximity Alert to get started." = "Добавьте оповещение о близости, чтобы начать.";
+"ID" = "ID";
+"Name" = "Имя";
+"Enter Proximity name" = "Введите название оповещения";
+"Location" = "Местоположение";
+"Select location" = "Выбрать местоположение";
+"Search location" = "Поиск местоположения";
+"Select Date" = "Выбрать дату";
+"Select Time" = "Выбрать время";
+"Open Map" = "Открыть карту";
+"Type" = "Тип";
+"Home" = "Дом";
+"Gym" = "Спортзал";
+"Office" = "Офис";
+"Shop" = "Магазин";
+"Education" = "Образование";
+"Hospital" = "Больница";
+"Other" = "Другое";
+"Alert Date and Time" = "Дата и время оповещения";
+"Radius" = "Радиус";
+"Push Notification" = "Push-уведомление";
+"Note" = "Примечание";
+"Enter note about this alert" = "Введите заметку об этом оповещении";
+"Add Alert" = "Добавить оповещение";
+"Select & Continue" = "Выбрать и продолжить";
+"Leave without alert?" = "Выйти без оповещения?";
+"No alert added. Go back?" = "Оповещение не добавлено. Вернуться?";
+"Alert Saved" = "Оповещение сохранено";
+"Your alert has been saved successfully." = "Ваше оповещение успешно сохранено.";
+"Proximity info" = "Информация о близости";
+"Coordinates" = "Координаты";
+"Status" = "Статус";
+"Inactive" = "Неактивно";
+"Active" = "Активно";
+"Alert On" = "Оповещение включено";
+"Delete Alert?" = "Удалить оповещение?";
+"Are you sure you want to delete this alert?" = "Вы уверены, что хотите удалить это оповещение?";
+"Save Alert" = "Сохранить оповещение";
+
+"Settings" = "Настройки";
+"Battery Level Sharing" = "Обмен уровнем заряда батареи";
+"Proximity Notifications" = "Оповещения о близости";
+"Motion Activity" = "Активность движения";
+"Location Sharing" = "Обмен местоположением";
+"Rate Now" = "Оценить сейчас";
+"Share" = "Поделиться";
+"Feedback" = "Обратная связь";
+"Privacy Policy" = "Политика конфиденциальности";
+"Term & Condition" = "Условия и положения";
+
+"Network Error" = "Ошибка сети";
+"Make sure you’re connected to the internet." = "Убедитесь, что вы подключены к интернету.";
+"Retry" = "Повторить";
+
+"Enable notification and allow access to your location Sharing for the app to run properly." = "Включите уведомления и разрешите доступ к обмену местоположением для корректной работы приложения.";
+"Enable notification and allow access to your motion activity for the app to run properly." = "Включите уведомления и разрешите доступ к вашей активности движения для корректной работы приложения.";
+"Member" = "Участник";
+"Map" = "Карта";
+"Proximity" = "Близость";
+"Child mode is enabled" = "Режим ребёнка включён";
+"you can’t turn off location and battery level sharing or log out." = "вы не можете отключить обмен местоположением и уровнем заряда батареи или выйти из аккаунта.";
+"LogOut" = "Выйти";
+"Log Out" = "Выйти";
+"Disable" = "Отключить";
+"Learn more about child mode" = "Узнать больше о режиме ребёнка";
+"Circle Owner" = "Владелец круга";
+"Send request to disable child mode?" = "Отправить запрос на отключение режима ребёнка?";
+"The circle owner will get a notification to turn it off for you." = "Владелец круга получит уведомление, чтобы отключить его для вас.";
+"Send" = "Отправить";
+"Child Mode" = "Режим ребёнка";
+"Child Mode remove features children don’t need and prevent them from logging out and turning off location and battery level sharing." = "Режим ребёнка убирает функции, которые детям не нужны, и предотвращает выход из аккаунта и отключение обмена местоположением и уровнем заряда.";
+"Setup child mode" = "Настроить режим ребёнка";
+"Add child to a circle and enable child mode in the app settings on their device." = "Добавьте ребёнка в круг и включите режим ребёнка в настройках приложения на их устройстве.";
+"Your Children Won’t be able to Creating Circles, browsing travel history, turn off location and battery level sharing or log out." = "Ваши дети не смогут создавать круги, просматривать историю поездок, отключать обмен местоположением и уровнем заряда или выходить из аккаунта.";
+"Child mode is enabled for" = "Режим ребёнка включён для";
+"About Child Mode" = "О режиме ребёнка";
+"What happens when Child Mode is ON?" = "Что происходит, когда режим ребёнка включён?";
+"Location sharing stays always active (cannot be turned off)." = "Обмен местоположением всегда активен (не может быть отключен).";
+"Battery percentage is visible to the circle owner." = "Процент заряда батареи виден владельцу круга.";
+"Logout option is disabled to prevent tracking interruptions." = "Опция выхода отключена, чтобы предотвратить прерывания отслеживания.";
+"Designed to ensure the member stays safe and connected." = "Создано для обеспечения безопасности и связи участника.";
+"How to turn OFF Child Mode?" = "Как отключить режим ребёнка?";
+"The Circle Owner can disable Child Mode anytime." = "Владелец круга может отключить режим ребёнка в любое время.";
+"The member can send a disable request → owner must approve it." = "Участник может отправить запрос на отключение → владелец должен его одобрить.";
+"Only after approval, Child Mode will be turned off." = "Только после одобрения режим ребёнка будет отключен.";
+"Why use Child Mode?" = "Зачем использовать режим ребёнка?";
+"Ensures continuous safety tracking." = "Обеспечивает непрерывное отслеживание безопасности.";
+"Prevents location hiding or accidental logout." = "Предотвращает скрытие местоположения или случайный выход.";
+"Gives parents/guardians more control & peace of mind." = "Даёт родителям/опекунам больше контроля и спокойствия.";
+"No members" = "Нет участников";
+"Disable Child Mode?" = "Отключить режим ребёнка?";
+"Are you sure you want to disable child mode for ‘%@’?" = "Вы уверены, что хотите отключить режим ребёнка для ‘%@’?";
+"No" = "Нет";
+"Exit" = "Выйти";
+"Reject" = "Отклонить";
+"Child Mode Disable Request!" = "Запрос на отключение режима ребёнка!";
+"has requested to disable Child Mode. Do you want to approve this request?" = "запросил отключить режим ребёнка. Вы хотите одобрить этот запрос?";
+"Child Mode Disabled!" = "Режим ребёнка отключён!";
+"Child Mode is Disable for '%@' successfully." = "Режим ребёнка успешно отключён для '%@'.";

@@ -1,0 +1,200 @@
+"Welcome" = "Maligayang pagdating";
+"Stay connected with loved ones by tracking their live location with ease" = "Manatiling konektado sa mga mahal sa buhay sa pamamagitan ng madaling pagsubaybay sa kanilang live na lokasyon";
+"Get started" = "Magsimula";
+
+"Select Language" = "Pumili ng Wika";
+"Change Language" = "Palitan ang Wika";
+
+"Stay Close to Your Loved Ones" = "Manatiling Malapit sa Iyong Mga Mahal sa Buhay";
+"Keep your family connected no matter where life takes them." = "Panatilihing konektado ang iyong pamilya kahit saan man sila dalhin ng buhay.";
+
+"Real-Time Location at Your Fingertips" = "Real-Time na Lokasyon sa Iyong mga Daliri";
+"See live updates instantly and never miss a moment." = "Makita ang mga live na update agad at huwag palampasin ang kahit anong sandali.";
+
+"A Smarter Way to Locate Family" = "Mas Matalinong Paraan upang Hanapin ang Pamilya";
+"Quick access to real-time family locations made simple." = "Mabilis na pag-access sa real-time na lokasyon ng pamilya na ginawa nang simple.";
+
+"Next" = "Susunod";
+
+"Permissions" = "Mga Pahintulot";
+"Enable notification and allow access to your location and motion activity for the app to run properly." = "Paganahin ang notification at payagan ang pag-access sa iyong lokasyon at galaw para gumana nang maayos ang app.";
+"Notification" = "Notification";
+
+"Continue" = "Magpatuloy";
+
+"Enter Your Phone Number" = "Ilagay ang Iyong Numero ng Telepono";
+"Your information stays private and is never shared with third parties." = "Mananatiling pribado ang iyong impormasyon at hindi kailanman ibabahagi sa mga third party.";
+
+"OTP Verification" = "Pagpapatunay ng OTP";
+"Enter the OTP Sent to" = "Ilagay ang OTP na Ipinadala sa";
+"Don’t Receive the OTP ?" = "Hindi Natanggap ang OTP?";
+"RESEND OTP" = "MULING IPADALA ANG OTP";
+
+"Please enter valid OTP code" = "Mangyaring ilagay ang wastong OTP code";
+"Verified" = "Napatunayan";
+
+"Set Profile" = "Itakda ang Profile";
+"Complete your profile details." = "Kumpletuhin ang mga detalye ng iyong profile.";
+"Upload Photo" = "Mag-upload ng Larawan";
+"Change Photo" = "Palitan ang Larawan";
+"Update" = "I-update";
+
+"Enter first name" = "Ilagay ang unang pangalan";
+"First name" = "Unang pangalan";
+"Enter Name" = "Ilagay ang Pangalan";
+"Enter circle name" = "Ilagay ang pangalan ng circle";
+"Enter last name" = "Ilagay ang apelyido";
+"Last name" = "Apelyido";
+"Select gender" = "Pumili ng kasarian";
+"Male" = "Lalaki";
+"Female" = "Babae";
+"Set Profile Pic" = "Itakda ang Larawan ng Profile";
+
+"Cancel" = "Kanselahin";
+"Done" = "Tapos na";
+"Yes" = "Oo";
+"Ok" = "Ok";
+"Save" = "I-save";
+"Delete" = "Tanggalin";
+
+"Members" = "Mga Miyembro";
+"Add" = "Magdagdag";
+
+"Choose Map" = "Pumili ng Mapa";
+"Standard" = "Standard";
+"Satellite" = "Satellite";
+"Transit" = "Transit";
+
+"Create Circle" = "Gumawa ng Circle";
+"Join Circle" = "Sumali sa Circle";
+"Edit Circle" = "I-edit ang Circle";
+
+"Circle Name" = "Pangalan ng Circle";
+"Invitation Code" = "Invitation Code";
+"Create" = "Gumawa";
+
+"Remove Member ?" = "Tanggalin ang Miyembro?";
+"Are you sure want to remove this member from circle?" = "Sigurado ka bang gusto mong tanggalin ang miyembrong ito mula sa circle?";
+
+"Enter Invitation Code" = "Ilagay ang Invitation Code";
+"Get an invitation code from the person who made the circle." = "Kumuha ng invitation code mula sa taong gumawa ng circle.";
+"Join" = "Sumali";
+"Please enter valid code" = "Mangyaring ilagay ang wastong code";
+
+"Add Member" = "Magdagdag ng Miyembro";
+"Add someone you know into circle to start getting notified about location" = "Magdagdag ng kilala mo sa circle upang magsimulang makatanggap ng mga notification tungkol sa lokasyon";
+
+"Choose From Contact" = "Pumili Mula sa Contact";
+
+"Member Detail" = "Detalye ng Miyembro";
+"Address" = "Address";
+"Last Update" = "Huling Update";
+
+"SOS Calling" = "SOS Pagtawag";
+"Once the countdown ends, your location will be shared with your circle." = "Kapag natapos ang countdown, ibabahagi ang iyong lokasyon sa iyong circle.";
+"Stop" = "Itigil";
+"SOS Not Sent" = "Hindi Naipadala ang SOS";
+"No members in your circle. Please add members to share SOS alerts." = "Walang miyembro sa iyong circle. Mangyaring magdagdag ng mga miyembro upang maibahagi ang mga SOS alert.";
+"SOS Sent Successfully" = "Matagumpay na Naipadala ang SOS";
+"Your alert has been shared with all circle members." = "Naibahagi ang iyong alerto sa lahat ng miyembro ng circle.";
+
+"Proximity Alert" = "Proximity Alert";
+"Add a Proximity Alert to get started." = "Magdagdag ng Proximity Alert upang makapagsimula.";
+"ID" = "ID";
+"Name" = "Pangalan";
+"Enter Proximity name" = "Ilagay ang pangalan ng Proximity";
+"Location" = "Lokasyon";
+"Select location" = "Pumili ng lokasyon";
+"Search location" = "Maghanap ng lokasyon";
+"Select Date" = "Pumili ng Petsa";
+"Select Time" = "Pumili ng Oras";
+"Open Map" = "Buksan ang Mapa";
+"Type" = "Uri";
+"Home" = "Bahay";
+"Gym" = "Gym";
+"Office" = "Opisina";
+"Shop" = "Tindahan";
+"Education" = "Edukasyon";
+"Hospital" = "Ospital";
+"Other" = "Iba pa";
+"Alert Date and Time" = "Petsa at Oras ng Alerto";
+"Radius" = "Radius";
+"Push Notification" = "Push Notification";
+"Note" = "Tala";
+"Enter note about this alert" = "Ilagay ang tala tungkol sa alertong ito";
+"Add Alert" = "Magdagdag ng Alerto";
+"Select & Continue" = "Pumili at Magpatuloy";
+"Leave without alert?" = "Umalis nang walang alerto?";
+"No alert added. Go back?" = "Walang idinagdag na alerto. Babalik ka ba?";
+"Alert Saved" = "Na-save ang Alerto";
+"Your alert has been saved successfully." = "Matagumpay na na-save ang iyong alerto.";
+"Proximity info" = "Impormasyon ng Proximity";
+"Coordinates" = "Mga Coordinate";
+"Status" = "Katayuan";
+"Inactive" = "Hindi Aktibo";
+"Active" = "Aktibo";
+"Alert On" = "Alerto On";
+"Delete Alert?" = "Tanggalin ang Alerto?";
+"Are you sure you want to delete this alert?" = "Sigurado ka bang gusto mong tanggalin ang alertong ito?";
+"Save Alert" = "I-save ang Alerto";
+
+"Settings" = "Mga Setting";
+"Battery Level Sharing" = "Pagbabahagi ng Antas ng Baterya";
+"Proximity Notifications" = "Mga Notification ng Proximity";
+"Motion Activity" = "Aktibidad ng Galaw";
+"Location Sharing" = "Pagbabahagi ng Lokasyon";
+"Rate Now" = "I-rate Ngayon";
+"Share" = "Ibahagi";
+"Feedback" = "Feedback";
+"Privacy Policy" = "Patakaran sa Privacy";
+"Term & Condition" = "Mga Tuntunin at Kondisyon";
+
+"Network Error" = "Error sa Network";
+"Make sure you’re connected to the internet." = "Siguraduhing nakakonekta ka sa internet.";
+"Retry" = "Subukang Muli";
+
+"Enable notification and allow access to your location Sharing for the app to run properly." = "Paganahin ang notification at payagan ang pag-access sa iyong pagbabahagi ng lokasyon para gumana nang maayos ang app.";
+"Enable notification and allow access to your motion activity for the app to run properly." = "Paganahin ang notification at payagan ang pag-access sa iyong aktibidad ng galaw para gumana nang maayos ang app.";
+"Member" = "Miyembro";
+"Map" = "Mapa";
+"Proximity" = "Proximity";
+"Child mode is enabled" = "Naka-enable ang Child mode";
+"you can’t turn off location and battery level sharing or log out." = "hindi mo maaaring patayin ang pagbabahagi ng lokasyon at antas ng baterya o mag-logout.";
+"LogOut" = "Mag-logout";
+"Log Out" = "Mag-logout";
+"Disable" = "I-disable";
+"Learn more about child mode" = "Alamin pa tungkol sa child mode";
+"Circle Owner" = "May-ari ng Circle";
+"Send request to disable child mode?" = "Magpadala ng kahilingan upang i-disable ang child mode?";
+"The circle owner will get a notification to turn it off for you." = "Makakatanggap ang may-ari ng circle ng notification upang patayin ito para sa iyo.";
+"Send" = "Ipadala";
+"Child Mode" = "Child Mode";
+"Child Mode remove features children don’t need and prevent them from logging out and turning off location and battery level sharing." = "Inaalis ng Child Mode ang mga tampok na hindi kailangan ng mga bata at pinipigilan silang mag-logout at patayin ang pagbabahagi ng lokasyon at antas ng baterya.";
+"Setup child mode" = "I-set up ang child mode";
+"Add child to a circle and enable child mode in the app settings on their device." = "Magdagdag ng bata sa isang circle at paganahin ang child mode sa mga setting ng app sa kanilang device.";
+"Your Children Won’t be able to Creating Circles, browsing travel history, turn off location and battery level sharing or log out." = "Hindi makakagawa ang iyong mga anak ng mga Circle, makakapag-browse ng travel history, makakapapatay ng pagbabahagi ng lokasyon at antas ng baterya, o makaka-logout.";
+"Child mode is enabled for" = "Naka-enable ang child mode para sa";
+"About Child Mode" = "Tungkol sa Child Mode";
+"What happens when Child Mode is ON?" = "Ano ang nangyayari kapag naka-ON ang Child Mode?";
+"Location sharing stays always active (cannot be turned off)." = "Laging aktibo ang pagbabahagi ng lokasyon (hindi maaaring patayin).";
+"Battery percentage is visible to the circle owner." = "Makikita ng may-ari ng circle ang porsyento ng baterya.";
+"Logout option is disabled to prevent tracking interruptions." = "Hindi pinagana ang opsyon sa pag-logout upang maiwasan ang pagkaantala sa pagsubaybay.";
+"Designed to ensure the member stays safe and connected." = "Dinisenyo upang matiyak na ang miyembro ay ligtas at konektado.";
+"How to turn OFF Child Mode?" = "Paano patayin ang Child Mode?";
+"The Circle Owner can disable Child Mode anytime." = "Maaaring i-disable ng May-ari ng Circle ang Child Mode anumang oras.";
+"The member can send a disable request → owner must approve it." = "Maaaring magpadala ang miyembro ng kahilingan na i-disable → kailangang aprubahan ito ng may-ari.";
+"Only after approval, Child Mode will be turned off." = "Pagkatapos lamang ng pag-apruba, mapapatay ang Child Mode.";
+"Why use Child Mode?" = "Bakit gamitin ang Child Mode?";
+"Ensures continuous safety tracking." = "Tinitiyak ang tuloy-tuloy na pagsubaybay sa kaligtasan.";
+"Prevents location hiding or accidental logout." = "Pinipigilan ang pagtatago ng lokasyon o aksidenteng pag-logout.";
+"Gives parents/guardians more control & peace of mind." = "Nagbibigay sa mga magulang/tagapag-alaga ng higit na kontrol at kapanatagan ng loob.";
+"No members" = "Walang mga miyembro";
+"Disable Child Mode?" = "I-disable ang Child Mode?";
+"Are you sure you want to disable child mode for ‘%@’?" = "Sigurado ka bang gusto mong i-disable ang child mode para sa ‘%@’?";
+"No" = "Hindi";
+"Exit" = "Lumabas";
+"Reject" = "Tanggi";
+"Child Mode Disable Request!" = "Kahilingan sa Pag-disable ng Child Mode!";
+"has requested to disable Child Mode. Do you want to approve this request?" = "ay humiling na i-disable ang Child Mode. Gusto mo bang aprubahan ang kahilingang ito?";
+"Child Mode Disabled!" = "Na-disable ang Child Mode!";
+"Child Mode is Disable for '%@' successfully." = "Matagumpay na na-disable ang Child Mode para sa '%@'.";

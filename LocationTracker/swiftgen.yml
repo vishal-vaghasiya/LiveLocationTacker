@@ -1,0 +1,17 @@
+xcassets:
+  inputs: LocationTracker/Resources/Assets.xcassets
+  outputs:
+    templateName: swift5
+    output: LocationTracker/Resources/SwiftGen/Images.swift
+
+fonts:
+  inputs: LocationTracker/Resources/Fonts
+  outputs:
+    templateName: swift5
+    output: LocationTracker/Resources/SwiftGen/Fonts.swift
+
+ib:
+  inputs: LocationTracker/UI
+  outputs:
+    templateName: scenes-swift4
+    output: LocationTracker/Resources/SwiftGen/Storyboards.swift

@@ -1,0 +1,200 @@
+"Welcome" = "Willkommen";
+"Stay connected with loved ones by tracking their live location with ease" = "Bleiben Sie mit Ihren Lieben verbunden, indem Sie deren Live-Standort ganz einfach verfolgen";
+"Get started" = "Loslegen";
+
+"Select Language" = "Sprache auswählen";
+"Change Language" = "Sprache ändern";
+
+"Stay Close to Your Loved Ones" = "Bleiben Sie Ihren Lieben nah";
+"Keep your family connected no matter where life takes them." = "Halten Sie Ihre Familie verbunden, egal wohin das Leben sie führt.";
+
+"Real-Time Location at Your Fingertips" = "Echtzeit-Standort jederzeit verfügbar";
+"See live updates instantly and never miss a moment." = "Sehen Sie sofort Live-Updates und verpassen Sie keinen Moment.";
+
+"A Smarter Way to Locate Family" = "Eine intelligentere Möglichkeit, die Familie zu finden";
+"Quick access to real-time family locations made simple." = "Schneller Zugriff auf Echtzeit-Standorte der Familie, einfach gemacht.";
+
+"Next" = "Weiter";
+
+"Permissions" = "Berechtigungen";
+"Enable notification and allow access to your location and motion activity for the app to run properly." = "Aktivieren Sie Benachrichtigungen und erlauben Sie den Zugriff auf Ihren Standort und Ihre Bewegungsaktivität, damit die App richtig funktioniert.";
+"Notification" = "Benachrichtigung";
+
+"Continue" = "Fortfahren";
+
+"Enter Your Phone Number" = "Geben Sie Ihre Telefonnummer ein";
+"Your information stays private and is never shared with third parties." = "Ihre Informationen bleiben privat und werden niemals an Dritte weitergegeben.";
+
+"OTP Verification" = "OTP-Verifizierung";
+"Enter the OTP Sent to" = "Geben Sie den gesendeten OTP-Code ein";
+"Don’t Receive the OTP ?" = "OTP nicht erhalten?";
+"RESEND OTP" = "OTP ERNEUT SENDEN";
+
+"Please enter valid OTP code" = "Bitte geben Sie einen gültigen OTP-Code ein";
+"Verified" = "Verifiziert";
+
+"Set Profile" = "Profil festlegen";
+"Complete your profile details." = "Vervollständigen Sie Ihre Profildaten.";
+"Upload Photo" = "Foto hochladen";
+"Change Photo" = "Foto ändern";
+"Update" = "Aktualisieren";
+
+"Enter first name" = "Vorname eingeben";
+"First name" = "Vorname";
+"Enter Name" = "Name eingeben";
+"Enter circle name" = "Kreisnamen eingeben";
+"Enter last name" = "Nachname eingeben";
+"Last name" = "Nachname";
+"Select gender" = "Geschlecht auswählen";
+"Male" = "Männlich";
+"Female" = "Weiblich";
+"Set Profile Pic" = "Profilbild festlegen";
+
+"Cancel" = "Abbrechen";
+"Done" = "Fertig";
+"Yes" = "Ja";
+"Ok" = "Ok";
+"Save" = "Speichern";
+"Delete" = "Löschen";
+
+"Members" = "Mitglieder";
+"Add" = "Hinzufügen";
+
+"Choose Map" = "Karte auswählen";
+"Standard" = "Standard";
+"Satellite" = "Satellit";
+"Transit" = "ÖPNV";
+
+"Create Circle" = "Kreis erstellen";
+"Join Circle" = "Kreis beitreten";
+"Edit Circle" = "Kreis bearbeiten";
+
+"Circle Name" = "Kreisname";
+"Invitation Code" = "Einladungscode";
+"Create" = "Erstellen";
+
+"Remove Member ?" = "Mitglied entfernen?";
+"Are you sure want to remove this member from circle?" = "Sind Sie sicher, dass Sie dieses Mitglied aus dem Kreis entfernen möchten?";
+
+"Enter Invitation Code" = "Einladungscode eingeben";
+"Get an invitation code from the person who made the circle." = "Holen Sie sich einen Einladungscode von der Person, die den Kreis erstellt hat.";
+"Join" = "Beitreten";
+"Please enter valid code" = "Bitte geben Sie einen gültigen Code ein";
+
+"Add Member" = "Mitglied hinzufügen";
+"Add someone you know into circle to start getting notified about location" = "Fügen Sie jemanden, den Sie kennen, zum Kreis hinzu, um Standortbenachrichtigungen zu erhalten";
+
+"Choose From Contact" = "Aus Kontakten wählen";
+
+"Member Detail" = "Mitgliedsdetails";
+"Address" = "Adresse";
+"Last Update" = "Letzte Aktualisierung";
+
+"SOS Calling" = "SOS-Anruf";
+"Once the countdown ends, your location will be shared with your circle." = "Sobald der Countdown endet, wird Ihr Standort mit Ihrem Kreis geteilt.";
+"Stop" = "Stopp";
+"SOS Not Sent" = "SOS nicht gesendet";
+"No members in your circle. Please add members to share SOS alerts." = "Keine Mitglieder in Ihrem Kreis. Bitte fügen Sie Mitglieder hinzu, um SOS-Warnungen zu teilen.";
+"SOS Sent Successfully" = "SOS erfolgreich gesendet";
+"Your alert has been shared with all circle members." = "Ihre Warnung wurde mit allen Kreis-Mitgliedern geteilt.";
+
+"Proximity Alert" = "Nähewarnung";
+"Add a Proximity Alert to get started." = "Fügen Sie eine Nähewarnung hinzu, um zu beginnen.";
+"ID" = "ID";
+"Name" = "Name";
+"Enter Proximity name" = "Nähenamen eingeben";
+"Location" = "Standort";
+"Select location" = "Standort auswählen";
+"Search location" = "Standort suchen";
+"Select Date" = "Datum auswählen";
+"Select Time" = "Uhrzeit auswählen";
+"Open Map" = "Karte öffnen";
+"Type" = "Typ";
+"Home" = "Zuhause";
+"Gym" = "Fitnessstudio";
+"Office" = "Büro";
+"Shop" = "Geschäft";
+"Education" = "Bildung";
+"Hospital" = "Krankenhaus";
+"Other" = "Andere";
+"Alert Date and Time" = "Alarmdatum und -zeit";
+"Radius" = "Radius";
+"Push Notification" = "Push-Benachrichtigung";
+"Note" = "Notiz";
+"Enter note about this alert" = "Notiz zu diesem Alarm eingeben";
+"Add Alert" = "Alarm hinzufügen";
+"Select & Continue" = "Auswählen & Fortfahren";
+"Leave without alert?" = "Ohne Alarm verlassen?";
+"No alert added. Go back?" = "Kein Alarm hinzugefügt. Zurück?";
+"Alert Saved" = "Alarm gespeichert";
+"Your alert has been saved successfully." = "Ihr Alarm wurde erfolgreich gespeichert.";
+"Proximity info" = "Näheinformationen";
+"Coordinates" = "Koordinaten";
+"Status" = "Status";
+"Inactive" = "Inaktiv";
+"Active" = "Aktiv";
+"Alert On" = "Alarm an";
+"Delete Alert?" = "Alarm löschen?";
+"Are you sure you want to delete this alert?" = "Sind Sie sicher, dass Sie diesen Alarm löschen möchten?";
+"Save Alert" = "Alarm speichern";
+
+"Settings" = "Einstellungen";
+"Battery Level Sharing" = "Batteriestand teilen";
+"Proximity Notifications" = "Nähebenachrichtigungen";
+"Motion Activity" = "Bewegungsaktivität";
+"Location Sharing" = "Standortfreigabe";
+"Rate Now" = "Jetzt bewerten";
+"Share" = "Teilen";
+"Feedback" = "Feedback";
+"Privacy Policy" = "Datenschutzrichtlinie";
+"Term & Condition" = "Geschäftsbedingungen";
+
+"Network Error" = "Netzwerkfehler";
+"Make sure you’re connected to the internet." = "Stellen Sie sicher, dass Sie mit dem Internet verbunden sind.";
+"Retry" = "Erneut versuchen";
+
+"Enable notification and allow access to your location Sharing for the app to run properly." = "Aktivieren Sie Benachrichtigungen und erlauben Sie den Zugriff auf Ihre Standortfreigabe, damit die App ordnungsgemäß funktioniert.";
+"Enable notification and allow access to your motion activity for the app to run properly." = "Aktivieren Sie Benachrichtigungen und erlauben Sie den Zugriff auf Ihre Bewegungsaktivität, damit die App ordnungsgemäß funktioniert.";
+"Member" = "Mitglied";
+"Map" = "Karte";
+"Proximity" = "Nähe";
+"Child mode is enabled" = "Kindermodus ist aktiviert";
+"you can’t turn off location and battery level sharing or log out." = "Sie können die Standort- und Batteriestandfreigabe nicht deaktivieren oder sich abmelden.";
+"LogOut" = "Abmelden";
+"Log Out" = "Abmelden";
+"Disable" = "Deaktivieren";
+"Learn more about child mode" = "Erfahren Sie mehr über den Kindermodus";
+"Circle Owner" = "Kreisbesitzer";
+"Send request to disable child mode?" = "Anfrage zum Deaktivieren des Kindermodus senden?";
+"The circle owner will get a notification to turn it off for you." = "Der Kreisbesitzer erhält eine Benachrichtigung, um ihn für Sie auszuschalten.";
+"Send" = "Senden";
+"Child Mode" = "Kindermodus";
+"Child Mode remove features children don’t need and prevent them from logging out and turning off location and battery level sharing." = "Der Kindermodus entfernt Funktionen, die Kinder nicht benötigen, und verhindert, dass sie sich abmelden oder die Standort- und Batteriestandfreigabe deaktivieren.";
+"Setup child mode" = "Kindermodus einrichten";
+"Add child to a circle and enable child mode in the app settings on their device." = "Fügen Sie ein Kind zu einem Kreis hinzu und aktivieren Sie den Kindermodus in den App-Einstellungen auf dessen Gerät.";
+"Your Children Won’t be able to Creating Circles, browsing travel history, turn off location and battery level sharing or log out." = "Ihre Kinder können keine Kreise erstellen, keine Reiseverläufe anzeigen, die Standort- und Batteriestandfreigabe nicht deaktivieren oder sich abmelden.";
+"Child mode is enabled for" = "Kindermodus ist aktiviert für";
+"About Child Mode" = "Über den Kindermodus";
+"What happens when Child Mode is ON?" = "Was passiert, wenn der Kindermodus aktiviert ist?";
+"Location sharing stays always active (cannot be turned off)." = "Die Standortfreigabe bleibt immer aktiv (kann nicht deaktiviert werden).";
+"Battery percentage is visible to the circle owner." = "Der Batteriestand ist für den Kreisbesitzer sichtbar.";
+"Logout option is disabled to prevent tracking interruptions." = "Die Abmeldeoption ist deaktiviert, um Unterbrechungen der Standortverfolgung zu verhindern.";
+"Designed to ensure the member stays safe and connected." = "Entwickelt, um sicherzustellen, dass das Mitglied sicher und verbunden bleibt.";
+"How to turn OFF Child Mode?" = "Wie schalte ich den Kindermodus aus?";
+"The Circle Owner can disable Child Mode anytime." = "Der Kreisbesitzer kann den Kindermodus jederzeit deaktivieren.";
+"The member can send a disable request → owner must approve it." = "Das Mitglied kann eine Deaktivierungsanfrage senden → der Besitzer muss diese genehmigen.";
+"Only after approval, Child Mode will be turned off." = "Erst nach Genehmigung wird der Kindermodus ausgeschaltet.";
+"Why use Child Mode?" = "Warum den Kindermodus verwenden?";
+"Ensures continuous safety tracking." = "Sorgt für kontinuierliche Sicherheitstracking.";
+"Prevents location hiding or accidental logout." = "Verhindert das Verbergen des Standorts oder versehentliches Abmelden.";
+"Gives parents/guardians more control & peace of mind." = "Gibt Eltern/Erziehungsberechtigten mehr Kontrolle und Sicherheit.";
+"No members" = "Keine Mitglieder";
+"Disable Child Mode?" = "Kindermodus deaktivieren?";
+"Are you sure you want to disable child mode for ‘%@’?" = "Sind Sie sicher, dass Sie den Kindermodus für ‘%@’ deaktivieren möchten?";
+"No" = "Nein";
+"Exit" = "Beenden";
+"Reject" = "Ablehnen";
+"Child Mode Disable Request!" = "Anfrage zur Deaktivierung des Kindermodus!";
+"has requested to disable Child Mode. Do you want to approve this request?" = "hat die Deaktivierung des Kindermodus angefordert. Möchten Sie diese Anfrage genehmigen?";
+"Child Mode Disabled!" = "Kindermodus deaktiviert!";
+"Child Mode is Disable for '%@' successfully." = "Der Kindermodus für '%@' wurde erfolgreich deaktiviert.";

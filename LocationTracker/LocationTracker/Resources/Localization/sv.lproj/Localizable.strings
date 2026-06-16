@@ -1,0 +1,200 @@
+"Welcome" = "Välkommen";
+"Stay connected with loved ones by tracking their live location with ease" = "Håll kontakten med dina nära och kära genom att enkelt spåra deras liveplats";
+"Get started" = "Kom igång";
+
+"Select Language" = "Välj språk";
+"Change Language" = "Byt språk";
+
+"Stay Close to Your Loved Ones" = "Håll dig nära dina nära och kära";
+"Keep your family connected no matter where life takes them." = "Håll din familj sammanlänkad oavsett vart livet tar dem.";
+
+"Real-Time Location at Your Fingertips" = "Real-tidsplats vid dina fingertoppar";
+"See live updates instantly and never miss a moment." = "Se liveuppdateringar direkt och missa aldrig ett ögonblick.";
+
+"A Smarter Way to Locate Family" = "Ett smartare sätt att hitta familjen";
+"Quick access to real-time family locations made simple." = "Snabb åtkomst till familjens realtidsplatser på ett enkelt sätt.";
+
+"Next" = "Nästa";
+
+"Permissions" = "Behörigheter";
+"Enable notification and allow access to your location and motion activity for the app to run properly." = "Aktivera aviseringar och tillåt åtkomst till din plats och rörelseaktivitet för att appen ska fungera korrekt.";
+"Notification" = "Avisering";
+
+"Continue" = "Fortsätt";
+
+"Enter Your Phone Number" = "Ange ditt telefonnummer";
+"Your information stays private and is never shared with third parties." = "Din information förblir privat och delas aldrig med tredje part.";
+
+"OTP Verification" = "OTP-verifiering";
+"Enter the OTP Sent to" = "Ange OTP som skickades till";
+"Don’t Receive the OTP ?" = "Fick du inte OTP?";
+"RESEND OTP" = "SKICKA OTP IGEN";
+
+"Please enter valid OTP code" = "Ange en giltig OTP-kod";
+"Verified" = "Verifierad";
+
+"Set Profile" = "Ställ in profil";
+"Complete your profile details." = "Fyll i dina profildetaljer.";
+"Upload Photo" = "Ladda upp foto";
+"Change Photo" = "Byt foto";
+"Update" = "Uppdatera";
+
+"Enter first name" = "Ange förnamn";
+"First name" = "Förnamn";
+"Enter Name" = "Ange namn";
+"Enter circle name" = "Ange cirkelns namn";
+"Enter last name" = "Ange efternamn";
+"Last name" = "Efternamn";
+"Select gender" = "Välj kön";
+"Male" = "Man";
+"Female" = "Kvinna";
+"Set Profile Pic" = "Ställ in profilbild";
+
+"Cancel" = "Avbryt";
+"Done" = "Klar";
+"Yes" = "Ja";
+"Ok" = "Ok";
+"Save" = "Spara";
+"Delete" = "Ta bort";
+
+"Members" = "Medlemmar";
+"Add" = "Lägg till";
+
+"Choose Map" = "Välj karta";
+"Standard" = "Standard";
+"Satellite" = "Satellit";
+"Transit" = "Kollektivtrafik";
+
+"Create Circle" = "Skapa cirkel";
+"Join Circle" = "Gå med i cirkel";
+"Edit Circle" = "Redigera cirkel";
+
+"Circle Name" = "Cirkelns namn";
+"Invitation Code" = "Inbjudningskod";
+"Create" = "Skapa";
+
+"Remove Member ?" = "Ta bort medlem?";
+"Are you sure want to remove this member from circle?" = "Är du säker på att du vill ta bort denna medlem från cirkeln?";
+
+"Enter Invitation Code" = "Ange inbjudningskod";
+"Get an invitation code from the person who made the circle." = "Få en inbjudningskod från personen som skapade cirkeln.";
+"Join" = "Gå med";
+"Please enter valid code" = "Ange en giltig kod";
+
+"Add Member" = "Lägg till medlem";
+"Add someone you know into circle to start getting notified about location" = "Lägg till någon du känner i cirkeln för att börja få platsaviseringar";
+
+"Choose From Contact" = "Välj från kontakter";
+
+"Member Detail" = "Medlemsdetaljer";
+"Address" = "Adress";
+"Last Update" = "Senaste uppdatering";
+
+"SOS Calling" = "SOS-samtal";
+"Once the countdown ends, your location will be shared with your circle." = "När nedräkningen är slut delas din plats med din cirkel.";
+"Stop" = "Stoppa";
+"SOS Not Sent" = "SOS skickades inte";
+"No members in your circle. Please add members to share SOS alerts." = "Inga medlemmar i din cirkel. Lägg till medlemmar för att dela SOS-varningar.";
+"SOS Sent Successfully" = "SOS skickades framgångsrikt";
+"Your alert has been shared with all circle members." = "Din varning har delats med alla cirkelmedlemmar.";
+
+"Proximity Alert" = "Närhetsvarning";
+"Add a Proximity Alert to get started." = "Lägg till en närhetsvarning för att komma igång.";
+"ID" = "ID";
+"Name" = "Namn";
+"Enter Proximity name" = "Ange närhetsnamn";
+"Location" = "Plats";
+"Select location" = "Välj plats";
+"Search location" = "Sök plats";
+"Select Date" = "Välj datum";
+"Select Time" = "Välj tid";
+"Open Map" = "Öppna karta";
+"Type" = "Typ";
+"Home" = "Hem";
+"Gym" = "Gym";
+"Office" = "Kontor";
+"Shop" = "Butik";
+"Education" = "Utbildning";
+"Hospital" = "Sjukhus";
+"Other" = "Annat";
+"Alert Date and Time" = "Varningsdatum och tid";
+"Radius" = "Radie";
+"Push Notification" = "Push-notifikation";
+"Note" = "Notering";
+"Enter note about this alert" = "Ange notering om denna varning";
+"Add Alert" = "Lägg till varning";
+"Select & Continue" = "Välj och fortsätt";
+"Leave without alert?" = "Lämna utan varning?";
+"No alert added. Go back?" = "Ingen varning tillagd. Gå tillbaka?";
+"Alert Saved" = "Varning sparad";
+"Your alert has been saved successfully." = "Din varning har sparats framgångsrikt.";
+"Proximity info" = "Närhetsinfo";
+"Coordinates" = "Koordinater";
+"Status" = "Status";
+"Inactive" = "Inaktiv";
+"Active" = "Aktiv";
+"Alert On" = "Varning på";
+"Delete Alert?" = "Ta bort varning?";
+"Are you sure you want to delete this alert?" = "Är du säker på att du vill ta bort denna varning?";
+"Save Alert" = "Spara varning";
+
+"Settings" = "Inställningar";
+"Battery Level Sharing" = "Delning av batterinivå";
+"Proximity Notifications" = "Närhetsaviseringar";
+"Motion Activity" = "Rörelseaktivitet";
+"Location Sharing" = "Platsdelning";
+"Rate Now" = "Betygsätt nu";
+"Share" = "Dela";
+"Feedback" = "Feedback";
+"Privacy Policy" = "Integritetspolicy";
+"Term & Condition" = "Villkor";
+
+"Network Error" = "Nätverksfel";
+"Make sure you’re connected to the internet." = "Se till att du är ansluten till internet.";
+"Retry" = "Försök igen";
+
+"Enable notification and allow access to your location Sharing for the app to run properly." = "Aktivera aviseringar och tillåt åtkomst till din platsdelning för att appen ska fungera korrekt.";
+"Enable notification and allow access to your motion activity for the app to run properly." = "Aktivera aviseringar och tillåt åtkomst till din rörelseaktivitet för att appen ska fungera korrekt.";
+"Member" = "Medlem";
+"Map" = "Karta";
+"Proximity" = "Närhet";
+"Child mode is enabled" = "Barnläge är aktiverat";
+"you can’t turn off location and battery level sharing or log out." = "du kan inte stänga av plats- och batteridelning eller logga ut.";
+"LogOut" = "Logga ut";
+"Log Out" = "Logga ut";
+"Disable" = "Inaktivera";
+"Learn more about child mode" = "Läs mer om barnläge";
+"Circle Owner" = "Cirkelägare";
+"Send request to disable child mode?" = "Skicka förfrågan om att inaktivera barnläge?";
+"The circle owner will get a notification to turn it off for you." = "Cirkelägaren får en avisering för att stänga av det åt dig.";
+"Send" = "Skicka";
+"Child Mode" = "Barnläge";
+"Child Mode remove features children don’t need and prevent them from logging out and turning off location and battery level sharing." = "Barnläget tar bort funktioner som barn inte behöver och förhindrar dem från att logga ut och stänga av plats- och batteridelning.";
+"Setup child mode" = "Ställ in barnläge";
+"Add child to a circle and enable child mode in the app settings on their device." = "Lägg till barn i en cirkel och aktivera barnläge i appinställningarna på deras enhet.";
+"Your Children Won’t be able to Creating Circles, browsing travel history, turn off location and battery level sharing or log out." = "Dina barn kommer inte kunna skapa cirklar, bläddra i reseloggen, stänga av plats- och batteridelning eller logga ut.";
+"Child mode is enabled for" = "Barnläge är aktiverat för";
+"About Child Mode" = "Om barnläge";
+"What happens when Child Mode is ON?" = "Vad händer när barnläge är på?";
+"Location sharing stays always active (cannot be turned off)." = "Platsdelning är alltid aktiv (kan inte stängas av).";
+"Battery percentage is visible to the circle owner." = "Batteriprocenten är synlig för cirkelägaren.";
+"Logout option is disabled to prevent tracking interruptions." = "Utloggningsalternativet är inaktiverat för att förhindra avbrott i spårningen.";
+"Designed to ensure the member stays safe and connected." = "Utformat för att säkerställa att medlemmen är säker och uppkopplad.";
+"How to turn OFF Child Mode?" = "Hur stänger man av barnläge?";
+"The Circle Owner can disable Child Mode anytime." = "Cirkelägaren kan inaktivera barnläge när som helst.";
+"The member can send a disable request → owner must approve it." = "Medlemmen kan skicka en förfrågan om att inaktivera → ägaren måste godkänna.";
+"Only after approval, Child Mode will be turned off." = "Först efter godkännande stängs barnläget av.";
+"Why use Child Mode?" = "Varför använda barnläge?";
+"Ensures continuous safety tracking." = "Säkerställer kontinuerlig säkerhetsspårning.";
+"Prevents location hiding or accidental logout." = "Förhindrar platsdölja eller oavsiktlig utloggning.";
+"Gives parents/guardians more control & peace of mind." = "Ger föräldrar/vårdnadshavare mer kontroll och sinnesro.";
+"No members" = "Inga medlemmar";
+"Disable Child Mode?" = "Inaktivera barnläge?";
+"Are you sure you want to disable child mode for ‘%@’?" = "Är du säker på att du vill inaktivera barnläge för ‘%@’?";
+"No" = "Nej";
+"Exit" = "Avsluta";
+"Reject" = "Avvisa";
+"Child Mode Disable Request!" = "Förfrågan om att inaktivera barnläge!";
+"has requested to disable Child Mode. Do you want to approve this request?" = "har begärt att inaktivera barnläge. Vill du godkänna denna förfrågan?";
+"Child Mode Disabled!" = "Barnläge inaktiverat!";
+"Child Mode is Disable for '%@' successfully." = "Barnläge har inaktiverats för '%@' framgångsrikt.";

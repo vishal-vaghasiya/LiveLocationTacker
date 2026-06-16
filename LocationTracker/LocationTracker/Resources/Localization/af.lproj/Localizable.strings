@@ -1,0 +1,200 @@
+"Welcome" = "Welkom";
+"Stay connected with loved ones by tracking their live location with ease" = "Bly verbind met geliefdes deur hul lewendige ligging maklik op te spoor";
+"Get started" = "Begin";
+
+"Select Language" = "Kies Taal";
+"Change Language" = "Verander Taal";
+
+"Stay Close to Your Loved Ones" = "Bly naby jou geliefdes";
+"Keep your family connected no matter where life takes them." = "Hou jou familie verbind, maak nie saak waar die lewe hulle neem nie.";
+
+"Real-Time Location at Your Fingertips" = "Reële tyd ligging binne handbereik";
+"See live updates instantly and never miss a moment." = "Sien lewendige opdaterings onmiddellik en mis nooit 'n oomblik nie.";
+
+"A Smarter Way to Locate Family" = "’n Slimmer manier om familie te vind";
+"Quick access to real-time family locations made simple." = "Vinnige toegang tot reële tyd familie liggings gemaak eenvoudig.";
+
+"Next" = "Volgende";
+
+"Permissions" = "Toestemmings";
+"Enable notification and allow access to your location and motion activity for the app to run properly." = "Skakel kennisgewing aan en laat toegang tot jou ligging en bewegingsaktiwiteit toe sodat die app behoorlik kan werk.";
+"Notification" = "Kennisgewing";
+
+"Continue" = "Gaan voort";
+
+"Enter Your Phone Number" = "Voer jou telefoonnommer in";
+"Your information stays private and is never shared with third parties." = "Jou inligting bly privaat en word nooit met derde partye gedeel nie.";
+
+"OTP Verification" = "OTP Verifikasie";
+"Enter the OTP Sent to" = "Voer die OTP in wat gestuur is na";
+"Don’t Receive the OTP ?" = "Het jy nie die OTP ontvang nie?";
+"RESEND OTP" = "HERSTUUR OTP";
+
+"Please enter valid OTP code" = "Voer asseblief 'n geldige OTP-kode in";
+"Verified" = "Geverifieer";
+
+"Set Profile" = "Stel Profiel";
+"Complete your profile details." = "Voltooi jou profielbesonderhede.";
+"Upload Photo" = "Laai Foto op";
+"Change Photo" = "Verander Foto";
+"Update" = "Werk by";
+
+"Enter first name" = "Voer voornaam in";
+"First name" = "Voornaam";
+"Enter Name" = "Voer Naam in";
+"Enter circle name" = "Voer sirkelnaam in";
+"Enter last name" = "Voer vanne in";
+"Last name" = "Van";
+"Select gender" = "Kies geslag";
+"Male" = "Manlik";
+"Female" = "Vroulik";
+"Set Profile Pic" = "Stel Profielprent";
+
+"Cancel" = "Kanselleer";
+"Done" = "Gedaan";
+"Yes" = "Ja";
+"Ok" = "Oké";
+"Save" = "Stoor";
+"Delete" = "Verwyder";
+
+"Members" = "Lede";
+"Add" = "Voeg by";
+
+"Choose Map" = "Kies Kaart";
+"Standard" = "Standaard";
+"Satellite" = "Satelliet";
+"Transit" = "Transit";
+
+"Create Circle" = "Skep Sirkel";
+"Join Circle" = "Sluit aan by Sirkel";
+"Edit Circle" = "Wysig Sirkel";
+
+"Circle Name" = "Sirkelnaam";
+"Invitation Code" = "Uitnodigingskode";
+"Create" = "Skep";
+
+"Remove Member ?" = "Verwyder lid?";
+"Are you sure want to remove this member from circle?" = "Is jy seker jy wil hierdie lid uit die sirkel verwyder?";
+
+"Enter Invitation Code" = "Voer Uitnodigingskode in";
+"Get an invitation code from the person who made the circle." = "Kry 'n uitnodigingskode van die persoon wat die sirkel gemaak het.";
+"Join" = "Sluit aan";
+"Please enter valid code" = "Voer asseblief 'n geldige kode in";
+
+"Add Member" = "Voeg Lid by";
+"Add someone you know into circle to start getting notified about location" = "Voeg iemand wat jy ken by die sirkel om kennisgewings oor ligging te begin ontvang";
+
+"Choose From Contact" = "Kies uit Kontak";
+
+"Member Detail" = "Lid Besonderhede";
+"Address" = "Adres";
+"Last Update" = "Laaste Opdatering";
+
+"SOS Calling" = "SOS Oproep";
+"Once the countdown ends, your location will be shared with your circle." = "Sodra die aftelling eindig, sal jou ligging met jou sirkel gedeel word.";
+"Stop" = "Stop";
+"SOS Not Sent" = "SOS Nie Gestuur Nie";
+"No members in your circle. Please add members to share SOS alerts." = "Geen lede in jou sirkel nie. Voeg asseblief lede by om SOS waarskuwings te deel.";
+"SOS Sent Successfully" = "SOS Succesvol Gestuur";
+"Your alert has been shared with all circle members." = "Jou waarskuwing is met alle sirkellede gedeel.";
+
+"Proximity Alert" = "Nabyheidswaarskuwing";
+"Add a Proximity Alert to get started." = "Voeg 'n nabyheidswaarskuwing by om te begin.";
+"ID" = "ID";
+"Name" = "Naam";
+"Enter Proximity name" = "Voer nabyheidsnaam in";
+"Location" = "Ligging";
+"Select location" = "Kies ligging";
+"Search location" = "Soek ligging";
+"Select Date" = "Kies Datum";
+"Select Time" = "Kies Tyd";
+"Open Map" = "Maak Kaart oop";
+"Type" = "Tipe";
+"Home" = "Tuis";
+"Gym" = "Gimnasium";
+"Office" = "Kantoor";
+"Shop" = "Winkel";
+"Education" = "Onderwys";
+"Hospital" = "Hospitaal";
+"Other" = "Ander";
+"Alert Date and Time" = "Waarskuwing Datum en Tyd";
+"Radius" = "Radius";
+"Push Notification" = "Stootkennisgewing";
+"Note" = "Nota";
+"Enter note about this alert" = "Voer nota oor hierdie waarskuwing in";
+"Add Alert" = "Voeg Waarskuwing by";
+"Select & Continue" = "Kies & Gaan voort";
+"Leave without alert?" = "Verlaat sonder waarskuwing?";
+"No alert added. Go back?" = "Geen waarskuwing bygevoeg nie. Gaan terug?";
+"Alert Saved" = "Waarskuwing Gestoor";
+"Your alert has been saved successfully." = "Jou waarskuwing is suksesvol gestoor.";
+"Proximity info" = "Nabyheidsinligting";
+"Coordinates" = "Koördinate";
+"Status" = "Status";
+"Inactive" = "Onaktief";
+"Active" = "Aktief";
+"Alert On" = "Waarskuwing AAN";
+"Delete Alert?" = "Verwyder Waarskuwing?";
+"Are you sure you want to delete this alert?" = "Is jy seker jy wil hierdie waarskuwing verwyder?";
+"Save Alert" = "Stoor Waarskuwing";
+
+"Settings" = "Instellings";
+"Battery Level Sharing" = "Batteryvlak Deel";
+"Proximity Notifications" = "Nabyheidskennisgewings";
+"Motion Activity" = "Bewegingsaktiwiteit";
+"Location Sharing" = "Ligging Deel";
+"Rate Now" = "Gradeer Nou";
+"Share" = "Deel";
+"Feedback" = "Terugvoer";
+"Privacy Policy" = "Privaatheidsbeleid";
+"Term & Condition" = "Terme & Voorwaardes";
+
+"Network Error" = "Netwerkfout";
+"Make sure you’re connected to the internet." = "Maak seker jy is aan die internet gekoppel.";
+"Retry" = "Probeer Weer";
+
+"Enable notification and allow access to your location Sharing for the app to run properly." = "Skakel kennisgewing aan en laat toegang tot jou liggingdeel toe sodat die app behoorlik kan werk.";
+"Enable notification and allow access to your motion activity for the app to run properly." = "Skakel kennisgewing aan en laat toegang tot jou bewegingsaktiwiteit toe sodat die app behoorlik kan werk.";
+"Member" = "Lid";
+"Map" = "Kaart";
+"Proximity" = "Nabyheid";
+"Child mode is enabled" = "Kindermodus is aangeskakel";
+"you can’t turn off location and battery level sharing or log out." = "jy kan nie ligging- en batterydeling afskakel of uitlog nie.";
+"LogOut" = "Teken Uit";
+"Log Out" = "Teken Uit";
+"Disable" = "Deaktiveer";
+"Learn more about child mode" = "Leer meer oor kindermodus";
+"Circle Owner" = "Sirkeleienaar";
+"Send request to disable child mode?" = "Stuur versoek om kindermodus te deaktiveer?";
+"The circle owner will get a notification to turn it off for you." = "Die sirkeleienaar sal 'n kennisgewing kry om dit vir jou af te skakel.";
+"Send" = "Stuur";
+"Child Mode" = "Kindermodus";
+"Child Mode remove features children don’t need and prevent them from logging out and turning off location and battery level sharing." = "Kindermodus verwyder funksies wat kinders nie nodig het nie en voorkom dat hulle uitlog en ligging- en batterydeling afskakel.";
+"Setup child mode" = "Stel kindermodus in";
+"Add child to a circle and enable child mode in the app settings on their device." = "Voeg kind by 'n sirkel en skakel kindermodus aan in die app-instellings op hul toestel.";
+"Your Children Won’t be able to Creating Circles, browsing travel history, turn off location and battery level sharing or log out." = "Jou kinders sal nie sirkel kan skep, reisgeskiedenis kan blaai, ligging- en batterydeling kan afskakel of kan uitlog nie.";
+"Child mode is enabled for" = "Kindermodus is aangeskakel vir";
+"About Child Mode" = "Oor Kindermodus";
+"What happens when Child Mode is ON?" = "Wat gebeur wanneer Kindermodus AAN is?";
+"Location sharing stays always active (cannot be turned off)." = "Liggingdeling bly altyd aktief (kan nie afgeskakel word nie).";
+"Battery percentage is visible to the circle owner." = "Battery persentasie is sigbaar vir die sirkeleienaar.";
+"Logout option is disabled to prevent tracking interruptions." = "Uitlogopsie is gedeaktiveer om onderbrekings in opsporing te voorkom.";
+"Designed to ensure the member stays safe and connected." = "Ontwerp om te verseker dat die lid veilig en verbind bly.";
+"How to turn OFF Child Mode?" = "Hoe om Kindermodus af te skakel?";
+"The Circle Owner can disable Child Mode anytime." = "Die sirkeleienaar kan Kindermodus enige tyd deaktiveer.";
+"The member can send a disable request → owner must approve it." = "Die lid kan 'n deaktiveringsversoek stuur → eienaar moet dit goedkeur.";
+"Only after approval, Child Mode will be turned off." = "Eers na goedkeuring sal Kindermodus afgeskakel word.";
+"Why use Child Mode?" = "Waarom gebruik Kindermodus?";
+"Ensures continuous safety tracking." = "Verseker deurlopende veiligheidsopsporing.";
+"Prevents location hiding or accidental logout." = "Voorkom liggingversteek of per ongeluk uitlog.";
+"Gives parents/guardians more control & peace of mind." = "Gee ouers/voogde meer beheer en gemoedsrus.";
+"No members" = "Geen lede nie";
+"Disable Child Mode?" = "Deaktiveer Kindermodus?";
+"Are you sure you want to disable child mode for ‘%@’?" = "Is jy seker jy wil kindermodus vir ‘%@’ deaktiveer?";
+"No" = "Nee";
+"Exit" = "Verlaat";
+"Reject" = "Weier";
+"Child Mode Disable Request!" = "Versoek om Kindermodus te Deaktiveer!";
+"has requested to disable Child Mode. Do you want to approve this request?" = "het versoek om Kindermodus te deaktiveer. Wil jy hierdie versoek goedkeur?";
+"Child Mode Disabled!" = "Kindermodus Deaktiveer!";
+"Child Mode is Disable for '%@' successfully." = "Kindermodus is suksesvol gedeaktiveer vir '%@'.";

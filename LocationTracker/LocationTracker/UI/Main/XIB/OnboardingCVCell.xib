@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="OnboardingCVCell" customModule="LocationTracker" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="374" height="777"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="374" height="777"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onboarding_1" translatesAutoresizingMaskIntoConstraints="NO" id="2Sd-ZL-vis">
+                        <rect key="frame" x="0.0" y="50" width="374" height="235"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="2Sd-ZL-vis" secondAttribute="height" multiplier="374:235" id="9R2-Yk-BRj"/>
+                            <constraint firstAttribute="height" constant="235" id="A7i-67-ewC"/>
+                        </constraints>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJy-bN-g5b" customClass="PrimaryPageControl" customModule="LocationTracker" customModuleProvider="target">
+                        <rect key="frame" x="137" y="305" width="100" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="lbu-i3-LaC"/>
+                            <constraint firstAttribute="height" constant="25" id="w4Y-PK-Cqx"/>
+                        </constraints>
+                    </stackView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="UD0-km-Syl">
+                        <rect key="frame" x="15" y="350" width="344" height="67.333333333333314"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stay in touch with your loved ones" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="wIe-qp-Ihh">
+                                <rect key="frame" x="0.0" y="0.0" width="344" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <color key="textColor" name="AppBlack"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSemiBold">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keep your family connected no matter where life takes them." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="IvY-Zv-sJV">
+                                <rect key="frame" x="0.0" y="29.000000000000004" width="344" height="38.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" name="AppBlack"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontRegular">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeJ-ch-IRy" customClass="PrimaryButton" customModule="LocationTracker" customModuleProvider="target">
+                        <rect key="frame" x="37" y="467.33333333333331" width="300" height="47.999999999999943"/>
+                        <color key="backgroundColor" name="AppMain"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="48" id="ZVX-jD-mcg"/>
+                            <constraint firstAttribute="width" constant="300" id="ct0-VY-xMB"/>
+                        </constraints>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" title="Next"/>
+                        <connections>
+                            <action selector="nextButtonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="JoK-DW-VDm"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="2Sd-ZL-vis" secondAttribute="trailing" id="2LC-Os-FKn"/>
+                <constraint firstItem="mJy-bN-g5b" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="IO2-ld-mhs"/>
+                <constraint firstItem="UD0-km-Syl" firstAttribute="top" secondItem="mJy-bN-g5b" secondAttribute="bottom" constant="20" id="IRv-1v-CcI"/>
+                <constraint firstItem="mJy-bN-g5b" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="IUk-ce-6Ft"/>
+                <constraint firstItem="2Sd-ZL-vis" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="efc-Bk-185"/>
+                <constraint firstItem="UD0-km-Syl" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="g83-AE-K98"/>
+                <constraint firstItem="LeJ-ch-IRy" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="kin-ic-VUb"/>
+                <constraint firstAttribute="trailing" secondItem="UD0-km-Syl" secondAttribute="trailing" constant="15" id="mZ1-Ht-s69"/>
+                <constraint firstItem="LeJ-ch-IRy" firstAttribute="top" secondItem="UD0-km-Syl" secondAttribute="bottom" constant="50" id="rYo-II-gbE"/>
+                <constraint firstItem="mJy-bN-g5b" firstAttribute="top" secondItem="2Sd-ZL-vis" secondAttribute="bottom" constant="20" id="wqR-1n-SwJ"/>
+                <constraint firstItem="2Sd-ZL-vis" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="50" id="x3p-3x-0kc"/>
+            </constraints>
+            <size key="customSize" width="430" height="777"/>
+            <connections>
+                <outlet property="mainImageView" destination="2Sd-ZL-vis" id="kBa-2x-lnb"/>
+                <outlet property="nextButton" destination="LeJ-ch-IRy" id="h9z-KL-iqs"/>
+                <outlet property="pageControl" destination="mJy-bN-g5b" id="6Jg-TF-aVh"/>
+                <outlet property="subTitleLabel" destination="IvY-Zv-sJV" id="G1M-q8-DUh"/>
+                <outlet property="titleLabel" destination="wIe-qp-Ihh" id="K6I-yJ-bLU"/>
+            </connections>
+            <point key="canvasLocation" x="129.7709923664122" y="52.464788732394368"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="onboarding_1" width="375" height="332"/>
+        <namedColor name="AppBlack">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="AppMain">
+            <color red="0.3843137254901961" green="0.51372549019607838" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
